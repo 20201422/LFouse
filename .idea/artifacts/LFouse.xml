@@ -6,11 +6,7 @@
         <element id="directory" name="classes">
           <element id="module-output" name="LFouse" />
         </element>
-        <element id="directory" name="lib">
-          <element id="library" level="project" name="mysql-connector-java-8.0.25" />
-          <element id="library" level="project" name="commons-beanutils-1.9.4" />
-          <element id="library" level="project" name="druid-1.1.10" />
-        </element>
+        <element id="directory" name="lib" />
       </element>
       <element id="javaee-facet-resources" facet="LFouse/web/Web" />
     </root>
