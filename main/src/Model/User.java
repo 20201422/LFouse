@@ -75,4 +75,18 @@ public class User {
         this.rent_num = rent_num;
     }
 
+    @Override
+    public String toString() {
+        return "USer{" +
+                "user_id='" + user_id +
+                ", tel='" + tel + '\'' +
+                ", uname=" + uname + '\'' +
+                ", upwd=" + upwd + '\'' +
+                ", sex='" + sex + '\'' +
+                ", age='" + age +
+                ", lodge_num='" + lodge_num +
+                ", rent_num=" + rent_num +
+                '}';
+    }
+
 }
