@@ -9,7 +9,7 @@
 <html>
   <head>
     <title>LFouse</title>
-    <meta http-equiv="Refresh" content="0;url=RentHouse.jsp"/>
+    <meta http-equiv="Refresh" content="0;url=LocationFindHouse.jsp"/>
   </head>
   <body>
   </body>
