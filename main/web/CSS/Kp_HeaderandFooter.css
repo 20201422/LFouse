@@ -1,0 +1,111 @@
+.header{
+    background: #0597F2;
+    color: white;
+    font-size: 14px;
+    padding: 4px 0 2px 27px;
+    margin: 0 auto;
+    position:relative;
+    min-height: 60px;
+}
+.logo{
+    width: 4%;
+}
+.name{
+    width: 5%;
+}
+.header_name{
+    color: white;
+    font-size: 22px;
+    vertical-align: center;
+    position:absolute;
+    padding: 16px 0 0 14px;
+}
+.head_welcome{
+    float: right;
+    text-align: right;
+}
+.head_welcome a{
+    color: white;
+    transition:color 0.2s linear 0s ;
+    -moz-transition:color 0.2s linear 0s ; /* Firefox 4 */
+    -webkit-transition:color 0.2s linear 0s ; /* Safari 和 Chrome */
+    -o-transition:color 0.2s linear 0s ; /* Opera */
+}
+.head_welcome a:visited{
+    color: white;
+}
+.head_welcome a:hover{
+    color: #CEE4F2;
+}
+.ts{
+    text-align: center;
+    float: right;
+    padding: 5px 0 5px 0;
+    font-size: 15px;
+    color: #F2F2F2;
+}
+.hr{
+    /*margin: 0 auto;*/
+    margin: 0 0 8px 0;
+    box-shadow: 0 4px 10px rgb(0,0,0.8);
+}
+.menu{
+    text-align: center;
+    margin: 0 160px 0 160px;
+    /*background: white;*/
+    border: 1px solid #0597F2;
+    border-radius: 24px;
+    background-color: #0597F2;
+    transition: all 0.45s;
+}
+.menu:hover{
+    box-shadow: 1px 1px 10px #a4a4a6;
+    border-radius:24px;
+    transform: scale(1.02);
+}
+.menu p{
+    display: inline-block;
+    margin: 0 22px 0 22px;
+    padding: 14px 0 14px 0;
+    font-size: 20px;
+}
+.menu p a{
+    color: white;
+    text-decoration: none;
+    transition:color 0.2s linear 0s ;
+    -moz-transition:color 0.2s linear 0s ; /* Firefox 4 */
+    -webkit-transition:color 0.2s linear 0s ; /* Safari 和 Chrome */
+    -o-transition:color 0.2s linear 0s ; /* Opera */
+}
+.menu p a:visited{
+    color: white;
+}
+.menu p a:hover{
+    text-decoration: none;
+    color: #CEE4F2;
+}
+
+
+
+.footer-help{
+    background-color: white;
+    padding: 10px 0 10px 80px;
+    font-size: 20px;
+    color: #3b3b3d;
+}
+.footer{
+    overflow: hidden;
+    bottom: 0;
+    margin: 0 0 0 0;
+    padding: 10px 80px 20px 80px;
+    background-color: #0597F2;
+    color: #F2F2F2;
+    text-align: left;
+    font-size: 10px;
+}
+.footer p{
+    color: #F2F2F2;
+}
+header,footer{
+    min-width: 900px;
+}
