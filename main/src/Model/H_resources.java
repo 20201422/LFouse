@@ -13,6 +13,7 @@ public class H_resources {
     private String h_toward;
     private String h_traffic;
     private int h_status;
+    private String h_floor;
     private User user;
 
     public int getH_id() {
@@ -101,6 +102,14 @@ public class H_resources {
 
     public void setH_status(int h_status) {
         this.h_status = h_status;
+    }
+
+    public String getH_floor() {
+        return h_floor;
+    }
+
+    public void setH_floor(String h_floor) {
+        this.h_floor = h_floor;
     }
 
     public User getUser() {

@@ -20,7 +20,7 @@
 
 <header>
     <%
-        if(user_id==null||user_id==""){//未登录
+        if(user_id==null|| user_id.equals("")){//未登录
     %>
     <div class="head_welcome">您好，<a href="Login.jsp" class="wa">请登录</a>（支持IPv6访问）</div>
     <%
@@ -33,11 +33,17 @@
     %>
     <div class="header">LFouse</div>
     <nav class="menu">
-        <p><a href="">找房</a></p>
+        <p><a href="">位置找房</a></p>
+        <p><a href="">交通找房</a></p>
+        <p><a href="">民宿</a></p>
+        <p><a href="">公寓</a></p>
+        <p><a href="">别墅</a></p>
+        <p><a href="">商品房</a></p>
+        <p><a href="">写字楼</a></p>
         <%
             if(user_id==null|| user_id.equals("")){//未登录
         %>
-        <p><a href="Login.jsp">我要租房</a></p>
+        <p><a href="Login.jsp">我要出租</a></p>
         <p><a href="Login.jsp">我的</a></p>
         <%
         }else{//已登录
@@ -48,7 +54,7 @@
             }
         %>
     </nav>
-    <div class="ts">现在选购，享受免费送货，Farmer 专家支持、免息分期等服务。</div>
+    <div class="ts">现在租房或者出租，享受免押金、免定金、免息分期等服务。</div>
 </header>
 
 
