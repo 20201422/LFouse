@@ -6,7 +6,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="LFouse" />
         </element>
-        <element id="directory" name="lib" />
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="JUnit4" module-name="LFouse" />
+          <element id="library" level="project" name="standard" />
+        </element>
       </element>
       <element id="javaee-facet-resources" facet="LFouse/web/Web" />
     </root>
