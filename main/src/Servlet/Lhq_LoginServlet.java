@@ -24,7 +24,7 @@ public class Lhq_LoginServlet extends HttpServlet {
         Admin admin = login.findAdminNoAndPassword(account,password);
         if(user==null&&admin==null){//登录失败
             request.setAttribute("errorMsg","账号或密码错误，请重新登录！");
-            request.getRequestDispatcher("/Login.jsp").forward(request,response);
+            request.getRequestDispatcher("/Lhq_Login.jsp").forward(request,response);
         }
         else if(user==null&&admin!=null){//管理员登录
             request.getRequestDispatcher("/Lt_admin.jsp").forward(request,response);

@@ -5,6 +5,8 @@
     text-align:center;
 
 }
+a{ text-decoration:none;  }
+a:hover{ color:red; }
 span{
     color:red;
 }
