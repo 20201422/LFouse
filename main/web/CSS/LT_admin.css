@@ -1,0 +1,106 @@
+/*#footer1{*/
+    /*position: fixed;*/
+    /*bottom: 0;*/
+/*}*/
+.LT_menu{
+    float: left;
+    width: 7%;
+    height: 100%;
+    /*text-align: center;*/
+    /*margin: 0 160px 0 160px;*/
+    /*background: white;*/
+    border: 1px solid #0597F2;
+    border-radius: 20px;
+    background-color: #0597F2;
+    transition: all 0.45s;
+}
+.LT_div{
+    transition: all 0.45s;
+}
+.LT_menu:hover{
+    box-shadow: 1px 1px 10px #a4a4a6;
+    border-radius:20px;
+    transform: scale(1.02);
+}
+.LT_div:hover{
+    box-shadow: 1px 1px 10px #a4a4a6;
+    border-radius:20px;
+    transform: scale(1.02);
+}
+
+
+#p1{
+    display: inline-block;
+    margin: 0 11px 0 11px;
+    padding-top: 52px;
+    font-size: 20px;
+}
+
+#p2{
+    display: inline-block;
+    margin: 0 11px 0 11px;
+    padding-top: 52px;
+    font-size: 20px;
+}
+#p3{
+    display: inline-block;
+    margin: 0 11px 0 11px;
+    padding-top: 52px;
+    font-size: 20px;
+}
+#p4{
+    display: inline-block;
+    margin: 0 11px 0 11px;
+    padding-top: 52px;
+    font-size: 20px;
+}
+#p5{
+    display: inline-block;
+    margin: 0 11px 0 11px;
+    padding-top: 52px;
+    font-size: 20px;
+}
+.LT_menu p a{
+    color: white;
+    text-decoration: none;
+    transition:color 0.2s linear 0s ;
+    -moz-transition:color 0.2s linear 0s ; /* Firefox 4 */
+    -webkit-transition:color 0.2s linear 0s ; /* Safari 和 Chrome */
+    -o-transition:color 0.2s linear 0s ; /* Opera */
+}
+.LT_menu p a:visited{
+    color: white;
+}
+.LT_menu p a:hover{
+    text-decoration: none;
+    color: #CEE4F2;
+}
+.abq{
+    color: #0597F2;
+    padding: 0 4px 0 4px;
+    text-decoration: none;
+}
+.abq0{
+    color: white;
+    line-height: 180%;
+    margin-left: 18%;
+    text-decoration: none;
+}
+.abq3{
+    color: white;
+    line-height: 180%;
+    margin-left: 44%;
+    text-decoration: none;
+}
+.abq1{
+    color: white;
+    line-height: 180%;
+    margin-left: 44%;
+    text-decoration: none;
+}
+.abq2{
+    color: white;
+    line-height: 180%;
+    margin-left: 18%;
+    text-decoration: none;
+}
