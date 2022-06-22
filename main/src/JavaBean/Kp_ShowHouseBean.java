@@ -11,7 +11,7 @@ public class Kp_ShowHouseBean extends BaseDao{
 
     public List<H_resources> ShowHouse(String pageNo,int gs,String traffic,String location,String price,String type,String layout,String toward,String elevator){
 
-        String sql="select * from h_resources,photo where h_resources.h_id=photo.h_id";
+        String sql="select * from h_resources,photo where h_resources.h_id=photo.h_id and (h_status=2 or h_status=3)";
 
         if(!Objects.equals(location, "全部")&&location!=null
                 &&!Objects.equals(location, "null")&&!Objects.equals(location, "")){//添加位置搜素
