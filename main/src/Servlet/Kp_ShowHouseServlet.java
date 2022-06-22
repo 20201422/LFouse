@@ -15,9 +15,9 @@ public class Kp_ShowHouseServlet extends HttpServlet {
         HttpSession session=request.getSession();
         Kp_ShowHouseBean kp_showHouseBean=new Kp_ShowHouseBean();
 
-        request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse());//展示耕地
+        request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse());//展示房源
 
-        request.getRequestDispatcher("/Kp_LocationFindHouse.jsp").forward(request,response);//返回耕种jsp
+        request.getRequestDispatcher("/Kp_LocationFindHouse.jsp").forward(request,response);//返回位置找房jsp
 
     }
 

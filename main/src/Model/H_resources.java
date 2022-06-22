@@ -17,6 +17,7 @@ public class H_resources {
     private String h_floor;
     private User user;
     private H_facilities h_facilities;
+    private String photo_name;
 
     public int getH_id() {
         return h_id;
@@ -138,6 +139,14 @@ public class H_resources {
         this.h_facilities = h_facilities;
     }
 
+    public String getPhoto_name() {
+        return photo_name;
+    }
+
+    public void setPhoto_name(String photo_name) {
+        this.photo_name = photo_name;
+    }
+
     public String toString() {
         return "USer{" +
                 "h_id=" + h_id +
@@ -153,6 +162,7 @@ public class H_resources {
                 ", h_traffic='" + h_traffic + '\'' +
                 ", h_status=" + h_status +
                 ", h_floor='" + h_floor + '\'' +
+                ", photo_name='" + photo_name + '\'' +
                 '}'+"\n";
     }
 

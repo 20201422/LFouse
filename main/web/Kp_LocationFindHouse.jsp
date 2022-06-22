@@ -49,7 +49,7 @@
     </div>
     <hr class="hr">
     <nav class="menu">
-        <p><a href="">位置找房</a></p>
+        <p><a href="Kp_ShowHouseServlet">位置找房</a></p>
         <p><a href="">交通找房</a></p>
         <p><a href="">民宿</a></p>
         <p><a href="">公寓</a></p>
@@ -74,29 +74,43 @@
 
 <div class="locationfindhouse">
     <%
-        int i=1;
         for(H_resources h_resources:list){
-            if((i+2)%3==0){
-                out.print("<div class=\"ShowHouse\">");
-            }
+            request.setAttribute("h_resorces",h_resources);
     %>
-        <div class="House">
-            <p><%=h_resources.getH_id()%></p>
-            <p><%=h_resources.getH_name()%></p>
-            <p><%=h_resources.getH_location()%></p>
-            <p><%=h_resources.getH_price()%></p>
-            <p><%=h_resources.getH_layout()%></p>
-            <p><%=h_resources.getH_type()%></p>
-            <p><%=h_resources.getH_area()%></p>
-            <p><%if(h_resources.isH_elevator()){%>是<%}else%> 无</p>
-            <p><%=h_resources.getH_toward()%></p>
-            <p><%=h_resources.getH_traffic()%></p>
-            <p><%=h_resources.getH_floor()%></p>
+        <div class="ShowHouse" onclick="
+        window.location.href='Tong_detailedinformationServlet?h_id=<%=h_resources.getH_id()%>' ">
+            <div class="img">
+                <img class="img" src="Image/<%=h_resources.getPhoto_name()%>" alt="<%=h_resources.getH_name()%>">
+            </div>
+            <div class="message">
+                <div class="House_Message0">
+                    <p><%=h_resources.getH_name()%></p>
+                </div>
+                <div class="House_Message1">
+                    <p>
+                        地点：<%=h_resources.getH_location()%>&nbsp&nbsp&nbsp&nbsp
+                        交通：<%=h_resources.getH_traffic()%>
+                    </p>
+                </div>
+                <div class="House_Message2">
+                    <p>
+                        种类：<%=h_resources.getH_type()%>&nbsp&nbsp&nbsp&nbsp
+                        户型：<%=h_resources.getH_layout()%>&nbsp&nbsp&nbsp&nbsp
+                        面积：<%=h_resources.getH_area()%>平米&nbsp&nbsp&nbsp&nbsp
+                        楼层：<%=h_resources.getH_floor()%>&nbsp&nbsp&nbsp&nbsp
+                        <%if(h_resources.isH_elevator()){%>有电梯<%}else%>无电梯
+                        &nbsp&nbsp&nbsp&nbsp
+                        朝向：<%=h_resources.getH_toward()%>
+                    </p>
+                </div>
+                <div class="House_Message3">
+                    <p>
+                        价格：¥ <%=h_resources.getH_price()%>/月&nbsp&nbsp&nbsp&nbsp
+                    </p>
+                </div>
+            </div>
         </div>
     <%
-            if(i%3==0)
-                out.print("</div>");
-            i++;
         }
     %>
 
