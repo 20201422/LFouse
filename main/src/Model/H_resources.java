@@ -3,6 +3,7 @@ package Model;
 public class H_resources {
 
     private int h_id;
+    private int user_id;
     private String h_name;
     private String h_location;
     private float h_price;
@@ -23,6 +24,14 @@ public class H_resources {
 
     public void setH_id(int h_id) {
         this.h_id = h_id;
+    }
+
+    public int getUser_id() {
+        return h_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 
     public String getH_name() {
@@ -127,6 +136,24 @@ public class H_resources {
 
     public void setH_facilities(H_facilities h_facilities) {
         this.h_facilities = h_facilities;
+    }
+
+    public String toString() {
+        return "USer{" +
+                "h_id=" + h_id +
+                "user_id=" + user_id +
+                ", h_name='" + h_name + '\'' +
+                ", h_location='" + h_location + '\'' +
+                ", h_price=" + h_price +
+                ", h_layout='" + h_layout + '\'' +
+                ", h_type='" + h_type + '\'' +
+                ", h_area=" + h_area +
+                ",h_elevator=" + h_elevator +
+                ", h_toward='" + h_toward + '\'' +
+                ", h_traffic='" + h_traffic + '\'' +
+                ", h_status=" + h_status +
+                ", h_floor='" + h_floor + '\'' +
+                '}'+"\n";
     }
 
 }

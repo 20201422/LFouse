@@ -1,4 +1,6 @@
-<%@ page import="java.util.Objects" %><%--
+<%@ page import="java.util.Objects" %>
+<%@ page import="Model.H_resources" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: coopskywalker
   Date: 2022/6/20
@@ -7,9 +9,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    String user_id= (String) session.getAttribute("user_id");//得到用户id
+    int user_id= (int) session.getAttribute("user_id");//得到用户id
     String tel= (String) session.getAttribute("tel");//得到用户电话号码
     String uname= (String) session.getAttribute("uname");//得到用户名字
+
+    List<H_resources> list= (List<H_resources>) request.getAttribute("ShowHouse");
 %>
 <html>
 <head>
@@ -26,7 +30,7 @@
         <img src="Image/name.jpg" title="" alt="LFouse" class="name">
         <span class="header_name">提供最好的租房服务</span>
         <%
-            if(user_id==null|| user_id.equals("")){//未登录
+            if(tel==null|| tel.equals("")){//未登录
         %>
         <div class="head_welcome">
             您好，<a href="Login.jsp" class="wa">请登录</a>（支持IPv6访问）<br>
@@ -53,7 +57,7 @@
         <p><a href="">商品房</a></p>
         <p><a href="">写字楼</a></p>
         <%
-            if(user_id==null|| user_id.equals("")){//未登录
+            if(tel==null|| tel.equals("")){//未登录
         %>
         <p><a href="Login.jsp">我要出租</a></p>
         <p><a href="Login.jsp">我的</a></p>
@@ -69,6 +73,32 @@
 </header>
 
 <div class="locationfindhouse">
+    <%
+        int i=1;
+        for(H_resources h_resources:list){
+            if((i+2)%3==0){
+                out.print("<div class=\"ShowHouse\">");
+            }
+    %>
+        <div class="House">
+            <p><%=h_resources.getH_id()%></p>
+            <p><%=h_resources.getH_name()%></p>
+            <p><%=h_resources.getH_location()%></p>
+            <p><%=h_resources.getH_price()%></p>
+            <p><%=h_resources.getH_layout()%></p>
+            <p><%=h_resources.getH_type()%></p>
+            <p><%=h_resources.getH_area()%></p>
+            <p><%if(h_resources.isH_elevator()){%>是<%}else%> 无</p>
+            <p><%=h_resources.getH_toward()%></p>
+            <p><%=h_resources.getH_traffic()%></p>
+            <p><%=h_resources.getH_floor()%></p>
+        </div>
+    <%
+            if(i%3==0)
+                out.print("</div>");
+            i++;
+        }
+    %>
 
 </div>
 
