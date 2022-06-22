@@ -15,7 +15,7 @@ public class Lhq_QuitServlet extends HttpServlet {
         request.getSession().removeAttribute("tel");
         request.getSession().removeAttribute("uname");
         
-        request.getRequestDispatcher("Kp_ShowHouseServlet").forward(request, response);
+        request.getRequestDispatcher("Kp_ShowHouseServlet?way=1").forward(request, response);
 
     }
 
