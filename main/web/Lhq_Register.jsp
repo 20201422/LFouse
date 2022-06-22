@@ -21,6 +21,6 @@
   <div><span>租房数量：</span><input type="text" id="rent_num" name="rent_num" value="0" readonly="true"></div>
   <div class="send-button"><input type = "submit" value="提交">&nbsp;&nbsp;<input type="button" value="取消" onclick="window.location.href='Kp_ShowHouseServlet';"></div>
 </form>
-<script type="text/javascript" language="JavaScript" src="Script/register.js"></script>
+<script type="text/javascript" language="JavaScript" src="Script/Lhq_Register.js"></script>
 </body>
 </html>

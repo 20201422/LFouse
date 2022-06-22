@@ -28,8 +28,7 @@ public class Lhq_RegisterServlet extends HttpServlet {
         Lhq_LoginBean login=new Lhq_LoginBean();
         Lhq_RegisterBean register=new Lhq_RegisterBean();
         User user = login.findUserNoAndPassword(tel,upwd);
-        System.out.println(user);
-        if(user==null&&Objects.equals(age,"")&&Objects.equals(lodge_num,"")&&Objects.equals(rent_num,"")){
+        if(user==null&&!Objects.equals(age,"")&&!Objects.equals(lodge_num,"")&&!Objects.equals(rent_num,"")){
             register.add(0, tel, uname, upwd, sex, Integer.parseInt(age), Integer.parseInt(lodge_num), Integer.parseInt(rent_num));
             request.setAttribute("errorMsg","注册成功！");
             request.getRequestDispatcher("/Lhq_Login.jsp").forward(request,response);
