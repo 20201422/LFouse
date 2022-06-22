@@ -15,6 +15,7 @@ public class H_resources {
     private int h_status;
     private String h_floor;
     private User user;
+    private H_facilities h_facilities;
 
     public int getH_id() {
         return h_id;
@@ -118,6 +119,14 @@ public class H_resources {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public H_facilities getH_facilities() {
+        return h_facilities;
+    }
+
+    public void setH_facilities(H_facilities h_facilities) {
+        this.h_facilities = h_facilities;
     }
 
 }
