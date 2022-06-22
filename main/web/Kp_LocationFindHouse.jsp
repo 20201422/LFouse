@@ -69,13 +69,13 @@
         <%
             if(tel==null|| tel.equals("")){//未登录
         %>
-        <p><a href="Login.jsp">我要出租</a></p>
-        <p><a href="Login.jsp">我的</a></p>
+        <p><a href="Lhq_Login.jsp">我要出租</a></p>
+        <p><a href="Lhq_Login.jsp">我的</a></p>
         <%
         }else{//已登录
         %>
-        <p><a href="Login.jsp">我要出租</a></p>
-        <p><a href="Login.jsp">我的</a></p>
+        <p><a href="">我要出租</a></p>
+        <p><a href="">我的</a></p>
         <%
             }
         %>
