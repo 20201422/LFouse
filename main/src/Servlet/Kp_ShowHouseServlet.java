@@ -26,7 +26,7 @@ public class Kp_ShowHouseServlet extends HttpServlet {
         String elevator=request.getParameter("elevator");//得到有无电梯
 
         String pageNo=request.getParameter("pageNo");//获取页数
-        int gs=2;//一页的条数
+        int gs=5;//一页的条数
         int count=0;//总条数
         int pagecount;//总页数
 
