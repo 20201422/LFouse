@@ -1,8 +1,7 @@
 .search-conditions{
     text-align: center;
     position: relative;
-    display: flex;
-    min-width: 900px;
+    min-width: 400px;
     background: #f5f5f7;
     color: #3b3b3c;
     margin: 12px auto;
@@ -10,17 +9,26 @@
     border: 1px solid white;
     border-radius:24px;
     transition: all 0.45s;
-    width: 20%;
-    align-items: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
+    width: 70%;
 }
-
-.search-conditions form{
-    width: 90%;
-    margin: auto 10px;
+.search-conditions:hover{
+    box-shadow: 1px 1px 10px #a4a4a6;
+    border: 1px solid white;
+    border-radius:24px;
+    transform: scale(1.02);
 }
-
+.conditions{
+    text-align: center;
+    margin: 0 auto;
+}
+.conditions #clocation,#cprice,#ctype,#clayout,#ctoward{
+    border-radius: 6px;
+}
+.error{
+    text-align: center;
+    color: #a4a4a6;
+    font-size: 8px;
+}
 .ShowHouse{
     text-align: center;
     position: relative;
@@ -80,3 +88,50 @@
     margin: 0 0 0 0;
     color: #0597F2;
 }
+.fenye {
+    text-align: center;
+    position: relative;
+    display: flex;
+    /*min-width: 00px;*/
+    background: #f5f5f7;
+    color: #3b3b3c;
+    margin: 12px auto;
+    padding: 8px 8px 8px 8px;
+    border: 1px solid white;
+    border-radius:24px;
+    transition: all 0.45s;
+    width: 30%;
+}
+.fenye:hover{
+    box-shadow: 1px 1px 10px #a4a4a6;
+    border: 1px solid white;
+    border-radius:24px;
+    transform: scale(1.02);
+}
+.fenye .a{
+    font-size: 16px;
+    text-decoration: none;
+    color: #166ece;
+    cursor: pointer;
+}
+.fenye .a:visited{
+    color: #166ece;
+}
+.fenye .a:hover{
+    text-decoration: underline;
+    color: #0062d3;
+}
+.fenye .b{
+    color: #777777;
+}
+.fy_message{
+    color: #3b3b3c;
+    float: left;
+}
+.fy_btn{
+    float: right;
+}
+.middle{
+    min-height: 400px;
+}
+

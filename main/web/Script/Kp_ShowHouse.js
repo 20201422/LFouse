@@ -1,4 +1,3 @@
-
 window.onload=function (){
     for(i=0;i<document.getElementById("clocation").length;i++){
         if(document.getElementById("clocation")[i].value===document.getElementById("location").value){
@@ -27,5 +26,8 @@ window.onload=function (){
     }
     if(document.getElementById("elevator").value==="on"){
         document.getElementById("celevator").checked=true
+    }
+    if(document.getElementById("traffic").value==="on"){
+        document.getElementById("ctraffic").checked=true
     }
 }

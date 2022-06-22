@@ -24,7 +24,7 @@ public class Lhq_LoginServlet extends HttpServlet {
         Admin admin = login.findAdminNoAndPassword(account,password);
         if(user==null&&admin==null){//登录失败
             request.setAttribute("errorMsg","账号或密码错误，请重新登录！");
-            request.getRequestDispatcher("/Login.jsp").forward(request,response);
+            request.getRequestDispatcher("/Lhq_Login.jsp").forward(request,response);
         }
         else if(user==null&&admin!=null){//管理员登录
             request.getRequestDispatcher("/Lt_admin.jsp").forward(request,response);
@@ -33,7 +33,7 @@ public class Lhq_LoginServlet extends HttpServlet {
             request.getSession().setAttribute("user_id",user.getUser_id());
             request.getSession().setAttribute("uname",user.getUname());
             request.getSession().setAttribute("tel",user.getTel());
-            request.getRequestDispatcher("Kp_ShowHouseServlet").forward(request, response);
+            request.getRequestDispatcher("Kp_ShowHouseServlet?way=1").forward(request, response);
         }
     }
 
