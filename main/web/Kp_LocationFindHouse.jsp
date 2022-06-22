@@ -39,7 +39,7 @@
         <%
         }else{//已登录
         %>
-        <div class="head_welcome">您好,<%=uname%>&nbsp<a href="" class="wa">[退出]</a><br>
+        <div class="head_welcome">您好,<%=uname%>&nbsp<a href="Lhq_QuitServlet" class="wa">[退出]</a><br>
             <div class="ts">现在租房或者出租，享受免押金、免定金、免息分期等服务。</div>
         </div>
         <input type="hidden" value="<%=uname%>" name="uno">
