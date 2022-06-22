@@ -13,14 +13,16 @@
     String tel= (String) session.getAttribute("tel");//得到用户电话号码
     String uname= (String) session.getAttribute("uname");//得到用户名字
 
-    List<H_resources> list= (List<H_resources>) request.getAttribute("ShowHouse");
+    List<H_resources> list= (List<H_resources>) request.getAttribute("detailinformation");
 %>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="CSS/Tong_detailedinformation.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <title>房源信息</title>
 </head>
 <body>
+<%--头部--%>
 <header>
     <div>
         <div class="header">
@@ -69,19 +71,44 @@
             %>
         </nav>
     </div>
-
-    <div class="container">
-        <div>
-            房源名称
-        </div>
-        <div>
-            图片
-        </div>
-    </div>
 </header>
 
-    <div>
+<%--中间body--%>
+
+
+    <div class="wrap">
+
+        <div class="h_name">
+            卫东花园，近万达，博能中心，家电齐全，地铁公交便利，拎包入住
+        </div>
+
+        <div class="introduce">
+
+            <div class="introduce_photos"></div>
+            <div class="introduce_text">
+
+            </div>
+            <div class="introduce_owner"></div>
+
+        </div>
+
 
     </div>
+
+
+
+<%--尾巴--%>
+<footer>
+    <hr>
+    <div class="footer-help">
+        需要更多帮助？致电 400-820-8820。
+    </div>
+    <div class="footer">
+        <p>LFouse采用符合业界标准的加密技术对您提交的信息进行保密。</p>
+        <hr>
+        Copyrite ©️ 2022 202014-4 lnc.保留所有权利<br>
+        京IPC备202014-4 营业执照 无线电发射设备销售备案编号11201910351200
+    </div>
+</footer>
 </body>
 </html>
