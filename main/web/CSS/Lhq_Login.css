@@ -1,0 +1,68 @@
+.card {
+    background-color: white;
+    padding: 5px;
+    margin-top: 20px;
+    text-align:center;
+
+}
+a{ text-decoration:none;  }
+a:hover{ color:red; }
+span{
+    color:red;
+}
+.left{
+    margin-right: 4%;
+    color:#CCCCCC;
+}
+.right{
+    margin-left: 4%;
+    color:#CCCCCC;
+}
+input[type="text"],input[type="password"]{
+    width: 15%;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: transparent;
+    border:none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #000000;
+    font-size: 15px;
+    color: #000000;
+}
+::-webkit-input-placeholder {
+    color: #CCC;
+}
+
+:-moz-placeholder {
+    color: #CCC;
+}
+
+::-moz-placeholder {
+    color: #CCC;
+}
+
+:-ms-input-placeholder {
+    color: #CCC;
+}
+
+.login-button input[type="submit"]{
+    width: 15%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 100;
+    background-color:#0597F2;
+    border-radius: 24px;
+    color: white;
+    border: 1px solid rgba(238, 238, 238, 0.41);
+    border-width: thin;
+    cursor: pointer;
+    outline: none;
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -o-transition:0.5s all;
+    -ms-transition:0.5s all;
+    text-decoration: none;
+}
