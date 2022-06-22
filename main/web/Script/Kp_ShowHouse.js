@@ -1,0 +1,31 @@
+
+window.onload=function (){
+    for(i=0;i<document.getElementById("clocation").length;i++){
+        if(document.getElementById("clocation")[i].value===document.getElementById("location").value){
+            document.getElementById("clocation")[i].selected=true
+        }
+    }
+    for(i=0;i<document.getElementById("cprice").length;i++){
+        if(document.getElementById("cprice")[i].value===document.getElementById("price").value){
+            document.getElementById("cprice")[i].selected=true
+        }
+    }
+    for(i=0;i<document.getElementById("ctype").length;i++){
+        if(document.getElementById("ctype")[i].value===document.getElementById("type").value){
+            document.getElementById("ctype")[i].selected=true
+        }
+    }
+    for(i=0;i<document.getElementById("clayout").length;i++){
+        if(document.getElementById("clayout")[i].value===document.getElementById("layout").value){
+            document.getElementById("clayout")[i].selected=true
+        }
+    }
+    for(i=0;i<document.getElementById("ctoward").length;i++){
+        if(document.getElementById("ctoward")[i].value===document.getElementById("toward").value){
+            document.getElementById("ctoward")[i].selected=true
+        }
+    }
+    if(document.getElementById("elevator").value==="on"){
+        document.getElementById("celevator").checked=true
+    }
+}

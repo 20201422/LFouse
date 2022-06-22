@@ -9,11 +9,14 @@ import java.io.IOException;
 public class Lhq_QuitServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         //清除session里用户数据
         request.getSession().removeAttribute("user_id");
         request.getSession().removeAttribute("tel");
         request.getSession().removeAttribute("uname");
+        
         request.getRequestDispatcher("Kp_ShowHouseServlet").forward(request, response);
+
     }
 
     @Override

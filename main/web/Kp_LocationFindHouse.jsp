@@ -13,14 +13,24 @@
     String tel= (String) session.getAttribute("tel");//得到用户电话号码
     String uname= (String) session.getAttribute("uname");//得到用户名字
 
+    String location=request.getParameter("location");//得到选择的位置
+    String price=request.getParameter("price");//得到选择的价格
+    String type=request.getParameter("type");//得到选择的类型
+    String layout=request.getParameter("layout");//得到选择的房型
+    String toward=request.getParameter("toward");//得到选择的朝向
+    String elevator=request.getParameter("elevator");//得到有无电梯
+
     List<H_resources> list= (List<H_resources>) request.getAttribute("ShowHouse");
 %>
+
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Kp_LocationfFindHouse.css" />
     <title>LFouse-位置找房</title>
 </head>
+
+<script type="text/javascript" language="JavaScript" src="Script/Kp_ShowHouse.js"></script>
 
 <body>
 
@@ -39,7 +49,7 @@
         <%
         }else{//已登录
         %>
-        <div class="head_welcome">您好,<%=uname%>&nbsp<a href="Lhq_QuitServlet" class="wa">[退出]</a><br>
+        <div class="head_welcome">您好,<%=uname%>&nbsp<a href="Lhq_QuitServlet" class="wa">[退出]</a>&nbsp&nbsp&nbsp<br>
             <div class="ts">现在租房或者出租，享受免押金、免定金、免息分期等服务。</div>
         </div>
         <input type="hidden" value="<%=uname%>" name="uno">
@@ -64,7 +74,7 @@
         <%
         }else{//已登录
         %>
-        <p><a href="Login.jsp">我要租房</a></p>
+        <p><a href="Login.jsp">我要出租</a></p>
         <p><a href="Login.jsp">我的</a></p>
         <%
             }
@@ -72,8 +82,37 @@
     </nav>
 </header>
 
+<div class="search-conditions">
+    <form action="Kp_ShowHouseServlet" name="conditions">
+        位置：<select onchange="document.conditions.submit();" name="location" id="clocation">
+        <option>全部</option><option>北京</option><option>上海</option><option>南昌</option><option>包头</option>
+    </select>
+        租金：<select onchange="document.conditions.submit();" name="price" id="cprice">
+        <option>全部</option><option value="1">1000以下</option><option value="2">1000-3000</option>
+        <option value="3">3000-5000</option><option value="4">5000-8000</option><option value="5">8000以上</option>
+    </select>元
+        房型：<select onchange="document.conditions.submit();" name="type" id="ctype">
+        <option>全部</option><option>商品房</option><option>公寓</option><option>民宿</option>
+        <option>别墅</option><option>写字楼</option>
+    </select>
+        户型：<select onchange="document.conditions.submit();" name="layout" id="clayout">
+        <option>全部</option><option>一室</option><option>二室</option><option>三室</option>
+        <option>四室</option><option>五室及以上</option>
+    </select>
+        朝向：<select onchange="document.conditions.submit();" name="toward" id="ctoward">
+        <option>全部</option><option>朝南</option><option>朝北</option><option>朝东</option><option>朝西</option>
+        <option>东北</option><option>西北</option><option>东南</option><option>西南</option>
+    </select>
+        <input type="checkbox" onchange="document.conditions.submit();" name="elevator" id="celevator">电梯房
+    </form>
+    <input type="hidden" id="location" value="<%=location%>"><input type="hidden" id="price" value="<%=price%>">
+    <input type="hidden" id="type" value="<%=type%>"><input type="hidden" id="layout" value="<%=layout%>">
+    <input type="hidden" id="toward" value="<%=toward%>"><input type="hidden" id="elevator" value="<%=elevator%>">
+</div>
+
 <div class="locationfindhouse">
     <%
+        if(list.size()!=0){
         for(H_resources h_resources:list){
             request.setAttribute("h_resorces",h_resources);
     %>
@@ -111,7 +150,7 @@
             </div>
         </div>
     <%
-        }
+        }}
     %>
 
 </div>
