@@ -15,6 +15,7 @@
   <div><span>电话：</span><input type="text" id="tel" name="tel"></div>
   <div><span>姓名：</span><input type="text" id="uname" name="uname"></div>
   <div><span>密码：</span><input type="password" id="upwd" name="upwd"></div>
+  <div><span>确认密码：</span><input type="password" id="eupwd" name="eupwd"></div>
   <div><span>性别：</span><input type="radio" name="sex" value="男" checked><span>男</span>&nbsp;&nbsp;<input type="radio" name="sex" value="女" ><span>女</span>&nbsp;&nbsp;<input type="radio" name="sex" value="其他" ><span>其他</span></div>
   <div><span>年龄：</span><input type="text" id="age" name="age"></div>
   <div><span>出租数量：</span><input type="text" id="lodge_num" name="lodge_num" value="0" readonly="true"></div>
