@@ -27,7 +27,7 @@ public class Lhq_LoginServlet extends HttpServlet {
             request.getRequestDispatcher("/Lhq_Login.jsp").forward(request,response);
         }
         else if(user==null&&admin!=null){//管理员登录
-            request.getRequestDispatcher("/Lt_admin.jsp").forward(request,response);
+            request.getRequestDispatcher("LT_ShowDataServlet").forward(request,response);
         }
         else{//用户登录
             request.getSession().setAttribute("user_id",user.getUser_id());

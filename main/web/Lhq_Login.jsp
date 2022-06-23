@@ -25,6 +25,9 @@
         </div>
     </div>
 </header>
+<div style="background-color: transparent;width: 100%;height: 20%">
+
+</div>
 <div class="card">
     <div class="errorMsg">
         <%
@@ -37,9 +40,12 @@
 <form method="post" id="menu" name = "menu" action="Lhq_LoginServlet">
     <div><input type="text" class="account" name="account" placeholder="请输入账号" ></div>
     <div><input type="password" name="password" placeholder="请输入密码"></div>
-    <div><a href="Lhq_register.jsp" class="left">注册</a> <a class="right">忘记密码?</a></div><br>
+    <div><a href="Lhq_Register.jsp" class="left">注册</a> <a class="right">忘记密码?</a></div><br>
     <div class="login-button"><input type = "submit" value="登录"></div>
 </form>
+</div>
+<div style="background-color: transparent;width: 100%;height: 14%">
+
 </div>
 
 <footer>
