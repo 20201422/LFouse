@@ -42,12 +42,12 @@
         朝向：<select name="h_toward">
             <option value="朝南" selected>朝南</option>
             <option value="朝北">朝北</option>
-            <option value="朝东">朝西</option>
+            <option value="朝东">朝东</option>
             <option value="朝西">朝西</option>
             <option value="东南">东南</option>
-            <option value="西南">东南</option>
-            <option value="东北">东南</option>
-            <option value="西北">东南</option>
+            <option value="西南">西南</option>
+            <option value="东北">东北</option>
+            <option value="西北">西北</option>
         </select><br>
         交通状况：<input type="text" name="h_traffic"><br>
         楼层：<input type="text" name="h_floor"><br>

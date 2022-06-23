@@ -1,6 +1,24 @@
 package Model;
 
 public class Lodge {
+    private int user_id;
+    private int h_id;
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
+    public int getH_id() {
+        return h_id;
+    }
+
+    public void setH_id(int h_id) {
+        this.h_id = h_id;
+    }
 
     private int lodge_id;
     private int lodge_limit;
@@ -10,8 +28,7 @@ public class Lodge {
     private String lodge_otime;
     private String lodge_psta;
     private String lodge_pway;
-    private User user;
-    private H_resources h_resources;
+
 
     public int getLodge_id() {
         return lodge_id;
@@ -77,20 +94,6 @@ public class Lodge {
         this.lodge_pway = lodge_pway;
     }
 
-    public User getUser() {
-        return user;
-    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public H_resources getH_resources() {
-        return h_resources;
-    }
-
-    public void setH_resources(H_resources h_resources) {
-        this.h_resources = h_resources;
-    }
 
 }
