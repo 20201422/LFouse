@@ -11,6 +11,16 @@ public class User {
     private int lodge_num;
     private int rent_num;
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    private String email;
+
     public int getUser_id() {
         return user_id;
     }

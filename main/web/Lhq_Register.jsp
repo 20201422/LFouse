@@ -14,6 +14,7 @@
 <form method="post" action="Lhq_RegisterServlet">
   <div><span>电话：</span><input type="text" id="tel" name="tel"></div>
   <div><span>姓名：</span><input type="text" id="uname" name="uname"></div>
+  <div><span>邮箱：</span><input type="text" id="email" name="email"></div>
   <div><span>密码：</span><input type="password" id="upwd" name="upwd"></div>
   <div><span>确认密码：</span><input type="password" id="eupwd" name="eupwd"></div>
   <div><span>性别：</span><input type="radio" name="sex" value="男" checked><span>男</span>&nbsp;&nbsp;<input type="radio" name="sex" value="女" ><span>女</span>&nbsp;&nbsp;<input type="radio" name="sex" value="其他" ><span>其他</span></div>

@@ -9,6 +9,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Objects;
 
 @WebServlet(name = "Lhq_LoginServlet", value = "/Lhq_LoginServlet")
 public class Lhq_LoginServlet extends HttpServlet {
@@ -19,6 +20,7 @@ public class Lhq_LoginServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         String account = request.getParameter("account");
         String password = request.getParameter("password");
+        String flg = request.getParameter("flg");
         Lhq_LoginBean login=new Lhq_LoginBean();
         User user = login.findUserNoAndPassword(account,password);
         Admin admin = login.findAdminNoAndPassword(account,password);
@@ -33,7 +35,7 @@ public class Lhq_LoginServlet extends HttpServlet {
             request.getSession().setAttribute("user_id",user.getUser_id());
             request.getSession().setAttribute("uname",user.getUname());
             request.getSession().setAttribute("tel",user.getTel());
-            request.getRequestDispatcher("Kp_ShowHouseServlet?way=1").forward(request, response);
+            request.getRequestDispatcher("/"+flg+"?way=1").forward(request, response);
         }
     }
 

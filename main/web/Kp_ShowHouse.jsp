@@ -44,7 +44,7 @@
             if(tel==null|| tel.equals("")){//未登录
         %>
         <div class="head_welcome">
-            您好，<a href="Lhq_Login.jsp" class="wa">请登录</a>（支持IPv6访问）<br>
+            您好，<a href="Lhq_Login.jsp?flg=Kp_ShowHouseServlet" class="wa">请登录</a>（支持IPv6访问）<br>
             <div class="ts">现在租房或者出租，享受免押金、免定金、免息分期等服务。</div>
         </div>
         <%
@@ -70,7 +70,7 @@
         <%
             if(tel==null|| tel.equals("")){//未登录
         %>
-        <p><a href="Lhq_Login.jsp">我要出租</a></p>
+        <p><a href="Lhq_Login.jsp?flg=Lrx_Cz.jsp">我要出租</a></p>
         <p><a href="Lhq_Login.jsp">我的</a></p>
         <%
         }else{//已登录
