@@ -27,7 +27,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/Kp_LocationfFindHouse.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/Kp_ShowHouse.css" />
     <title>LFouse-位置找房</title>
 </head>
 
@@ -139,7 +139,14 @@
             </div>
             <div class="message">
                 <div class="House_Message0">
-                    <p><%=h_resources.getH_name()%></p>
+                    <p class="title-error0"><%=h_resources.getH_name()%></p>
+                    <%
+                        if (h_resources.getH_status() == 3) {
+                    %>
+                    <p class="title-error">（已租出）</p>
+                    <%
+                        }
+                    %>
                 </div>
                 <div class="House_Message1">
                     <p>
@@ -169,9 +176,8 @@
                     </p>
                 </div>
                 <div class="House_Message3">
-                    <p>
-                        价格：¥ <%=h_resources.getH_price()%>/月&nbsp&nbsp&nbsp&nbsp
-                    </p>
+                    <p>价格：<%=h_resources.getH_price()%></p>
+                    <p class="House_Message3-a">RMB/月&nbsp&nbsp&nbsp&nbsp</p>
                 </div>
             </div>
         </div>

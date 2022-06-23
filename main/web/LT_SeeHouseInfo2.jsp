@@ -17,7 +17,7 @@
 <%--管理员查看房源信息--%>
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
-    <%--<link rel="stylesheet" type="text/css" href="CSS/Kp_LocationfFindHouse.css" />--%>
+    <%--<link rel="stylesheet" type="text/css" href="CSS/Kp_ShowHouse.css" />--%>
     <link rel="stylesheet" type="text/css" href="CSS/LT_admin.css" />
     <title>LFouse-未出租房源</title>
 </head>

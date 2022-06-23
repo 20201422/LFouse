@@ -1,53 +1,176 @@
 .wrap{
-    margin: -10px 180px 10px 180px;
-    background-color: rgb(202,220,225,.8);
-    height: 70%;
+    /*margin: -10px 180px 10px 180px;*/
+    /*background-color: rgb(202,220,225,.8);*/
 }
-.h_name{
+.title{
     text-align: center;
-    padding: 5px;
-    margin: 10px;
+    position: relative;
+    display: flex;
+    /*min-width: 00px;*/
+    background: #f5f5f7;
+    color: #3b3b3c;
+    margin: 12px auto;
+    padding: 8px 8px 8px 8px;
+    border: 1px solid white;
+    border-radius:24px;
+    width: 40%;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.title-name h1{
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 auto;
+}
+.title-error{
+    color: #a4a4a6;
+    font-size: 14px;
+}
+.title-message{
+    margin: 4px 0 0 0;
+}
+.title-message p{
+    margin: 0 auto;
+    display: inline-block;
+}
+.information-title-price{
+    font-size: 27px;
+    color: #0597F2;
+}
+.information-title-price-a{
+    color: #0597F2;
+}
+.information-title-layout,.information-title-area{
+    font-size: 24px;
+}
+.information-title-toward{
+    display: block;
+    border-style: solid;
+    border-radius: 12px;
+    padding: 0 4px 0 4px;
+    background-color: #ced9e1;
+    border-color: #ced9e1;
+    color: #0597F2;
+    font-size: 19px;
+}
+.photo{
+    background: #f5f5f7;
+    color: #3b3b3c;
+    margin: 12px auto;
+    padding: 8px 8px 8px 8px;
+    border: 1px solid white;
+    border-radius:24px;
+    width: 70%;
+    overflow: hidden;
+    overflow-x:auto;
+    white-space: nowrap;
+    text-align:center;
+}
+.photo img{
+    width: 40%;
+    border-radius: 24px;
+    padding: 0 4px 0 4px;
+    vertical-align:middle;
+}
+.nr{
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    width: 70%;
+    min-width: 800px;
+}
+.message{
+    text-align: center;
+    position: relative;
+    display: flex;
+    /*min-width: 00px;*/
+    background: #f5f5f7;
+    color: #3b3b3c;
+    margin: 12px auto;
+    padding: 8px 8px 8px 8px;
+    border: 1px solid white;
+    border-radius:24px;
+    width: 40%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transition: all 0.45s;
+}
+.message:hover{
+    box-shadow: 1px 1px 10px #a4a4a6;
+    border: 1px solid white;
+    border-radius:12px;
+    transform: scale(1.02);
+}
+h2{
+    margin: 0 auto;
+}
+table{
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+}
+td{
+    text-align: left;
+    color: #28282a;
+    font-size: 18px;
+    padding: 8px 24px 8px 24px;
+}
+.table1 td{
+    padding: 8px 20px 8px 20px;
+}
+.facilities{
+    text-align: center;
+    position: relative;
+    display: flex;
+    background: #f5f5f7;
+    color: #3b3b3c;
+    margin: 12px auto;
+    padding: 8px 8px 8px 8px;
+    border: 1px solid white;
+    border-radius:24px;
+    width: 40%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transition: all 0.45s;
+}
+.facilities:hover{
+    box-shadow: 1px 1px 10px #a4a4a6;
+    border: 1px solid white;
+    border-radius:12px;
+    transform: scale(1.02);
+}
+.error{
+    color: #a4a4a6;
+}
+.check{
+    text-align: center;
+    position: relative;
+    display: flex;
+    background: #f5f5f7;
+    color: #3b3b3c;
+    margin: 12px auto;
+    padding: 8px 8px 8px 8px;
+    border: 1px solid white;
+    border-radius:24px;
+    width: 40%;
+    justify-content: space-evenly;
+    align-items: center
+}
+.check a{
     font-size: 20px;
-    color: darkslategrey;
+    text-decoration: none;
+    color: #166ece;
 }
-.introduce{
-    width: 1000px;
-    height: 70%;
-    background-color: #f5f5f7;
-    margin: auto;
-    border-radius: 50px;
-    padding: 30px 0;
+.check a:visited{
+    color: #166ece;
 }
-
-.introduce div{
-    display: inline-block;
-
+.check a:hover{
+    text-decoration: underline;
+    color: #0062d3;
+    cursor: pointer;
 }
-
-.introduce_photos{
-    margin: 0px 10px 10px 50px;
-    width: 380px;
-    height: 260px;
-    background-color: darkslategrey;
-    border-radius: 20px;
-}
-
-.introduce_text{
-    margin: 0px 10px 10px 10px;
-    width: 290px;
-    height: 260px;
-    background-color: brown;
-    border-radius: 20px;
-}
-ul{
-    display: inline-block;
-
-}
-.introduce_owner{
-    margin: 0px 10px 10px 10px;
-    width: 210px;
-    height: 260px;
-    background-color: brown;
-    border-radius: 20px;
-
+.error-no{
+    font-size: 20px;
+    color: #a4a4a6;
 }
