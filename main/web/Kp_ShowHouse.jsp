@@ -1,12 +1,13 @@
-<%@ page import="Model.H_resources" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.Objects" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: coopskywalker
   Date: 2022/6/20
   Time: 20:27
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page import="Model.H_resources" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Objects" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -132,7 +133,7 @@
                 request.setAttribute("h_resorces",h_resources);
         %>
         <div class="ShowHouse" onclick="
-                window.location.href='Tong_detailedinformationServlet?h_id=<%=h_resources.getH_id()%>' ">
+                window.location.href='Tong_detailedinformationServlet?h_id=<%=h_resources.getH_id()%>'">
             <div class="img">
                 <img class="img" src="Image/<%=h_resources.getPhoto_name()%>" alt="<%=h_resources.getH_name()%>">
             </div>
