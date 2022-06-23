@@ -67,7 +67,7 @@ public class Kp_ShowHouseBean extends BaseDao{
         //System.out.println(sql);
 
         return queryForList(H_resources.class, sql);
-    }
+    }//展示房源信息
 
 //    @Test
 //    public void test() {

@@ -114,7 +114,7 @@ public class Kp_ShowHouseServlet extends HttpServlet {
             request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse(pageNo,gs,traffic,location,price,"写字楼",layout,toward,elevator));//展示房源
         }
 
-        request.getRequestDispatcher("/Kp_LocationFindHouse.jsp").forward(request,response);//返回位置找房jsp
+        request.getRequestDispatcher("/Kp_ShowHouse.jsp").forward(request,response);//返回位置找房jsp
 
     }
 
