@@ -30,7 +30,7 @@
         <img src="Image/name.jpg" title="" alt="LFouse" class="name">
         <span class="header_name">提供最好的租房服务</span>
 
-        <div class="head_welcome" style="margin-right: 2%;margin-top: 1%">您好,<%=uname%>
+        <div class="head_welcome" style="margin-right: 2%;margin-top: 1%">您好,管理员
             <div>
                 <a href="" class="wa">[退出]</a>
             </div>

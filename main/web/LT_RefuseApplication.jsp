@@ -30,7 +30,7 @@
         <img src="Image/name.jpg" title="" alt="LFouse" class="name">
         <span class="header_name">提供最好的租房服务</span>
 
-        <div class="head_welcome" style="margin-right: 2%;margin-top: 1%">您好,<%=uname%>
+        <div class="head_welcome" style="margin-right: 2%;margin-top: 1%">您好,管理员
             <div>
                 <a href="" class="wa">[退出]</a>
             </div>
@@ -58,12 +58,8 @@
     </nav>
 
     <div style="width: 92%;height: 100%;margin-left: 8%;background-color: #F2F2F2;border-radius: 20px">
-        <div style="width: 100%;height: 4%;"></div>
-        <div style="width: 40%;height: 80%;background-color: white;border-radius: 20px;margin-left: 9%;float: left">
 
-        </div>
-        <div style=";height: 80%;border-right: solid white;float: left;margin-left: 1%"></div>
-        <div style="width: 40%;height: 80%;background-color: white;border-radius: 20px;margin-left: 1%;float: left">
+        <div style="width: 40%;height: 80%;background-color: white;border-radius: 20px;margin-left: 28%;margin-top: 4%;float: left">
 
         </div>
 

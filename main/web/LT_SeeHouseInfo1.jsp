@@ -30,7 +30,7 @@
         <img src="Image/name.jpg" title="" alt="LFouse" class="name">
         <span class="header_name">提供最好的租房服务</span>
 
-        <div class="head_welcome" style="margin-right: 2%;margin-top: 1%">您好,<%=uname%>
+        <div class="head_welcome" style="margin-right: 2%;margin-top: 1%">您好,管理员
             <div>
                 <a href="" class="wa">[退出]</a>
             </div>
@@ -218,7 +218,7 @@
             <%
                 if(list.size()==2){
             %>
-            <div align="center" style="float: left;width: 4%;height: 6%;border-radius: 45px;background-color: #0597F2;margin-left: 45%;margin-top: 2%;color: white">${PageNo*2}</div><br/><br/>
+            <div align="center" style="float: left;width: 4%;height: 6%;border-radius: 45px;background-color: #0597F2;margin-left: 45%;margin-top: 4%;color: white">${PageNo*2}</div><br/><br/>
             <table align="center" border="1" cellpadding="0" cellspacing="0"style="width: 80%;height: 60%;margin-top: 6%;border-color: #0597F2">
                 <tr align="center"><td colspan="4"><font>LFouse房源信息审批订单</font></td></tr>
                 <tr>
