@@ -3,6 +3,14 @@ package Model;
 public class Lodge {
     private int user_id;
     private int h_id;
+    private int lodge_id;
+    private int lodge_limit;
+    private float lodge_price;
+    private String lodge_stime;
+    private String lodge_etime;
+    private String lodge_otime;
+    private String lodge_psta;
+    private String lodge_pway;
 
     public int getUser_id() {
         return user_id;
@@ -19,17 +27,6 @@ public class Lodge {
     public void setH_id(int h_id) {
         this.h_id = h_id;
     }
-
-    private int lodge_id;
-    private int lodge_limit;
-    private float lodge_price;
-    private String lodge_stime;
-    private String lodge_etime;
-    private String lodge_otime;
-    private String lodge_psta;
-    private String lodge_pway;
-
-
     public int getLodge_id() {
         return lodge_id;
     }

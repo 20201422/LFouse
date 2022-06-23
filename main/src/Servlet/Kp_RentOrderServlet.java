@@ -1,15 +1,14 @@
 package Servlet;
 
 import JavaBean.Tong_detailinformationBean;
-import Model.H_resources;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "Tong_detailedinformationServlet", value = "/Tong_detailedinformationServlet")
-public class Tong_detailedinformationServlet extends HttpServlet {
+@WebServlet(name = "Kp_RentOrderServlet", value = "/Kp_RentOrderServlet")
+public class Kp_RentOrderServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -23,7 +22,7 @@ public class Tong_detailedinformationServlet extends HttpServlet {
         request.setAttribute("detailinformationuser", tong_detailinformationBean.detailinformationuser(h_id));//调用方法得到房源主人信息
         request.setAttribute("detailinformationphoto", tong_detailinformationBean.detailinformationphoto(h_id));//调用方法得到房源图片
 
-        request.getRequestDispatcher("/Tong_detailedinformation.jsp").forward(request,response);//返回详细信息jsp
+        request.getRequestDispatcher("/Kp_RentOrder.jsp").forward(request,response);//返回订单jsp
 
     }
 

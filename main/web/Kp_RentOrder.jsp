@@ -1,16 +1,14 @@
 <%--
   Created by IntelliJ IDEA.
-  User: xxd
-  Date: 2022/6/22
-  Time: 9:33
+  User: coopskywalker
+  Date: 2022/6/23
+  Time: 16:20
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="Model.H_resources" %>
-<%@ page import="java.util.List" %>
 <%@ page import="Model.H_facilities" %>
 <%@ page import="Model.User" %>
-<%@ page import="Model.Photo" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     int user_id= (Integer) session.getAttribute("user_id");//得到用户id
     String tel= (String) session.getAttribute("tel");//得到用户电话号码
@@ -19,16 +17,17 @@
     H_resources h_resources= (H_resources) request.getAttribute("detailinformation");//得到房源信息
     H_facilities h_facilities= (H_facilities) request.getAttribute("detailinformationfac");//得到房源配置
     User user= (User) request.getAttribute("detailinformationuser");//得到房源主人信息
-    List<Photo> photolist= (List<Photo>) request.getAttribute("detailinformationphoto");//得到房源图片
 %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="CSS/Tong_detailedinformation.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
-    <title>LFouse-房源信息</title>
+    <link rel="stylesheet" type="text/css" href="CSS/Kp_RentOrder.css" />
+    <title>LFouse-检查订单</title>
 </head>
+
+<script type="text/javascript" language="JavaScript" src="Script/Kp_RentOrder.js"></script>
+
 <body>
-<%--头部--%>
 <header>
     <div class="header">
         <img src="Image/logo.jpg" title="" alt="logo" class="logo">
@@ -77,42 +76,9 @@
     </nav>
 </header>
 
-<%--中间body--%>
-<div class="wrap">
-
-    <div class="title">
-        <div class="title-name">
-            <h1><%=h_resources.getH_name()%></h1>
-            <%
-                if (h_resources.getH_status() == 3) {
-            %>
-            <h1 class="title-error">（已租出）</h1>
-            <%
-                }
-            %>
-        </div>
-        <div class="title-message">
-            <p class="information-title-price"><%=h_resources.getH_price()%></p>
-            <p class="information-title-price-a">RMB/月</p>&nbsp&nbsp&nbsp&nbsp&nbsp
-            <p class="information-title-layout"><%=h_resources.getH_layout()%></p>&nbsp&nbsp&nbsp&nbsp&nbsp
-            <p class="information-title-area"><%=h_resources.getH_area()%></p>
-            <p class="information-title-area-a">平方米</p>&nbsp&nbsp&nbsp&nbsp&nbsp
-            <p class="information-title-toward"><%=h_resources.getH_toward()%></p>
-        </div>
-    </div>
-    <div class="photo">
-        <%
-            for(Photo photo:photolist){
-        %>
-        <img class="img" src="Image/<%=photo.getPhoto_name()%>">
-        <%
-            }
-        %>
-        <img class="img" src="Image/公寓1.jpg">
-        <img class="img" src="Image/公寓2.jpg">
-        <img class="img" src="Image/公寓3.jpg">
-        <img class="img" src="Image/公寓4.jpg">
-        <img class="img" src="Image/民宿1.jpg">
+<div>
+    <div class="checkOrder_Head">
+        <h1>请检查您的租房信息</h1>
     </div>
 
     <div class="nr">
@@ -150,36 +116,36 @@
                 <tr>
                     <%if(h_facilities.getWifi()==1){%>
                     <td> Wi-Fi：有</td>
-                        <%}else{%>
-                        <td class="error">Wi-Fi：无</td>
-                        <%}%>
+                    <%}else{%>
+                    <td class="error">Wi-Fi：无</td>
+                    <%}%>
                     <%if(h_facilities.getTV()==1){%>
                     <td>电视：有</td>
-                        <%}else{%>
+                    <%}else{%>
                     <td class="error">电视：无</td>
-                        <%}%>
+                    <%}%>
                     <%if(h_facilities.getWashing()==1){%>
                     <td>洗衣机：有</td>
-                        <%}else{%>
+                    <%}else{%>
                     <td class="error">洗衣机：无</td>
-                        <%}%>
+                    <%}%>
                 </tr>
                 <tr>
                     <%if(h_facilities.getShower()==1){%>
                     <td>热水器：有</td>
-                        <%}else{%>
+                    <%}else{%>
                     <td class="error">热水器：无</td>
-                        <%}%>
+                    <%}%>
                     <%if(h_facilities.getAirConditioner()==1){%>
-                        <td>空调：有</td>
-                        <%}else{%>
+                    <td>空调：有</td>
+                    <%}else{%>
                     <td class="error">空调：无</td>
-                        <%}%>
+                    <%}%>
                     <%if(h_facilities.getRefrigerator()==1){%>
                     <td>冰箱：有</td>
-                        <%}else{%>
+                    <%}else{%>
                     <td class="error">冰箱：无</td>
-                        <%}%>
+                    <%}%>
                 </tr>
             </table>
             <h2>屋主信息</h2>
@@ -196,35 +162,29 @@
         </div>
     </div>
 
-    <div class="check">
-        <%
-            if(tel==null|| tel.equals("")){//未登录
-        %>
-        <a href="Lhq_Login.jsp">加入收藏</a>
-        <a href="Lhq_Login.jsp">我要租房</a>
-        <%
-            }else{//已登录
-        %>
-        <a href="">加入收藏</a>
-        <%
-            if(h_resources.getH_status()==3){//已租出
-        %>
-        <p class="error-no">我要租房</p>
-        <%
-            }else{//未租出
-        %>
-        <a href="Kp_RentOrderServlet?h_id=${h_id}">我要租房</a>
-        <%
-            }
-        %>
-        <%
-            }
-        %>
+    <div class="fill">
+        <form action="Kp_PlaceOrderServlet" id="queding">
+            <div class="form">
+                租房月数：&nbsp&nbsp&nbsp&nbsp
+                <input type="number" min="1" name="lodge_limit" id="lodge_limit" class="form-text" value="1"
+                       onblur="totalprice('<%=h_resources.getH_price()%>')" oninput="if(value<0)value=0"><br>
+                支付方式：&nbsp&nbsp&nbsp
+                <input type="radio" name="lodge_pway" value="1">全款
+                <input type="radio" name="lodge_pway" value="2">分期<br>
+            </div>
+            <div class="Check_Form_btn">
+                合计: <span id="totalprice" onclick="totalprice()" name="lodge_price"><%=h_resources.getH_price()%></span> RMB
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="button" value="确定" class="form-btn" onclick="queding()">
+            </div>
+            <input type="hidden" value="<%=user_id%>" name="user_id">
+            <input type="hidden" value="<%=h_resources.getH_id()%>" name="h_id">
+            <input type="hidden" value="<%=h_resources.getH_price()%>" name="lodge_price" id="lodge_price">
+        </form>
     </div>
 
 </div>
 
-<%--尾巴--%>
 <footer>
     <hr>
     <div class="footer-help">
