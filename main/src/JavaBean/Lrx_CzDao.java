@@ -14,7 +14,10 @@ public class Lrx_CzDao extends BaseDao{
         update("insert into h_resources values(null,"+Integer.parseInt(user_id)+",'"+h_name+"','"+h_location+"',"+Double.parseDouble(h_price) +",'"+h_layout+"','"+h_type+"',"+Double.parseDouble(area)+ ",'"+h_elevator+"','"+h_toward+"','"+h_traffic+"',0,'"+h_floor+"')");
     }
     public  void AddPhoto(String name,String photo){
-        //update("INSERT INTO photo VALUES((SELECT h_id FROM h_resources WHERE h_name='"+name+"'),'"+photo+"') ");
-        System.out.println(update("INSERT INTO photo VALUES((SELECT h_id FROM h_resources WHERE h_name='"+name+"'),'"+photo+"') "));
+        update("INSERT INTO photo VALUES((SELECT h_id FROM h_resources WHERE h_name='"+name+"'),'"+photo+"') ");
+        //System.out.println(update("INSERT INTO photo VALUES((SELECT h_id FROM h_resources WHERE h_name='"+name+"'),'"+photo+"') "));
+    }
+    public  void Addfacilities(String name,int a,int b,int c,int d,int e,int f){
+        update("insert into h_facilities values((SELECT h_id FROM h_resources WHERE h_name='"+name+"'),"+a+","+b+","+c+","+d+","+e+","+f+")");
     }
 }
