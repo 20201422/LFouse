@@ -72,7 +72,7 @@ public class Kp_OrderBean  extends BaseDao{
 
         String UpdateUserRent_numSql="update user set rent_num=rent_num-1 where user_id=?";
         String UpdateH_resourcesH_statusSql="update h_resources set h_status=2 where h_id=?";
-        String UpdateLodge_otime="update lodge set lodge_otime=now() and lodge_psta='订单结束' where h_id=? and user_id=?";
+        String UpdateLodge_otime="update lodge set lodge_otime=now() , lodge_psta='订单结束' where h_id=? and user_id=?";
 
         update(UpdateUserRent_numSql,user_id);//修改用户租房数量
         update(UpdateH_resourcesH_statusSql,h_id);//修改房源状态

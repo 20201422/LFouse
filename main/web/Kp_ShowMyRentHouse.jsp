@@ -95,7 +95,8 @@
     <div class="myrent">
         <table>
             <tr>
-                <td colspan="2">订单编号：<%=lodge.getLodge_id()%></td>
+                <td>订单编号：<%=lodge.getLodge_id()%></td>
+                <td>房屋编号：<%=lodge.getH_id()%></td>
                 <td colspan="2">房屋名称：<%=lodge.getH_name()%></td>
             </tr>
             <tr>

@@ -149,7 +149,8 @@
                     <p class="title-error">（已租出）</p>
                     <%
                         }
-                    %>
+                    %>&nbsp&nbsp&nbsp&nbsp
+                     <p class="title-error-id">房源编号：<%=h_resources.getH_id()%></p>
                 </div>
                 <div class="House_Message1">
                     <p>
