@@ -1,81 +1,151 @@
 .card {
-    background-color: #0597F2;
-    padding: 5px;
-    margin-top: 20px;
+    background-color: rgb(5,151,242,.8);
+    padding: 30px;
+    margin: auto;
     text-align:center;
     width:30%;
-    margin-left: 35%;
+    border-radius: 25px;
+    outline-style: ridge;
+    outline-color: rgb(0,83,119,.5) ;
 }
 .login{
     background-color: white;
+    padding: 20px;
     width:75%;
-    margin-left: 21.5%;
+    height: 20%;
+    margin: auto;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.menu{
+    margin: auto;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+span{
+    color: rgb(0,83,119);
+    font-size: 18px;
+}
+
+.password ,.account{
+    margin-top: 10px;
+    width: 190px;
+    height: 30px;
+    border-radius: 10px;
+    border: rgb(0,83,119) solid 1px ;
 }
 .eyes{
-    float:right;
-    position: absolute;
     width: 20px;
-    height: 20px;
-    margin-right: 5%;
+    margin-left: -32px;
+    margin-bottom: -5px;
 }
-a{ text-decoration:none;  }
-a:hover{ color:#0062d3; }
-span{
-    color:#166ece;
+.left-right{
+
+    margin-top: 15px;
 }
 .left{
-    margin-right: 4%;
-    color:#CCCCCC;
+    margin-right: 30px;
+    letter-spacing:2px;
 }
+
 .right{
-    margin-left: 4%;
-    color:#CCCCCC;
+    margin-left: 30px;
 }
-input[type="text"],input[type="password"]{
-    width: 50%;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: transparent;
-    border:none;
+/* 提交按钮 */
+input[type="submit"] {
+    margin-top: -12px;
+    background-color: #005377;
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px;
     outline: none;
     border: none;
-    border-bottom: 1px solid #3b3b3c;
-    font-size: 15px;
-    color: #3b3b3c;
-}
-::-webkit-input-placeholder {
-    color: #CCCCCC;
-}
-
-:-moz-placeholder {
-    color: #CCCCCC;
-}
-
-::-moz-placeholder {
-    color: #CCCCCC;
-}
-
-:-ms-input-placeholder {
-    color: #CCCCCC;
-}
-
-.login-button input[type="submit"]{
-    width: 50%;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: 100;
-    background-color:#0597F2;
-    border-radius: 24px;
-    color: white;
-    border: 1px solid rgba(238, 238, 238, 0.41);
-    border-width: thin;
+    font-size: 17px;
+    width: 30%;
     cursor: pointer;
-    outline: none;
-    transition:0.5s all;
-    -webkit-transition:0.5s all;
-    -moz-transition:0.5s all;
-    -o-transition:0.5s all;
-    -ms-transition:0.5s all;
-    text-decoration: none;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
 }
+
+input[type="submit"]:hover {
+    background: #fed14e;
+    color: #000;
+}
+
+
+/*.password{*/
+/*    float: right;*/
+/*}*/
+/*.eyes{*/
+/*    float:right;*/
+/*    position: absolute;*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*    margin-right: 5%;*/
+/*}*/
+/*a{ text-decoration:none;  }*/
+/*a:hover{ color:#0062d3; }*/
+/*span{*/
+/*    color:#166ece;*/
+/*}*/
+/*.left{*/
+/*    margin-right: 4%;*/
+/*    color:#CCCCCC;*/
+/*}*/
+/*.right{*/
+/*    margin-left: 4%;*/
+/*    color:#CCCCCC;*/
+/*}*/
+/*input[type="text"],input[type="password"]{*/
+/*    width: 50%;*/
+/*    margin-bottom: 10px;*/
+/*    padding: 10px;*/
+/*    background-color: transparent;*/
+/*    border:none;*/
+/*    outline: none;*/
+/*    border: none;*/
+/*    border-bottom: 1px solid #3b3b3c;*/
+/*    font-size: 15px;*/
+/*    color: #3b3b3c;*/
+/*}*/
+/*::-webkit-input-placeholder {*/
+/*    color: #CCCCCC;*/
+/*}*/
+
+/*:-moz-placeholder {*/
+/*    color: #CCCCCC;*/
+/*}*/
+
+/*::-moz-placeholder {*/
+/*    color: #CCCCCC;*/
+/*}*/
+
+/*:-ms-input-placeholder {*/
+/*    color: #CCCCCC;*/
+/*}*/
+
+/*.login-button input[type="submit"]{*/
+/*    width: 50%;*/
+/*    margin-bottom: 10px;*/
+/*    padding: 10px;*/
+/*    font-size: 16px;*/
+/*    font-weight: 100;*/
+/*    background-color:#0597F2;*/
+/*    border-radius: 24px;*/
+/*    color: white;*/
+/*    border: 1px solid rgba(238, 238, 238, 0.41);*/
+/*    border-width: thin;*/
+/*    cursor: pointer;*/
+/*    outline: none;*/
+/*    transition:0.5s all;*/
+/*    -webkit-transition:0.5s all;*/
+/*    -moz-transition:0.5s all;*/
+/*    -o-transition:0.5s all;*/
+/*    -ms-transition:0.5s all;*/
+/*    text-decoration: none;*/
+/*}*/
