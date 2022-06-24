@@ -1,0 +1,25 @@
+.MyCzOrZf{
+
+    display:none;
+    float: right;
+    background-color:#0597F2 ;
+    width: 90px;
+    margin-right: 69px;
+    border-bottom-left-radius:10px ;
+    border-bottom-right-radius:10px
+}
+.typeface{
+    color: white;
+    text-decoration: none;
+    transition:color 0.2s linear 0s ;
+    -moz-transition:color 0.2s linear 0s ; /* Firefox 4 */
+    -webkit-transition:color 0.2s linear 0s ; /* Safari 和 Chrome */
+    -o-transition:color 0.2s linear 0s ; /* Opera */
+}
+.typeface:visited{
+    color: white;
+}
+.typeface:hover{
+    text-decoration: none;
+    color: #CEE4F2;
+}
