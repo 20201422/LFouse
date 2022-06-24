@@ -176,9 +176,9 @@
             <div class="Check_Form_btn">
                 合计: <span id="totalprice" onclick="totalprice()" name="lodge_price"><%=h_resources.getH_price()%></span> RMB
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <input type="button" value="确定" class="form-btn" onclick="queding('${way}')">
+                <input type="button" value="确定" class="form-btn" onclick="queding('${orderway}')">
             </div>
-            <input type="hidden" name="way" id="way">
+            <input type="hidden" name="orderway" id="orderway">
             <input type="hidden" value="<%=user_id%>" name="user_id">
             <input type="hidden" value="<%=h_resources.getH_id()%>" name="h_id">
             <input type="hidden" value="<%=h_resources.getH_price()%>" name="lodge_price" id="lodge_price">
