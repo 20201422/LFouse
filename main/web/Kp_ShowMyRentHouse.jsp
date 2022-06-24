@@ -28,8 +28,8 @@
 <body>
 <header>
     <div class="header">
-        <img src="Image/logo.jpg" title="" alt="logo" class="logo">
-        <img src="Image/name.jpg" title="" alt="LFouse" class="name">
+        <img src="Image/logo.jpg" title="" alt="logo" class="logo" onclick="window.location.href='index.jsp'">
+        <img src="Image/name.jpg" title="" alt="LFouse" class="name" onclick="window.location.href='index.jsp'">
         <span class="header_name">提供最好的租房服务</span>
         <%
             if(tel==null|| tel.equals("")){//未登录
@@ -61,22 +61,29 @@
         <%
             if(tel==null|| tel.equals("")){//未登录
         %>
-        <p><a href="Lhq_Login.jsp">我要出租</a></p>
+        <p><a href="Lhq_Login.jsp?flg=Lrx_Cz.jsp">我要出租</a></p>
         <p><a href="Lhq_Login.jsp">我的</a></p>
         <%
         }else{//已登录
         %>
-        <p><a href="">我要出租</a></p>
-        <p><a href="">我的</a></p>
+        <p><a href="Lrx_Cz.jsp">我要出租</a></p>
+        <p><a href="Kp_ShowMyRentHouseServlet">我的</a></p>
         <%
             }
         %>
     </nav>
 </header>
 
+<nav class="menu-two">
+    <p><a href="Kp_ShowMyRentHouseServlet">我的租房</a></p>
+    <p><a href="">我的出租</a></p>
+    <p><a href="Kp_ShowMyCollectionServlet">我的收藏</a></p>
+    <p><a href="">我的信息</a></p>
+</nav>
+
 <div>
     <%
-        if(list.size()!=0){//有租房信息
+        if(list!=null){//有租房信息
     %>
     <div class="checkOrder_Head">
         <h1>您的租房信息</h1>
