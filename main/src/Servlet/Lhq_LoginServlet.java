@@ -32,7 +32,8 @@ public class Lhq_LoginServlet extends HttpServlet {
             request.getRequestDispatcher("LT_ShowDataServlet").forward(request,response);
         }
         else{//用户登录
-            request.getSession().setAttribute("user_id",user.getUser_id());
+            String user_id= String.valueOf(user.getUser_id());
+            request.getSession().setAttribute("user_id",user_id);
             request.getSession().setAttribute("uname",user.getUname());
             request.getSession().setAttribute("tel",user.getTel());
             request.getRequestDispatcher("/"+flg+"?way=1").forward(request, response);

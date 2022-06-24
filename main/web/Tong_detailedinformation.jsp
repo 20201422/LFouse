@@ -6,13 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="Model.H_resources" %>
 <%@ page import="java.util.List" %>
-<%@ page import="Model.H_facilities" %>
-<%@ page import="Model.User" %>
-<%@ page import="Model.Photo" %>
+<%@ page import="Model.*" %>
+<%@ page import="JavaBean.Kp_CollectionBean" %>
 <%
-    int user_id= (Integer) session.getAttribute("user_id");//得到用户id
+    String user_id= (String) session.getAttribute("user_id");//得到用户id
     String tel= (String) session.getAttribute("tel");//得到用户电话号码
     String uname= (String) session.getAttribute("uname");//得到用户名字
 
@@ -20,6 +18,7 @@
     H_facilities h_facilities= (H_facilities) request.getAttribute("detailinformationfac");//得到房源配置
     User user= (User) request.getAttribute("detailinformationuser");//得到房源主人信息
     List<Photo> photolist= (List<Photo>) request.getAttribute("detailinformationphoto");//得到房源图片
+    Collection collection= (Collection) request.getAttribute("findCollection");//得到收藏信息
 %>
 <html>
 <head>
@@ -205,7 +204,18 @@
         <%
             }else{//已登录
         %>
-        <a href="">加入收藏</a>
+        <%
+            if(collection==null){//未加入收藏
+        %>
+        <a href="Kp_CollectionServlet?way=1&h_id=${h_id}">加入收藏</a>
+        <%
+            }else{//已加入到收藏
+        %>
+        <p class="error-no">已添加到收藏</p>
+        <a href="Kp_CollectionServlet?way=2&h_id=${h_id}">取消收藏</a>
+        <%
+            }
+        %>
         <%
             if(h_resources.getH_status()==3){//已租出
         %>

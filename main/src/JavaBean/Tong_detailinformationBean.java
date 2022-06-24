@@ -10,28 +10,28 @@ import java.util.List;
 
 public class Tong_detailinformationBean extends BaseDao{
 
-    public H_resources detailinformation(String h_id){//根据id显示房源信息
+    public H_resources detailinformation(int h_id){//根据id显示房源信息
 
         String sql="select * from h_resources where h_id = ?;";
 
         return queryForOne(H_resources.class, sql, h_id);
     }
 
-    public H_facilities detailinformationfac(String h_id){//根据id显示房源配置
+    public H_facilities detailinformationfac(int h_id){//根据id显示房源配置
 
         String sql="select * from H_facilities where h_id = ?;";
 
         return queryForOne(H_facilities.class, sql, h_id);
     }
 
-    public User detailinformationuser(String h_id){//根据id显示房源主任信息
+    public User detailinformationuser(int h_id){//根据id显示房源主任信息
 
         String sql="select uname,sex,age,tel from user,h_resources where h_resources.user_id=user.user_id and h_id=?;";
 
         return queryForOne(User.class, sql, h_id);
     }
 
-    public List<Photo> detailinformationphoto(String h_id){//根据id显示房源主任信息
+    public List<Photo> detailinformationphoto(int h_id){//根据id显示房源主任信息
 
         String sql="select Photo_name from photo where h_id=?;";
 
