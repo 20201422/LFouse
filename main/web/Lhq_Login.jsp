@@ -8,8 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/Lhq_Login.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css"/>
+    <link rel="stylesheet" type="text/css" href="CSS/Lhq_Login.css"/>
     <title>LFouse-登录</title>
 </head>
 <script type="text/javascript" language="JavaScript" src="Script/Lhq_PwdShowAndHide.js"></script>
@@ -26,32 +26,39 @@
         </div>
     </div>
 </header>
-<div style="background-color: transparent;width: 100%;height: 20%">
+<div style="background-color: transparent;width: 100%;height: 14%">
 
 </div>
 <div class="card">
-<div class="login">
-    <div class="errorMsg">
-        <%
-            String errorMsg=(String)request.getAttribute("errorMsg");
-            String flg=request.getParameter("flg");
-            if(errorMsg!=null){
-        %>
-        <span><%=errorMsg%></span>
-        <%}%>
+    <div class="login">
+        <div class="errorMsg">
+            <%
+                String errorMsg = (String) request.getAttribute("errorMsg");
+                String flg = request.getParameter("flg");
+                if (errorMsg != null) {
+            %>
+            <span><%=errorMsg%></span>
+            <%}%>
+        </div>
+        <form method="post" id="menu" name="menu" action="Lhq_LoginServlet?flg=<%=flg%>">
+            <div>
+                <span>账号：</span>
+                <input type="text" class="account" name="account" placeholder="请输入账号">
+
+            </div>
+
+            <div><span>密码：</span>
+                <input type="password" id="password" name="password" class="password" placeholder="请输入密码">
+                <img class="eyes" id="eyes" alt="" src="Image/hide.jpg" onclick="change()">
+            </div>
+            <div class="left-right"><a href="Lhq_Register.jsp" class="left">注册</a> <a class="right" href="Lhq_Search.jsp">忘记密码?</a>
+            </div>
+            <br>
+            <div class="login-button"><input type="submit" value="登录"></div>
+        </form>
     </div>
-<form method="post" id="menu" name = "menu" action="Lhq_LoginServlet?flg=<%=flg%>">
-    <div><input type="text" class="account" name="account" placeholder="请输入账号" ></div>
-    <div>
-        <input type="password" id="password" name="password" class="password" placeholder="请输入密码">
-        <img class="eyes" id="eyes" alt="" src="Image/hide.jpg" onclick="change()">
-    </div>
-    <div><a href="Lhq_Register.jsp" class="left">注册</a> <a class="right" href="Lhq_Search.jsp">忘记密码?</a></div><br>
-    <div class="login-button"><input type = "submit" value="登录"></div>
-</form>
 </div>
-</div>
-<div style="background-color: transparent;width: 100%;height: 14%">
+<div style="background-color: transparent;width: 100%;height: 20%">
 
 </div>
 

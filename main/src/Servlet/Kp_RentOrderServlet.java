@@ -15,8 +15,10 @@ public class Kp_RentOrderServlet extends HttpServlet {
         Tong_detailinformationBean tong_detailinformationBean = new Tong_detailinformationBean();
 
         int h_id= Integer.parseInt(request.getParameter("h_id"));//得到房源id
+        String way=request.getParameter("way");//得到方式，1为创建订单，2为续租
 
         request.setAttribute("h_id",h_id);//保存房源id
+        request.setAttribute("way",way);//保存方式
         request.setAttribute("detailinformation", tong_detailinformationBean.detailinformation(h_id));//调用方法得到房源信息
         request.setAttribute("detailinformationfac", tong_detailinformationBean.detailinformationfac(h_id));//调用方法得到房源配置
         request.setAttribute("detailinformationuser", tong_detailinformationBean.detailinformationuser(h_id));//调用方法得到房源主人信息

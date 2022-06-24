@@ -1,6 +1,7 @@
 package JavaBean;
 
 import Model.H_resources;
+import Model.Lodge;
 import Model.User;
 import org.junit.Test;
 
@@ -67,11 +68,30 @@ public class Kp_ShowHouseBean extends BaseDao{
         //System.out.println(sql);
 
         return queryForList(H_resources.class, sql);
+
     }//展示房源信息
+
+    public List<Lodge> ShowMyHouse(int user_id){//展示我的租房
+
+        String sql="select lodge.lodge_id,lodge.h_id,h_name,lodge_limit,lodge.lodge_price,lodge_stime,lodge_etime,lodge_psta,lodge_pway\n" +
+                "from lodge,h_resources\n" +
+                "where lodge.h_id=h_resources.h_id and lodge_otime is null and lodge.user_id=?;";
+
+        return queryForList(Lodge.class, sql,user_id);
+
+    }
+
+    public List<H_resources> ShowMyCollection(int user_id){
+        String sql="select * from collection,h_resources,photo\n" +
+                "where h_resources.h_id=photo.h_id and collection.h_id=h_resources.h_id and collection.user_id=?";
+
+        return queryForList(H_resources.class,sql,user_id);
+    }
 
 //    @Test
 //    public void test() {
-//        String sql="select * from h_resources,photo where h_resources.h_id=photo.h_id;";
+//        String sql="select * from collection,h_resources,photo\n" +
+//                "where h_resources.h_id=photo.h_id and collection.h_id=h_resources.h_id and collection.user_id=1 ;";
 //        System.out.println(queryForList(H_resources.class, sql));
 //    }
 

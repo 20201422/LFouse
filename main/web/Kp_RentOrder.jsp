@@ -13,6 +13,7 @@
     String user_id= (String) session.getAttribute("user_id");//得到用户id
     String tel= (String) session.getAttribute("tel");//得到用户电话号码
     String uname= (String) session.getAttribute("uname");//得到用户名字
+    String way= (String) request.getAttribute("way");
 
     H_resources h_resources= (H_resources) request.getAttribute("detailinformation");//得到房源信息
     H_facilities h_facilities= (H_facilities) request.getAttribute("detailinformationfac");//得到房源配置
@@ -175,8 +176,9 @@
             <div class="Check_Form_btn">
                 合计: <span id="totalprice" onclick="totalprice()" name="lodge_price"><%=h_resources.getH_price()%></span> RMB
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <input type="button" value="确定" class="form-btn" onclick="queding()">
+                <input type="button" value="确定" class="form-btn" onclick="queding('${orderway}')">
             </div>
+            <input type="hidden" name="orderway" id="orderway">
             <input type="hidden" value="<%=user_id%>" name="user_id">
             <input type="hidden" value="<%=h_resources.getH_id()%>" name="h_id">
             <input type="hidden" value="<%=h_resources.getH_price()%>" name="lodge_price" id="lodge_price">
