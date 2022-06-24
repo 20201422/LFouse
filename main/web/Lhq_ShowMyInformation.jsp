@@ -23,7 +23,7 @@
     <div><span>年龄：</span><input type="text" id="age" name="age" readonly="true" value=<%=user.getAge()%>></div>
     <div><span>出租数量：</span><input type="text" id="lodge_num" name="lodge_num" value="0" readonly="true" value=<%=user.getLodge_num()%>></div>
     <div><span>租房数量：</span><input type="text" id="rent_num" name="rent_num" value="0" readonly="true" value=<%=user.getRent_num()%>></div>
-    <div><a href="javascript:document.menu.submit()">注销</a></div>
+    <div><a href="javascript:document.menu.submit()">注销</a><a href="Kp_ShowHouseServlet?way=1">返回</a></div>
     <div><input type="button" onclick="modificate()" value="修改密码"><input type="button" onclick="editor()" value="编辑"></div>
 </form>
 <script type="text/javascript" language="JavaScript" src="Script/Lhq_LogoutAndModificate.js"></script>
