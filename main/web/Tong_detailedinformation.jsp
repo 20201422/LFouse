@@ -33,8 +33,8 @@
 <%--头部--%>
 <header>
     <div class="header">
-        <img src="Image/logo.jpg" title="" alt="logo" class="logo">
-        <img src="Image/name.jpg" title="" alt="LFouse" class="name">
+        <img src="Image/logo.jpg" title="" alt="logo" class="logo" onclick="window.location.href='index.jsp'">
+        <img src="Image/name.jpg" title="" alt="LFouse" class="name" onclick="window.location.href='index.jsp'">
         <span class="header_name">提供最好的租房服务</span>
         <%
             if(tel==null|| tel.equals("")){//未登录
@@ -213,12 +213,12 @@
         <%
             if(collection==null){//未加入收藏
         %>
-        <a href="Kp_CollectionServlet?way=1&showway=1&h_id=${h_id}">加入收藏</a>
+        <a href="Kp_CollectionServlet?collectionway=1&showway=1&h_id=${h_id}">加入收藏</a>
         <%
         }else{//已加入到收藏
         %>
         <p class="error-no">已添加到收藏</p>
-        <a href="Kp_CollectionServlet?way=2&showway=1&h_id=${h_id}">取消收藏</a>
+        <a href="Kp_CollectionServlet?collectionway=2&showway=1&h_id=${h_id}">取消收藏</a>
         <%
             }
         %>
@@ -244,12 +244,12 @@
         <%
             if(collection==null){//未加入收藏
         %>
-        <a href="Kp_CollectionServlet?way=1&showway=2&h_id=${h_id}">加入收藏</a>
+        <a href="Kp_CollectionServlet?collectionway=1&showway=2&h_id=${h_id}">加入收藏</a>
         <%
         }else{//已加入到收藏
         %>
         <p class="error-no">已添加到收藏</p>
-        <a href="Kp_CollectionServlet?way=2&showway=2&h_id=${h_id}">取消收藏</a>
+        <a href="Kp_CollectionServlet?collectionway=2&showway=2&h_id=${h_id}">取消收藏</a>
         <%
             }
         %>
@@ -261,12 +261,12 @@
         <%
             if(collection==null){//未加入收藏
         %>
-        <a href="Kp_CollectionServlet?way=1&showway=3&h_id=${h_id}">加入收藏</a>
+        <a href="Kp_CollectionServlet?collectionway=1&showway=3&h_id=${h_id}">加入收藏</a>
         <%
         }else{//已加入到收藏
         %>
         <p class="error-no">已添加到收藏</p>
-        <a href="Kp_CollectionServlet?way=2&showway=3&h_id=${h_id}">取消收藏</a>
+        <a href="Kp_CollectionServlet?collectionway=2&showway=3&h_id=${h_id}">取消收藏</a>
         <%
             }
         %>

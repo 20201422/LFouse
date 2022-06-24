@@ -42,7 +42,7 @@
             <span><%=errorMsg%></span>
             <%}%>
         </div>
-        <form method="post" id="menu" name="menu" action="Lhq_LoginServlet?flg=<%=flg%>&show=<%=showway%>&h_id=<%=h_id%>">
+        <form method="post" id="menu" name="menu" action="Lhq_LoginServlet?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>">
             <div>
                 <span>账号：</span>
                 <input type="text" class="account" name="account" placeholder="请输入账号">
