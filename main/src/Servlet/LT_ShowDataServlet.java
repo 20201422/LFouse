@@ -17,7 +17,7 @@ public class LT_ShowDataServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         LT_ShowDataBean lt_showDataBean = new LT_ShowDataBean();
-
+//        System.out.println(request.getParameter("flag"));
         //跳转到login.jsp
         if(request.getParameter("flag")==null||request.getParameter("flag")==""||request.getParameter("flag").equals("1")){
             //初始页面位置
@@ -59,6 +59,7 @@ public class LT_ShowDataServlet extends HttpServlet {
             request.setAttribute("ts", 2);
             //传递当前页面位置
             request.getSession().setAttribute("PageNo", PageNo);
+            request.getSession().setAttribute("flag", request.getParameter("flag"));
             request.getRequestDispatcher("LT_admin.jsp").forward(request,response);
         }else if(request.getParameter("flag").equals("2")){
             //初始页面位置
@@ -102,7 +103,8 @@ public class LT_ShowDataServlet extends HttpServlet {
             request.setAttribute("ts", 2);
             //传递当前页面位置
             request.getSession().setAttribute("PageNo", PageNo);
-            request.getRequestDispatcher("LT_SeeHouseInfo1.jsp").forward(request,response);
+            request.getSession().setAttribute("flag", request.getParameter("flag"));
+            request.getRequestDispatcher("LT_admin.jsp").forward(request,response);
         }else if(request.getParameter("flag").equals("3")){
             //初始页面位置
             String PageNo =request.getParameter("PageNo");
@@ -145,7 +147,8 @@ public class LT_ShowDataServlet extends HttpServlet {
             request.setAttribute("ts", 2);
             //传递当前页面位置
             request.getSession().setAttribute("PageNo", PageNo);
-            request.getRequestDispatcher("LT_SeeHouseInfo2.jsp").forward(request,response);
+            request.getSession().setAttribute("flag", request.getParameter("flag"));
+            request.getRequestDispatcher("LT_admin.jsp").forward(request,response);
         }else if(request.getParameter("flag").equals("4")){
             //初始页面位置
             String PageNo =request.getParameter("PageNo");
@@ -185,7 +188,8 @@ public class LT_ShowDataServlet extends HttpServlet {
             request.setAttribute("ts", 2);
             //传递当前页面位置
             request.getSession().setAttribute("PageNo", PageNo);
-            request.getRequestDispatcher("LT_SeeHouseInfo3.jsp").forward(request,response);
+            request.getSession().setAttribute("flag", request.getParameter("flag"));
+            request.getRequestDispatcher("LT_admin.jsp").forward(request,response);
         }else if(request.getParameter("flag").equals("5")){
             //初始页面位置
             String PageNo =request.getParameter("PageNo");
@@ -225,8 +229,13 @@ public class LT_ShowDataServlet extends HttpServlet {
             request.setAttribute("ts", 2);
             //传递当前页面位置
             request.getSession().setAttribute("PageNo", PageNo);
+            request.getSession().setAttribute("flag", request.getParameter("flag"));
             request.getRequestDispatcher("LT_SeeUserInfo.jsp").forward(request,response);
         }
-
+        else if(request.getParameter("flag").equals("6")){
+            request.setAttribute("FYXX", lt_showDataBean.queryBillPage5());
+            request.getSession().setAttribute("flag", request.getParameter("flag"));
+            request.getRequestDispatcher("LT_SeeApplicationInfo.jsp").forward(request,response);
+        }
     }
 }

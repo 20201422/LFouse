@@ -1,5 +1,6 @@
 package JavaBean;
 
+import Model.H_facilities;
 import Model.H_resources;
 import Model.User;
 import org.junit.Test;
@@ -12,13 +13,13 @@ import java.util.List;
 public class LT_ShowDataBean extends BaseDao{
 
     public Object queryBillPageSize() {
-        String sql="SELECT COUNT(h_id) FROM h_resources";
+        String sql="SELECT COUNT(h_id) FROM h_resources WHERE h_status != -1 and h_status!=1";
         return queryForSingleValue(sql);
     }
 
     public List<H_resources> queryBillPage(String PageNo) {
         int pageIndex=(Integer.parseInt(PageNo) -1)*2;
-        String sql="select * from h_resources limit "+pageIndex+","+2;
+        String sql="select * from h_resources WHERE h_status != -1 and h_status!=1 limit "+pageIndex+","+2;
         return queryForList(H_resources.class, sql);
     }
 
@@ -64,5 +65,9 @@ public class LT_ShowDataBean extends BaseDao{
         int pageIndex=(Integer.parseInt(PageNo) -1)*2;
         String sql="select * from user limit "+pageIndex+","+2;
         return queryForList(User.class, sql);
+    }
+    public List<H_facilities> queryBillPage5() {
+        String sql="select * from h_facilities";
+        return queryForList(H_facilities.class, sql);
     }
 }
