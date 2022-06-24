@@ -25,8 +25,8 @@ public class Lrx_CzAddServlet extends HttpServlet {
 
         Lrx_CzDao cz=new Lrx_CzDao();
 
-        String user_id="2";
-
+        String user_id=request.getParameter("user_id");
+        System.out.println(user_id);
 
         FileItemFactory factory = new DiskFileItemFactory();
         // 文件上传处理器

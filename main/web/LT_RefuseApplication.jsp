@@ -61,17 +61,17 @@
         <%
             String H_id = request.getParameter("H_id");
             String Type = request.getParameter("Type");
-            System.out.println(request.getParameter("flag"));
+            String flag = request.getParameter("flag");
             if(Type.equals("1")){
                 %>
-                    <div class="pop_up_window" style="">
-                        <div align="center"  style="">
+                    <div class="pop_up_window">
+                        <div align="center">
                             是否确认打回
                         </div>
                         <a align="center" href="LT_AdminWorkServlet?H_id=<%=H_id%>&LocationPage=1&Type=1" style="margin-left: 20%">
                             狠心打回
                         </a>
-                        <a align="center" href="" style="">
+                        <a align="center" href="javascript:history.back(-1)" style="">
                             取消操作
                         </a>
                     </div>
@@ -86,7 +86,7 @@
                         <a align="center" href="LT_AdminWorkServlet?H_id=<%=H_id%>&LocationPage=1&Type=2" class="pop_up_window" style="margin-top: 24%;color:white;font-size:  16px;background-color: #0597F2;border-radius: 20px;width: 26%;height: 10%;margin-left: 20%;line-height: 240%;float: left">
                             接受申请
                         </a>
-                        <a align="center" href="LT_admin.jsp" style="margin-top: 24%;color:white;font-size:  16px;background-color: #0597F2;border-radius: 20px;width: 26%;height: 10%;margin-left: 12%;line-height: 240%;float: left">
+                        <a align="center" href="javascript:history.back(-1)" style="margin-top: 24%;color:white;font-size:  16px;background-color: #0597F2;border-radius: 20px;width: 26%;height: 10%;margin-left: 12%;line-height: 240%;float: left">
                             取消操作
                         </a>
                     </div>

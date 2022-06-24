@@ -63,7 +63,6 @@ public class LT_AdminWorkServlet extends HttpServlet {
         request.setAttribute("ts", 2);
         //传递当前页面位置
         request.getSession().setAttribute("PageNo", PageNo);
-        System.out.println(request.getParameter("flag"));
         request.getSession().setAttribute("flag", request.getParameter("flag"));
         request.getRequestDispatcher("LT_admin.jsp").forward(request,response);
     }
