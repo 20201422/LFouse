@@ -29,8 +29,7 @@ public class Kp_CollectionServlet extends HttpServlet {
             System.out.println("收藏故障");
         }
 
-
-        request.getRequestDispatcher("Tong_detailedinformationServlet?h_id="+h_id).forward(request,response);//返回房源详细信息Servlet
+        request.getRequestDispatcher("Tong_detailedinformationServlet?way="+way+"h_id="+h_id).forward(request,response);//返回房源详细信息Servlet
     }
 
     @Override

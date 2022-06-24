@@ -3,6 +3,7 @@ package Model;
 public class Lodge {
     private int user_id;
     private int h_id;
+    private String h_name;
     private int lodge_id;
     private int lodge_limit;
     private float lodge_price;
@@ -27,6 +28,15 @@ public class Lodge {
     public void setH_id(int h_id) {
         this.h_id = h_id;
     }
+
+    public String getH_name() {
+        return h_name;
+    }
+
+    public void setH_name(String h_name) {
+        this.h_name = h_name;
+    }
+
     public int getLodge_id() {
         return lodge_id;
     }
@@ -91,6 +101,14 @@ public class Lodge {
         this.lodge_pway = lodge_pway;
     }
 
-
+    public String toString() {
+        return "USer{" +
+                "h_id=" + h_id +
+                "user_id=" + user_id +
+                ", h_name='" + h_name + '\'' +
+                ", h_location='" + lodge_pway + '\'' +
+                ", h_price=" + lodge_price +
+                '}'+"\n";
+    }
 
 }
