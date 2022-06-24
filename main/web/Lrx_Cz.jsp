@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String uname= (String) session.getAttribute("uname");
+    String user_id=(String)session.getAttribute("user_id");
 %>
 <html>
 <head>
@@ -26,7 +27,7 @@
     </div>
 
     <div class="information">
-    <form action="Lrx_CzAddServlet" method="post" enctype="multipart/form-data">
+    <form action="Lrx_CzAddServlet?user_id=<%=user_id%>" method="post" enctype="multipart/form-data">
         房子名称：<input type="text" name="h_name"><br>
         位置：<input type="text" name="h_location"><br>
         价格：<input type="text" name="h_price"><br>

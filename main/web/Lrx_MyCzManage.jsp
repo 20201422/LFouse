@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
-    int user_id= (Integer) session.getAttribute("user_id");//得到用户id
+    String user_id= (String) session.getAttribute("user_id");//得到用户id
     String tel= (String) session.getAttribute("tel");//得到用户电话号码
     String uname= (String) session.getAttribute("uname");//得到用户名字
 
@@ -25,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_CzForm.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_TableStyle.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/Lrx_Menu.css" />
     <title>LFouse-我的出租</title>
 </head>
 <body>
@@ -36,30 +37,58 @@
             <div class="ts">现在租房或者出租，享受免押金、免定金、免息分期等服务。</div>
         </div>
     </div>
-
-
-    <div>
-        <table class="providerTable" cellpadding="0" cellspacing="0">
-            <tr  class="firstTr"><th>出租编号</th><th>租客编号</th><th>房源编号</th><th>出租月数</th><th>出租价格</th><th>出租开始时间</th><th>出租预计结束时间</th><th>实际退租时间</th><th>支付状态</th><th>支付方式</th><th>操作</th></tr>
-            <c:forEach items="${lodgeList}" var="Lodge">
-                <tr>
-                    <td>${Lodge.lodge_id}</td>
-                    <td>${Lodge.user_id}</td>
-                    <td>${Lodge.h_id}</td>
-                    <td>${Lodge.lodge_limit}</td>
-                    <td>${Lodge.lodge_price}</td>
-                    <td>${Lodge.lodge_stime}</td>
-                    <td>${Lodge.lodge_etime}</td>
-                    <td>${Lodge.lodge_otime}</td>
-                    <td>${Lodge.lodge_psta}</td>
-                    <td>${Lodge.lodge_pway}</td>
-                    <td><input type="button" value="修改">&nbsp;<input type="button" value="删除"></td>
-
-                </tr>
-            </c:forEach>
-        </table>
+<div>
+    <div class="menu1">
+        <p><a href="Lrx_ShowServlet">已出租</a></p><br>
+        <p><a href="Lrx_ShowNotCzServlet">未出租</a></p>
     </div>
+    <div class="float">
+        <div>
+            房位<select>
+            <option>请选择</option>
+            <option>南昌</option>
+            <option>上海</option>
+            <option>北京</option>
+            <option>包头</option>
+        </select>
+            支付状态<select>
+            <option>请选择</option>
+            <option>已支付</option>
+            <option>未支付</option>
+        </select>
+            房名<input type="text">&nbsp;
+            租客姓名<input type="text">&nbsp;
 
+            <input type="button" value="搜索">
+        </div>
+
+        <div >
+            <table class="providerTable" cellpadding="0" cellspacing="0">
+                <tr  class="firstTr"><th>房名</th><th>房位</th><th>房价</th><th>租客姓名</th><th>租客电话</th><th>租客邮箱</th><th>租房时长</th><th>出租开始时间</th><th>出租预计结束时间</th><th>实际退租时间</th><th>支付状态</th><th>支付方式</th></tr>
+                <c:forEach items="${List}" var="Lrx_AlreadyCz">
+                    <tr>
+                        <td>${Lrx_AlreadyCz.h_name}</td>
+                        <td>${Lrx_AlreadyCz.h_location}</td>
+                        <td>${Lrx_AlreadyCz.h_price}</td>
+                        <td>${Lrx_AlreadyCz.uname}</td>
+                        <td>${Lrx_AlreadyCz.tel}</td>
+                        <td>${Lrx_AlreadyCz.email}</td>
+                        <td>${Lrx_AlreadyCz.lodge_limit}</td>
+                        <td>${Lrx_AlreadyCz.lodge_stime}</td>
+                        <td>${Lrx_AlreadyCz.lodge_etime}</td>
+                        <td>${Lrx_AlreadyCz.lodge_otime}</td>
+                        <td>${Lrx_AlreadyCz.lodge_psta}</td>
+                        <td>${Lrx_AlreadyCz.lodge_pway}</td>
+
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<%--    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>--%>
     <footer>
         <hr>
         <div class="footer-help">
