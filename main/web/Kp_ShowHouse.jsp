@@ -74,16 +74,21 @@
             if(tel==null|| tel.equals("")){//未登录
         %>
         <p><a href="Lhq_Login.jsp?flg=Lrx_Cz.jsp">我要出租</a></p>
-        <p><a href="Lhq_Login.jsp">我的</a></p>
+        <p id="My"><a href="Lhq_Login.jsp">我的</a>
+        <div id="MyCzOrZf" class="MyCzOrZf" >
+            <a class="typeface" href="Lhq_Login.jsp?flg=Lrx_ShowServlet" >我的出租</a><br>
+            <a class="typeface" href=''>我的租房</a><br>
+            <a class="typeface" href='' >我的信息</a><br>
+        </div></p>
         <%
         }else{//已登录
         %>
         <p><a href="Lrx_Cz.jsp">我要出租</a></p>
         <p id="My"><a>我的</a>
         <div id="MyCzOrZf" class="MyCzOrZf" >
-            <a class="typeface" href="Lrx_ShowServlet" id='MyCz'>我的出租</a><br>
-            <a class="typeface" href='' id='MyZf'>我的租房</a><br>
-            <a class="typeface" href='' id='MyInform'>我的信息</a><br>
+            <a class="typeface" href="Lrx_ShowServlet" >我的出租</a><br>
+            <a class="typeface" href=''>我的租房</a><br>
+            <a class="typeface" href='' >我的信息</a><br>
         </div>
         </p>
         <%
