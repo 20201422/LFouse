@@ -9,10 +9,13 @@
 <%@ page import="java.util.List" %>
 <%@ page import="Model.*" %>
 <%@ page import="JavaBean.Kp_CollectionBean" %>
+<%@ page import="java.util.Objects" %>
 <%
     String user_id= (String) session.getAttribute("user_id");//得到用户id
     String tel= (String) session.getAttribute("tel");//得到用户电话号码
     String uname= (String) session.getAttribute("uname");//得到用户名字
+
+    String way= (String) request.getAttribute("way");//得到类型
 
     H_resources h_resources= (H_resources) request.getAttribute("detailinformation");//得到房源信息
     H_facilities h_facilities= (H_facilities) request.getAttribute("detailinformationfac");//得到房源配置
@@ -195,6 +198,9 @@
         </div>
     </div>
 
+    <%
+        if(Objects.equals(way, "1")){//方式1，由房源界面进入
+    %>
     <div class="check">
         <%
             if(tel==null|| tel.equals("")){//未登录
@@ -202,17 +208,17 @@
         <a href="Lhq_Login.jsp">加入收藏</a>
         <a href="Lhq_Login.jsp">我要租房</a>
         <%
-            }else{//已登录
+        }else{//已登录
         %>
         <%
             if(collection==null){//未加入收藏
         %>
         <a href="Kp_CollectionServlet?way=1&h_id=${h_id}">加入收藏</a>
         <%
-            }else{//已加入到收藏
+        }else{//已加入到收藏
         %>
         <p class="error-no">已添加到收藏</p>
-        <a href="Kp_CollectionServlet?way=2&h_id=${h_id}">取消收藏</a>
+        <a href="Kp_CollectionServlet?way=1&h_id=${h_id}">取消收藏</a>
         <%
             }
         %>
@@ -221,9 +227,9 @@
         %>
         <p class="error-no">我要租房</p>
         <%
-            }else{//未租出
+        }else{//未租出
         %>
-        <a href="Kp_RentOrderServlet?h_id=${h_id}">我要租房</a>
+        <a href="Kp_RentOrderServlet?way=1&h_id=${h_id}">我要租房</a>
         <%
             }
         %>
@@ -231,6 +237,27 @@
             }
         %>
     </div>
+    <%
+        }else{//方式2，由我的租房界面进入
+    %>
+    <div class="check">
+
+        <%
+            if(collection==null){//未加入收藏
+        %>
+        <a href="Kp_CollectionServlet?way=2&h_id=${h_id}">加入收藏</a>
+        <%
+        }else{//已加入到收藏
+        %>
+        <p class="error-no">已添加到收藏</p>
+        <a href="Kp_CollectionServlet?way=2&h_id=${h_id}">取消收藏</a>
+        <%
+            }
+        %>
+    </div>
+    <%
+        }
+    %>
 
 </div>
 

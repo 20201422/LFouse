@@ -19,6 +19,8 @@ public class Tong_detailedinformationServlet extends HttpServlet {
 
         HttpSession session=request.getSession();
 
+        String way= request.getParameter("way");//得到详细信息类型，1是从房源界面查看，2是从我的租房信息查看
+
         int h_id= Integer.parseInt(request.getParameter("h_id"));//得到房源id
         String user_id= (String) session.getAttribute("user_id");//得到用户id
 
@@ -27,6 +29,7 @@ public class Tong_detailedinformationServlet extends HttpServlet {
                     kp_collectionBean.findCollection(h_id, Integer.parseInt(user_id)));//调用方法找到收藏信息
         }
 
+        request.setAttribute("way",way);//保存类型
         request.setAttribute("h_id",h_id);//保存房源id
         request.setAttribute("detailinformation",
                 tong_detailinformationBean.detailinformation(h_id));//调用方法得到房源信息
