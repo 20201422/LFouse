@@ -33,8 +33,8 @@
 <%--头部--%>
 <header>
     <div class="header">
-        <img src="Image/logo.jpg" title="" alt="logo" class="logo">
-        <img src="Image/name.jpg" title="" alt="LFouse" class="name">
+        <img src="Image/logo.jpg" title="" alt="logo" class="logo" onclick="window.location.href='index.jsp'">
+        <img src="Image/name.jpg" title="" alt="LFouse" class="name" onclick="window.location.href='index.jsp'">
         <span class="header_name">提供最好的租房服务</span>
         <%
             if(tel==null|| tel.equals("")){//未登录
@@ -66,13 +66,13 @@
         <%
             if(tel==null|| tel.equals("")){//未登录
         %>
-        <p><a href="Lhq_Login.jsp">我要出租</a></p>
-        <p><a href="Lhq_Login.jsp">我的</a></p>
+        <p><a href="Lhq_Login.jsp?flg=Lrx_Cz.jsp">我要出租</a></p>
+        <p><a href="Lhq_Login.jsp?flg=Kp_ShowMyRentHouseServlet">我的</a></p>
         <%
         }else{//已登录
         %>
-        <p><a href="">我要出租</a></p>
-        <p><a href="">我的</a></p>
+        <p><a href="Lrx_Cz.jsp">我要出租</a></p>
+        <p><a href="Kp_ShowMyRentHouseServlet">我的</a></p>
         <%
             }
         %>
@@ -205,20 +205,20 @@
         <%
             if(tel==null|| tel.equals("")){//未登录
         %>
-        <a href="Lhq_Login.jsp">加入收藏</a>
-        <a href="Lhq_Login.jsp">我要租房</a>
+        <a href="Lhq_Login.jsp?flg=Tong_detailedinformationServlet&showway=1&h_id=${h_id}">加入收藏</a>
+        <a href="Lhq_Login.jsp?flg=Tong_detailedinformationServlet&showway=1&h_id=${h_id}">我要租房</a>
         <%
         }else{//已登录
         %>
         <%
             if(collection==null){//未加入收藏
         %>
-        <a href="Kp_CollectionServlet?way=1&showway=1&h_id=${h_id}">加入收藏</a>
+        <a href="Kp_CollectionServlet?collectionway=1&showway=1&h_id=${h_id}">加入收藏</a>
         <%
         }else{//已加入到收藏
         %>
         <p class="error-no">已添加到收藏</p>
-        <a href="Kp_CollectionServlet?way=2&showway=1&h_id=${h_id}">取消收藏</a>
+        <a href="Kp_CollectionServlet?collectionway=2&showway=1&h_id=${h_id}">取消收藏</a>
         <%
             }
         %>
@@ -229,7 +229,7 @@
         <%
         }else{//未租出
         %>
-        <a href="Kp_RentOrderServlet?showway=1&h_id=${h_id}">我要租房</a>
+        <a href="Kp_RentOrderServlet?showway=1&orderway=1&h_id=${h_id}">我要租房</a>
         <%
             }
         %>
@@ -241,16 +241,32 @@
         }else if(Objects.equals(showway, "2")){//方式2，由我的租房界面进入
     %>
     <div class="check">
-
         <%
             if(collection==null){//未加入收藏
         %>
-        <a href="Kp_CollectionServlet?way=1&showway=2&h_id=${h_id}">加入收藏</a>
+        <a href="Kp_CollectionServlet?collectionway=1&showway=2&h_id=${h_id}">加入收藏</a>
         <%
         }else{//已加入到收藏
         %>
         <p class="error-no">已添加到收藏</p>
-        <a href="Kp_CollectionServlet?way=2&showway=2&h_id=${h_id}">取消收藏</a>
+        <a href="Kp_CollectionServlet?collectionway=2&showway=2&h_id=${h_id}">取消收藏</a>
+        <%
+            }
+        %>
+    </div>
+    <%
+        }else if(Objects.equals(showway, "3")){//方式3，由我的收藏界面进入
+    %>
+    <div class="check">
+        <%
+            if(collection==null){//未加入收藏
+        %>
+        <a href="Kp_CollectionServlet?collectionway=1&showway=3&h_id=${h_id}">加入收藏</a>
+        <%
+        }else{//已加入到收藏
+        %>
+        <p class="error-no">已添加到收藏</p>
+        <a href="Kp_CollectionServlet?collectionway=2&showway=3&h_id=${h_id}">取消收藏</a>
         <%
             }
         %>

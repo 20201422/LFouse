@@ -44,7 +44,7 @@
 
 </header>
 
-<div style="height: 480px;">
+<div style="height: 67%;margin-top: 1%">
     <%
         List<H_resources>list= (List<H_resources>)request.getAttribute("YHXX");
     %>
@@ -67,9 +67,9 @@
                         <tr align="center"><td colspan="4"><font>LFouse房源信息审批订单</font></td></tr>
                         <tr>
                             <td colspan="1" style="text-align: center;width: 20%">
-                                <font>房源名称</font>
+                                <font>编号：<%=list.get(0).getH_id()%></font>
                             </td>
-                            <td colspan="3">
+                            <td colspan="3" align="center">
                                 &nbsp;<%=list.get(0).getH_name()%><br/>
                             </td>
                         </tr>
@@ -171,26 +171,26 @@
                     if(list.get(0).getH_status()==2){
                 %>
                 <%--flag为传递的参数，用于判断跳转的页面--%>
-                <a class="abq2" style="color: white" href="LT_RefuseApplication.jsp?flag=2&PageNo=${PageNo}&H_id=<%=list.get(0).getH_id()%>&Type=1">打回</a>
-                <a class="abq2" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(0).getH_name()%>">详情</a>
+                <a class="abq2"  href="LT_RefuseApplication.jsp?flag=2&PageNo=${PageNo}&H_id=<%=list.get(0).getH_id()%>&Type=1">打回</a>
+                <a class="abq2"  href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(0).getH_name()%>&H_id=<%=list.get(0).getH_id()%>">详情</a>
                 <%
                 }else if(list.get(0).getH_status()==3){
                 %>
                 <%--<a class="abq3" style="color: white"></a>--%>
-                <a class="abq1" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(0).getH_name()%>">详情</a>
+                <a class="abq1"  href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(0).getH_name()%>&H_id=<%=list.get(0).getH_id()%>">详情</a>
                 <%--<a class="abq3" style="color: white"></a>--%>
                 <%
                 }else if(list.get(0).getH_status()==1){
                 %>
                 <%--<a class="abq1" style="color: white"></a>--%>
-                <a class="abq1" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(0).getH_name()%>">详情</a>
+                <a class="abq1"  href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(0).getH_name()%>&H_id=<%=list.get(0).getH_id()%>">详情</a>
                 <%--<a class="abq1" style="color: white"></a>--%>
                 <%
                 }else {
                 %>
                 <a class="abq0" style="color: white" href="LT_RefuseApplication.jsp?flag=2&PageNo=${PageNo}&H_id=<%=list.get(0).getH_id()%>&Type=1">打回</a>
-                <a class="abq0" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(0).getH_name()%>">详情</a>
-                <a class="abq0" style="color: white" href="LT_RefuseApplication.jsp?flag=1?&PageNo=${PageNo}&H_id=<%=list.get(0).getH_id()%>&Type=3">通过</a>
+                <a class="abq0" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(0).getH_name()%>&H_id=<%=list.get(0).getH_id()%>">详情</a>
+                <a class="abq0" style="color: white" href="LT_RefuseApplication.jsp?flag=2&PageNo=${PageNo}&H_id=<%=list.get(0).getH_id()%>&Type=3">通过</a>
                 <%
                     }
                 %>
@@ -215,9 +215,9 @@
                 <tr align="center"><td colspan="4"><font>LFouse房源信息审批订单</font></td></tr>
                 <tr>
                     <td colspan="1" style="text-align: center;width: 20%">
-                        <font>房源名称</font>
+                        <font>编号：<%=list.get(1).getH_id()%></font>
                     </td>
-                    <td colspan="3">
+                    <td colspan="3" align="center">
                         &nbsp;<%=list.get(1).getH_name()%><br/>
                     </td>
                 </tr>
@@ -319,25 +319,25 @@
                 if(list.get(1).getH_status()==2){
                 %>
                 <a class="abq2" style="color: white" href="LT_RefuseApplication.jsp?flag=2&PageNo=${PageNo}&H_id=<%=list.get(1).getH_id()%>&Type=1">打回</a>
-                <a class="abq2" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(1).getH_name()%>">详情</a>
+                <a class="abq2" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(1).getH_name()%>&H_id=<%=list.get(1).getH_id()%>">详情</a>
                 <%
                 }else if(list.get(1).getH_status()==3){
                 %>
                 <%--<a class="abq3" style="color: white"></a>--%>
-                <a class="abq1" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(1).getH_name()%>">详情</a>
+                <a class="abq1" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(1).getH_name()%>&H_id=<%=list.get(1).getH_id()%>">详情</a>
 
             <%--<a class="abq3" style="color: white"></a>--%>
                 <%
                 }else if(list.get(1).getH_status()==1){
                 %>
                 <%--<a class="abq1" style="color: white"></a>--%>
-                <a class="abq1" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(1).getH_name()%>">详情</a>
+                <a class="abq1" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(1).getH_name()%>&H_id=<%=list.get(1).getH_id()%>">详情</a>
                 <%--<a class="abq1" style="color: white"></a>--%>
                 <%
                 }else {
                 %>
                 <a class="abq0" style="color: white" href="LT_RefuseApplication.jsp?flag=2&PageNo=${PageNo}&H_id=<%=list.get(1).getH_id()%>&Type=1">打回</a>
-                <a class="abq0" style="color: white" href="LT_ShowDataServlet?flag=6&flag=1&PageNo=${PageNo}&H_name=<%=list.get(1).getH_name()%>">详情</a>
+                <a class="abq0" style="color: white" href="LT_ShowDataServlet?flag=6&flag=1&PageNo=${PageNo}&H_name=<%=list.get(1).getH_name()%>&H_id=<%=list.get(1).getH_id()%>">详情</a>
                 <a class="abq0" style="color: white" href="LT_RefuseApplication.jsp?flag=1&PageNo=${PageNo}&H_id=<%=list.get(1).getH_id()%>&Type=3">通过</a>
                 <%
                 }

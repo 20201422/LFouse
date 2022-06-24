@@ -58,18 +58,18 @@
     background-color: #0597F2;
     transition: all 0.45s;
 }
-.menu:hover{
+.menu:hover , .menu-two:hover{
     box-shadow: 1px 1px 10px #a4a4a6;
     border-radius:24px;
     transform: scale(1.02);
 }
-.menu p{
+.menu p , .menu-two p{
     display: inline-block;
     margin: 0 22px 0 22px;
     padding: 14px 0 14px 0;
     font-size: 20px;
 }
-.menu p a{
+.menu p a , .menu-two p a{
     color: white;
     text-decoration: none;
     transition:color 0.2s linear 0s ;
@@ -77,13 +77,23 @@
     -webkit-transition:color 0.2s linear 0s ; /* Safari 和 Chrome */
     -o-transition:color 0.2s linear 0s ; /* Opera */
 }
-.menu p a:visited{
+.menu p a:visited , .menu-two p a:visited{
     color: white;
 }
-.menu p a:hover{
+.menu p a:hover , .menu-two p a:hover{
     text-decoration: none;
     color: #CEE4F2;
 }
+.menu-two{
+    text-align: center;
+    margin: 8px 360px 0 360px;
+    /*background: white;*/
+    border: 1px solid #0597F2;
+    border-radius: 24px;
+    background-color: #0597F2;
+    transition: all 0.45s;
+}
+
 
 
 

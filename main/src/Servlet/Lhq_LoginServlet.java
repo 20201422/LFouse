@@ -21,6 +21,8 @@ public class Lhq_LoginServlet extends HttpServlet {
         String account = request.getParameter("account");
         String password = request.getParameter("password");
         String flg = request.getParameter("flg");
+        String showway = request.getParameter("showway");
+        String h_id = request.getParameter("h_id");
         Lhq_LoginBean login=new Lhq_LoginBean();
         User user = login.findUserNoAndPassword(account,password);
         Admin admin = login.findAdminNoAndPassword(account,password);
@@ -36,6 +38,8 @@ public class Lhq_LoginServlet extends HttpServlet {
             request.getSession().setAttribute("user_id",user_id);
             request.getSession().setAttribute("uname",user.getUname());
             request.getSession().setAttribute("tel",user.getTel());
+            request.setAttribute("showway",showway);
+            request.setAttribute("h_id",h_id);
             request.getRequestDispatcher("/"+flg+"?way=1").forward(request, response);
         }
     }

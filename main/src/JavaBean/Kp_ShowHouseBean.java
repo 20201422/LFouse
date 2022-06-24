@@ -3,6 +3,7 @@ package JavaBean;
 import Model.H_resources;
 import Model.Lodge;
 import Model.User;
+
 import org.junit.Test;
 
 import java.util.List;
@@ -81,8 +82,10 @@ public class Kp_ShowHouseBean extends BaseDao{
 
     }
 
-    public List<H_resources> ShowMyCollection(int user_id){
-        String sql="select * from collection,h_resources,photo\n" +
+    public List<H_resources> ShowMyCollection(int user_id){//展示我的收藏
+        String sql="select collection.h_id,h_name,h_location,h_price,h_layout,h_type,h_area\n" +
+                "     ,h_elevator,h_toward,h_traffic,h_status,h_floor,photo_name\n" +
+                "from collection,h_resources,photo\n" +
                 "where h_resources.h_id=photo.h_id and collection.h_id=h_resources.h_id and collection.user_id=?";
 
         return queryForList(H_resources.class,sql,user_id);
@@ -90,8 +93,10 @@ public class Kp_ShowHouseBean extends BaseDao{
 
 //    @Test
 //    public void test() {
-//        String sql="select * from collection,h_resources,photo\n" +
-//                "where h_resources.h_id=photo.h_id and collection.h_id=h_resources.h_id and collection.user_id=1 ;";
+//        String sql="select collection.h_id,h_name,h_location,h_price,h_layout,h_type,h_area\n" +
+//                "     ,h_elevator,h_toward,h_traffic,h_status,h_floor,photo_name\n" +
+//                "from collection,h_resources,photo\n" +
+//                "where h_resources.h_id=photo.h_id and collection.h_id=h_resources.h_id and collection.user_id=1";
 //        System.out.println(queryForList(H_resources.class, sql));
 //    }
 

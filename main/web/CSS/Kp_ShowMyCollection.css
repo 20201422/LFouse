@@ -1,6 +1,7 @@
 .checkOrder_Head{
     text-align: center;
     color: #3b3b3d;
+    font-size: 12px;
 }
 .search-conditions{
     text-align: center;
@@ -77,6 +78,10 @@
     color: #0062d3;
 }
 .House_Message0 .title-error{
+    color: #a4a4a6;
+    font-size: 14px;
+}
+.House_Message0 .title-error-id{
     color: #a4a4a6;
     font-size: 14px;
 }

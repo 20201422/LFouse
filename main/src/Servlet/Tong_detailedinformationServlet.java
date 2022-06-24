@@ -19,12 +19,13 @@ public class Tong_detailedinformationServlet extends HttpServlet {
 
         HttpSession session=request.getSession();
 
-        String showway= request.getParameter("showway");//得到详细信息类型，1是从房源界面查看，2是从我的租房信息查看
+        String showway= request.getParameter("showway");//得到详细信息类型，1是从房源界面查看，2是从我的租房信息查看,3是从我的收藏查看
 
         int h_id= Integer.parseInt(request.getParameter("h_id"));//得到房源id
+        System.out.println(h_id);
         String user_id= (String) session.getAttribute("user_id");//得到用户id
 
-        if(user_id!=null&&user_id!=""){//已登录
+        if(user_id!=null&& !user_id.equals("")){//已登录
             request.setAttribute("findCollection",
                     kp_collectionBean.findCollection(h_id, Integer.parseInt(user_id)));//调用方法找到收藏信息
         }

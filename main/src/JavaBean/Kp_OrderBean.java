@@ -3,6 +3,8 @@ package JavaBean;
 import Model.Lodge;
 import org.junit.Test;
 
+import java.util.List;
+
 public class Kp_OrderBean  extends BaseDao{
 
     public Lodge FindMyHouse(int user_id,int h_id){//Bug修复（点击我要租房后跳转到的我的租房界面，此时刷新界面会出现多条数据插入）
@@ -10,6 +12,14 @@ public class Kp_OrderBean  extends BaseDao{
         String sql="select * from lodge where lodge_otime is null and user_id=? and h_id=?";
 
         return queryForOne(Lodge.class,sql,user_id,h_id);//查询租房表，按照用户id和房源id锁定租房信息，再通过结束租房时间判断
+
+    }
+
+    public List<Lodge> lodgeCount(int user_id){//查找用户已租房的数量
+
+        String sql="select * from lodge where lodge_otime is null and user_id=?";
+
+        return queryForList(Lodge.class,sql,user_id);
 
     }
 
@@ -62,7 +72,7 @@ public class Kp_OrderBean  extends BaseDao{
 
         String UpdateUserRent_numSql="update user set rent_num=rent_num-1 where user_id=?";
         String UpdateH_resourcesH_statusSql="update h_resources set h_status=2 where h_id=?";
-        String UpdateLodge_otime="update lodge set lodge_otime=now() and lodge_psta='订单结束' where h_id=? and user_id=?";
+        String UpdateLodge_otime="update lodge set lodge_otime=now() , lodge_psta='订单结束' where h_id=? and user_id=?";
 
         update(UpdateUserRent_numSql,user_id);//修改用户租房数量
         update(UpdateH_resourcesH_statusSql,h_id);//修改房源状态

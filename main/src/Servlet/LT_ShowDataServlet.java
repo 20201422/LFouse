@@ -233,7 +233,9 @@ public class LT_ShowDataServlet extends HttpServlet {
             request.getRequestDispatcher("LT_SeeUserInfo.jsp").forward(request,response);
         }
         else if(request.getParameter("flag").equals("6")){
-            request.setAttribute("FYXX", lt_showDataBean.queryBillPage5());
+            String str = request.getParameter("H_id");
+            request.setAttribute("FYXX", lt_showDataBean.queryBillPage5(Integer.parseInt(str)));
+            request.setAttribute("photo", lt_showDataBean.queryBillPage6(Integer.parseInt(str)));
             request.getSession().setAttribute("flag", request.getParameter("flag"));
             request.getRequestDispatcher("LT_SeeApplicationInfo.jsp").forward(request,response);
         }

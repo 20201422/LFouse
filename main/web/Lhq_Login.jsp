@@ -17,8 +17,8 @@
 
 <header>
     <div class="header">
-        <img src="Image/logo.jpg" title="" alt="logo" class="logo">
-        <img src="Image/name.jpg" title="" alt="LFouse" class="name">
+        <img src="Image/logo.jpg" title="" alt="logo" class="logo" onclick="window.location.href='index.jsp'">
+        <img src="Image/name.jpg" title="" alt="LFouse" class="name" onclick="window.location.href='index.jsp'">
         <span class="header_name">提供最好的租房服务</span>
         <div class="head_welcome">
             <br>
@@ -35,12 +35,14 @@
             <%
                 String errorMsg = (String) request.getAttribute("errorMsg");
                 String flg = request.getParameter("flg");
+                String showway=request.getParameter("showway");
+                String h_id=request.getParameter("h_id");
                 if (errorMsg != null) {
             %>
             <span><%=errorMsg%></span>
             <%}%>
         </div>
-        <form method="post" id="menu" name="menu" action="Lhq_LoginServlet?flg=<%=flg%>">
+        <form method="post" id="menu" name="menu" action="Lhq_LoginServlet?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>">
             <div>
                 <span>账号：</span>
                 <input type="text" class="account" name="account" placeholder="请输入账号">

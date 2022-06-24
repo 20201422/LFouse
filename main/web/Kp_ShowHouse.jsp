@@ -40,8 +40,8 @@
 
 <header>
     <div class="header">
-        <img src="Image/logo.jpg" title="" alt="logo" class="logo">
-        <img src="Image/name.jpg" title="" alt="LFouse" class="name">
+        <img src="Image/logo.jpg" title="" alt="logo" class="logo" onclick="window.location.href='index.jsp'">
+        <img src="Image/name.jpg" title="" alt="LFouse" class="name" onclick="window.location.href='index.jsp'">
         <span class="header_name">提供最好的租房服务</span>
         <%
             if(tel==null|| tel.equals("")){//未登录
@@ -74,23 +74,12 @@
             if(tel==null|| tel.equals("")){//未登录
         %>
         <p><a href="Lhq_Login.jsp?flg=Lrx_Cz.jsp">我要出租</a></p>
-        <p id="My"><a href="Lhq_Login.jsp">我的</a>
-        <div id="MyCzOrZf" class="MyCzOrZf" >
-            <a class="typeface" href="Lhq_Login.jsp?flg=Lrx_ShowServlet" >我的出租</a><br>
-            <a class="typeface" href=''>我的租房</a><br>
-            <a class="typeface" href='' >我的信息</a><br>
-        </div></p>
+        <p><a href="Lhq_Login.jsp?flg=Kp_ShowMyRentHouseServlet">我的</a></p>
         <%
         }else{//已登录
         %>
         <p><a href="Lrx_Cz.jsp">我要出租</a></p>
-        <p id="My"><a>我的</a>
-        <div id="MyCzOrZf" class="MyCzOrZf" >
-            <a class="typeface" href="Lrx_ShowServlet" >我的出租</a><br>
-            <a class="typeface" href=''>我的租房</a><br>
-            <a class="typeface" href='' >我的信息</a><br>
-        </div>
-        </p>
+        <p><a href="Kp_ShowMyRentHouseServlet">我的</a></p>
         <%
             }
         %>
@@ -147,7 +136,7 @@
                 request.setAttribute("h_resorces",h_resources);
         %>
         <div class="ShowHouse" onclick="
-                window.location.href='Tong_detailedinformationServlet?h_id=<%=h_resources.getH_id()%>'">
+                window.location.href='Tong_detailedinformationServlet?showway=1&h_id=<%=h_resources.getH_id()%>'">
             <div class="img">
                 <img class="img" src="Image/<%=h_resources.getPhoto_name()%>" alt="<%=h_resources.getH_name()%>">
             </div>
@@ -160,7 +149,8 @@
                     <p class="title-error">（已租出）</p>
                     <%
                         }
-                    %>
+                    %>&nbsp&nbsp&nbsp&nbsp
+                     <p class="title-error-id">房源编号：<%=h_resources.getH_id()%></p>
                 </div>
                 <div class="House_Message1">
                     <p>
