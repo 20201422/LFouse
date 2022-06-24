@@ -1,5 +1,6 @@
 package Servlet;
 
+import JavaBean.Kp_OrderBean;
 import JavaBean.Tong_detailinformationBean;
 
 import javax.servlet.*;
@@ -13,16 +14,19 @@ public class Kp_RentOrderServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         Tong_detailinformationBean tong_detailinformationBean = new Tong_detailinformationBean();
+        Kp_OrderBean kp_orderBean=new Kp_OrderBean();
 
         int h_id= Integer.parseInt(request.getParameter("h_id"));//得到房源id
-        String way=request.getParameter("way");//得到方式，1为创建订单，2为续租
+        String user_id= (String) request.getSession().getAttribute("user_id");//得到用户id
+        String orderway=request.getParameter("orderway");//得到方式，1为创建订单，2为续租
 
         request.setAttribute("h_id",h_id);//保存房源id
-        request.setAttribute("way",way);//保存方式
+        request.setAttribute("orderway",orderway);//保存方式
         request.setAttribute("detailinformation", tong_detailinformationBean.detailinformation(h_id));//调用方法得到房源信息
         request.setAttribute("detailinformationfac", tong_detailinformationBean.detailinformationfac(h_id));//调用方法得到房源配置
         request.setAttribute("detailinformationuser", tong_detailinformationBean.detailinformationuser(h_id));//调用方法得到房源主人信息
         request.setAttribute("detailinformationphoto", tong_detailinformationBean.detailinformationphoto(h_id));//调用方法得到房源图片
+        request.setAttribute("lodgecount",kp_orderBean.lodgeCount(Integer.parseInt(user_id)));//调用方法得到该用户已租信息
 
         request.getRequestDispatcher("/Kp_RentOrder.jsp").forward(request,response);//返回订单jsp
 

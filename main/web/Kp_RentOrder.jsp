@@ -8,6 +8,8 @@
 <%@ page import="Model.H_resources" %>
 <%@ page import="Model.H_facilities" %>
 <%@ page import="Model.User" %>
+<%@ page import="java.util.List" %>
+<%@ page import="Model.Lodge" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String user_id= (String) session.getAttribute("user_id");//得到用户id
@@ -18,6 +20,7 @@
     H_resources h_resources= (H_resources) request.getAttribute("detailinformation");//得到房源信息
     H_facilities h_facilities= (H_facilities) request.getAttribute("detailinformationfac");//得到房源配置
     User user= (User) request.getAttribute("detailinformationuser");//得到房源主人信息
+    List<Lodge> list= (List<Lodge>) request.getAttribute("lodgecount");//得到该用户的已租信息
 %>
 <html>
 <head>
@@ -176,7 +179,7 @@
             <div class="Check_Form_btn">
                 合计: <span id="totalprice" onclick="totalprice()" name="lodge_price"><%=h_resources.getH_price()%></span> RMB
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <input type="button" value="确定" class="form-btn" onclick="queding('${orderway}')">
+                <input type="button" value="确定" class="form-btn" onclick="queding('${orderway}','<%=list.size()%>')">
             </div>
             <input type="hidden" name="orderway" id="orderway">
             <input type="hidden" value="<%=user_id%>" name="user_id">

@@ -229,7 +229,7 @@
         <%
         }else{//未租出
         %>
-        <a href="Kp_RentOrderServlet?showway=1&h_id=${h_id}">我要租房</a>
+        <a href="Kp_RentOrderServlet?showway=1&orderway=1&h_id=${h_id}">我要租房</a>
         <%
             }
         %>
