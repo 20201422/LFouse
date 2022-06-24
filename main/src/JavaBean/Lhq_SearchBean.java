@@ -5,6 +5,6 @@ import Model.User;
 public class Lhq_SearchBean extends BaseDao{
     public User findEmail(String email){
         String sql="select email,uname,upwd from user where email=?";
-        return (User) queryForOne(User.class,sql,email);
+        return queryForOne(User.class,sql,email);
     }
 }
