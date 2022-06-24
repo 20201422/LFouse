@@ -12,7 +12,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <%
-    int user_id= (Integer) session.getAttribute("user_id");//得到用户id
+    String user_id= (String) session.getAttribute("user_id");//得到用户id
     String tel= (String) session.getAttribute("tel");//得到用户电话号码
     String uname= (String) session.getAttribute("uname");//得到用户名字
 
@@ -26,6 +26,9 @@
 
 <html>
 <head>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="Script/Lrx_My.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/Lrx_My.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Kp_ShowHouse.css" />
     <title>LFouse-位置找房</title>
@@ -76,7 +79,13 @@
         }else{//已登录
         %>
         <p><a href="Lrx_Cz.jsp">我要出租</a></p>
-        <p><a href="">我的</a></p>
+        <p id="My"><a>我的</a>
+        <div id="MyCzOrZf" class="MyCzOrZf" >
+            <a class="typeface" href="Lrx_ShowServlet" id='MyCz'>我的出租</a><br>
+            <a class="typeface" href='' id='MyZf'>我的租房</a><br>
+            <a class="typeface" href='' id='MyInform'>我的信息</a><br>
+        </div>
+        </p>
         <%
             }
         %>

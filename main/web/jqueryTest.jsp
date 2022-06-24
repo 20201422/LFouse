@@ -23,18 +23,13 @@
     <script src="Script/Lrx_My.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Kp_LocationfFindHouse.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/Lrx_My.css" />
     <title>LFouse-位置找房</title>
 </head>
 
 <script type="text/javascript" language="JavaScript" src="Script/Kp_ShowHouse.js"></script>
 
 <body>
-<style>
-    .float{
-        float: right;
-        width: 23%;
-    }
-</style>
 <header>
     <div class="header">
         <img src="Image/logo.jpg" title="" alt="logo" class="logo">
@@ -71,19 +66,24 @@
             if(tel==null|| tel.equals("")){//未登录
         %>
         <p><a href="Lhq_Login.jsp">我要出租</a></p>
-        <p ><a  id="My">我的</a></p>
+        <p id="My"><a>我的</a>
+            <div id="MyCzOrZf" class="MyCzOrZf" >
+                <a class="typeface" href='Lrx_ShowServlet' id='MyCz'>我的出租</a><br>
+                <a class="typeface" href='' id='MyZf'>我的租房</a><br>
+                <a class="typeface" href='' id='MyInform'>我的信息</a><br>
+            </div>
+        </p>
         <%
         }else{//已登录
         %>
         <p><a href="Lrx_Cz.jsp">我要出租</a></p>
-        <p><a href="">我的</a></p>
+        <p><a href="" >我的</a></p>
         <%
             }
         %>
     </nav>
-    <div id="MyCzOrZf" class="float">
 
-    </div>
+
 </header>
 
 </body>

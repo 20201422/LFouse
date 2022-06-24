@@ -32,7 +32,7 @@
 
         <div class="head_welcome" style="margin-right: 2%;margin-top: 1%">您好,管理员
             <div>
-                <a href="" class="wa">[退出]</a>
+                <a href="Lhq_QuitServlet" class="wa">[退出]</a>
             </div>
         </div>
 
@@ -57,11 +57,43 @@
         <p id="p5"><a href="LT_ShowDataServlet?flag=5&PageNo=<%=PageNo%>">用户信息</a></p>
     </nav>
 
-    <div style="width: 92%;height: 100%;margin-left: 8%;background-color: #F2F2F2;border-radius: 20px">
+    <div class="bigbg" >
+        <%
+            String H_id = request.getParameter("H_id");
+            String Type = request.getParameter("Type");
+            System.out.println(request.getParameter("flag"));
+            if(Type.equals("1")){
+                %>
+                    <div class="pop_up_window" style="">
+                        <div align="center"  style="">
+                            是否确认打回
+                        </div>
+                        <a align="center" href="LT_AdminWorkServlet?H_id=<%=H_id%>&LocationPage=1&Type=1" style="margin-left: 20%">
+                            狠心打回
+                        </a>
+                        <a align="center" href="" style="">
+                            取消操作
+                        </a>
+                    </div>
+                <%
+            }
+            else{
+                %>
+                    <div class="pop_up_window" style="">
+                        <div align="center" class="pop_up_window" style="margin-top: 24%;color:white;font-size:  32px;background-color: #0597F2;border-radius: 20px;width: 64%;height: 18%;margin-left: 20%;line-height: 240%">
+                            是否接受申请
+                        </div>
+                        <a align="center" href="LT_AdminWorkServlet?H_id=<%=H_id%>&LocationPage=1&Type=2" class="pop_up_window" style="margin-top: 24%;color:white;font-size:  16px;background-color: #0597F2;border-radius: 20px;width: 26%;height: 10%;margin-left: 20%;line-height: 240%;float: left">
+                            接受申请
+                        </a>
+                        <a align="center" href="LT_admin.jsp" style="margin-top: 24%;color:white;font-size:  16px;background-color: #0597F2;border-radius: 20px;width: 26%;height: 10%;margin-left: 12%;line-height: 240%;float: left">
+                            取消操作
+                        </a>
+                    </div>
+                <%
+            }
+        %>
 
-        <div style="width: 40%;height: 80%;background-color: white;border-radius: 20px;margin-left: 28%;margin-top: 4%;float: left">
-
-        </div>
 
     </div>
 </div>

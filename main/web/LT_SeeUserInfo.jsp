@@ -59,14 +59,14 @@
         <p id="p5"><a href="LT_ShowDataServlet?PageNo=${PageNo}&ts=2&flag=5">用户信息</a></p>
     </nav>
 
-    <div style="width: 92%;height: 100%;margin-left: 8%;background-color: #F2F2F2;border-radius: 20px">
+    <div class="bigbg">
         <div style="width: 100%;height: 4%;"></div>
         <div style="width: 40%;height: 80%;background-color: white;border-radius: 20px;margin-left: 9%;float: left">
             <div align="center" style="float: left;width: 4%;height: 6%;border-radius: 45px;background-color: #0597F2;margin-left: 45%;margin-top: 4%;color: white">${PageNo*2-1}</div><br/><br/>
             <%
                 if(list.get(0).getUser_id()!=0){
             %>
-            <table align="center" border="1" cellpadding="0" cellspacing="0"style="width: 80%;height: 60%;margin-top: 6%;border-color: #0597F2">
+            <table align="center" border="1" cellpadding="0" cellspacing="0"class="table1">
                 <tr align="center"><td colspan="4"><font>LFouse用户信息</font></td></tr>
                 <tr>
                     <td colspan="1" style="text-align: center;width: 20%">
@@ -112,8 +112,8 @@
                         &nbsp;<%=list.get(0).getRent_num()%><br/>
                     </td>
                 </tr>
-
             </table>
+
             <%
             }else {
             %>
@@ -121,7 +121,6 @@
             <%
                 }
             %>
-
             <%--<div style="float: left;height: 8%;width: 80%;background-color: #CEE4F2;margin-top: 4%;margin-left: 10%"></div>--%>
         </div>
         <div style=";height: 80%;border-right: solid white;float: left;margin-left: 1%"></div>
@@ -130,7 +129,7 @@
                 if(list.size()==2){
             %>
             <div align="center" style="float: left;width: 4%;height: 6%;border-radius: 45px;background-color: #0597F2;margin-left: 45%;margin-top: 4%;color: white">${PageNo*2}</div><br/><br/>
-            <table align="center" border="1" cellpadding="0" cellspacing="0"style="width: 80%;height: 60%;margin-top: 6%;border-color: #0597F2">
+            <table align="center" border="1" cellpadding="0" cellspacing="0"class="table1">
                 <tr align="center"><td colspan="4"><font>LFouse用户信息</font></td></tr>
                 <tr>
                     <td colspan="1" style="text-align: center;width: 20%">
@@ -176,6 +175,7 @@
                         &nbsp;<%=list.get(1).getRent_num()%><br/>
                     </td>
                 </tr>
+
             </table>
             <%
             }else {

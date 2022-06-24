@@ -32,7 +32,7 @@
 
         <div class="head_welcome" style="margin-right: 2%;margin-top: 1%">您好,管理员
             <div>
-                <a href="" class="wa">[退出]</a>
+                <a href="Lhq_QuitServlet" class="wa">[退出]</a>
             </div>
         </div>
 
@@ -46,7 +46,6 @@
 
 <div style="height: 480px;">
     <%
-        String ts = "2";
         List<H_resources>list= (List<H_resources>)request.getAttribute("YHXX");
     %>
     <nav class="LT_menu">
@@ -57,14 +56,14 @@
         <p id="p5"><a href="LT_ShowDataServlet?ts=2&flag=5">用户信息</a></p>
     </nav>
 
-    <div style="width: 92%;height: 100%;margin-left: 8%;background-color: #F2F2F2;border-radius: 20px">
+    <div class="bigbg">
         <div style="width: 100%;height: 4%;"></div>
         <div style="width: 40%;height: 80%;background-color: white;border-radius: 20px;margin-left: 9%;float: left">
-                <div align="center" style="float: left;width: 4%;height: 6%;border-radius: 45px;background-color: #0597F2;margin-left: 45%;margin-top: 4%;color: white">${PageNo*2-1}</div><br/><br/>
+                <div class="h_id" align="center" >${PageNo*2-1}</div><br/><br/>
                 <%
                 if(list.get(0).getH_id()!=0){
                 %>
-                    <table align="center" border="1" cellpadding="0" cellspacing="0"style="width: 80%;height: 60%;margin-top: 6%;border-color: #0597F2">
+                    <table align="center" cellspacing="0" cellpadding="0" class="table1">
                         <tr align="center"><td colspan="4"><font>LFouse房源信息审批订单</font></td></tr>
                         <tr>
                             <td colspan="1" style="text-align: center;width: 20%">
@@ -172,28 +171,26 @@
                     if(list.get(0).getH_status()==2){
                 %>
                 <%--flag为传递的参数，用于判断跳转的页面--%>
-                <a class="abq2" style="color: white" href="LT_RefuseApplication.jsp?flag=2&PageNo=${PageNo}">打回</a>
-                <a class="abq2" style="color: white" href="LT_SeeApplicationInfo.jsp?flag=1&PageNo=${PageNo}">查看详情</a>
-                <a class="abq2" style="color: white" href="LT_AcceptApplication.jsp?flag=1&PageNo=${PageNo}">通过</a>
+                <a class="abq2" style="color: white" href="LT_RefuseApplication.jsp?flag=2&PageNo=${PageNo}&H_id=<%=list.get(0).getH_id()%>&Type=1">打回</a>
+                <a class="abq2" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(0).getH_name()%>">详情</a>
                 <%
                 }else if(list.get(0).getH_status()==3){
                 %>
                 <%--<a class="abq3" style="color: white"></a>--%>
-                <a class="abq3" style="color: white" href="LT_SeeApplicationInfo.jsp?flag=1&PageNo=${PageNo}">查看详情</a>
+                <a class="abq1" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(0).getH_name()%>">详情</a>
                 <%--<a class="abq3" style="color: white"></a>--%>
                 <%
                 }else if(list.get(0).getH_status()==1){
                 %>
                 <%--<a class="abq1" style="color: white"></a>--%>
-                <a class="abq1" style="color: white" href="LT_SeeApplicationInfo.jsp?flag=1&PageNo=${PageNo}">查看详情</a>
+                <a class="abq1" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(0).getH_name()%>">详情</a>
                 <%--<a class="abq1" style="color: white"></a>--%>
                 <%
                 }else {
                 %>
-
-                <a class="abq0" style="color: white" href="LT_RefuseApplication.jsp?flag=2&PageNo=${PageNo}">打回</a>
-                <a class="abq0" style="color: white" href="LT_SeeApplicationInfo.jsp?flag=1&PageNo=${PageNo}">查看详情</a>
-                <a class="abq0" style="color: white" href="LT_AcceptApplication.jsp?flag=1?&PageNo=${PageNo}">通过</a>
+                <a class="abq0" style="color: white" href="LT_RefuseApplication.jsp?flag=2&PageNo=${PageNo}&H_id=<%=list.get(0).getH_id()%>&Type=1">打回</a>
+                <a class="abq0" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(0).getH_name()%>">详情</a>
+                <a class="abq0" style="color: white" href="LT_RefuseApplication.jsp?flag=1?&PageNo=${PageNo}&H_id=<%=list.get(0).getH_id()%>&Type=3">通过</a>
                 <%
                     }
                 %>
@@ -213,8 +210,8 @@
             <%
                 if(list.size()==2){
             %>
-            <div align="center" style="float: left;width: 4%;height: 6%;border-radius: 45px;background-color: #0597F2;margin-left: 45%;margin-top: 4%;color: white">${PageNo*2}</div><br/><br/>
-                <table align="center" border="1" cellpadding="0" cellspacing="0"style="width: 80%;height: 60%;margin-top: 6%;border-color: #0597F2">
+            <div class="h_id" align="center" >${PageNo*2}</div><br/><br/>
+                <table align="center" border="1" cellpadding="0" cellspacing="0"class="table1">
                 <tr align="center"><td colspan="4"><font>LFouse房源信息审批订单</font></td></tr>
                 <tr>
                     <td colspan="1" style="text-align: center;width: 20%">
@@ -321,27 +318,27 @@
                 <%
                 if(list.get(1).getH_status()==2){
                 %>
-                <a class="abq2" style="color: white" href="LT_RefuseApplication.jsp?flag=2?PageNo=${PageNo}">打回</a>
-                <a class="abq2" style="color: white" href="LT_SeeApplicationInfo.jsp?flag=1?PageNo=${PageNo}">查看详情</a>
-                <a class="abq2" style="color: white" href="LT_AcceptApplication.jsp?flag=1?PageNo=${PageNo}">通过</a>
+                <a class="abq2" style="color: white" href="LT_RefuseApplication.jsp?flag=2&PageNo=${PageNo}&H_id=<%=list.get(1).getH_id()%>&Type=1">打回</a>
+                <a class="abq2" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(1).getH_name()%>">详情</a>
                 <%
                 }else if(list.get(1).getH_status()==3){
                 %>
                 <%--<a class="abq3" style="color: white"></a>--%>
-                <a class="abq3" style="color: white" href="LT_SeeApplicationInfo.jsp?flag=1?PageNo=${PageNo}">查看详情</a>
-                <%--<a class="abq3" style="color: white"></a>--%>
+                <a class="abq1" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(1).getH_name()%>">详情</a>
+
+            <%--<a class="abq3" style="color: white"></a>--%>
                 <%
                 }else if(list.get(1).getH_status()==1){
                 %>
                 <%--<a class="abq1" style="color: white"></a>--%>
-                <a class="abq1" style="color: white" href="LT_SeeApplicationInfo.jsp?flag=1?PageNo=${PageNo}">查看详情</a>
+                <a class="abq1" style="color: white" href="LT_ShowDataServlet?flag=6&PageNo=${PageNo}&H_name=<%=list.get(1).getH_name()%>">详情</a>
                 <%--<a class="abq1" style="color: white"></a>--%>
                 <%
                 }else {
                 %>
-                <a class="abq0" style="color: white" href="LT_RefuseApplication.jsp?flag=2?PageNo=${PageNo}">打回</a>
-                <a class="abq0" style="color: white" href="LT_SeeApplicationInfo.jsp?flag=1?PageNo=${PageNo}">查看详情</a>
-                <a class="abq0" style="color: white" href="LT_AcceptApplication.jsp?flag=1?PageNo=${PageNo}">通过</a>
+                <a class="abq0" style="color: white" href="LT_RefuseApplication.jsp?flag=2&PageNo=${PageNo}&H_id=<%=list.get(1).getH_id()%>&Type=1">打回</a>
+                <a class="abq0" style="color: white" href="LT_ShowDataServlet?flag=6&flag=1&PageNo=${PageNo}&H_name=<%=list.get(1).getH_name()%>">详情</a>
+                <a class="abq0" style="color: white" href="LT_RefuseApplication.jsp?flag=1&PageNo=${PageNo}&H_id=<%=list.get(1).getH_id()%>&Type=3">通过</a>
                 <%
                 }
                 %>
@@ -361,11 +358,11 @@
             <div style="margin-left: 31%;line-height: 240%">
                 <font style="color: #0597F2">共${YHYS}条记录<font/>
                 <%-- /showServlet为从新转向showServlet，?pageNo=1&tiaoshu=<%=ts%>pageNo,tiaoshu为传递的两个参数--%>
-                <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=1&tiaoshu=2">首页</a>
-                <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=${PageNo-1}&tiaoshu=2">上一页</a>
+                <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=1&tiaoshu=2&flag=${flag}">首页</a>
+                <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=${PageNo-1}&tiaoshu=2&flag=${flag}">上一页</a>
                     <font style="color: #0597F2">${PageNo}/${count}页</font>
-                <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=${PageNo+1 }&tiaoshu=2">下一页</a>
-                <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=${count }&tiaoshu=2">末页</a>
+                <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=${PageNo+1 }&tiaoshu=2&flag=${flag}">下一页</a>
+                <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=${count }&tiaoshu=2&flag=${flag}">末页</a>
             </div>
         </div>
     </div>
