@@ -112,8 +112,8 @@
             </tr>
         </table>
         <div class="myrent-cz">
-            <a href="Tong_detailedinformationServlet?way=2&h_id=<%=lodge.getH_id()%>">查看房屋详细信息</a>
-            <a href="Kp_RentOrderServlet?way=2&h_id=<%=lodge.getH_id()%>">续租</a>
+            <a href="Tong_detailedinformationServlet?showway=2&h_id=<%=lodge.getH_id()%>">查看房屋详细信息</a>
+            <a href="Kp_RentOrderServlet?orderway=2&h_id=<%=lodge.getH_id()%>">续租</a>
             <a onclick="quxiao('<%=lodge.getH_id()%>')">取消租房</a>
             <form action="Kp_CancelOrderServlet" id="quxiao">
                 <input type="hidden" name="h_id" id="h_id">

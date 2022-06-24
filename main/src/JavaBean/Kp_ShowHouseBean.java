@@ -81,12 +81,18 @@ public class Kp_ShowHouseBean extends BaseDao{
 
     }
 
+    public List<H_resources> ShowMyCollection(int user_id){
+        String sql="select * from collection,h_resources,photo\n" +
+                "where h_resources.h_id=photo.h_id and collection.h_id=h_resources.h_id and collection.user_id=?";
+
+        return queryForList(H_resources.class,sql,user_id);
+    }
+
 //    @Test
 //    public void test() {
-//        String sql="select lodge.lodge_id,lodge.h_id,h_name,lodge_limit,lodge.lodge_price,lodge_stime,lodge_etime,lodge_psta,lodge_pway\n" +
-//                "from lodge,h_resources\n" +
-//                "where lodge.h_id=h_resources.h_id and lodge.user_id=1;";
-//        System.out.println(queryForList(Lodge.class, sql));
+//        String sql="select * from collection,h_resources,photo\n" +
+//                "where h_resources.h_id=photo.h_id and collection.h_id=h_resources.h_id and collection.user_id=1 ;";
+//        System.out.println(queryForList(H_resources.class, sql));
 //    }
 
 }

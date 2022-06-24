@@ -15,7 +15,7 @@
     String tel= (String) session.getAttribute("tel");//得到用户电话号码
     String uname= (String) session.getAttribute("uname");//得到用户名字
 
-    String way= (String) request.getAttribute("way");//得到类型
+    String showway= (String) request.getAttribute("showway");//得到类型
 
     H_resources h_resources= (H_resources) request.getAttribute("detailinformation");//得到房源信息
     H_facilities h_facilities= (H_facilities) request.getAttribute("detailinformationfac");//得到房源配置
@@ -199,7 +199,7 @@
     </div>
 
     <%
-        if(Objects.equals(way, "1")){//方式1，由房源界面进入
+        if(Objects.equals(showway, "1")){//方式1，由房源界面进入
     %>
     <div class="check">
         <%
@@ -213,12 +213,12 @@
         <%
             if(collection==null){//未加入收藏
         %>
-        <a href="Kp_CollectionServlet?way=1&h_id=${h_id}">加入收藏</a>
+        <a href="Kp_CollectionServlet?way=1&showway=1&h_id=${h_id}">加入收藏</a>
         <%
         }else{//已加入到收藏
         %>
         <p class="error-no">已添加到收藏</p>
-        <a href="Kp_CollectionServlet?way=1&h_id=${h_id}">取消收藏</a>
+        <a href="Kp_CollectionServlet?way=2&showway=1&h_id=${h_id}">取消收藏</a>
         <%
             }
         %>
@@ -229,7 +229,7 @@
         <%
         }else{//未租出
         %>
-        <a href="Kp_RentOrderServlet?way=1&h_id=${h_id}">我要租房</a>
+        <a href="Kp_RentOrderServlet?showway=1&h_id=${h_id}">我要租房</a>
         <%
             }
         %>
@@ -238,19 +238,19 @@
         %>
     </div>
     <%
-        }else{//方式2，由我的租房界面进入
+        }else if(Objects.equals(showway, "2")){//方式2，由我的租房界面进入
     %>
     <div class="check">
 
         <%
             if(collection==null){//未加入收藏
         %>
-        <a href="Kp_CollectionServlet?way=2&h_id=${h_id}">加入收藏</a>
+        <a href="Kp_CollectionServlet?way=1&showway=2&h_id=${h_id}">加入收藏</a>
         <%
         }else{//已加入到收藏
         %>
         <p class="error-no">已添加到收藏</p>
-        <a href="Kp_CollectionServlet?way=2&h_id=${h_id}">取消收藏</a>
+        <a href="Kp_CollectionServlet?way=2&showway=2&h_id=${h_id}">取消收藏</a>
         <%
             }
         %>

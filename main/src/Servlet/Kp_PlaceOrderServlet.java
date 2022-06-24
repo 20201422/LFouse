@@ -15,17 +15,17 @@ public class Kp_PlaceOrderServlet extends HttpServlet {
 
         Kp_OrderBean kp_orderBean=new Kp_OrderBean();
 
-        String way=request.getParameter("way");//得到方式，1为创建订单，2为续租
+        String orderway=request.getParameter("orderway");//得到方式，1为创建订单，2为续租
         String user_id= (String) request.getSession().getAttribute("user_id");//得到用户id
         int h_id= Integer.parseInt(request.getParameter("h_id"));//得到房源id
         int lodge_limit= Integer.parseInt(request.getParameter("lodge_limit"));//得到月份
         int lodge_pway= Integer.parseInt(request.getParameter("lodge_pway"));//得到支付方式
         float lodge_price= Float.parseFloat(request.getParameter("lodge_price"));//得到支付价格
 
-        if(Objects.equals(way, "1")){
+        if(Objects.equals(orderway, "1")){
             kp_orderBean.createorder(Integer.parseInt(user_id),h_id,lodge_limit,lodge_pway,lodge_price);//调用方法提交订单
         }
-        else if(Objects.equals(way, "2")){
+        else if(Objects.equals(orderway, "2")){
             kp_orderBean.goonorder(Integer.parseInt(user_id),h_id,lodge_limit,lodge_pway,lodge_price);//调用方法续租订单
         }
 

@@ -18,7 +18,6 @@ public class H_resources {
     private User user;
     private H_facilities h_facilities;
     private String photo_name;
-
     public int getH_id() {
         return h_id;
     }
