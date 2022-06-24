@@ -1,9 +1,18 @@
 package Model;
 
 public class Lrx_NotCz {
+    private int h_id;
     private String h_name;
     private String h_location;
     private int h_status;
+
+    public int getH_id() {
+        return h_id;
+    }
+
+    public void setH_id(int h_id) {
+        this.h_id = h_id;
+    }
 
     public String getH_name() {
         return h_name;

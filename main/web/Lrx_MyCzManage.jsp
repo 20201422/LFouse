@@ -77,9 +77,9 @@
     </nav>
 </header>
 <div>
-    <div class="menu1">
+    <div class="Lrx_menu" >
         <p><a href="Lrx_ShowServlet">已出租</a></p><br>
-        <p><a href="Lrx_ShowNotCzServlet">未出租</a></p>
+        <p> <a href="Lrx_ShowNotCzServlet">未出租</a></p>
     </div>
     <div class="float">
         <div>

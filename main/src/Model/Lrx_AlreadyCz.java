@@ -1,6 +1,7 @@
 package Model;
 
 public class Lrx_AlreadyCz {
+    private int h_id;
     private String h_name;
     private String h_location;
     private double h_price;
@@ -13,6 +14,14 @@ public class Lrx_AlreadyCz {
     private String lodge_otime;
     private String lodge_psta;
     private String lodge_pway;
+
+    public int getH_id() {
+        return h_id;
+    }
+
+    public void setH_id(int h_id) {
+        this.h_id = h_id;
+    }
 
     public String getH_name() {
         return h_name;

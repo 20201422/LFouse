@@ -1,7 +1,8 @@
-menu1{
-    float: left;
+.Lrx_menu{
+    background-color:#0597F2;
     width: 10%;
-    height: 80%;
+    height: 50%;
+    float: left;
     border-radius: 20px;
-    background-color: #0597F2;
+
 }
