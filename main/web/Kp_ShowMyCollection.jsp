@@ -77,6 +77,13 @@
     </nav>
 </header>
 
+<nav class="menu-two">
+    <p><a href="Kp_ShowMyRentHouseServlet">我的租房</a></p>
+    <p><a href="">我的出租</a></p>
+    <p><a href="Kp_ShowMyCollectionServlet">我的收藏</a></p>
+    <p><a href="">我的信息</a></p>
+</nav>
+
 <div class="middle">
     <div class="locationfindhouse">
     <%
