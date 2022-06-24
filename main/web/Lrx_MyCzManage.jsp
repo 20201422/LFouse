@@ -75,6 +75,14 @@
             }
         %>
     </nav>
+
+
+    <nav class="menu-two">
+        <p><a href="Kp_ShowMyRentHouseServlet">我的租房</a></p>
+        <p><a href="Lrx_ShowServlet">我的出租</a></p>
+        <p><a href="Kp_ShowMyCollectionServlet">我的收藏</a></p>
+        <p><a href="Lhq_ShowMyInformationServlet">我的信息</a></p>
+    </nav>
 </header>
 <div>
     <div class="Lrx_menu" >

@@ -76,57 +76,69 @@
             }
         %>
     </nav>
-</header>
 
-<nav class="menu">
-    <p id="p2"><a href="Lrx_ShowServlet">已出租</a></p>
-    <p id="p3"><a href="Lrx_ShowNotCzServlet">未出租</a></p>
-</nav>
-<div class="float">
-    房子状态<select>
+
+    <nav class="menu-two">
+        <p><a href="Kp_ShowMyRentHouseServlet">我的租房</a></p>
+        <p><a href="Lrx_ShowServlet">我的出租</a></p>
+        <p><a href="Kp_ShowMyCollectionServlet">我的收藏</a></p>
+        <p><a href="Lhq_ShowMyInformationServlet">我的信息</a></p>
+    </nav>
+</header>
+<div>
+    <div class="Lrx_menu">
+        <p id="p2"><a href="Lrx_ShowServlet">已出租</a></p>
+        <p id="p3"><a href="Lrx_ShowNotCzServlet">未出租</a></p>
+    </div>
+
+    <div class="float">
+        <div>
+            房子状态<select>
             <option>请选择</option>
             <option>待审核</option>
             <option>待上架</option>
             <option>未出租</option>
             <option>待审核</option>
-    </select>
-    房位<select>
-        <option>请选择</option>
-        <option>南昌</option>
-        <option>上海</option>
-        <option>北京</option>
-        <option>包头</option>
-    </select>
-    房名<input type="text">&nbsp;
-    <input type="button" value="搜索">
+        </select>
+            房位<select>
+            <option>请选择</option>
+            <option>南昌</option>
+            <option>上海</option>
+            <option>北京</option>
+            <option>包头</option>
+        </select>
+            房名<input type="text">&nbsp;
+            <input type="button" value="搜索">
 
-</div>
-<div class="float">
-    <table class="providerTable" cellpadding="0" cellspacing="0">
-        <tr  class="firstTr"><th>房名</th><th>房位</th><th>状态</th><th>操作</th></tr>
-        <c:forEach items="${List}" var="Lrx_NotCz">
-            <tr>
-                <td>${Lrx_NotCz.h_name}</td>
-                <td>${Lrx_NotCz.h_location}</td>
-                <td>
-                        <c:if test=" ${Lrx_NotCz.h_status==0}">待审核</c:if>
-                        <c:if test=" ${Lrx_NotCz.h_status==0}">审核通过，待上架</c:if>
-                        <c:if test=" ${Lrx_NotCz.h_status==0}">上架了，未出租</c:if>
-                        <c:if test=" ${Lrx_NotCz.h_status==0}">审核不通</c:if>
+        </div>
+        <div>
+            <table class="providerTable" cellpadding="0" cellspacing="0">
+                <tr  class="firstTr"><th>房名</th><th>房位</th><th>状态</th><th>操作</th></tr>
+                <c:forEach items="${List}" var="Lrx_NotCz">
+                    <tr>
+                        <td>${Lrx_NotCz.h_name}</td>
+                        <td>${Lrx_NotCz.h_location}</td>
+                        <td>
+                            <c:if test=" ${Lrx_NotCz.h_status==0}">待审核</c:if>
+                            <c:if test=" ${Lrx_NotCz.h_status==1}">审核通过，待上架</c:if>
+                            <c:if test=" ${Lrx_NotCz.h_status==2}">上架了，未出租</c:if>
+                            <c:if test=" ${Lrx_NotCz.h_status==-1}">审核不通过</c:if>
 
-                    ${Lrx_NotCz.h_status}
-                </td>
-                <td>
-                    <p><a>修改</a></p>
-                    <P><a>删除</a></P>
-                    <p><a>上架</a></p>
-                    <p><a>下架</a></p>
-                </td>
+                                ${Lrx_NotCz.h_status}
+                        </td>
+                        <td>
+                            <a href="Lrx_ShowMoreInformsServlet?h_id=${Lrx_NotCz.h_id}">修改</a>
+                            <a>删除</a>
+                            <a>上架</a>
+                            <a>下架</a>
+                        </td>
 
 
-            </tr>
-        </c:forEach>
-    </table>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+    </div>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <footer>
