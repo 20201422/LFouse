@@ -19,6 +19,8 @@
       <sourceFolder url="file://$MODULE_DIR$/main/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="commons-beanutils-1.9.4" level="project" />
     <orderEntry type="module-library">
       <library name="JUnit4">
         <CLASSES>
@@ -29,12 +31,21 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="commons-beanutils-1.9.4" level="project" />
-    <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="standard" level="project" />
-    <orderEntry type="library" name="commons-io-2.2" level="project" />
+    <orderEntry type="module-library">
+      <library name="lib">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/main/web/WEB-INF/lib/commons-fileupload-1.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/main/web/WEB-INF/lib/commons-io-2.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/main/web/WEB-INF/lib/javax.mail .jar!/" />
+          <root url="file://$MODULE_DIR$/main/web/WEB-INF/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/main/web/WEB-INF/lib" recursive="false" />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="commons-fileupload-1.4" level="project" />
-    <orderEntry type="library" name="commons-io-2.2 (2)" level="project" />
-    <orderEntry type="library" name="javax.mail" level="project" />
+    <orderEntry type="library" name="src" level="project" />
   </component>
 </module>

@@ -2,7 +2,8 @@
 <%@ page import="Model.H_resources" %>
 <%@ page import="java.util.List" %>
 <%@ page import="Model.User" %>
-<%@ page import="Model.H_facilities" %><%--
+<%@ page import="Model.H_facilities" %>
+<%@ page import="Model.Photo" %><%--
   Created by IntelliJ IDEA.
   User: coopskywalker
   Date: 2022/6/20
@@ -19,7 +20,6 @@
 <%--管理员查看申请信息--%>
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
-    <%--<link rel="stylesheet" type="text/css" href="CSS/Kp_ShowHouse.css" />--%>
     <link rel="stylesheet" type="text/css" href="CSS/LT_admin.css" />
     <title>LFouse-申请详情</title>
 </head>
@@ -51,7 +51,8 @@
     <nav class="LT_menu">
         <%
             String PageNo = request.getParameter("PageNo");
-            List<H_facilities>list= (List<H_facilities>)request.getAttribute("FYXX");
+            List<H_facilities>list= (List<H_facilities>)request.getAttribute("FYXX");//房间配套信息
+            List<Photo>list1= (List<Photo>)request.getAttribute("photo");//房间配套照片
             String H_name = request.getParameter("H_name");
         %>
         <p id="p1"><a href="LT_ShowDataServlet?flag=1&PageNo=<%=PageNo%>">全部房源</a></p>
@@ -64,7 +65,26 @@
     <div class="bigbg">
         <div style="width: 100%;height: 4%;"></div>
         <div style="width: 40%;height: 80%;background-color: white;border-radius: 20px;margin-left: 9%;float: left">
-
+            <%--<div style="margin-top: 2%;margin-left: 6%;border-radius: 20px;width: 88%;background-color: #F5F5F7">--%>
+                <%--<marquee hspace="4%" vspace="5%" scrollamount="10" scrolldelay="60" behavior="alternate" onMouseOver='stop()' onMouseOut='start()'>--%>
+                <%--<img style="border-radius: 20px" src="Image/公寓1.jpg" idth="100%" height="80%" border="0">--%>
+                <%--<img style="border-radius: 20px" src="Image/公寓2.jpg" idth="100%" height="80%" border="0">--%>
+                <%--</marquee>--%>
+            <%--</div>--%>
+            <div class="photo">
+                <%
+                    for(Photo photo:list1){
+                %>
+                <img class="img" src="Image/<%=photo.getPhoto_name()%>">
+                <%
+                    }
+                %>
+                <img class="img" src="Image/公寓1.jpg">
+                <img class="img" src="Image/公寓2.jpg">
+                <img class="img" src="Image/公寓3.jpg">
+                <img class="img" src="Image/公寓4.jpg">
+                <img class="img" src="Image/民宿1.jpg">
+            </div>
         </div>
         <div style="height: 80%;border-right: solid white;float: left;margin-left: 1%"></div>
         <div style="width: 40%;height: 80%;background-color: white;border-radius: 20px;margin-left: 1%;float: left">
@@ -87,7 +107,7 @@
                     </td>
                     <td colspan="3">
                         &nbsp;<%
-                                if(list.get(0).getWifi()==0){
+                                if(list.get(0).getWifi()==1){
                                     %>
                                         <%="有"%>
                                     <%
@@ -106,7 +126,7 @@
                     </td>
                     <td colspan="3">
                         &nbsp;<%
-                                if(list.get(0).getTV()==0){
+                                if(list.get(0).getTV()==1){
                                     %>
                                         <%="有"%>
                                     <%
@@ -125,7 +145,7 @@
                     </td>
                     <td style="width: 30%">
                         &nbsp;<%
-                                if(list.get(0).getTV()==0){
+                                if(list.get(0).getTV()==1){
                                     %>
                                         <%="有"%>
                                     <%
@@ -142,7 +162,7 @@
                     </td>
                     <td>
                         &nbsp;<%
-                        if(list.get(0).getAirConditioner()==0){
+                        if(list.get(0).getAirConditioner()==1){
                             %>
                                 <%="有"%>
                             <%
@@ -161,7 +181,7 @@
                     </td>
                     <td>
                     &nbsp;<%
-                        if(list.get(0).getWashing()==0){
+                        if(list.get(0).getWashing()==1){
                             %>
                                 <%="有"%>
                             <%
@@ -178,7 +198,7 @@
                     </td>
                     <td>
                         &nbsp;<%
-                        if(list.get(0).getRefrigerator()==0){
+                        if(list.get(0).getRefrigerator()==1){
                             %>
                                 <%="有"%>
                             <%
@@ -211,5 +231,6 @@
         京IPC备202014-4 营业执照 无线电发射设备销售备案编号11201910351200
     </div>
 </footer>
+
 </body>
 </html>
