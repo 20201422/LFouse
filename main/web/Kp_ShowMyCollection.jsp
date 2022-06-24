@@ -83,7 +83,7 @@
                 request.setAttribute("h_resorces",h_resources);
     %>
         <div class="ShowHouse" onclick="
-                window.location.href='Tong_detailedinformationServlet?way=1&h_id=<%=h_resources.getH_id()%>'">
+                window.location.href='Tong_detailedinformationServlet?showway=3&h_id=<%=h_resources.getH_id()%>'">
             <div class="img">
                 <img class="img" src="Image/<%=h_resources.getPhoto_name()%>" alt="<%=h_resources.getH_name()%>">
             </div>

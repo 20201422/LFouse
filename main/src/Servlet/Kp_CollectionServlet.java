@@ -6,6 +6,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.Objects;
 
 @WebServlet(name = "Kp_CollectionServlet", value = "/Kp_CollectionServlet")
 public class Kp_CollectionServlet extends HttpServlet {
@@ -19,6 +20,8 @@ public class Kp_CollectionServlet extends HttpServlet {
 
         String way=request.getParameter("way");//得到收藏方式,1为加入，2为取消
 
+        String showway=request.getParameter("showway");//得到详细信息类型，1是从房源界面查看，2是从我的租房信息查看,3是从我的收藏查看
+
         if(way.equals("1")){//加入收藏
             kp_collectionBean.addCollection(h_id, Integer.parseInt(user_id));//调用方法添加到收藏
         }
@@ -29,7 +32,12 @@ public class Kp_CollectionServlet extends HttpServlet {
             System.out.println("收藏故障");
         }
 
-        request.getRequestDispatcher("Tong_detailedinformationServlet?way="+way+"h_id="+h_id).forward(request,response);//返回房源详细信息Servlet
+        if(Objects.equals(showway, "3")){//从我的收藏进入的详细信息界面
+            request.getRequestDispatcher("Kp_ShowMyCollectionServlet").forward(request,response);//返回我的收藏Servlet
+        }
+        else{
+            request.getRequestDispatcher("Tong_detailedinformationServlet?way="+way+"h_id="+h_id).forward(request,response);//返回房源详细信息Servlet
+        }
     }
 
     @Override
