@@ -7,7 +7,9 @@
     border-radius: 25px;
     outline-style: ridge;
     outline-color: rgb(0,83,119,.5) ;
+    -moz-outline-radius: 25px;
 }
+
 .login{
     background-color: white;
     padding: 20px;
@@ -36,13 +38,14 @@ span{
     border-radius: 10px;
     border: rgb(0,83,119) solid 1px ;
 }
+
+
 .eyes{
     width: 20px;
     margin-left: -32px;
     margin-bottom: -5px;
 }
 .left-right{
-
     margin-top: 15px;
 }
 .left{
