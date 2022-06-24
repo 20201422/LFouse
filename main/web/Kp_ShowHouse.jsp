@@ -40,8 +40,8 @@
 
 <header>
     <div class="header">
-        <img src="Image/logo.jpg" title="" alt="logo" class="logo">
-        <img src="Image/name.jpg" title="" alt="LFouse" class="name">
+        <img src="Image/logo.jpg" title="" alt="logo" class="logo" onclick="window.location.href='index.jsp'">
+        <img src="Image/name.jpg" title="" alt="LFouse" class="name" onclick="window.location.href='index.jsp'">
         <span class="header_name">提供最好的租房服务</span>
         <%
             if(tel==null|| tel.equals("")){//未登录
@@ -79,13 +79,7 @@
         }else{//已登录
         %>
         <p><a href="Lrx_Cz.jsp">我要出租</a></p>
-        <p id="My"><a>我的</a>
-        <div id="MyCzOrZf" class="MyCzOrZf" >
-            <a class="typeface" href="Lrx_ShowServlet" id='MyCz'>我的出租</a><br>
-            <a class="typeface" href='' id='MyZf'>我的租房</a><br>
-            <a class="typeface" href='' id='MyInform'>我的信息</a><br>
-        </div>
-        </p>
+        <p><a href="Kp_ShowMyRentHouseServlet">我的</a></p>
         <%
             }
         %>
