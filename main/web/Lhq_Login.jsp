@@ -26,42 +26,59 @@
         </div>
     </div>
 </header>
-<div style="background-color: transparent;width: 100%;height: 14%">
+<div style="height: 70%;background-color: white;width: 100%;margin-top: 2%">
+    <div class="card">
+                <%
+                    String errorMsg = (String) request.getAttribute("errorMsg");
+                    if (errorMsg != null) {
+                        %>
+                    <div class="errorMsg" style="background-color: #F5F5F7;height: 8%;width: 80%;margin-left: 10%;border-bottom-left-radius: 20px;border-bottom-right-radius: 20px">
+                    <div style="height: 24%"></div>
+                        <span style="font-family: 等线 Light;font-size: 19px;"><%=errorMsg%></span>
+                    </div>
+                    <%}else{
+                        %>
+                            <%--<div style="height: 8%"></div>--%>
+                            <div class="errorMsg" style="background-color: transparent;height: 8%;width: 80%;margin-left: 10%;border-bottom-left-radius: 20px;border-bottom-right-radius: 20px">
+                            </div>
+                        <%
+                    }%>
+                <%
+                    String flg = request.getParameter("flg");
+                    String showway=request.getParameter("showway");
+                    String h_id=request.getParameter("h_id");
+                %>
+            <div style="height: 5%"></div>
+            <form style="height: 50%;width: 100%;" method="post" id="menu" name="menu" action="Lhq_LoginServlet?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>">
+                <div align="center"style="margin-top: 10%">
+                    <font style="font-size: 42px;font-family: 等线 Light">Welcome LFouse</font>
+                </div>
+                <div style="height: 80%">
+                    <div style="background-color: white;float: left;width: 80%;height: 24%;margin-left: 10%;float: left;margin-top: 16%">
+                        <input type="text"  class="password" placeholder=" 账号:"readonly=readonly style="float:left;font-family: 等线 Light;outline: none;width: 24%;height: 100%;background: none transparent scroll repeat 0% 0%;border-right: none;border-bottom-left-radius: 20px;border-top-left-radius: 20px;">
+                        <input type="text" class="account" name="account"  style="outline: none;float: left;font-family: 等线 Light;width: 76%;height: 100%;background: none transparent scroll repeat 0% 0%;border-left: none;border-bottom-right-radius: 20px;border-top-right-radius: 20px;">
+                    </div>
 
-</div>
-<div class="card">
-    <div class="login">
-        <div class="errorMsg">
-            <%
-                String errorMsg = (String) request.getAttribute("errorMsg");
-                String flg = request.getParameter("flg");
-                String showway=request.getParameter("showway");
-                String h_id=request.getParameter("h_id");
-                if (errorMsg != null) {
-            %>
-            <span><%=errorMsg%></span>
-            <%}%>
-        </div>
-        <form method="post" id="menu" name="menu" action="Lhq_LoginServlet?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>">
-            <div>
-                <span>账号：</span>
-                <input type="text" class="account" name="account" placeholder="请输入账号">
+                    <div style="background-color: white;float: left;width: 80%;height: 24%;margin-left: 10%;float: left;margin-top: 4%">
+                        <input type="text"  class="password" placeholder=" 密码:"readonly=readonly style="float:left;font-family: 等线 Light;outline: none;width: 24%;height: 100%;background: none transparent scroll repeat 0% 0%;border-right: none;border-bottom-left-radius: 20px;border-top-left-radius: 20px;">
+                        <input type="password" id="password" name="password" class="password" style="float:left; font-family: 等线 Light;width: 76%;height: 100%;outline: none;background: none transparent scroll repeat 0% 0%;border-left: none;border-bottom-right-radius: 20px;border-top-right-radius: 20px;">
+                    </div>
+                    <img style="float: right;margin-right: 16%;margin-top: -8%" class="eyes" id="eyes" alt="" src="Image/hide.jpg" onclick="change()">
+                </div>
+                <div class="login-button" ><input style="height: 20%;width: 80%;margin-top: -2%;font-size: 20px;font-family: 等线 Light;" type="submit" value="立 即 登 录"></div>
+                <div style="float: left;margin-top: 3%;width: 100%">
+                    <a style="margin-left: 0%;text-decoration: none;color: #3b3b3c;font-family: 等线 Light;" class="right" href="Lhq_Search.jsp">忘记密码?</a>
+                    |
+                    <a style="margin-left: 0%;text-decoration: none;color: #3b3b3c;font-family: 等线 Light;"  href="Lhq_Register.jsp" class="left">立即注册！</a>
+                </div>
 
-            </div>
+            </form>
 
-            <div><span>密码：</span>
-                <input type="password" id="password" name="password" class="password" placeholder="请输入密码">
-                <img class="eyes" id="eyes" alt="" src="Image/hide.jpg" onclick="change()">
-            </div>
-            <div class="left-right"><a href="Lhq_Register.jsp" class="left">注册</a> <a class="right" href="Lhq_Search.jsp">忘记密码?</a>
-            </div>
-            <br>
-            <div class="login-button"><input type="submit" value="登录"></div>
-        </form>
     </div>
-</div>
-<div style="background-color: transparent;width: 100%;height: 20%">
 
+    <div style="height: 4%">
+
+    </div>
 </div>
 
 <footer>

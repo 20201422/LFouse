@@ -1,24 +1,27 @@
 .card {
-    background-color: rgb(5,151,242,.8);
-    padding: 30px;
-    margin: auto;
-    text-align:center;
-    width:30%;
-    border-radius: 25px;
-    outline-style: ridge;
-    outline-color: rgb(0,83,119,.5) ;
-    -moz-outline-radius: 25px;
-}
-
-.login{
+    float: left;
     background-color: white;
-    padding: 20px;
-    width:75%;
-    height: 20%;
-    margin: auto;
-    border-radius: 25px;
-    text-align: center;
+    margin-left: 40%;
+    margin-top: 2%;
+    text-align:center;
+    width:24%;
+    height: 90%;
+    border-radius: 10px;
+    -moz-outline-radius: 25px;
+    transition: all 0.45s;
 }
+.card:hover{
+    box-shadow: 1px 1px 10px #a4a4a6;
+    transform: scale(1.02);
+}
+/*.login{*/
+    /*background-color: #F5F5F7;*/
+    /*width:80%;*/
+    /*height: 80%;*/
+    /*margin: auto;*/
+    /*border-radius: 25px;*/
+    /*text-align: center;*/
+/*}*/
 
 .menu{
     margin: auto;
@@ -32,34 +35,33 @@ span{
 }
 
 .password ,.account{
-    margin-top: 10px;
-    width: 190px;
-    height: 30px;
-    border-radius: 10px;
+    font-size: 24px;
+
+    /*border-radius: 10px;*/
     border: rgb(0,83,119) solid 1px ;
 }
 
 
 .eyes{
+    float: left;
     width: 20px;
-    margin-left: -32px;
-    margin-bottom: -5px;
+    margin-left: 86%;
+    margin-top: -12%;
 }
 .left-right{
-    margin-top: 15px;
+
 }
 .left{
-    margin-right: 30px;
-    letter-spacing:2px;
+
 }
 
 .right{
-    margin-left: 30px;
+
 }
 /* 提交按钮 */
 input[type="submit"] {
     margin-top: -12px;
-    background-color: #005377;
+    background-color: #0597F2;
     color: #fff;
     border-radius: 20px;
     padding: 8px;
@@ -75,10 +77,7 @@ input[type="submit"] {
     -ms-transition: 0.5s all;
 }
 
-input[type="submit"]:hover {
-    background: #fed14e;
-    color: #000;
-}
+
 
 
 /*.password{*/
