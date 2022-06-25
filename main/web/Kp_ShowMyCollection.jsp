@@ -84,7 +84,7 @@
 <div class="middle">
     <div class="locationfindhouse">
     <%
-        if(list!=null){//有收藏
+        if(list.size()!=0){//有收藏
     %>
         <div class="checkOrder_Head">
             <h1>您的收藏</h1>
