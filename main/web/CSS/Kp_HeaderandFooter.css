@@ -8,17 +8,17 @@
     min-height: 60px;
 }
 .logo{
-    width: 4%;
+    width: 56px;
 }
 .name{
-    width: 5%;
+    width: 70px;
 }
 .header_name{
     color: white;
     font-size: 22px;
     vertical-align: center;
     position:absolute;
-    padding: 16px 0 0 14px;
+    padding: 24px 0 0 14px;
 }
 .head_welcome{
     float: right;
