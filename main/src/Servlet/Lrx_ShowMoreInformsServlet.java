@@ -13,10 +13,14 @@ import java.util.List;
 public class Lrx_ShowMoreInformsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=utf-8");
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
         String h_id=request.getParameter("h_id");
         Lrx_CzDao cz=new Lrx_CzDao();
         Lrx_NotCzMoreInforms ln=cz.getNorCzMoreInforms(h_id);
-        request.getSession().setAttribute("oneInform",ln);
+        System.out.println(ln.getH_name());
+        request.setAttribute("oneInform",ln);
         request.getRequestDispatcher("/Lrx_MyNotCzMoreInforms.jsp").forward(request,response);
     }
 

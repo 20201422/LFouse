@@ -20,6 +20,7 @@ public class Lrx_CzDao extends BaseDao{
         return queryForOne(Lrx_NotCzMoreInforms.class,"SELECT h_id,h_name,h_location,h_price,h_layout,h_type,h_area,h_elevator,h_toward,h_traffic,h_floor\n" +
                                                         "FROM h_resources\n" +
                                                         "WHERE h_id="+h_id+";");
+
     }
     //添加房源信息
     public void AddHouse(String user_id,String h_name,String h_location,String h_price,String h_layout,String h_type,String area,

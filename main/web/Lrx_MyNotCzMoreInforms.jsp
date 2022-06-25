@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%String uname= (String) session.getAttribute("uname");//得到用户名字%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
@@ -49,20 +50,57 @@
     </header>
 
     <%
-        Lrx_NotCzMoreInforms lncmi=(Lrx_NotCzMoreInforms)request.getSession().getAttribute("oneInform");
+        Lrx_NotCzMoreInforms lncmi=(Lrx_NotCzMoreInforms)request.getAttribute("oneInform");
     %>
     <div class="myChangeTable">
         <form action="Lrx_ModifyServlet?h_id=<%=lncmi.getH_id()%>" method="post">
-            房名<input type="text" name="h_name" value=<%=lncmi.getH_name()%>><br>
-            房位<input type="text" name="h_location" value=<%=lncmi.getH_location()%>><br>
-            房价<input type="text" name="h_price" value="<%=lncmi.getH_price()%>"><br>
-            户型<input type="text" name="h_layout" value=<%=lncmi.getH_layout()%>><br>
-            类型<input type="text" name="h_type" value=<%=lncmi.getH_type()%>><br>
-            面积<input type="text" name="h_area" value="<%=lncmi.getH_area()%>"><br>
-            是否有电梯<input type="text" name="h_elevator" value="<%=lncmi.getH_elevator()%>"><br>
-            朝向<input type="text" name="h_toward" value="<%=lncmi.getH_toward()%>"><br>
-            交通情况<input type="text" name="h_traffic" value=<%=lncmi.getH_traffic()%>><br>
-            楼层<input type="text" name="h_floor" value=<%=lncmi.getH_floor()%>><br>
+            <table>
+                <tr>
+                    <td colspan="2">房名：<input type="text" name="h_name" value=<%=lncmi.getH_name()%>></td>
+                    <td colspan="2">房位：<input type="text" name="h_location" value=<%=lncmi.getH_location()%>></td>
+                </tr>
+                <tr>
+                    <td>房价：<input style="width: 100px" type="text" name="h_price" value="<%=lncmi.getH_price()%>"></td>
+                    <td>户型：<input style="width: 100px" type="text" name="h_layout" value=<%=lncmi.getH_layout()%>></td>
+                    <td>类型：
+                        <select style="width: 100px" name="h_type">
+                            <%
+                                String type=lncmi.getH_type();
+                            %>
+                            <option <c:if test="${type.equals('商品房')}"> selected="selected"</c:if>>商品房</option>
+                            <option <c:if test="${type.equals('别墅')}"> selected="selected"</c:if>>别墅</option>
+                            <option <c:if test="${type.equals('写字楼')}"> selected="selected"</c:if>>写字楼</option>
+                            <option <c:if test="${type.equals('民宿')}"> selected="selected"</c:if>>民宿</option>
+                            <option <c:if test="${type.equals('公寓')}"> selected="selected"</c:if>>公寓</option>
+                        </select>
+                    </td>
+                    <td>面积：<input style="width: 100px" type="text" name="h_area" value="<%=lncmi.getH_area()%>"></td>
+                </tr>
+                <tr>
+                    <td>是否有电梯：
+                        <select style="width: 100px" name="h_elevator" onselect="<%=lncmi.getH_elevator()%>">
+                            <option value="1">有</option>
+                            <option value="0">无</option>
+                        </select>
+                    </td>
+                    <td>朝向：
+                        <select style="width: 100px" name="h_toward" onselect="<%=lncmi.getH_toward()%>">
+                            <option value="朝南" selected>朝南</option>
+                            <option value="朝北">朝北</option>
+                            <option value="朝东">朝东</option>
+                            <option value="朝西">朝西</option>
+                            <option value="东南">东南</option>
+                            <option value="西南">西南</option>
+                            <option value="东北">东北</option>
+                            <option value="西北">西北</option>
+                        </select>
+                    </td>
+                    <td colspan="2">楼层：<input type="text" name="h_floor" value=<%=lncmi.getH_floor()%>></td>
+                </tr>
+                <tr>
+                    <td colspan="4">交通情况：<input style="width: 600px" type="text" name="h_traffic" value=<%=lncmi.getH_traffic()%>></td>
+                </tr>
+            </table>
             <input type="submit" value="保存修改">
             <input type="reset" value="重置">
         </form>
