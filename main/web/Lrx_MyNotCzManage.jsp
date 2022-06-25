@@ -114,23 +114,24 @@
         <div>
             <table class="providerTable" cellpadding="0" cellspacing="0">
                 <tr  class="firstTr"><th>房名</th><th>房位</th><th>状态</th><th>操作</th></tr>
-                <c:forEach items="${List}" var="Lrx_NotCz">
+                <c:forEach items="${List}" var="Lrx_NotCz" varStatus="status">
                     <tr>
                         <td>${Lrx_NotCz.h_name}</td>
                         <td>${Lrx_NotCz.h_location}</td>
                         <td>
-                            <c:if test=" ${Lrx_NotCz.h_status==0}">待审核</c:if>
-                            <c:if test=" ${Lrx_NotCz.h_status==1}">审核通过，待上架</c:if>
-                            <c:if test=" ${Lrx_NotCz.h_status==2}">上架了，未出租</c:if>
-                            <c:if test=" ${Lrx_NotCz.h_status==-1}">审核不通过</c:if>
+
+                            <c:if test="${Lrx_NotCz.h_status}==0">待审核</c:if>
+                            <c:if test="${Lrx_NotCz.h_status}==1">审核通过，待上架</c:if>
+                            <c:if test="${Lrx_NotCz.h_status}==2">上架了，未出租</c:if>
+                            <c:if test="${Lrx_NotCz.h_status}==-1">审核不通过</c:if>
 
                                 ${Lrx_NotCz.h_status}
                         </td>
                         <td>
                             <a href="Lrx_ShowMoreInformsServlet?h_id=${Lrx_NotCz.h_id}">修改</a>
-                            <a>删除</a>
-                            <a>上架</a>
-                            <a>下架</a>
+                            <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
+                            <a href="Lrx_PutOnServlet?h_id=${Lrx_NotCz.h_id}">上架</a>
+                            <a href="Lrx_PutOffServlet?h_id=${Lrx_NotCz.h_id}">下架</a>
                         </td>
 
 
