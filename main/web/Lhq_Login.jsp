@@ -69,7 +69,7 @@
                 <div style="float: left;margin-top: 3%;width: 100%">
                     <a class="right" href="Lhq_Search.jsp">忘记密码?</a>
                     |
-                    <a href="Lhq_Register.jsp" class="left">立即注册！</a>
+                    <a href="Lhq_Register.jsp?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>" class="left">立即注册！</a>
                 </div>
 
             </form>

@@ -24,9 +24,14 @@
     </div>
   </div>
 </header>
+<%
+  String flg = request.getParameter("flg");
+  String showway=request.getParameter("showway");
+  String h_id=request.getParameter("h_id");
+%>
 <div  class="wrap">
   <div class="head_color">欢迎注册!</div>
-  <form class="form_Register" method="post" action="Lhq_RegisterServlet">
+  <form class="form_Register" method="post" action="Lhq_RegisterServlet?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>">
     <div><span>电话：</span><input class="move" type="text" id="tel" name="tel"></div>
     <div><span>姓名：</span><input class="move" type="text" id="uname" name="uname"></div>
     <div><span>邮箱：</span><input class="move" type="text" id="email" name="email"></div>

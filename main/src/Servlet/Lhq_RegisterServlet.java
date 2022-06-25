@@ -24,6 +24,9 @@ public class Lhq_RegisterServlet extends HttpServlet {
         String email= request.getParameter("email");
         String sex= request.getParameter("sex");
         String age= request.getParameter("age");
+        String flg = request.getParameter("flg");
+        String showway = request.getParameter("showway");
+        String h_id = request.getParameter("h_id");
         String lodge_num= request.getParameter("lodge_num");
         String rent_num= request.getParameter("rent_num");
         Lhq_LoginBean login=new Lhq_LoginBean();
@@ -32,6 +35,9 @@ public class Lhq_RegisterServlet extends HttpServlet {
         if(user==null&&!Objects.equals(age,"")&&!Objects.equals(lodge_num,"")&&!Objects.equals(rent_num,"")){
             register.add(0, tel, uname, email, upwd, sex, Integer.parseInt(age), Integer.parseInt(lodge_num), Integer.parseInt(rent_num));
             request.setAttribute("errorMsg","注册成功！");
+            request.setAttribute("flg",flg);
+            request.setAttribute("showway",showway);
+            request.setAttribute("h_id",h_id);
             request.getRequestDispatcher("/Lhq_Login.jsp").forward(request,response);
 
         }

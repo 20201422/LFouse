@@ -19,7 +19,7 @@ frm.onsubmit = function () {
             return false;
         }
         //校验姓名
-        if (!(/[\u4e00-\u9fa5_a-zA-Z0-9_]{5,20}/.test(uname.value))) {
+        if (!(/[\u4e00-\u9fa5_a-zA-Z0-9_]{2,20}/.test(uname.value))) {
             alert("格式错误！姓名长度在2-20,不包含特殊字符");
             return false;
         }
