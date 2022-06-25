@@ -20,8 +20,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="commons-beanutils-1.9.4" level="project" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="library" name="commons-beanutils-1.9.4" level="project" />
+    <orderEntry type="module-library">
       <library name="JUnit4">
         <CLASSES>
           <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13.1/junit-4.13.1.jar!/" />
@@ -31,8 +31,8 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" name="standard" level="project" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="library" name="standard" level="project" />
+    <orderEntry type="module-library">
       <library name="lib">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/main/web/WEB-INF/lib/commons-fileupload-1.4.jar!/" />
@@ -45,7 +45,7 @@
         <jarDirectory url="file://$MODULE_DIR$/main/web/WEB-INF/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" name="commons-fileupload-1.4" level="project" />
-    <orderEntry type="library" exported="" name="src" level="project" />
+    <orderEntry type="library" name="commons-fileupload-1.4" level="project" />
+    <orderEntry type="library" name="src" level="project" />
   </component>
 </module>

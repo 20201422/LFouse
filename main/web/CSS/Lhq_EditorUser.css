@@ -1,0 +1,61 @@
+.card {
+    background-color: #f5f5f7;
+    padding: 30px;
+    margin: auto;
+    text-align:center;
+    width:20%;
+    border-radius: 25px;
+    outline-style: ridge;
+    outline-color: transparent ;
+    -moz-outline-radius: 25px;
+}
+.move{
+    display:block;
+    text-align: left;
+    color:#3b3b3c;
+}
+input[type="text"]{
+    transform:translateY(-100%);
+    margin-left: 20%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #3b3b3c;
+}
+.left{
+    background-color: transparent;
+    color: #0597F2;
+    padding: 8px;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    margin-left: 20%;
+}
+
+.right{
+    background-color: transparent;
+    color: #0597F2;
+    outline: none;
+    border: none;
+    padding: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    margin-right: 20%;
+}
+input[type="button"]:hover{
+    color: #3b3b3c;
+}
+input[type="submit"]:hover{
+    color: #3b3b3c;
+}

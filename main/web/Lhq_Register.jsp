@@ -37,7 +37,7 @@
     <div><span>年龄：</span><input type="text" id="age" name="age"></div>
     <div><span>出租数量：</span><input type="text" id="lodge_num" name="lodge_num" value="0" readonly="true"></div>
     <div><span>租房数量：</span><input type="text" id="rent_num" name="rent_num" value="0" readonly="true"></div>
-    <div class="send-button"><input type = "submit" class="submit" value="提交">&nbsp;&nbsp;<input type="button" class="cancel" value="取消" onclick="window.location.href='Kp_ShowHouseServlet';"></div>
+    <div class="send-button"><input type = "submit" class="submit" value="提交">&nbsp;&nbsp;<input type="button" class="cancel" value="取消" onclick="window.location.href='Kp_ShowHouseServlet?way=1';"></div>
   </form>
 </div>
 

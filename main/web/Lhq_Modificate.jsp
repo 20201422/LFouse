@@ -9,6 +9,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/Lhq_Modificate.css" />
     <title>LFouse-修改密码</title>
 </head>
 <%  String upwd=request.getParameter("upwd");
@@ -65,6 +66,7 @@
         %>
     </nav>
 </header>
+<br>
 <form id="menu" name="menu" method="post" action="Lhq_ModificateServlet">
     <input type="hidden" name="tel" value=<%=ntel%>>
     <input type="hidden" id="check" value=<%=upwd%>>
