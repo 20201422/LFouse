@@ -1,12 +1,7 @@
-.div {
-    margin: 0;
-    padding: 0;
-}
-
 .wrap{
     width: 540px;
     height: 400px;
-    background-color:rgb(255,255,255);
+    background-color:#f5f5f7;
     margin: 50px auto;
     border: solid rgb(224,224,224) 1px;
 
@@ -17,13 +12,34 @@
     padding: 10px 0px 10px 10px;
     width: 530px;
     height: 30px;
-    background-color: rgb(0,83,119,.8);
-    color:rgb(255,255,255);
+    background-color: #0597F2;
+    color:white;
     letter-spacing:4px;
     font-size: 18px;
 
 }
-
+.sex{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #3b3b3c;
+    margin-left: 50px;
+}
+.move{
+    width:200px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #3b3b3c;
+    margin-left: 50px;
+}
+.nmove{
+    width:200px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #3b3b3c;
+}
 .form_Register{
     width: 490px;
     height: 330px;
@@ -52,9 +68,26 @@
 
 .submit{
     margin-top: -12px;
-    background-color: rgb(0,83,119,.8);
-    color: #fff;
-    border-radius: 20px;
+    background-color: transparent;
+    color: #0597F2;
+    padding: 8px;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    width: 30%;
+    cursor: pointer;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    margin-left: 65px;
+}
+
+.cancel{
+    margin-top: -12px;
+    background-color: transparent;
+    color: #0597F2;
     padding: 8px;
     outline: none;
     border: none;
@@ -67,21 +100,6 @@
     -o-transition: 0.5s all;
     -ms-transition: 0.5s all;
 }
-
-.cancel{
-    margin-top: -12px;
-    background-color: rgb(0,83,119,.8);
-    color: #fff;
-    border-radius: 20px;
-    padding: 8px;
-    outline: none;
-    border: none;
-    font-size: 17px;
-    width: 30%;
-    cursor: pointer;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
+.submit:hover,.cancel:hover {
+    color: #166ece;
 }

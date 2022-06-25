@@ -26,20 +26,20 @@
         </div>
     </div>
 </header>
-<div style="height: 70%;background-color: white;width: 100%;margin-top: 2%">
+<div class="big">
     <div class="card">
                 <%
                     String errorMsg = (String) request.getAttribute("errorMsg");
                     if (errorMsg != null) {
                         %>
-                    <div class="errorMsg" style="background-color: #F5F5F7;height: 8%;width: 80%;margin-left: 10%;border-bottom-left-radius: 20px;border-bottom-right-radius: 20px">
+                    <div class="errorMsg">
                     <div style="height: 24%"></div>
                         <span style="font-family: 等线 Light;font-size: 19px;"><%=errorMsg%></span>
                     </div>
                     <%}else{
                         %>
                             <%--<div style="height: 8%"></div>--%>
-                            <div class="errorMsg" style="background-color: transparent;height: 8%;width: 80%;margin-left: 10%;border-bottom-left-radius: 20px;border-bottom-right-radius: 20px">
+                            <div class="errorMsg1">
                             </div>
                         <%
                     }%>
@@ -54,22 +54,22 @@
                     <font style="font-size: 42px;font-family: 等线 Light">Welcome LFouse</font>
                 </div>
                 <div style="height: 80%">
-                    <div style="background-color: white;float: left;width: 80%;height: 24%;margin-left: 10%;float: left;margin-top: 16%">
+                    <div class="ipt">
                         <input type="text"  class="password" placeholder=" 账号:"readonly=readonly style="float:left;font-family: 等线 Light;outline: none;width: 24%;height: 100%;background: none transparent scroll repeat 0% 0%;border-right: none;border-bottom-left-radius: 20px;border-top-left-radius: 20px;">
                         <input type="text" class="account" name="account"  style="outline: none;float: left;font-family: 等线 Light;width: 76%;height: 100%;background: none transparent scroll repeat 0% 0%;border-left: none;border-bottom-right-radius: 20px;border-top-right-radius: 20px;">
                     </div>
 
-                    <div style="background-color: white;float: left;width: 80%;height: 24%;margin-left: 10%;float: left;margin-top: 4%">
+                    <div class="ipt1">
                         <input type="text"  class="password" placeholder=" 密码:"readonly=readonly style="float:left;font-family: 等线 Light;outline: none;width: 24%;height: 100%;background: none transparent scroll repeat 0% 0%;border-right: none;border-bottom-left-radius: 20px;border-top-left-radius: 20px;">
                         <input type="password" id="password" name="password" class="password" style="float:left; font-family: 等线 Light;width: 76%;height: 100%;outline: none;background: none transparent scroll repeat 0% 0%;border-left: none;border-bottom-right-radius: 20px;border-top-right-radius: 20px;">
                     </div>
-                    <img style="float: right;margin-right: 16%;margin-top: -8%" class="eyes" id="eyes" alt="" src="Image/hide.jpg" onclick="change()">
+                    <img class="eyes" id="eyes" alt="" src="Image/hide.jpg" onclick="change()">
                 </div>
-                <div class="login-button" ><input style="height: 20%;width: 80%;margin-top: -2%;font-size: 20px;font-family: 等线 Light;" type="submit" value="立 即 登 录"></div>
+                <div class="login-button" ><input class="submit" type="submit" value="立 即 登 录"></div>
                 <div style="float: left;margin-top: 3%;width: 100%">
-                    <a style="margin-left: 0%;text-decoration: none;color: #3b3b3c;font-family: 等线 Light;" class="right" href="Lhq_Search.jsp">忘记密码?</a>
+                    <a class="right" href="Lhq_Search.jsp">忘记密码?</a>
                     |
-                    <a style="margin-left: 0%;text-decoration: none;color: #3b3b3c;font-family: 等线 Light;"  href="Lhq_Register.jsp" class="left">立即注册！</a>
+                    <a href="Lhq_Register.jsp" class="left">立即注册！</a>
                 </div>
 
             </form>
