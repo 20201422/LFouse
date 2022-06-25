@@ -63,10 +63,16 @@
     border-radius:24px;
     transform: scale(1.02);
 }
-.menu p , .menu-two p{
+.menu p{
     display: inline-block;
     margin: 0 22px 0 22px;
     padding: 14px 0 14px 0;
+    font-size: 20px;
+}
+.menu-two p{
+    display: inline-block;
+    margin: 0 22px 0 22px;
+    padding: 2px 0 2px 0;
     font-size: 20px;
 }
 .menu p a , .menu-two p a{
