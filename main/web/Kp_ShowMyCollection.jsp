@@ -155,7 +155,9 @@
     %>
     </div>
 </div>
-
+<%
+    if(list.size()!=0){//有收藏
+%>
 <div class="fenye">
     <div class="fy_message">
         共${count}条记录,${pageNo}/${pagecount}页&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -191,6 +193,9 @@
         </c:if>
     </div>
 </div>
+<%
+    }
+%>
 
 <div class="like">
     <hr>
