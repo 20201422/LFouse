@@ -63,10 +63,12 @@ public class Kp_ShowHouseBean extends BaseDao{
             sql=sql+" and (h_traffic like'%号线%' or h_traffic like '%地铁%')";
         }
 
+        sql=sql+" group by photo.h_id";//按照房源id分组，解决一个房源因为多张图片而重复查询的bug
+
         if(Objects.equals(sort, "on")){//添加是否降序
             sql=sql+" order by h_price DESC";
         }
-        
+
         if(!Objects.equals(pageNo, "0")){//如果为零则表示无分页
             int pageIndex=(Integer.parseInt(pageNo) -1)*gs;//每一页的第一条数据的序号
             sql=sql+" limit "+pageIndex+","+gs;
@@ -92,7 +94,8 @@ public class Kp_ShowHouseBean extends BaseDao{
         String sql="select collection.h_id,h_name,h_location,h_price,h_layout,h_type,h_area\n" +
                 "     ,h_elevator,h_toward,h_traffic,h_status,h_floor,photo_name\n" +
                 "from collection,h_resources,photo\n" +
-                "where h_resources.h_id=photo.h_id and collection.h_id=h_resources.h_id and collection.user_id=?";
+                "where h_resources.h_id=photo.h_id and collection.h_id=h_resources.h_id and collection.user_id=? \n" +
+                "group by photo.h_id ";
 
         if(!Objects.equals(pageNo, "0")){//如果为零则表示无分页
             int pageIndex=(Integer.parseInt(pageNo) -1)*gs;//每一页的第一条数据的序号

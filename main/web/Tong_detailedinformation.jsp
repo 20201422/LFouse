@@ -86,7 +86,7 @@
         <div class="title-name">
             <h1><%=h_resources.getH_name()%></h1>
             <%
-                if (h_resources.getH_status() == 3) {
+                if (h_resources.getH_status() == 3 && !Objects.equals(showway, "2")) {
             %>
             <h1 class="title-error">（已租出）</h1>
             <%
