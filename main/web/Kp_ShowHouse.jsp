@@ -116,12 +116,13 @@
             <input type="checkbox" onchange="document.conditions.submit();" name="traffic" id="ctraffic">近地铁
             <%
                 }
-            %>
+            %>&nbsp&nbsp&nbsp&nbsp
+            <input type="checkbox" onchange="document.conditions.submit();" name="sort" id="csort">降序
         </form>
         <input type="hidden" id="location" value="${location}"><input type="hidden" id="price" value="${price}">
         <input type="hidden" id="type" value="${type}"><input type="hidden" id="layout" value="${layout}">
         <input type="hidden" id="toward" value="${toward}"><input type="hidden" id="elevator" value="${elevator}">
-        <input type="hidden" id="traffic" value="${traffic}">
+        <input type="hidden" id="traffic" value="${traffic}"><input type="hidden" id="sort" value="${sort}">
     </div>
 
     <div class="locationfindhouse">

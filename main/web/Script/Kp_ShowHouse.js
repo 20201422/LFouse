@@ -30,4 +30,7 @@ window.onload=function (){
     if(document.getElementById("traffic").value==="on"){
         document.getElementById("ctraffic").checked=true
     }
+    if(document.getElementById("sort").value==="on"){
+        document.getElementById("csort").checked=true
+    }
 }

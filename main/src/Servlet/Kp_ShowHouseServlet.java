@@ -24,6 +24,7 @@ public class Kp_ShowHouseServlet extends HttpServlet {
         String layout=request.getParameter("layout");//得到选择的房型
         String toward=request.getParameter("toward");//得到选择的朝向
         String elevator=request.getParameter("elevator");//得到有无电梯
+        String sort=request.getParameter("sort");//得到是否降序
 
         String pageNo=request.getParameter("pageNo");//获取页数
         int gs=5;//一页的条数
@@ -31,25 +32,25 @@ public class Kp_ShowHouseServlet extends HttpServlet {
         int pagecount;//总页数
 
         if(Objects.equals(way, "1")){//选择的类型为位置找房
-            count = kp_showHouseBean.ShowHouse("0",0,"0",location,price,type,layout,toward,elevator).size();
+            count = kp_showHouseBean.ShowHouse("0",0,"0",location,price,type,layout,toward,elevator,sort).size();
         }
         else if(Objects.equals(way, "2")){//选择的类型为地铁找房
-            count = kp_showHouseBean.ShowHouse("0",0,traffic,location,price,type,layout,toward,elevator).size();
+            count = kp_showHouseBean.ShowHouse("0",0,traffic,location,price,type,layout,toward,elevator,sort).size();
         }
         else if(Objects.equals(way, "3")){//选择的类型为民宿
-            count = kp_showHouseBean.ShowHouse("0",0,traffic,location,price,"民宿",layout,toward,elevator).size();
+            count = kp_showHouseBean.ShowHouse("0",0,traffic,location,price,"民宿",layout,toward,elevator,sort).size();
         }
         else if(Objects.equals(way, "4")){//选择的类型为公寓
-            count = kp_showHouseBean.ShowHouse("0",0,traffic,location,price,"公寓",layout,toward,elevator).size();
+            count = kp_showHouseBean.ShowHouse("0",0,traffic,location,price,"公寓",layout,toward,elevator,sort).size();
         }
         else if(Objects.equals(way, "5")){//选择的类型为别墅
-            count = kp_showHouseBean.ShowHouse("0",0,traffic,location,price,"别墅",layout,toward,elevator).size();
+            count = kp_showHouseBean.ShowHouse("0",0,traffic,location,price,"别墅",layout,toward,elevator,sort).size();
         }
         else if(Objects.equals(way, "6")){//选择的类型为商品房
-            count = kp_showHouseBean.ShowHouse("0",0,traffic,location,price,"商品房",layout,toward,elevator).size();
+            count = kp_showHouseBean.ShowHouse("0",0,traffic,location,price,"商品房",layout,toward,elevator,sort).size();
         }
         else if(Objects.equals(way, "7")){//选择的类型为写字楼
-            count = kp_showHouseBean.ShowHouse("0",0,traffic,location,price,"写字楼",layout,toward,elevator).size();
+            count = kp_showHouseBean.ShowHouse("0",0,traffic,location,price,"写字楼",layout,toward,elevator,sort).size();
         }
 
         if(pageNo==null|| pageNo.equals(""))//如果页数为空则赋值为1
@@ -78,40 +79,41 @@ public class Kp_ShowHouseServlet extends HttpServlet {
         request.setAttribute("layout",layout);//保存选择的房型
         request.setAttribute("toward",toward);//保存选择的朝向
         request.setAttribute("elevator",elevator);//保存有无电梯
+        request.setAttribute("sort",sort);//保存是否降序
 
         request.setAttribute("way",way);//保存查找方式
 
         if(count==0){//如果未找到房源，就展示所有房源
-            request.setAttribute("ShowAllHouse", kp_showHouseBean.ShowHouse(pageNo,gs,"0","","","","","",""));//展示房源
+            request.setAttribute("ShowAllHouse", kp_showHouseBean.ShowHouse(pageNo,gs,"0","","","","","","",sort));//展示房源
         }
 
         if(Objects.equals(way, "1")){//选择的类型为位置找房
             request.setAttribute("type",type);//保存选择的类型
-            request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse(pageNo,gs,"0",location,price,type,layout,toward,elevator));//展示房源
+            request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse(pageNo,gs,"0",location,price,type,layout,toward,elevator,sort));//展示房源
         }
         else if(Objects.equals(way, "2")){//选择的类型为地铁找房
             request.setAttribute("type",type);//保存选择的类型
-            request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse(pageNo,gs,traffic,location,price,type,layout,toward,elevator));//展示房源
+            request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse(pageNo,gs,traffic,location,price,type,layout,toward,elevator,sort));//展示房源
         }
         else if(Objects.equals(way, "3")){//选择的类型为民宿
             request.setAttribute("type","民宿");//保存选择的类型
-            request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse(pageNo,gs,traffic,location,price,"民宿",layout,toward,elevator));//展示房源
+            request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse(pageNo,gs,traffic,location,price,"民宿",layout,toward,elevator,sort));//展示房源
         }
         else if(Objects.equals(way, "4")){//选择的类型为公寓
             request.setAttribute("type","公寓");//保存选择的类型
-            request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse(pageNo,gs,traffic,location,price,"公寓",layout,toward,elevator));//展示房源
+            request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse(pageNo,gs,traffic,location,price,"公寓",layout,toward,elevator,sort));//展示房源
         }
         else if(Objects.equals(way, "5")){//选择的类型为别墅
             request.setAttribute("type","别墅");//保存选择的类型
-            request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse(pageNo,gs,traffic,location,price,"别墅",layout,toward,elevator));//展示房源
+            request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse(pageNo,gs,traffic,location,price,"别墅",layout,toward,elevator,sort));//展示房源
         }
         else if(Objects.equals(way, "6")){//选择的类型为商品房
             request.setAttribute("type","商品房");//保存选择的类型
-            request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse(pageNo,gs,traffic,location,price,"商品房",layout,toward,elevator));//展示房源
+            request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse(pageNo,gs,traffic,location,price,"商品房",layout,toward,elevator,sort));//展示房源
         }
         else if(Objects.equals(way, "7")){//选择的类型为写字楼
             request.setAttribute("type","写字楼");//保存选择的类型
-            request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse(pageNo,gs,traffic,location,price,"写字楼",layout,toward,elevator));//展示房源
+            request.setAttribute("ShowHouse", kp_showHouseBean.ShowHouse(pageNo,gs,traffic,location,price,"写字楼",layout,toward,elevator,sort));//展示房源
         }
 
         request.getRequestDispatcher("/Kp_ShowHouse.jsp").forward(request,response);//返回位置找房jsp

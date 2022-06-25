@@ -7,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
     String user_id= (String) session.getAttribute("user_id");//得到用户id
     String tel= (String) session.getAttribute("tel");//得到用户电话号码
@@ -152,42 +153,41 @@
     </div>
 </div>
 
-<%--<div class="fenye">--%>
-<%--    <div class="fy_message">--%>
-<%--        共${count}条记录,${pageNo}/${pagecount}页&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp--%>
-<%--    </div>--%>
-<%--    <div class="fy_btn">--%>
-<%--        <c:choose>--%>
-<%--            <c:when test="${pageNo!=1}">--%>
-<%--                <a class="a"--%>
-<%--                   href="${pageContext.request.contextPath }/Kp_ShowHouseServlet?way=${way}&pageNo=1&location=${location}&price=${price}&type=${type}&layout=${layout}&toward=${toward}&traffic=${traffic}">--%>
-<%--                    首页</a>&nbsp&nbsp&nbsp--%>
-<%--                <a class="a"--%>
-<%--                   href="${pageContext.request.contextPath }/Kp_ShowHouseServlet?way=${way}&pageNo=${pageNo-1}&location=${location}&price=${price}&type=${type}&layout=${layout}&toward=${toward}&traffic=${traffic}">--%>
-<%--                    上一页</a>&nbsp&nbsp&nbsp--%>
-<%--            </c:when>--%>
-<%--            <c:otherwise>--%>
-<%--                <c:if test="${pageNo==1}">--%>
-<%--                    <a class="b">首页</a>&nbsp&nbsp&nbsp--%>
-<%--                    <a class="b">上一页</a>&nbsp&nbsp&nbsp--%>
-<%--                </c:if>--%>
-<%--            </c:otherwise>--%>
-<%--        </c:choose>--%>
-<%--        <c:if test="${pageNo!=pagecount}">--%>
-<%--            <a class="a"--%>
-<%--               href="${pageContext.request.contextPath }/Kp_ShowHouseServlet?way=${way}&pageNo=${pageNo+1}&location=${location}&price=${price}&type=${type}&layout=${layout}&toward=${toward}&traffic=${traffic}">--%>
-<%--                下一页</a>&nbsp&nbsp&nbsp--%>
-<%--            <a class="a"--%>
-<%--               href="${pageContext.request.contextPath }/Kp_ShowHouseServlet?way=${way}&pageNo=${pagecount}&location=${location}&price=${price}&type=${type}&layout=${layout}&toward=${toward}&traffic=${traffic}">--%>
-<%--                末页</a>--%>
-<%--        </c:if>--%>
-<%--        <c:if test="${pageNo==pagecount}">--%>
-<%--            <a class="b">下一页</a>&nbsp&nbsp&nbsp--%>
-<%--            <a class="b">末页</a>--%>
-<%--        </c:if>--%>
-<%--    </div>--%>
-<%--</div>--%>
-
+<div class="fenye">
+    <div class="fy_message">
+        共${count}条记录,${pageNo}/${pagecount}页&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    </div>
+    <div class="fy_btn">
+        <c:choose>
+            <c:when test="${pageNo!=1}">
+                <a class="a"
+                   href="${pageContext.request.contextPath }/Kp_ShowMyCollectionServlet?pageNo=1">
+                    首页</a>&nbsp&nbsp&nbsp
+                <a class="a"
+                   href="${pageContext.request.contextPath }/Kp_ShowMyCollectionServlet?pageNo=${pageNo-1}">
+                    上一页</a>&nbsp&nbsp&nbsp
+            </c:when>
+            <c:otherwise>
+                <c:if test="${pageNo==1}">
+                    <a class="b">首页</a>&nbsp&nbsp&nbsp
+                    <a class="b">上一页</a>&nbsp&nbsp&nbsp
+                </c:if>
+            </c:otherwise>
+        </c:choose>
+        <c:if test="${pageNo!=pagecount}">
+            <a class="a"
+               href="${pageContext.request.contextPath }/Kp_ShowMyCollectionServlet?pageNo=${pageNo+1}">
+                下一页</a>&nbsp&nbsp&nbsp
+            <a class="a"
+               href="${pageContext.request.contextPath }/Kp_ShowMyCollectionServlet?pageNo=${pagecount}">
+                末页</a>
+        </c:if>
+        <c:if test="${pageNo==pagecount}">
+            <a class="b">下一页</a>&nbsp&nbsp&nbsp
+            <a class="b">末页</a>
+        </c:if>
+    </div>
+</div>
 
 <footer>
     <hr>

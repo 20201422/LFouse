@@ -11,7 +11,9 @@ import java.util.Objects;
 
 public class Kp_ShowHouseBean extends BaseDao{
 
-    public List<H_resources> ShowHouse(String pageNo,int gs,String traffic,String location,String price,String type,String layout,String toward,String elevator){
+    public List<H_resources> ShowHouse(String pageNo,int gs,String traffic,
+                                       String location,String price,String type,
+                                       String layout,String toward,String elevator,String sort){
 
         String sql="select * from h_resources,photo where h_resources.h_id=photo.h_id and (h_status=2 or h_status=3)";
 
@@ -57,10 +59,14 @@ public class Kp_ShowHouseBean extends BaseDao{
         if(Objects.equals(elevator, "on")){//添加有无电梯搜素
             sql=sql+" and h_elevator=1";
         }
-        if(Objects.equals(traffic, "on")){
+        if(Objects.equals(traffic, "on")){//添加是否近地铁
             sql=sql+" and (h_traffic like'%号线%' or h_traffic like '%地铁%')";
         }
 
+        if(Objects.equals(sort, "on")){//添加是否降序
+            sql=sql+" order by h_price DESC";
+        }
+        
         if(!Objects.equals(pageNo, "0")){//如果为零则表示无分页
             int pageIndex=(Integer.parseInt(pageNo) -1)*gs;//每一页的第一条数据的序号
             sql=sql+" limit "+pageIndex+","+gs;
@@ -82,11 +88,16 @@ public class Kp_ShowHouseBean extends BaseDao{
 
     }
 
-    public List<H_resources> ShowMyCollection(int user_id){//展示我的收藏
+    public List<H_resources> ShowMyCollection(String pageNo,int gs,int user_id){//展示我的收藏
         String sql="select collection.h_id,h_name,h_location,h_price,h_layout,h_type,h_area\n" +
                 "     ,h_elevator,h_toward,h_traffic,h_status,h_floor,photo_name\n" +
                 "from collection,h_resources,photo\n" +
                 "where h_resources.h_id=photo.h_id and collection.h_id=h_resources.h_id and collection.user_id=?";
+
+        if(!Objects.equals(pageNo, "0")){//如果为零则表示无分页
+            int pageIndex=(Integer.parseInt(pageNo) -1)*gs;//每一页的第一条数据的序号
+            sql=sql+" limit "+pageIndex+","+gs;
+        }
 
         return queryForList(H_resources.class,sql,user_id);
     }

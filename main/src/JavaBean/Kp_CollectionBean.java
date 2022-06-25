@@ -3,6 +3,8 @@ package JavaBean;
 import Model.Collection;
 import org.junit.Test;
 
+import java.util.List;
+
 public class Kp_CollectionBean extends BaseDao{
 
     public void addCollection(int h_id,int user_id){//加入收藏
@@ -26,6 +28,14 @@ public class Kp_CollectionBean extends BaseDao{
         String sql="select * from collection where h_id=? and user_id=?";
 
         return queryForOne(Collection.class,sql,h_id,user_id);
+
+    }
+
+    public List<Collection> countCollection(int user_id){//收藏个数
+
+        String sql="select * from collection where user_id=?";
+
+        return queryForList(Collection.class,sql,user_id);
 
     }
 
