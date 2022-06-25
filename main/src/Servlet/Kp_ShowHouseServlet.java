@@ -30,6 +30,7 @@ public class Kp_ShowHouseServlet extends HttpServlet {
         int gs=5;//一页的条数
         int count=0;//总条数
         int pagecount;//总页数
+        int flag=1;//判断是否查找到房源
 
         if(Objects.equals(way, "1")){//选择的类型为位置找房
             count = kp_showHouseBean.ShowHouse("0",0,"0",location,price,type,layout,toward,elevator,sort).size();
@@ -51,6 +52,11 @@ public class Kp_ShowHouseServlet extends HttpServlet {
         }
         else if(Objects.equals(way, "7")){//选择的类型为写字楼
             count = kp_showHouseBean.ShowHouse("0",0,traffic,location,price,"写字楼",layout,toward,elevator,sort).size();
+        }
+
+        if(count==0){//如果未找到房源，就展示所有房源
+            count = kp_showHouseBean.ShowHouse("0",0,"0","","","","","","","").size();
+            flag=0;
         }
 
         if(pageNo==null|| pageNo.equals(""))//如果页数为空则赋值为1
@@ -83,7 +89,7 @@ public class Kp_ShowHouseServlet extends HttpServlet {
 
         request.setAttribute("way",way);//保存查找方式
 
-        if(count==0){//如果未找到房源，就展示所有房源
+        if(flag==0){//如果未找到房源，就展示所有房源
             request.setAttribute("ShowAllHouse", kp_showHouseBean.ShowHouse(pageNo,gs,"0","","","","","","",sort));//展示房源
         }
 
