@@ -23,7 +23,7 @@
     <title>LFouse-浏览用户信息</title>
 </head>
 
-<body>
+<body style="min-width: 1300px;min-height: 800px">
 
 <header>
     <div class="header">
@@ -188,17 +188,16 @@
                 }
             %>
         </div>
-        <div style="width: 82%;height: 8%;background-color: white;border-radius: 16px;margin-left: 9%;margin-top: 29%;display: flex">
-            <div style="margin-left: 31%;line-height: 240%">
-                <font style="color: #0597F2">共${YHYS}条记录<font/>
-                    <%-- /showServlet为从新转向showServlet，?pageNo=1&tiaoshu=<%=ts%>pageNo,tiaoshu为传递的两个参数--%>
-                    <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=1&tiaoshu=2&flag=5">首页</a>
-                    <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=${PageNo-1}&tiaoshu=2&flag=5">上一页</a>
-                    <font style="color: #0597F2">${PageNo}/${count}页</font>
-                    <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=${PageNo+1 }&tiaoshu=2&flag=5">下一页</a>
-                    <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=${count }&tiaoshu=2&flag=5">末页</a>
-            </div>
-        </div>
+
+    </div>
+    <div  style="text-align: center;width: 73%;height: 8%;background-color: white;border-radius: 16px;margin-left: 18%;margin-top: -4%;line-height: 240%">
+        <font style="color: #0597F2">共${YHYS}条记录<font/>
+            <%-- /showServlet为从新转向showServlet，?pageNo=1&tiaoshu=<%=ts%>pageNo,tiaoshu为传递的两个参数--%>
+            <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=1&tiaoshu=2&flag=5">首页</a>
+            <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=${PageNo-1}&tiaoshu=2&flag=5">上一页</a>
+            <font style="color: #0597F2">${PageNo}/${count}页</font>
+            <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=${PageNo+1 }&tiaoshu=2&flag=5">下一页</a>
+            <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=${count }&tiaoshu=2&flag=5">末页</a>
     </div>
 </div>
 
