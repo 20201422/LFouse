@@ -21,6 +21,9 @@ public class Kp_ShowMyRentHouseServlet extends HttpServlet {
         if(user_id!=null){//已登录
             request.setAttribute("showMyHouse",kp_showHouseBean.ShowMyHouse(Integer.parseInt(user_id)));//调用方法得到我的租房信息
         }
+        request.setAttribute("ShowAllHouse",
+                kp_showHouseBean.ShowHouse("0",0,"0","","",
+                        "","","","",""));//展示所有房源
 
         request.getRequestDispatcher("/Kp_ShowMyRentHouse.jsp").forward(request,response);//返回我的租房jsp
     }

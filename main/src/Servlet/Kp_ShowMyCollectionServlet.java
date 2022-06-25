@@ -48,6 +48,10 @@ public class Kp_ShowMyCollectionServlet extends HttpServlet {
 
         request.setAttribute("showMyCollection",kp_showHouseBean.ShowMyCollection(pageNo,gs,Integer.parseInt(user_id)));//调用方法得到我的收藏
 
+        request.setAttribute("ShowAllHouse",
+                kp_showHouseBean.ShowHouse("0",0,"0","","",
+                        "","","","",""));//展示所有房源
+
         request.getRequestDispatcher("Kp_ShowMyCollection.jsp").forward(request,response);//返回我的收藏jsp
 
     }

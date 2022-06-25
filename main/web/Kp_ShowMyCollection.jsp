@@ -14,12 +14,15 @@
     String uname= (String) session.getAttribute("uname");//得到用户名字
 
     List<H_resources> list= (List<H_resources>) request.getAttribute("showMyCollection");//得到我的收藏
+    List<H_resources> alllist= (List<H_resources>) request.getAttribute("ShowAllHouse");//得到我的租房信息
 
 %>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Kp_ShowMyCollection.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/Kp_MaybeLike.css" />
+
     <title>LFouse-我的收藏</title>
 </head>
 <body>
@@ -186,6 +189,53 @@
             <a class="b">下一页</a>&nbsp&nbsp&nbsp
             <a class="b">末页</a>
         </c:if>
+    </div>
+</div>
+
+<div class="like">
+    <hr>
+    <p class="like-title">猜你喜欢</p>
+    <div class="maybelike">
+        <%
+            if(alllist!=null){
+                for(H_resources h_resources:alllist){
+                    request.setAttribute("h_resorces",h_resources);
+        %>
+        <div class="ShowHouse" onclick="
+                window.location.href='Tong_detailedinformationServlet?showway=1&h_id=<%=h_resources.getH_id()%>'">
+            <div class="img">
+                <img class="img" src="Image/<%=h_resources.getPhoto_name()%>" alt="<%=h_resources.getH_name()%>">
+            </div>
+            <div class="message">
+                <div class="House_Message0">
+                    <p class="title-error0"><%=h_resources.getH_name()%></p>
+                </div>
+                <div class="House_Message2">
+                    <p>
+                        <%
+                            if(h_resources.getH_layout()==null){//户型为空（用于写字楼）
+                        %>
+                        户型：暂无&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <%
+                        }else{//户型不为空（用于写字楼）
+                        %>
+                        户型：<%=h_resources.getH_layout()%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <%
+                            }
+                        %>
+                        面积：<%=h_resources.getH_area()%>平米&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    </p>
+                </div>
+                <div class="House_Message3">
+                    <p>价格：<%=h_resources.getH_price()%></p>
+                    <p class="House_Message3-a">RMB/月&nbsp&nbsp&nbsp&nbsp</p>
+                </div>
+            </div>
+        </div>
+        <%
+                }
+            }
+        %>
     </div>
 </div>
 

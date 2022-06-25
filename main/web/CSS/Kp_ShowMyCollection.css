@@ -29,7 +29,7 @@
 .conditions #clocation,#cprice,#ctype,#clayout,#ctoward{
     border-radius: 6px;
 }
-.ShowHouse{
+.middle .ShowHouse{
     text-align: center;
     position: relative;
     display: flex;
@@ -46,62 +46,62 @@
     flex-wrap: nowrap;
     flex-direction: row;
 }
-.ShowHouse:hover{
+.middle .ShowHouse:hover{
     box-shadow: 1px 1px 10px #a4a4a6;
     border: 1px solid white;
     border-radius:24px;
     transform: scale(1.02);
     cursor: pointer;
 }
-.img{
+.middle .img{
     width: 42%;
     border-radius:24px;
     float: left;
 }
-.message{
+.middle .message{
     text-align: left;
     float: left;
     margin: 0 0 0 -200px;
 }
-.House_Message0 p{
+.middle .House_Message0 p{
     font-size: 24px;
     margin: 0 auto;
     color: #3b3b3d;
     text-decoration: none;
     display: inline-block;
 }
-.title-error0:visited{
+.middle .title-error0:visited{
     color: #166ece;
 }
-.title-error0:hover{
+.middle .title-error0:hover{
     text-decoration: underline;
     color: #0062d3;
 }
-.House_Message0 .title-error{
+.middle .House_Message0 .title-error{
     color: #a4a4a6;
     font-size: 14px;
 }
-.House_Message0 .title-error-id{
+.middle .House_Message0 .title-error-id{
     color: #a4a4a6;
     font-size: 14px;
 }
-.House_Message1 p,.House_Message2 p{
+.middle .House_Message1 p,.House_Message2 p{
     font-size: 14px;
     color: #3b3b3d;
     text-decoration: none;
     white-space: nowrap;
     margin: 10px auto;
 }
-.House_Message3{
+.middle .House_Message3{
     font-size: 24px;
 }
-.House_Message3 p{
+.middle .House_Message3 p{
     text-decoration: none;
     margin: 0 0 0 0;
     color: #0597F2;
     display: inline-block;
 }
-.House_Message3-a{
+.middle .House_Message3-a{
     font-size: 14px;
 }
 .fenye {
