@@ -35,10 +35,7 @@
                 <a href="Lhq_QuitServlet" class="wa">[退出]</a>
             </div>
         </div>
-
-
         <input type="hidden" value="<%=uname%>" name="uno">
-
     </div>
     <hr class="hr">
 
@@ -57,8 +54,25 @@
     </nav>
 
     <div class="bigbg">
-        <div style="width: 100%;height: 4%;"></div>
-        <div style="width: 40%;height: 80%;background-color: white;border-radius: 20px;margin-left: 9%;float: left">
+        <div style="height: 3%"></div>
+        <form name=form1 method="post" action="LT_ShowDataServlet">
+            <div style="margin-left: 9%;width: 80%;height: 8%;background-color: #F5F5F7;">
+                <input style="height: 60%;float: left" type="text" placeholder="搜索房源编号"name="search">
+                <a href="javascript:document.form1.submit()">
+                    <img style="height: 50%;margin-left: -23px;margin-top: 2px" src="Image/搜索图标1jpg">
+                </a>
+            </div>
+        </form>
+
+
+        <%--<%--%>
+            <%--if(request.getParameter("search")==""||request.getParameter("search")==null){--%>
+                <%----%>
+            <%--}--%>
+        <%--%>--%>
+
+        <div style="width: 40%;height: 75%;background-color: white;border-radius: 20px;margin-left: 9%;float: left;">
+
                 <div class="h_id" align="center" >${PageNo*2-1}</div><br/><br/>
                 <%
                 if(list.get(0).getH_id()!=0){
@@ -205,8 +219,8 @@
 
             <%--<div style="float: left;height: 8%;width: 80%;background-color: #CEE4F2;margin-top: 4%;margin-left: 10%"></div>--%>
         </div>
-        <div style=";height: 80%;border-right: solid white;float: left;margin-left: 1%"></div>
-        <div style="width: 40%;height: 80%;background-color: white;border-radius: 20px;margin-left: 1%;float: left">
+        <div style=";height: 75%;border-right: solid white;float: left;margin-left: 1%"></div>
+        <div style="width: 40%;height: 75%;background-color: white;border-radius: 20px;margin-left: 1%;float: left;">
             <%
                 if(list.size()==2){
             %>
@@ -356,8 +370,7 @@
         </div>
 
     </div>
-    <div  style="text-align: center;width: 73%;height: 8%;background-color: white;border-radius: 16px;margin-left: 18%;margin-top: -4%;line-height: 240%">
-        <%--<div style="margin-left: 31%;line-height: 240%;width: 100%">--%>
+    <div align="center" style="width: 73%;height: 8%;background-color: white;border-radius: 16px;margin-left: 18%;margin-top: -4%;line-height: 240%">
         <font style="color: #0597F2">共${YHYS}条记录<font/>
             <%-- /showServlet为从新转向showServlet，?pageNo=1&tiaoshu=<%=ts%>pageNo,tiaoshu为传递的两个参数--%>
             <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=1&tiaoshu=2&flag=${flag}">首页</a>
@@ -365,7 +378,6 @@
             <font style="color: #0597F2">${PageNo}/${count}页</font>
             <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=${PageNo+1 }&tiaoshu=2&flag=${flag}">下一页</a>
             <a class="abq" href="${pageContext.request.contextPath }/LT_ShowDataServlet?PageNo=${count }&tiaoshu=2&flag=${flag}">末页</a>
-            <%--</div>--%>
     </div>
 </div>
 

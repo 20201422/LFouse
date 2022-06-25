@@ -79,11 +79,11 @@
                 <%
                     }
                 %>
-                <img class="img" src="Image/公寓1.jpg">
-                <img class="img" src="Image/公寓2.jpg">
-                <img class="img" src="Image/公寓3.jpg">
-                <img class="img" src="Image/公寓4.jpg">
-                <img class="img" src="Image/民宿1.jpg">
+                <%--<img class="img" src="Image/公寓1.jpg">--%>
+                <%--<img class="img" src="Image/公寓2.jpg">--%>
+                <%--<img class="img" src="Image/公寓3.jpg">--%>
+                <%--<img class="img" src="Image/公寓4.jpg">--%>
+                <%--<img class="img" src="Image/民宿1.jpg">--%>
             </div>
         </div>
         <div style="height: 80%;border-right: solid white;float: left;margin-left: 1%"></div>

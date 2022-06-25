@@ -87,7 +87,7 @@
 
 <div>
     <%
-        if(list!=null){//有租房信息
+        if(list.size()!=0){//有租房信息
     %>
     <div class="checkOrder_Head">
         <h1>您的租房信息</h1>
@@ -103,7 +103,7 @@
                 <td colspan="2">房屋名称：<%=lodge.getH_name()%></td>
             </tr>
             <tr>
-                <td>月份：<%=lodge.getLodge_limit()%> 月</td>
+                <td>月份：<%=lodge.getLodge_limit()%> 个月</td>
                 <td>价格：<%=lodge.getLodge_price()%> RMB</td>
                 <td>支付方式：<%=lodge.getLodge_pway()%></td>
                 <%
