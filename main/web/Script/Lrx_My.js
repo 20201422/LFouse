@@ -13,12 +13,12 @@ $(document).ready(function(){
     //         $("#MyCzOrZf").append("<a href='Lrx_ShowServlet' id='MyCz'>我的出租&nbsp;</a><a href='' id='MyZf'>&nbsp;我的租房</a>")
     // });
     $("#My").mouseenter(function (){
-        $("#MyCzOrZf").slideToggle("slow");
+        $("#MyHouse").slideToggle("slow");
     });
-    $("#MyCzOrZf").hover(function (){
-        $("#MyCzOrZf").show();
+    $("#MyHouse").hover(function (){
+        $("#MyHouse").show();
     },function (){
-        $("#MyCzOrZf").slideToggle("slow");
+        $("#MyHouse").slideToggle("slow");
     });
     // $("#My").mouseleave(function (){
     //     $("#MyCzOrZf").slideToggle("slow");

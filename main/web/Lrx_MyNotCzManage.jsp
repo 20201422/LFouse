@@ -26,7 +26,6 @@
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_CzForm.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_TableStyle.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/Lrx_Menu.css" />
     <title>LFouse-我的出租</title>
 </head>
 <body>
@@ -80,11 +79,17 @@
 
     <nav class="menu-two">
         <p><a href="Kp_ShowMyRentHouseServlet">我的租房</a></p>
-        <p><a href="Lrx_ShowServlet">我的出租</a></p>
+        <p><a href="Lrx_ShowServlet">我的房源</a></p>
         <p><a href="Kp_ShowMyCollectionServlet">我的收藏</a></p>
         <p><a href="Lhq_ShowMyInformationServlet">我的信息</a></p>
     </nav>
+
+    <nav class="menu-three">
+        <p><a href="Lrx_ShowServlet">已出租</a></p>
+        <p><a href="Lrx_ShowNotCzServlet">未出租</a></p>
+    </nav>
 </header>
+<!--
 <div>
     <div class="Lrx_menu">
         <p id="p2"><a href="Lrx_ShowServlet">已出租</a></p>
@@ -93,55 +98,66 @@
 
     <div class="float">
         <div>
-            房子状态<select>
-            <option>请选择</option>
-            <option>待审核</option>
-            <option>待上架</option>
-            <option>未出租</option>
-            <option>待审核</option>
-        </select>
-            房位<select>
-            <option>请选择</option>
-            <option>南昌</option>
-            <option>上海</option>
-            <option>北京</option>
-            <option>包头</option>
-        </select>
-            房名<input type="text">&nbsp;
+            <form action="Lrx_NotCzSearchServlet?method=1">
+                房子状态<select name="h_status">
+                    <option>请选择</option>
+                    <option>待审核</option>
+                    <option>待上架</option>
+                    <option>未出租</option>
+                    <option>审核不通过</option>
+                </select>
+                房位<select name="h_location">
+                    <option>请选择</option>
+                    <option>南昌</option>
+                    <option>上海</option>
+                    <option>北京</option>
+                    <option>包头</option>
+                </select>
+            </form>
+            <form Lrx_NotCzSearchServlet?method=2>
+            房名<input type="text" name="h_name">&nbsp;
             <input type="button" value="搜索">
-
+            </form>
         </div>
-        <div>
-            <table class="providerTable" cellpadding="0" cellspacing="0">
-                <tr  class="firstTr"><th>房名</th><th>房位</th><th>状态</th><th>操作</th></tr>
-                <c:forEach items="${List}" var="Lrx_NotCz" varStatus="status">
-                    <tr>
-                        <td>${Lrx_NotCz.h_name}</td>
-                        <td>${Lrx_NotCz.h_location}</td>
-                        <td>
+        -->
 
-                            <c:if test="${Lrx_NotCz.h_status}==0">待审核</c:if>
-                            <c:if test="${Lrx_NotCz.h_status}==1">审核通过，待上架</c:if>
-                            <c:if test="${Lrx_NotCz.h_status}==2">上架了，未出租</c:if>
-                            <c:if test="${Lrx_NotCz.h_status}==-1">审核不通过</c:if>
+<c:forEach items="${List}" var="Lrx_NotCz" varStatus="status">
+    <c:if test="${(status.index)%2==0}">
+        <div class="cross">
+    </c:if>
+<div class="myCz" style="width:38% ;min-width:470px" >
+    <table>
 
-                                ${Lrx_NotCz.h_status}
-                        </td>
-                        <td>
-                            <a href="Lrx_ShowMoreInformsServlet?h_id=${Lrx_NotCz.h_id}">修改</a>
-                            <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
-                            <a href="Lrx_PutOnServlet?h_id=${Lrx_NotCz.h_id}">上架</a>
-                            <a href="Lrx_PutOffServlet?h_id=${Lrx_NotCz.h_id}">下架</a>
-                        </td>
+            <tr>
+                <td colspan="2">房屋名称：${Lrx_NotCz.h_name}</td>
+            </tr>
+            <tr>
+                <td colspan="2">房屋位置：${Lrx_NotCz.h_location}</td>
+            </tr>
+            <tr>
+                <td colspan="2">
 
+                    <c:if test="${Lrx_NotCz.h_status}==0">待审核</c:if>
+                    <c:if test="${Lrx_NotCz.h_status}==1">审核通过，待上架</c:if>
+                    <c:if test="${Lrx_NotCz.h_status}==2">上架了，未出租</c:if>
+                    <c:if test="${Lrx_NotCz.h_status}==-1">审核不通过</c:if>
 
-                    </tr>
-                </c:forEach>
-            </table>
-        </div>
+                        房屋状态：${Lrx_NotCz.h_status}
+                </td>
+            </tr>
+    </table>
+    <div class="MyCz-cz">
+        <a href="Lrx_ShowMoreInformsServlet?h_id=${Lrx_NotCz.h_id}">查看详细信息</a>
+        <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
+        <a href="Lrx_PutOnServlet?h_id=${Lrx_NotCz.h_id}">上架</a>
+        <a href="Lrx_PutOffServlet?h_id=${Lrx_NotCz.h_id}">下架</a>
     </div>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <c:if test="${(status.index+1)%2==0}">
+        </div>
+    </c:if>
+</c:forEach>
+</div>
 <footer>
     <hr>
     <div class="footer-help">

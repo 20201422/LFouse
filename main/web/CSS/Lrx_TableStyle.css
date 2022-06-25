@@ -1,38 +1,100 @@
-.providerTable {
-    width: 100%;
-    border: 1px solid #ccc;
-}
 
-.providerTable tr {
-    height: 30px;
-    line-height: 30px;
+.checkOrder_Head{
     text-align: center;
+    color: #3b3b3d;
+    font-size: 12px;
+}
+.myCz{
+    text-align: center;
+    position: relative;
+    display: flex;
+    min-width: 600px;
+    background: #f5f5f7;
+    color: #3b3b3c;
+    margin: 12px auto;
+    padding: 8px 8px 8px 8px;
+    border: 1px solid white;
+    border-radius:24px;
+    width: 70%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transition: all 0.45s;
 }
 
-.providerTable tr:nth-child(odd) {
-    background: #f6f7f9;
+.myCz:hover{
+    box-shadow: 1px 1px 10px #a4a4a6;
+    border: 1px solid white;
+    border-radius:12px;
+    transform: scale(1.02);
+}
+table{
+    text-align: center;
+    border-spacing: 0;
+    border: 1px solid gray;
+    color: #28282a;
+    margin: 16px auto;
+    border-radius: 12px;
+    overflow: hidden;
+}
+td{
+    border: 0.01px solid gray;
+    text-align: left;
+    color: #28282a;
+    font-size: 18px;
+    padding: 2px 24px 2px 24px;
+}
+.myCz-cz{
+    margin: 0 auto;
+    display: flex;
+    padding: 0 0 4px 0;
+}
+.myCz-cz a{
+    font-size: 22px;
+    text-decoration: none;
+    color: #166ece;
+    padding: 0 20px 0 20px;
+    cursor: pointer;
+}
+.myCz-cz a:visited{
+    color: #166ece;
+}
+.myCz-cz a:hover{
+    text-decoration: underline;
+    color: #0062d3;
+}
+.myCz-error{
+    display: flex;
+    align-items: center;
+}
+.error{
+    color: red;
+    margin: 0 auto;
 }
 
-.providerTable tr:hover {
-    background: #e9f9ca;
+.cross{
+    display: flex;
 }
 
-.firstTr {
-    border: 1px solid #d6dfe6;
-    background: linear-gradient(to bottom, #f3f8fc, #ebf4f9, #e3f1fa, #e0f0fd, #d8e9fd);
+.myChangeTable{
+    text-align: center;
+    position: relative;
+    display: flex;
+    min-width: 400px;
+    background: #f5f5f7;
+    color: #3b3b3c;
+    margin: 12px auto;
+    padding: 8px 8px 8px 8px;
+    border: 1px solid white;
+    border-radius:24px;
+    width: 40%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transition: all 0.45s;
 }
 
-.firstTr th {
-    border-right: 2px solid rgba(209, 218, 223, 0.4);
-}
-
-.providerTable td a {
-    margin-top: 10px;
-    display: inline-block;
-    margin-right: 10px;
-
-}
-.float{
-    width: 90%;
-    float: left;
+.myChangeTable:hover{
+    box-shadow: 1px 1px 10px #a4a4a6;
+    border: 1px solid white;
+    border-radius:12px;
+    transform: scale(1.02);
 }

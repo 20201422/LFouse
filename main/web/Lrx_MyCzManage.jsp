@@ -25,9 +25,9 @@
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_CzForm.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_TableStyle.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/Lrx_Menu.css" />
     <title>LFouse-我的出租</title>
 </head>
+<script type="text/javascript" language="JavaScript" src="Script/Lrx_My.js.js"></script>
 <body>
 <header>
     <div class="header">
@@ -79,11 +79,17 @@
 
     <nav class="menu-two">
         <p><a href="Kp_ShowMyRentHouseServlet">我的租房</a></p>
-        <p><a href="Lrx_ShowServlet">我的出租</a></p>
+        <p><a id="My" href="Lrx_ShowServlet">我的房源</a></p>
         <p><a href="Kp_ShowMyCollectionServlet">我的收藏</a></p>
         <p><a href="Lhq_ShowMyInformationServlet">我的信息</a></p>
     </nav>
+
+    <nav class="menu-three" id="MyHouse">
+        <p><a href="Lrx_ShowServlet">已出租</a></p>
+        <p><a href="Lrx_ShowNotCzServlet">未出租</a></p>
+    </nav>
 </header>
+<!--
 <div>
     <div class="Lrx_menu" >
         <p><a href="Lrx_ShowServlet">已出租</a></p><br>
@@ -91,51 +97,60 @@
     </div>
     <div class="float">
         <div>
-            房位<select>
-            <option>请选择</option>
-            <option>南昌</option>
-            <option>上海</option>
-            <option>北京</option>
-            <option>包头</option>
-        </select>
-            支付状态<select>
-            <option>请选择</option>
-            <option>已支付</option>
-            <option>未支付</option>
-        </select>
-            房名<input type="text">&nbsp;
-            租客姓名<input type="text">&nbsp;
+            <form action="Lrx_AlreadyCzSearchServlet?method=1">
+            房位<select name="location">
+                <option>请选择</option>
+                <option>南昌</option>
+                <option>上海</option>
+                <option>北京</option>
+                <option>包头</option>
+            </select>
+            支付状态<select name="pway">
+                <option>请选择</option>
+                <option>已支付</option>
+                <option>分期支付中</option>
+            </select>
+            </form>
+            <form Lrx_AlreadyCzSearchServlet?method=2>
+                房名<input type="text" name="h_name">&nbsp;
+                租客姓名<input type="text" name="uname">&nbsp;
 
-            <input type="button" value="搜索">
+                <input type="submit" value="搜索">
+            </form>
         </div>
+-->
+<c:forEach items="${List}" var="Lrx_AlreadyCz">
+<div class="myCz">
+    <table>
 
-        <div >
-            <table class="providerTable" cellpadding="0" cellspacing="0">
-                <tr  class="firstTr"><th>房名</th><th>房位</th><th>房价</th><th>租客姓名</th><th>租客电话</th><th>租客邮箱</th><th>租房时长</th><th>出租开始时间</th><th>出租预计结束时间</th><th>实际退租时间</th><th>支付状态</th><th>支付方式</th></tr>
-                <c:forEach items="${List}" var="Lrx_AlreadyCz">
-                    <tr>
-                        <td>${Lrx_AlreadyCz.h_name}</td>
-                        <td>${Lrx_AlreadyCz.h_location}</td>
-                        <td>${Lrx_AlreadyCz.h_price}</td>
-                        <td>${Lrx_AlreadyCz.uname}</td>
-                        <td>${Lrx_AlreadyCz.tel}</td>
-                        <td>${Lrx_AlreadyCz.email}</td>
-                        <td>${Lrx_AlreadyCz.lodge_limit}</td>
-                        <td>${Lrx_AlreadyCz.lodge_stime}</td>
-                        <td>${Lrx_AlreadyCz.lodge_etime}</td>
-                        <td>${Lrx_AlreadyCz.lodge_otime}</td>
-                        <td>${Lrx_AlreadyCz.lodge_psta}</td>
-                        <td>${Lrx_AlreadyCz.lodge_pway}</td>
+            <tr>
 
-                    </tr>
-                </c:forEach>
-            </table>
-        </div>
-    </div>
+                <td>租客姓名：${Lrx_AlreadyCz.uname}</td>
+                <td>租客电话：${Lrx_AlreadyCz.tel}</td>
+                <td colspan="2">房屋名称：${Lrx_AlreadyCz.h_name}</td>
+            </tr>
+            <tr>
+                <td colspan="2">租客邮箱：${Lrx_AlreadyCz.email}</td>
+                <td colspan="2">房屋位置：${Lrx_AlreadyCz.h_location}</td>
+            </tr>
+            <tr>
+                <td>月份：${Lrx_AlreadyCz.lodge_limit}个月</td>
+                <td>价格：${Lrx_AlreadyCz.h_price} RMB/月</td>
+                <td>支付方式：${Lrx_AlreadyCz.lodge_pway}</td>
+                <td>支付状态：${Lrx_AlreadyCz.lodge_psta}</td>
+            </tr>
+            <tr>
+                <td colspan="2">起始时间：${Lrx_AlreadyCz.lodge_stime}</td>
+                <td colspan="2">预计结束时间：${Lrx_AlreadyCz.lodge_etime}</td>
+            </tr>
+            <tr>
+                <td colspan="4">实际退租时间：${Lrx_AlreadyCz.lodge_otime}</td>
+            </tr>
+
+    </table>
 </div>
+</c:forEach>
 
-
-<%--    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>--%>
     <footer>
         <hr>
         <div class="footer-help">
