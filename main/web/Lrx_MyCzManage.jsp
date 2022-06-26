@@ -118,15 +118,12 @@
             </form>
         </div>
 -->
-<p align="center">已出租房源</p>
+<div class="checkOrder_Head"><h1>已出租房源</h1></div>
 <c:forEach items="${List}" var="Lrx_AlreadyCz">
 <div class="myCz">
-    <div style="text-align: center;display: flex;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
-    align-items: center;" >
+    <div style="display: flex;justify-content: space-evenly;flex-wrap: nowrap;" >
         <img class="img" src="Image/${Lrx_AlreadyCz.photo_name}" >
-        <table style="">
+        <table>
             <tr>
 
                 <td>租客姓名：${Lrx_AlreadyCz.uname}</td>

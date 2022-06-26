@@ -119,12 +119,12 @@
             </form>
         </div>
         -->
-<p align="center">未出租房源</p>
+<div class="checkOrder_Head"><h1>未出租房源</h1></div>
 <c:forEach items="${List}" var="Lrx_NotCz" varStatus="status">
     <c:if test="${(status.index)%2==0}">
         <div class="cross">
     </c:if>
-<div class="myCz" style="width:38% ;min-width:470px" >
+<div class="myNotCz">
     <table>
 
             <tr>
@@ -135,19 +135,35 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    房屋状态：
-                    <c:if test="${Lrx_NotCz.h_status==0}">待审核</c:if>
-                    <c:if test="${Lrx_NotCz.h_status==1}">审核通过，待上架</c:if>
-                    <c:if test="${Lrx_NotCz.h_status==2}">上架了，未出租</c:if>
-                    <c:if test="${Lrx_NotCz.h_status==-1}">审核不通过</c:if>
+                    <c:if test="${Lrx_NotCz.h_status==0}">房屋状态：待审核</c:if>
+                    <c:if test="${Lrx_NotCz.h_status==1}">房屋状态：待上架</c:if>
+                    <c:if test="${Lrx_NotCz.h_status==2}">房屋状态：已上架</c:if>
+                    <c:if test="${Lrx_NotCz.h_status==-1}"><h4 style="color: crimson">房屋状态：审核不通过</h4></c:if>
                 </td>
             </tr>
     </table>
     <div class="MyCz-cz">
         <a href="Lrx_ShowMoreInformsServlet?h_id=${Lrx_NotCz.h_id}">查看详细信息</a>
-        <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
-        <a href="Lrx_PutOnServlet?h_id=${Lrx_NotCz.h_id}">上架</a>
-        <a href="Lrx_PutOffServlet?h_id=${Lrx_NotCz.h_id}">下架</a>
+        <c:if test="${Lrx_NotCz.h_status==0}">
+            <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
+            <a>上架</a>
+            <a>下架</a>
+        </c:if>
+        <c:if test="${Lrx_NotCz.h_status==1}">
+            <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
+            <a href="Lrx_PutOnServlet?h_id=${Lrx_NotCz.h_id}">上架</a>
+            <a>下架</a>
+        </c:if>
+        <c:if test="${Lrx_NotCz.h_status==2}">
+            <a>删除</a>
+            <a>上架</a>
+            <a href="Lrx_PutOffServlet?h_id=${Lrx_NotCz.h_id}">下架</a>
+        </c:if>
+        <c:if test="${Lrx_NotCz.h_status==-1}">
+            <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
+            <a>上架</a>
+            <a>下架</a>
+        </c:if>
     </div>
 </div>
     <c:if test="${(status.index+1)%2==0}">
