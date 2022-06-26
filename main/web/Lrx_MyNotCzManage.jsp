@@ -24,7 +24,6 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/Lrx_CzForm.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_TableStyle.css" />
     <title>LFouse-我的出租</title>
 </head>
@@ -120,7 +119,7 @@
             </form>
         </div>
         -->
-
+<p align="center">未出租房源</p>
 <c:forEach items="${List}" var="Lrx_NotCz" varStatus="status">
     <c:if test="${(status.index)%2==0}">
         <div class="cross">
@@ -136,13 +135,11 @@
             </tr>
             <tr>
                 <td colspan="2">
-
-                    <c:if test="${Lrx_NotCz.h_status}==0">待审核</c:if>
-                    <c:if test="${Lrx_NotCz.h_status}==1">审核通过，待上架</c:if>
-                    <c:if test="${Lrx_NotCz.h_status}==2">上架了，未出租</c:if>
-                    <c:if test="${Lrx_NotCz.h_status}==-1">审核不通过</c:if>
-
-                        房屋状态：${Lrx_NotCz.h_status}
+                    房屋状态：
+                    <c:if test="${Lrx_NotCz.h_status==0}">待审核</c:if>
+                    <c:if test="${Lrx_NotCz.h_status==1}">审核通过，待上架</c:if>
+                    <c:if test="${Lrx_NotCz.h_status==2}">上架了，未出租</c:if>
+                    <c:if test="${Lrx_NotCz.h_status==-1}">审核不通过</c:if>
                 </td>
             </tr>
     </table>

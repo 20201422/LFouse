@@ -15,7 +15,7 @@
     padding: 8px 8px 8px 8px;
     border: 1px solid white;
     border-radius:24px;
-    width: 70%;
+    width: 80%;
     justify-content: space-evenly;
     flex-direction: column;
     transition: all 0.45s;
@@ -97,4 +97,12 @@ td{
     border: 1px solid white;
     border-radius:12px;
     transform: scale(1.02);
+}
+
+.img{
+    width: 16%;
+
+    border-radius:24px;
+    float: left;
+
 }

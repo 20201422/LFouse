@@ -9,15 +9,19 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/Lrx_CzForm.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/Lrx_TableStyle.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/Lrx_Button.css" />
     <title>LFouse-出租</title>
 </head>
 <body>
+
 <%
     String user_id= (String) session.getAttribute("user_id");//得到用户id
     String tel= (String) session.getAttribute("tel");//得到用户电话号码
     String uname= (String) session.getAttribute("uname");//得到用户名字
 %>
+
+
 <header>
     <div class="header">
         <img src="Image/logo.jpg" title="" alt="logo" class="logo" onclick="window.location.href='index.jsp'">
@@ -65,32 +69,56 @@
         %>
     </nav>
 </header>
-    <div class="information">
+<p align="center">填写好以下信息</p>
+<div class="myChangeTable">
     <form action="Lrx_CzAddServlet?user_id=<%=user_id%>" method="post" enctype="multipart/form-data">
-        房子名称：<input type="text" name="h_name"><br>
-        位置：<input type="text" name="h_location"><br>
-        价格：<input type="text" name="h_price"><br>
-        户型：<input type="text" name="h_layout"><br>
-        类型：<input type="text" name="h_type"><br>
-        面积：<input type="text" name="h_area"><br>
-        <!-- 是否有电梯：<input type="text" name="h_elevator"><br>
-         朝向：<input type="text" name="h_toward"><br>  -->
-        是否有电梯：<select name="h_elevator">
-            <option value="1">有</option>
-            <option value="0">无</option>
-        </select><br>
-        朝向：<select name="h_toward">
-            <option value="朝南" selected>朝南</option>
-            <option value="朝北">朝北</option>
-            <option value="朝东">朝东</option>
-            <option value="朝西">朝西</option>
-            <option value="东南">东南</option>
-            <option value="西南">西南</option>
-            <option value="东北">东北</option>
-            <option value="西北">西北</option>
-        </select><br>
-        交通状况：<input type="text" name="h_traffic"><br>
-        楼层：<input type="text" name="h_floor"><br>
+        <table>
+            <tr>
+                <td colspan="2">房名：<input style="width: 305px" type="text" name="h_name" ></td>
+                <td colspan="2">房位：<input style="width: 310px" type="text" name="h_location"></td>
+            </tr>
+            <tr>
+                <td>房价：<input style="width: 100px" type="text" name="h_price" ></td>
+                <td>户型：<input style="width: 100px" type="text" name="h_layout"></td>
+                <td>类型：
+                    <select style="width: 100px" name="h_type">
+                        <option>商品房</option>
+                        <option>别墅</option>
+                        <option>写字楼</option>
+                        <option>民宿</option>
+                        <option>公寓</option>
+                    </select>
+                </td>
+                <td>面积：<input style="width: 100px" type="text" name="h_area"></td>
+            </tr>
+            <tr>
+                <td>
+                    楼层：<input style="width: 100px" type="text" name="h_floor">
+                </td>
+                <td>朝向：
+                    <select style="width: 95px" name="h_toward">
+                        <option value="朝南">朝南</option>
+                        <option value="朝北">朝北</option>
+                        <option value="朝东">朝东</option>
+                        <option value="朝西">朝西</option>
+                        <option value="东南">东南</option>
+                        <option value="西南">西南</option>
+                        <option value="东北">东北</option>
+                        <option value="西北">西北</option>
+                    </select>
+                </td>
+                <td colspan="2">电梯：
+                    <select style="width: 100px" name="h_elevator">
+                        <option value="1">有</option>
+                        <option value="0">无</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">交通情况：<input style="width: 690px" type="text" name="h_traffic"></td>
+            </tr>
+        </table>
+
         <input type="checkbox" name="facilities" value="wifi">无线WIFI
         <input type="checkbox" name="facilities" value="TV">电视
         <input type="checkbox" name="facilities" value="shower">淋浴
@@ -99,10 +127,10 @@
         <input type="checkbox" name="facilities" value="refrigerator">冰箱
         <br>
         <input type="file" name="file" id="file" ><br>
-        <input type="submit" name="Submit" value="提交">
-        <input type="reset" value="重置">
+        <input type="submit" name="Submit" value="提交" class="btn">
+        <input type="reset" value="重置" class="btn">
     </form>
-    </div>
+</div>
 
     <br><br>
     <footer>

@@ -1,6 +1,8 @@
 package Model;
 
 public class Lrx_AlreadyCz {
+    private String photo_name;
+
     private int h_id;
     private String h_name;
     private String h_location;
@@ -14,7 +16,13 @@ public class Lrx_AlreadyCz {
     private String lodge_otime;
     private String lodge_psta;
     private String lodge_pway;
+    public String getPhoto_name() {
+        return photo_name;
+    }
 
+    public void setPhoto_name(String photo_name) {
+        this.photo_name = photo_name;
+    }
     public int getH_id() {
         return h_id;
     }

@@ -23,7 +23,6 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/Lrx_CzForm.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_TableStyle.css" />
     <title>LFouse-我的出租</title>
 </head>
@@ -119,10 +118,15 @@
             </form>
         </div>
 -->
+<p align="center">已出租房源</p>
 <c:forEach items="${List}" var="Lrx_AlreadyCz">
 <div class="myCz">
-    <table>
-
+    <div style="text-align: center;display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;" >
+        <img class="img" src="Image/${Lrx_AlreadyCz.photo_name}" >
+        <table style="float: left">
             <tr>
 
                 <td>租客姓名：${Lrx_AlreadyCz.uname}</td>
@@ -147,7 +151,8 @@
                 <td colspan="4">实际退租时间：${Lrx_AlreadyCz.lodge_otime}</td>
             </tr>
 
-    </table>
+        </table>
+    </div>
 </div>
 </c:forEach>
 
