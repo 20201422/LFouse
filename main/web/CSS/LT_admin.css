@@ -173,14 +173,21 @@
     float: left
 }
 .table1{
+    /*border-radius: 20px;*/
     width: 80%;
     height: 60%;
     margin-top: 6%;
-    border-color: #0597F2;
-    border: solid 1px;
+    border-color: transparent;
+    transition: all 0.45s;
+    border: solid 0.1px;
+    outline: none;
+}
+.table1:hover{
+    transform: scale(1.02);
+    box-shadow: 1px 1px 10px #a4a4a6;
 }
 tr,td{
-    border: solid 1px;
+    /*border: solid 1px;*/
 }
 .h_id{
     float: left;

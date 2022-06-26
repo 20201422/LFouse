@@ -89,10 +89,10 @@
         <div style="height: 80%;border-right: solid white;float: left;margin-left: 1%"></div>
         <div style="width: 40%;height: 80%;background-color: white;border-radius: 20px;margin-left: 1%;float: left">
             <div align="center" style="width: 60%;height: 10%;background-color: #0597F2;margin-left: 20%;border-radius: 24px;margin-top: 4%">
-                <font style="line-height: 200%;color: white;font-size: 20px">更多配套信息</font>
+                <font style="line-height: 200%;color: white;font-size: 20px">配套设施信息</font>
             </div>
-            <table class="table1" align="center" cellspacing="0" cellpadding="0">
-                <tr align="center"><td colspan="4"><font>LFouse房源信息审批订单</font></td></tr>
+            <table align="center" border="1" cellpadding="0" cellspacing="0"class="table1">
+                <tr style="background: #f5f5f7" align="center"><td colspan="4"><font>LFouse房源信息审批订单</font></td></tr>
                 <tr>
                     <td colspan="1" style="text-align: center;width: 20%">
                         <font>名称</font>
@@ -101,7 +101,7 @@
                         &nbsp;<%=H_name%><br/>
                     </td>
                 </tr>
-                <tr>
+                <tr style="background: #f5f5f7">
                     <td colspan="1" style="text-align: center;width: 20%">
                         <font>wifi</font>
                     </td>
@@ -139,7 +139,7 @@
                             %><br/>
                     </td>
                 </tr>
-                <tr>
+                <tr style="background: #f5f5f7">
                     <td style="text-align: center;width: 20%">
                         <font>淋浴</font>
                     </td>

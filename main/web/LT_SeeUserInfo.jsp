@@ -77,7 +77,7 @@
                 if(list.get(0).getUser_id()!=0){
             %>
             <table align="center" border="1" cellpadding="0" cellspacing="0"class="table1">
-                <tr align="center"><td colspan="4"><font>LFouse用户信息</font></td></tr>
+                <tr style="background: #f5f5f7" align="center"><td colspan="4"><font>LFouse用户信息</font></td></tr>
                 <tr>
                     <td colspan="1" style="text-align: center;width: 20%">
                         <font>名称</font>
@@ -86,7 +86,7 @@
                         &nbsp;<%=list.get(0).getUname()%><br/>
                     </td>
                 </tr>
-                <tr>
+                <tr style="background: #f5f5f7">
                     <td colspan="1" style="text-align: center">
                         <font>电话号码</font>
                     </td>
@@ -108,7 +108,7 @@
                         &nbsp;<%=list.get(0).getAge()%><br/>
                     </td>
                 </tr>
-                <tr>
+                <tr style="background: #f5f5f7">
                     <td style="text-align: center">
                         <font>出租数量</font>
                     </td>
@@ -140,7 +140,7 @@
             %>
             <div align="center" style="float: left;width: 4%;height: 6%;border-radius: 45px;background-color: #0597F2;margin-left: 45%;margin-top: 4%;color: white">${PageNo*2}</div><br/><br/>
             <table align="center" border="1" cellpadding="0" cellspacing="0"class="table1">
-                <tr align="center"><td colspan="4"><font>LFouse用户信息</font></td></tr>
+                <tr style="background: #f5f5f7" align="center"><td colspan="4"><font>LFouse用户信息</font></td></tr>
                 <tr>
                     <td colspan="1" style="text-align: center;width: 20%">
                         <font>用户名称</font>
@@ -149,7 +149,7 @@
                         &nbsp;<%=list.get(1).getUname()%><br/>
                     </td>
                 </tr>
-                <tr>
+                <tr style="background: #f5f5f7">
                     <td colspan="1" style="text-align: center">
                         <font>用户电话号码</font>
                     </td>
@@ -171,7 +171,7 @@
                         &nbsp;<%=list.get(1).getAge()%><br/>
                     </td>
                 </tr>
-                <tr>
+                <tr style="background: #f5f5f7">
                     <td style="text-align: center">
                         <font>出租数量</font>
                     </td>

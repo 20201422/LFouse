@@ -74,13 +74,12 @@
         <%--%>--%>
 
         <div style="width: 40%;height: 70%;background-color: white;border-radius: 20px;margin-left: 9%;float: left;">
-
                 <div class="h_id" align="center" >${PageNo*2-1}</div><br/><br/>
                 <%
                 if(list.get(0).getH_id()!=0){
                 %>
-                    <table align="center" cellspacing="0" cellpadding="0" class="table1">
-                        <tr align="center"><td colspan="4"><font>LFouse房源信息审批订单</font></td></tr>
+                    <table align="center" border="1" cellpadding="0" cellspacing="0"class="table1">
+                        <tr style="background: #f5f5f7" align="center"><td colspan="4"><font>LFouse房源信息审批订单</font></td></tr>
                         <tr>
                             <td colspan="1" style="text-align: center;width: 20%">
                                 <font>编号：<%=list.get(0).getH_id()%></font>
@@ -89,7 +88,7 @@
                                 &nbsp;<%=list.get(0).getH_name()%><br/>
                             </td>
                         </tr>
-                        <tr>
+                        <tr style="background: #f5f5f7">
                             <td colspan="1" style="text-align: center">
                                 <font>房源位置</font>
                             </td>
@@ -116,7 +115,7 @@
                                 }%><br/>
                             </td>
                         </tr>
-                        <tr>
+                        <tr style="background: #f5f5f7">
                             <td style="text-align: center">
                                 <font>类型</font>
                             </td>
@@ -149,7 +148,7 @@
                                 &nbsp;<%=list.get(0).getH_toward()%><br/>
                             </td>
                         </tr>
-                        <tr>
+                        <tr style="background: #f5f5f7">
                             <td colspan="1" style="text-align: center">
                                 <font>交通情况</font>
                             </td>
@@ -214,7 +213,7 @@
                 <%
                 }else {
                 %>
-                    <h1>暂无信息</h1>
+                    <h1 style="font-family:等线 Light;">暂时没有你要查找的信息</h1>
                 <%
                 }
                 %>
@@ -227,8 +226,8 @@
                 if(list.size()==2){
             %>
             <div class="h_id" align="center" >${PageNo*2}</div><br/><br/>
-                <table align="center" border="1" cellpadding="0" cellspacing="0"class="table1">
-                <tr align="center"><td colspan="4"><font>LFouse房源信息审批订单</font></td></tr>
+            <table align="center" border="1" cellpadding="0" cellspacing="0"class="table1">
+                <tr style="background: #f5f5f7" align="center"><td colspan="4"><font>LFouse房源信息审批订单</font></td></tr>
                 <tr>
                     <td colspan="1" style="text-align: center;width: 20%">
                         <font>编号：<%=list.get(1).getH_id()%></font>
@@ -237,7 +236,7 @@
                         &nbsp;<%=list.get(1).getH_name()%><br/>
                     </td>
                 </tr>
-                <tr>
+                <tr style="background: #f5f5f7">
                     <td colspan="1" style="text-align: center">
                         <font>房源位置</font>
                     </td>
@@ -264,7 +263,7 @@
                         }%><br/>
                     </td>
                 </tr>
-                <tr>
+                <tr style="background: #f5f5f7">
                     <td style="text-align: center">
                         <font>类型</font>
                     </td>
@@ -297,7 +296,7 @@
                         &nbsp;<%=list.get(1).getH_toward()%><br/>
                     </td>
                 </tr>
-                <tr>
+                <tr style="background: #f5f5f7">
                     <td colspan="1" style="text-align: center">
                         <font>交通情况</font>
                     </td>
@@ -363,7 +362,7 @@
                 }else {
                     %>
                     <div style="float: left;margin-left: 40%;margin-top: 20%">
-                        <h1>暂无信息</h1>
+                        <h1 style="font-family:等线 Light;">暂时没有你要查找的信息</h1>
                     </div>
 
                     <%
