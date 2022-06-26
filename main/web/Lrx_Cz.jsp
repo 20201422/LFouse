@@ -70,16 +70,21 @@
     </nav>
 </header>
 <p align="center">填写好以下信息</p>
-<div class="myChangeTable">
-    <form action="Lrx_CzAddServlet?user_id=<%=user_id%>" method="post" enctype="multipart/form-data">
+<div class="myChangeTable" align="center">
+    <form style="width: 100%" action="Lrx_CzAddServlet?user_id=<%=user_id%>" method="post" enctype="multipart/form-data">
         <table>
             <tr>
-                <td colspan="2">房名：<input style="width: 305px" type="text" name="h_name" ></td>
-                <td colspan="2">房位：<input style="width: 310px" type="text" name="h_location"></td>
+                <td colspan="2">房名：<input style="width: 300px" type="text" name="h_name" ></td>
+            </tr>
+            <tr>
+                <td colspan="2">房位：<input style="width: 300px" type="text" name="h_location"></td>
             </tr>
             <tr>
                 <td>房价：<input style="width: 100px" type="text" name="h_price" ></td>
                 <td>户型：<input style="width: 100px" type="text" name="h_layout"></td>
+
+            </tr>
+            <tr>
                 <td>类型：
                     <select style="width: 100px" name="h_type">
                         <option>商品房</option>
@@ -107,6 +112,9 @@
                         <option value="西北">西北</option>
                     </select>
                 </td>
+
+            </tr>
+            <tr>
                 <td colspan="2">电梯：
                     <select style="width: 100px" name="h_elevator">
                         <option value="1">有</option>
@@ -115,7 +123,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="4">交通情况：<input style="width: 690px" type="text" name="h_traffic"></td>
+                <td colspan="2">交通：<input style="width: 300px" type="text" name="h_traffic"></td>
             </tr>
         </table>
 

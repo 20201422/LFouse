@@ -13,6 +13,11 @@
     <title>LFouse-找回密码</title>
 </head>
 <body>
+<%
+    String flg = request.getParameter("flg");
+    String showway=request.getParameter("showway");
+    String h_id=request.getParameter("h_id");
+%>
 <header>
     <div class="header">
         <img src="Image/logo.jpg" title="" alt="logo" class="logo" onclick="window.location.href='index.jsp'">
@@ -26,9 +31,9 @@
 </header>
 <div style="height:12%"></div>
 <div class="wrap">
-    <div class="head_color">  通过邮箱找回密码</div>
+    <div class="head_color">LFouse-找回密码</div>
     <div>
-    <form action="Lhq_SearchServlet" method="post" class="find_password">
+    <form action="Lhq_SearchServlet?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>" method="post" class="find_password">
         <div class="mailbox">
             <span>邮箱 :</span>
             <input type="email" class="mail_code" name="email" id="email" width="100px"
@@ -40,9 +45,7 @@
             <button type="submit" class="btn-success" id="button1"
                     width="100px" height="60px">找回密码
             </button>
-        </p>
-
-        <p>
+            <a class="back" href="Lhq_Login.jsp?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>">返回</a>
         </p>
     </form>
     </div>

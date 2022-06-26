@@ -28,6 +28,7 @@
     transform: scale(1.02);
 }
 table{
+    width: 44%;
     text-align: center;
     border-spacing: 0;
     border: 1px solid gray;
