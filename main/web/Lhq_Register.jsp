@@ -30,18 +30,33 @@
   String h_id=request.getParameter("h_id");
 %>
 <div  class="wrap">
-  <div class="head_color">欢迎注册!</div>
-  <form class="form_Register" method="post" action="Lhq_RegisterServlet?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>">
-    <div><span>电话：</span><input class="move" type="text" id="tel" name="tel"></div>
-    <div><span>姓名：</span><input class="move" type="text" id="uname" name="uname"></div>
-    <div><span>邮箱：</span><input class="move" type="text" id="email" name="email"></div>
-    <div><span>密码：</span><input class="move" type="password" id="upwd" name="upwd"></div>
-    <div ><span>确认密码：</span><input class="nmove" type="password" id="eupwd" name="eupwd"></div>
-    <div><span>性别：</span><input class="sex" type="radio" name="sex" value="男" checked><span>男</span>&nbsp;&nbsp;<input type="radio" name="sex" value="女" ><span>女</span>&nbsp;&nbsp;<input type="radio" name="sex" value="其他" ><span>其他</span></div>
-    <div><span>年龄：</span><input class="move" type="text" id="age" name="age"></div>
-    <div><span>出租数量：</span><input class="nmove" type="text" id="lodge_num" name="lodge_num" value="0" readonly="true"></div>
-    <div><span>租房数量：</span><input class="nmove" type="text" id="rent_num" name="rent_num" value="0" readonly="true"></div>
-    <div class="send-button"><input type = "submit" class="submit" value="提交">&nbsp;&nbsp;<input type="button" class="cancel" value="取消" onclick="window.location.href='Lhq_Login.jsp'"></div>
+  <%
+  String errorMsg = (String) request.getAttribute("errorMsg");
+  if (errorMsg != null) {
+%>
+  <div class="errorMsg">
+    <div style="height: 24%"></div>
+    <span style="font-family: 等线 Light;font-size: 19px;"><%=errorMsg%></span>
+  </div>
+  <%}else{
+  %>
+  <div class="errorMsg1">
+  </div>
+  <%
+    }%>
+<%--  <div style="height: 5%"></div>--%>
+  <form style="height: 50%;width: 100%;" class="form_Register" method="post" action="Lhq_RegisterServlet?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>">
+<%--    <div align="center"style="margin-top: 10%">--%>
+<%--      <font style="font-size: 42px;font-family: 等线 Light">LFouse 注册</font>--%>
+<%--    </div>--%>
+    <div><span class="block">电话：</span><input class="move" type="text" id="tel" name="tel" onchange="check1()"><span id = "check1"> </span></div>
+    <div><span class="block">姓名：</span><input class="move" type="text" id="uname" name="uname" onchange="check2()"><span id = "check2"> </span></div>
+    <div><span class="block">邮箱：</span><input class="move" type="text" id="email" name="email" onchange="check3()"><span id = "check3"> </span></div>
+    <div><span class="block">密码：</span><input class="move" type="password" id="upwd" name="upwd" onchange="check4()"><span id = "check4"> </span></div>
+    <div ><span class="block">确认密码：</span><input class="nmove" type="password" id="eupwd" name="eupwd" onchange="check5()"><span id = "check5"> </span></div>
+    <div><span class="block">性别：</span><input class="sex" type="radio" name="sex" value="男" checked><span>男</span>&nbsp;&nbsp;<input type="radio" name="sex" value="女" ><span>女</span>&nbsp;&nbsp;<input type="radio" name="sex" value="其他" ><span>其他</span></div>
+    <div><span class="block">年龄：</span><input class="move" type="text" id="age" name="age" onchange="check6()"><span id = "check6"> </span></div>
+    <div class="send-button"><input type = "submit" class="submit" value="注册">&nbsp;&nbsp;<input type="button" class="cancel" value="取消" onclick="window.location.href='Lhq_Login.jsp'"></div>
   </form>
 </div>
 

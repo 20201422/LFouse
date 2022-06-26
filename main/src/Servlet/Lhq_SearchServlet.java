@@ -20,18 +20,17 @@ public class Lhq_SearchServlet extends HttpServlet {
         String email = request.getParameter("email");
         Lhq_SearchBean search=new Lhq_SearchBean();
         User user = search.findEmail(email);
-        PrintWriter out = response.getWriter();
         //实例化一个发送邮件的对象
         SendMail mySendMail = new SendMail();
         //根据邮箱找到该用户信息
         if(user!=null) {
             String message="尊敬的 "+user.getUname()+"：\n您的密码为："+user.getUpwd()+"\n您的账号通过LFouse平台已找回！";
-            System.out.println(message);
             mySendMail.sendMail(email, message);
-            out.println("<script>alert('恭喜，找回密码成功');window.location.href='Lhq_Login.jsp'</script>");
+            request.setAttribute("errorMsg","找回密码成功！");
+            request.getRequestDispatcher("/Lhq_Login.jsp").forward(request,response);
         }
-        out.println("<script>alert('该邮箱尚未注册！请重新输入');window.location.href='Lhq_Search.jsp'</script>");
-
+        request.setAttribute("errorMsg","该邮箱尚未注册！");
+        request.getRequestDispatcher("/Lhq_Search.jsp").forward(request,response);
     }
 
     @Override

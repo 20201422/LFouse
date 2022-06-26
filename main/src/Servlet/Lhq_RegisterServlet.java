@@ -27,13 +27,10 @@ public class Lhq_RegisterServlet extends HttpServlet {
         String flg = request.getParameter("flg");
         String showway = request.getParameter("showway");
         String h_id = request.getParameter("h_id");
-        String lodge_num= request.getParameter("lodge_num");
-        String rent_num= request.getParameter("rent_num");
-        Lhq_LoginBean login=new Lhq_LoginBean();
         Lhq_RegisterBean register=new Lhq_RegisterBean();
-        User user = login.findUserNoAndPassword(tel,upwd);
-        if(user==null&&!Objects.equals(age,"")&&!Objects.equals(lodge_num,"")&&!Objects.equals(rent_num,"")){
-            register.add(0, tel, uname, email, upwd, sex, Integer.parseInt(age), Integer.parseInt(lodge_num), Integer.parseInt(rent_num));
+        User user = register.findTel(tel);
+        if(user==null&&!Objects.equals(age,"")){
+            register.add(0, tel, uname, email, upwd, sex, Integer.parseInt(age),0,0);
             request.setAttribute("errorMsg","注册成功！");
             request.setAttribute("flg",flg);
             request.setAttribute("showway",showway);
@@ -43,7 +40,7 @@ public class Lhq_RegisterServlet extends HttpServlet {
         }
         else{
             request.setAttribute("errorMsg","注册失败！该用户已存在");
-            request.getRequestDispatcher("/Lhq_Login.jsp").forward(request,response);
+            request.getRequestDispatcher("/Lhq_Register.jsp").forward(request,response);
         }
     }
 

@@ -8,16 +8,24 @@
     outline-style: ridge;
     outline-color: transparent ;
     -moz-outline-radius: 25px;
-    min-width: 300px;
+    min-width: 400px;
 }
 .move{
     display:block;
     text-align: left;
     color:#3b3b3c;
+    margin-left: 8%;
+}
+#check1,#check2,#check3,#check4{
+    width:20%;
+    display: block;
+    float:right;
+    margin-left: 20%;
+    color:red;
 }
 input[type="text"]{
+    width: 200px;
     transform:translateY(-100%);
-    margin-left: 20%;
     background-color: transparent;
     outline: none;
     border: none;

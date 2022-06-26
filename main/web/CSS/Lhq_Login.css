@@ -34,8 +34,6 @@ span{
 
 .password ,.account{
     font-size: 24px;
-
-    /*border-radius: 10px;*/
     border: rgb(0,83,119) solid 1px ;
 }
 
@@ -113,5 +111,5 @@ input[type="submit"] {
     -ms-transition: 0.5s all;
 }
 .left:hover,.right:hover{
-    color:#0597F2;
+    color:#166ece;
 }

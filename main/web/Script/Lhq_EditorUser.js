@@ -1,35 +1,75 @@
-var frm = document.querySelector('form');
-frm.onsubmit = function () {
     var tel = document.getElementById("tel");
     var email = document.getElementById("email");
     var uname = document.getElementById("uname");
     var age = document.getElementById("age");
-    //判空
-    if(tel.value===''||uname.value===''||age.value===''||email.value===''){
-        alert("信息不能为空！");
-        return false;
-    }
-    //不为空
-    else {
-        //校验姓名
+    //校验姓名
+    function check1() {
+        var result;
         if (!(/[\u4e00-\u9fa5_a-zA-Z0-9_]{2,20}/.test(uname.value))) {
-            alert("格式错误！姓名长度在2-20,不包含特殊字符");
-            return false;
+            document.getElementById("check1").innerHTML = "× 长度在2-20,不包含特殊字符";
+            document.getElementById("uname").focus();
+            result = false;
         }
-        //校验电话号码
-        if (!(/^1[3-9]\d{9}$/.test(tel.value))) {
-            alert("格式错误！电话号码第一个必须为1，第二个必须为3-9");
-            return false;
+        else{
+            document.getElementById("check1").innerHTML = "√";
+            result = true;
         }
-        //校验邮箱
-        if (!(/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(com|cn|net)$/.test(email.value))) {
-            alert("邮箱输入错误！");
-            return false;
-        }
-        //校验年龄
-        if (!(/^(?:[1-9][0-9]?|1[01][0-9]|120)$/.test(age.value))) {
-            alert("格式错误！年龄必须为1-120的整数");
-            return false;
-        }
+        return result;
     }
+    //校验电话号码
+    function check2() {
+        var result;
+        if (!(/^1[3-9]\d{9}$/.test(tel.value))) {
+            document.getElementById("check2").innerHTML = "×";
+            document.getElementById("tel").focus();
+            result = false;
+        }
+        else{
+            document.getElementById("check2").innerHTML = "√";
+            result = true;
+        }
+        return result;
+    }
+    //校验邮箱
+    function check3() {
+        var result;
+        if (!(/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(com|cn|net)$/.test(email.value))) {
+            document.getElementById("check3").innerHTML = "×";
+            document.getElementById("email").focus();
+            result = false;
+        }
+        else{
+            document.getElementById("check3").innerHTML = "√";
+            result = true;
+        }
+        return result;
+    }
+    //校验年龄
+    function check4(){
+        var result;
+        if (!(/^(?:[1-9][0-9]?|1[01][0-9]|120)$/.test(age.value))) {
+            document.getElementById("check1").innerHTML = "× 必须在1-120之间";
+            document.getElementById("uname").focus();
+            result = false;
+        }
+        else{
+            document.getElementById("check1").innerHTML = "√";
+            result = true;
+        }
+        return result;
+    }
+    var frm = document.querySelector('form');
+    frm.onsubmit = function () {
+        if(tel.value===''||uname.value===''||age.value===''||email.value===''){
+            alert("信息不能为空！");
+            return false;
+        }
+        else{
+            if(check1()&&check2()&&check3()&&check4())
+                return true;
+            else{
+                alert("信息存在错误！");
+                return false;
+            }
+        }
 }
