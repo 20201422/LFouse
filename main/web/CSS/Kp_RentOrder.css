@@ -1,6 +1,7 @@
 .checkOrder_Head{
     text-align: center;
     color: #3b3b3d;
+    min-width: 1200px;
 }
 .nr{
     position: relative;

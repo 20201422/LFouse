@@ -38,7 +38,6 @@
                     </div>
                     <%}else{
                         %>
-                            <%--<div style="height: 8%"></div>--%>
                             <div class="errorMsg1">
                             </div>
                         <%
@@ -67,7 +66,7 @@
                 </div>
                 <div class="login-button" ><input class="submit" type="submit" value="立 即 登 录"></div>
                 <div style="float: left;margin-top: 3%;width: 100%">
-                    <a class="right" href="Lhq_Search.jsp">忘记密码?</a>
+                    <a class="right" href="Lhq_Search.jsp?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>">忘记密码?</a>
                     |
                     <a href="Lhq_Register.jsp?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>" class="left">立即注册&nbsp;</a>
                 </div>
