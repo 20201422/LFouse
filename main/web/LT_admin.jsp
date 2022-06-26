@@ -236,6 +236,7 @@
                         &nbsp;<%=list.get(1).getH_name()%><br/>
                     </td>
                 </tr>
+
                 <tr style="background: #f5f5f7">
                     <td colspan="1" style="text-align: center">
                         <font>房源位置</font>
@@ -329,6 +330,7 @@
                     </td>
                 </tr>
             </table>
+            <div id="nihao"></div>
             <nav class="LT_div" style="float: left;height: 8%;width: 80%;background-color: #0597F2;margin-top: 4%;margin-left: 10%;border-radius: 24px">
                 <%
                 if(list.get(1).getH_status()==2){

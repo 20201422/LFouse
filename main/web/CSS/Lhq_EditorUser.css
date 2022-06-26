@@ -3,13 +3,14 @@
     padding: 30px;
     margin: 27px auto;
     text-align:center;
-    width:20%;
+    width:16%;
     border-radius: 25px;
     outline-style: ridge;
     outline-color: transparent ;
     -moz-outline-radius: 25px;
     min-width: 400px;
 }
+
 .move{
     display:block;
     text-align: left;
@@ -17,13 +18,11 @@
     margin-left: 8%;
 }
 #check1,#check2,#check3,#check4{
-    width:20%;
-    display: block;
-    float:right;
-    margin-left: 20%;
+    width:100%;
     color:red;
 }
 input[type="text"]{
+    height: 4%;
     width: 200px;
     transform:translateY(-100%);
     background-color: transparent;

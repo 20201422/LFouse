@@ -66,14 +66,52 @@
     </nav>
 </header>
 <br>
-<div class="card">
+<div class="card" >
 <form id="menu" name="menu" method="post" action="Lhq_UpdateServlet">
     <input type="hidden" name="user_id" value=<%=user.getUser_id()%>>
-    <div><span class="move">姓名：</span><input type="text" id="uname" name="uname" onchange="check1()" value=<%=user.getUname()%>></div><div><span id="check1"></span></div>
-    <div><span class="move">电话：</span><input type="text" id="tel" name="tel" onchange="check2()" value=<%=user.getTel()%>></div><div><span id="check2"></span></div>
-    <div><span class="move">邮箱：</span><input type="text" id="email" name="email" onchange="check3()" value=<%=user.getEmail()%>></div><div><span id="check3"></span></div>
-    <div><span class="move">性别：</span><input type="text" name="sex" value=<%=user.getSex()%>></div>
-    <div><span class="move">年龄：</span><input type="text" id="age" name="age" onchange="check4()" value=<%=user.getAge()%>></div><div><span id="check4"></span></div>
+    <div style="margin-top: 6%;">
+        <div>
+            <span class="move">姓名：</span>
+            <input type="text" id="uname" name="uname" onchange="check1()" value=<%=user.getUname()%>>
+        </div>
+        <div style="height: 4%;margin-top: -5%;">
+            <span id="check1"></span>
+        </div>
+    </div>
+
+    <div style="margin-top: 2%;">
+        <span class="move">电话：</span>
+        <input type="text" id="tel" name="tel" onchange="check2()" value=<%=user.getTel()%>>
+        <div style="height: 4%;margin-top: -5%;">
+            <span id="check2"></span>
+        </div>
+    </div>
+
+
+    <div>
+        <span class="move">邮箱：</span>
+        <input type="text" id="email" name="email" onchange="check3()" value=<%=user.getEmail()%>>
+        <div style="height: 4%;margin-top: -5%;">
+            <span id="check3"></span>
+        </div>
+    </div>
+
+
+    <div>
+        <span class="move">性别：</span>
+        <input type="text" name="sex" value=<%=user.getSex()%>>
+        <div style="height: 4%;margin-top: -5%;"></div>
+    </div>
+
+    <div>
+        <span class="move">年龄：</span>
+        <input type="text" id="age" name="age" onchange="check4()" value=<%=user.getAge()%>>
+        <div style="height: 4%;margin-top: -5%;">
+            <span id="check4"></span>
+        </div>
+    </div>
+
+
     <div class="form-btn">
         <input class="left" type="submit" value="立即修改">&nbsp&nbsp&nbsp&nbsp&nbsp
         <input class="right" type="button" onclick="window.location.href='Lhq_ShowMyInformationServlet';"value="返回">

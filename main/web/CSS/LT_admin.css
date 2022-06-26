@@ -182,6 +182,7 @@
     border: solid 0.1px;
     outline: none;
 }
+
 .table1:hover{
     transform: scale(1.02);
     box-shadow: 1px 1px 10px #a4a4a6;
