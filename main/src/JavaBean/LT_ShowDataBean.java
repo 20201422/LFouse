@@ -83,4 +83,15 @@ public class LT_ShowDataBean extends BaseDao{
         String sql="select * from user limit "+pageIndex+","+2;
         return queryForList(User.class, sql);
     }
+
+    public List<H_resources> queryBillPage8(int H_id) {//拿到特定用户信息
+        String sql="select * from h_resources where h_id = ?";
+        return queryForList(H_resources.class, sql,H_id);
+    }
+
+    public List<User> queryBillPage9(int User_id) {//拿到特定用户信息
+        String sql="select * from user where user_id = ?";
+        return queryForList(User.class, sql,User_id);
+    }
+
 }

@@ -45,7 +45,7 @@
 
 </header>
 
-<div style="height: 480px;">
+<div style="height: 67%;margin-top: 1%">
     <%
         String PageNo = request.getParameter("PageNo");
         String ts = "2";
@@ -60,8 +60,18 @@
     </nav>
 
     <div class="bigbg">
-        <div style="width: 100%;height: 4%;"></div>
-        <div style="width: 40%;height: 80%;background-color: white;border-radius: 20px;margin-left: 9%;float: left">
+        <div style="height: 3%"></div>
+        <form name=form1 method="post" action="LT_SearchForServlet">
+            <div style="margin-left: 9%;width: 80%;height: 8%;background-color: #F5F5F7;">
+                <input style="height: 60%;float: left;border-radius: 10px" type="text" placeholder="搜索用户编号"name="search">
+                <a href="javascript:document.form1.submit()">
+                    <img style="height: 50%;margin-left: -28px;margin-top: 2px" src="Image/搜索图标1jpg">
+                </a>
+            </div>
+            <%--此处是为了判断搜索的是房源编号还是用户--%>
+            <input type="hidden" id="ForSearcchType" name="ForSearcchType" value="user">
+        </form>
+        <div style="width: 40%;height: 70%;background-color: white;border-radius: 20px;margin-left: 9%;float: left">
             <div align="center" style="float: left;width: 4%;height: 6%;border-radius: 45px;background-color: #0597F2;margin-left: 45%;margin-top: 4%;color: white">${PageNo*2-1}</div><br/><br/>
             <%
                 if(list.get(0).getUser_id()!=0){
@@ -123,8 +133,8 @@
             %>
             <%--<div style="float: left;height: 8%;width: 80%;background-color: #CEE4F2;margin-top: 4%;margin-left: 10%"></div>--%>
         </div>
-        <div style=";height: 80%;border-right: solid white;float: left;margin-left: 1%"></div>
-        <div style="width: 40%;height: 80%;background-color: white;border-radius: 20px;margin-left: 1%;float: left">
+        <div style=";height: 70%;border-right: solid white;float: left;margin-left: 1%"></div>
+        <div style="width: 40%;height: 70%;background-color: white;border-radius: 20px;margin-left: 1%;float: left">
             <%
                 if(list.size()==2){
             %>

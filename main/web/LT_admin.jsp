@@ -55,13 +55,15 @@
 
     <div class="bigbg">
         <div style="height: 3%"></div>
-        <form name=form1 method="post" action="LT_ShowDataServlet">
+        <form name=form1 method="post" action="LT_SearchForServlet">
             <div style="margin-left: 9%;width: 80%;height: 8%;background-color: #F5F5F7;">
-                <input style="height: 60%;float: left" type="text" placeholder="搜索房源编号"name="search">
+                <input style="height: 60%;float: left;border-radius: 10px" type="text" placeholder="搜索房源编号"name="search">
                 <a href="javascript:document.form1.submit()">
-                    <img style="height: 50%;margin-left: -23px;margin-top: 2px" src="Image/搜索图标1jpg">
+                    <img style="height: 50%;margin-left: -28px;margin-top: 2px" src="Image/搜索图标1jpg">
                 </a>
             </div>
+            <%--此处是为了判断搜索的是房源编号还是用户--%>
+            <input type="hidden" id="ForSearcchType" name="ForSearcchType" value="house">
         </form>
 
 
@@ -71,7 +73,7 @@
             <%--}--%>
         <%--%>--%>
 
-        <div style="width: 40%;height: 75%;background-color: white;border-radius: 20px;margin-left: 9%;float: left;">
+        <div style="width: 40%;height: 70%;background-color: white;border-radius: 20px;margin-left: 9%;float: left;">
 
                 <div class="h_id" align="center" >${PageNo*2-1}</div><br/><br/>
                 <%
@@ -219,8 +221,8 @@
 
             <%--<div style="float: left;height: 8%;width: 80%;background-color: #CEE4F2;margin-top: 4%;margin-left: 10%"></div>--%>
         </div>
-        <div style=";height: 75%;border-right: solid white;float: left;margin-left: 1%"></div>
-        <div style="width: 40%;height: 75%;background-color: white;border-radius: 20px;margin-left: 1%;float: left;">
+        <div style=";height: 70%;border-right: solid white;float: left;margin-left: 1%"></div>
+        <div style="width: 40%;height: 70%;background-color: white;border-radius: 20px;margin-left: 1%;float: left;">
             <%
                 if(list.size()==2){
             %>
