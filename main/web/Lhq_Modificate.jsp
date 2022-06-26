@@ -67,14 +67,23 @@
     </nav>
 </header>
 <br>
-<form id="menu" name="menu" method="post" action="Lhq_ModificateServlet">
-    <input type="hidden" name="tel" value=<%=ntel%>>
-    <input type="hidden" id="check" value=<%=upwd%>>
-    <div><span>旧密码：</span><input type="password" id="upwd" name="upwd"></div>
-    <div><span>新密码：</span><input type="password" id="newupwd" name="newupwd"></div>
-    <div><span>确认新密码：</span><input type="password" id="enewupwd" name="enewupwd"></div>
-    <div><input type="submit" value="立即修改"><input type="button" onclick="window.location.href='Lhq_ShowMyInformationServlet';"value="返回"></div>
-</form>
+
+<div class="apwd-menu">
+    <form id="menu" name="menu" method="post" action="Lhq_ModificateServlet">
+        <input type="hidden" name="tel" value=<%=ntel%>>
+        <input type="hidden" id="check" value=<%=upwd%>>
+        <div class="apwd-text">
+            <span>旧密码：</span><input type="password" id="upwd" name="upwd"><br>
+            <span>新密码：</span><input type="password" id="newupwd" name="newupwd"><br>
+            <span>确认新密码：</span><input type="password" id="enewupwd" name="enewupwd"><br>
+        </div><br>
+        <div class="form-btn">
+            <input type="submit" value="立即修改">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <input type="button" onclick="window.location.href='Lhq_ShowMyInformationServlet';"value="返回">
+        </div>
+    </form>
+</div>
+
 <footer>
     <hr>
     <div class="footer-help">

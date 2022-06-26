@@ -85,13 +85,20 @@
     <div><span class="move">年龄：</span><input type="text" id="age" name="age" readonly="true" value=<%=user.getAge()%>></div>
     <div><span class="move">出租数量：</span><input type="text" id="lodge_num" name="lodge_num" value="0" readonly="true" value=<%=user.getLodge_num()%>></div>
     <div><span class="move">租房数量：</span><input type="text" id="rent_num" name="rent_num" value="0" readonly="true" value=<%=user.getRent_num()%>></div>
-    <div><a class="logout" href="javascript:document.menu.submit()">注销</a></div>
-    <div><input class="right" type="button" onclick="modificate()" value="修改密码"><input class="left" type="button" onclick="editor()" value="编辑"></div>
+    <div class="form-btn">
+        <input class="right" type="button" onclick="modificate()" value="修改密码">&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input class="left" type="button" onclick="editor()" value="修改信息">
+    </div>
+    <div class="form-btn-delete">
+        <a href="javascript:document.menu.submit()">注销</a>
+    </div>
 </form>
 </div>
+
 <div style="background-color: transparent;width: 100%;height: 5%">
 
 </div>
+
 <footer>
     <hr>
     <div class="footer-help">

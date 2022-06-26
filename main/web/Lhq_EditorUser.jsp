@@ -10,7 +10,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lhq_EditorUser.css" />
-    <title>LFouse-编辑用户信息</title>
+    <title>LFouse-修改个人信息</title>
 </head>
 <%  User user=(User)request.getAttribute("ShowMyInformation");
     String user_id= (String) session.getAttribute("user_id");//得到用户id
@@ -74,9 +74,10 @@
     <div><span class="move">邮箱：</span><input type="text" id="email" name="email" value=<%=user.getEmail()%>></div>
     <div><span class="move">性别：</span><input type="text" name="sex" value=<%=user.getSex()%>></div>
     <div><span class="move">年龄：</span><input type="text" id="age" name="age" value=<%=user.getAge()%>></div>
-    <div><span class="move">出租数量：</span><input type="text" id="lodge_num" name="lodge_num" value="0" readonly="true" value=<%=user.getLodge_num()%>></div>
-    <div><span class="move">租房数量：</span><input type="text" id="rent_num" name="rent_num" value="0" readonly="true" value=<%=user.getRent_num()%>></div>
-    <div><input class="left" type="submit" value="立即修改"><input class="right" type="button" onclick="window.location.href='Lhq_ShowMyInformationServlet';"value="返回"></div>
+    <div class="form-btn">
+        <input class="left" type="submit" value="立即修改">&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input class="right" type="button" onclick="window.location.href='Lhq_ShowMyInformationServlet';"value="返回">
+    </div>
 </form>
 </div>
 <footer>
