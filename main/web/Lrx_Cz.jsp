@@ -69,23 +69,23 @@
         %>
     </nav>
 </header>
-<p align="center">填写好以下信息</p>
-<div class="myChangeTable" align="center">
-    <form style="width: 100%" action="Lrx_CzAddServlet?user_id=<%=user_id%>" method="post" enctype="multipart/form-data">
-        <table>
-            <tr>
-                <td colspan="2">房名：<input style="width: 300px" type="text" name="h_name" ></td>
-            </tr>
-            <tr>
-                <td colspan="2">房位：<input style="width: 300px" type="text" name="h_location"></td>
-            </tr>
-            <tr>
-                <td>房价：<input style="width: 100px" type="text" name="h_price" ></td>
-                <td>户型：<input style="width: 100px" type="text" name="h_layout"></td>
+<div class="checkOrder_Head"><h1>填写以下信息</h1></div>
+<div>
+    <form action="Lrx_CzAddServlet?user_id=<%=user_id%>" method="post" enctype="multipart/form-data">
+        <div class="checkOrder_Head">
+            <h1>请填写基本信息</h1>
+        </div>
+        <div class="message-0">
+            <div class="message-1">
+                <div>名称：<input type="text" name="h_name" ></div>
+                <div>户型：<input type="text" name="h_layout"></div>
+                <div>面积：<input type="text" name="h_area"></div>
+                <div>楼层：<input type="text" name="h_floor"></div>
+            </div>
 
-            </tr>
-            <tr>
-                <td>类型：
+            <div class="message-1">
+                <div>
+                    类型：
                     <select style="width: 100px" name="h_type">
                         <option>商品房</option>
                         <option>别墅</option>
@@ -93,15 +93,10 @@
                         <option>民宿</option>
                         <option>公寓</option>
                     </select>
-                </td>
-                <td>面积：<input style="width: 100px" type="text" name="h_area"></td>
-            </tr>
-            <tr>
-                <td>
-                    楼层：<input style="width: 100px" type="text" name="h_floor">
-                </td>
-                <td>朝向：
-                    <select style="width: 95px" name="h_toward">
+                </div>
+                <div>
+                    朝向：
+                    <select style="width:100px" name="h_toward">
                         <option value="朝南">朝南</option>
                         <option value="朝北">朝北</option>
                         <option value="朝东">朝东</option>
@@ -111,36 +106,60 @@
                         <option value="东北">东北</option>
                         <option value="西北">西北</option>
                     </select>
-                </td>
-
-            </tr>
-            <tr>
-                <td colspan="2">电梯：
+                </div>
+                <div>
+                    电梯：
                     <select style="width: 100px" name="h_elevator">
                         <option value="1">有</option>
                         <option value="0">无</option>
                     </select>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">交通：<input style="width: 300px" type="text" name="h_traffic"></td>
-            </tr>
-        </table>
+                </div>
+            </div>
+        </div>
 
-        <input type="checkbox" name="facilities" value="wifi">无线WIFI
-        <input type="checkbox" name="facilities" value="TV">电视
-        <input type="checkbox" name="facilities" value="shower">淋浴
-        <input type="checkbox" name="facilities" value="airConditioner">空调
-        <input type="checkbox" name="facilities" value="washing">洗衣机
-        <input type="checkbox" name="facilities" value="refrigerator">冰箱
-        <br>
-        <input type="file" name="file" id="file" ><br>
-        <input type="submit" name="Submit" value="提交" class="btn">
-        <input type="reset" value="重置" class="btn">
+
+        <div class="checkOrder_Head">
+            <h1>请填写详细信息</h1>
+        </div>
+        <div class="message-2">
+            <div>位置：<input type="text" name="h_location"></div>
+            <div class="message-2-0">交通：
+                <textarea class="message-2-1" rows="3" name="h_traffic"></textarea>
+            </div>
+        </div>
+
+        <div class="checkOrder_Head">
+            <h1>请勾选房屋的配置</h1>
+        </div>
+        <div class="message-3">
+            <input type="checkbox" name="facilities" value="wifi">无线WIFI&nbsp&nbsp&nbsp&nbsp
+            <input type="checkbox" name="facilities" value="TV">电视&nbsp&nbsp&nbsp&nbsp
+            <input type="checkbox" name="facilities" value="shower">淋浴&nbsp&nbsp&nbsp&nbsp
+            <input type="checkbox" name="facilities" value="airConditioner">空调&nbsp&nbsp&nbsp&nbsp
+            <input type="checkbox" name="facilities" value="washing">洗衣机&nbsp&nbsp&nbsp&nbsp
+            <input type="checkbox" name="facilities" value="refrigerator">冰箱
+        </div>
+
+        <div class="checkOrder_Head">
+            <h1>您期望的月租</h1>
+        </div>
+        <div class="message-4">
+            <input type="text" name="h_price">&nbsp RMB/月
+        </div>
+        <div class="checkOrder_Head">
+            <h1>请上传房屋图片</h1>
+        </div>
+        <div class="message-5">
+            <input type="file" name="file" id="file" >
+        </div>
+        <div class="message-6">
+            <input type="submit" name="Submit" value="提交" class="btn">
+            <input type="reset" value="重置" class="btn">
+        </div>
     </form>
 </div>
 
-    <br><br>
+<br><br>
     <footer>
         <hr>
         <div class="footer-help">

@@ -52,7 +52,7 @@
     <%
         Lrx_NotCzMoreInforms lncmi=(Lrx_NotCzMoreInforms)request.getAttribute("oneInform");
     %>
-    <p align="center">你可以对这些基本信息进行修改</p>
+    <div class="checkOrder_Head"><h1>你可以对这些基本信息进行修改</h1></div>
     <div class="myChangeTable">
         <form action="Lrx_ModifyServlet?h_id=<%=lncmi.getH_id()%>" method="post">
             <table>
