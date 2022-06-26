@@ -122,11 +122,11 @@
 <c:forEach items="${List}" var="Lrx_AlreadyCz">
 <div class="myCz">
     <div style="text-align: center;display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: nowrap;
     align-items: center;" >
         <img class="img" src="Image/${Lrx_AlreadyCz.photo_name}" >
-        <table style="float: left">
+        <table style="">
             <tr>
 
                 <td>租客姓名：${Lrx_AlreadyCz.uname}</td>
