@@ -18,6 +18,12 @@ public class Lhq_SearchServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
         String email = request.getParameter("email");
+        String flg = request.getParameter("flg");
+        String showway = request.getParameter("showway");
+        String h_id = request.getParameter("h_id");
+        request.setAttribute("flg",flg);
+        request.setAttribute("showway",showway);
+        request.setAttribute("h_id",h_id);
         Lhq_SearchBean search=new Lhq_SearchBean();
         User user = search.findEmail(email);
         //实例化一个发送邮件的对象
@@ -30,7 +36,7 @@ public class Lhq_SearchServlet extends HttpServlet {
             request.getRequestDispatcher("/Lhq_Login.jsp").forward(request,response);
         }
         request.setAttribute("errorMsg","该邮箱尚未注册！");
-        request.getRequestDispatcher("/Lhq_Search.jsp").forward(request,response);
+        request.getRequestDispatcher("/Lhq_Login.jsp").forward(request,response);
     }
 
     @Override
