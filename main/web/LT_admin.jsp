@@ -213,7 +213,9 @@
                 <%
                 }else {
                 %>
-                    <h1 style="font-family:等线 Light;">暂时没有你要查找的信息</h1>
+                    <div style="float: left;margin-left: 20%;margin-top: 20%">
+                        <h1 style="font-family:等线 Light;">暂时没有你要查找的信息</h1>
+                    </div>
                 <%
                 }
                 %>
@@ -363,7 +365,7 @@
             <%
                 }else {
                     %>
-                    <div style="float: left;margin-left: 40%;margin-top: 20%">
+                    <div style="float: left;margin-left: 20%;margin-top: 20%">
                         <h1 style="font-family:等线 Light;">暂时没有你要查找的信息</h1>
                     </div>
 
