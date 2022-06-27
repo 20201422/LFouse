@@ -10,6 +10,7 @@
 <%@ page import="Model.User" %>
 <%@ page import="java.util.List" %>
 <%@ page import="Model.Lodge" %>
+<%@ page import="java.util.Objects" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String user_id= (String) session.getAttribute("user_id");//得到用户id
@@ -99,7 +100,18 @@
             <table>
                 <tr>
                     <td>类型：<%=h_resources.getH_type()%></td>
+                    <%
+                        if(Objects.equals(h_resources.getH_layout(), "")||
+                                (h_resources.getH_layout()==null)){//户型为空（用于写字楼）
+                    %>
+                    <td>户型：暂无</td>
+                    <%
+                    }else{//户型不为空（用于写字楼）
+                    %>
                     <td>户型：<%=h_resources.getH_layout()%></td>
+                    <%
+                        }
+                    %>
                 </tr>
                 <tr>
                     <td>楼层：<%=h_resources.getH_floor()%></td>

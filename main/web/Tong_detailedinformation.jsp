@@ -122,7 +122,18 @@
             <table>
                 <tr>
                     <td>类型：<%=h_resources.getH_type()%></td>
+                    <%
+                        if(Objects.equals(h_resources.getH_layout(), "")||
+                                (h_resources.getH_layout()==null)){//户型为空（用于写字楼）
+                    %>
+                    <td>户型：暂无</td>
+                    <%
+                    }else{//户型不为空（用于写字楼）
+                    %>
                     <td>户型：<%=h_resources.getH_layout()%></td>
+                    <%
+                        }
+                    %>
                 </tr>
                 <tr>
                     <td>楼层：<%=h_resources.getH_floor()%></td>
@@ -299,7 +310,8 @@
                 <div class="House_Message2">
                     <p>
                         <%
-                            if(h_resource.getH_layout()==null){//户型为空（用于写字楼）
+                            if(Objects.equals(h_resources.getH_layout(), "")||
+                                    (h_resources.getH_layout()==null)){//户型为空（用于写字楼）
                         %>
                         户型：暂无&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                         <%

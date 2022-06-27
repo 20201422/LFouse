@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="Model.H_resources" %><%--
+<%@ page import="Model.H_resources" %>
+<%@ page import="java.util.Objects" %><%--
   Created by IntelliJ IDEA.
   User: coopskywalker
   Date: 2022/6/23
@@ -121,7 +122,8 @@
                     <p>
                         种类：<%=h_resources.getH_type()%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                         <%
-                            if(h_resources.getH_layout()==null){//户型为空（用于写字楼）
+                            if(Objects.equals(h_resources.getH_layout(), "")||
+                                    (h_resources.getH_layout()==null)){//户型为空（用于写字楼）
                         %>
                         户型：暂无&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                         <%
@@ -219,7 +221,8 @@
                 <div class="House_Message2">
                     <p>
                         <%
-                            if(h_resources.getH_layout()==null){//户型为空（用于写字楼）
+                            if(Objects.equals(h_resources.getH_layout(), "")||
+                                    (h_resources.getH_layout()==null)){//户型为空（用于写字楼）
                         %>
                         户型：暂无&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                         <%
