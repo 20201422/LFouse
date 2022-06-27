@@ -1,6 +1,7 @@
 package JavaBean;
 
 import Model.Lodge;
+import Model.User;
 import org.junit.Test;
 
 import java.util.List;
@@ -68,13 +69,26 @@ public class Kp_OrderBean  extends BaseDao{
 
     }
 
+    public User checkrentnum(int user_id){//检查用户
+
+        String sql="select * from user where user_id=?";
+
+        return queryForOne(User.class,sql,user_id);
+    }
+
     public void cancelorder(int user_id, int h_id){//取消订单
 
-        String UpdateUserRent_numSql="update user set rent_num=rent_num-1 where user_id=?";
-        String UpdateH_resourcesH_statusSql="update h_resources set h_status=2 where h_id=?";
+        if(checkrentnum(user_id).getRent_num()>0){//修改bug，如果租房数量大于0才可以减少
+            String UpdateUserRent_numSql="update user set rent_num=rent_num-1 where user_id=?";
+            update(UpdateUserRent_numSql,user_id);//修改用户租房数量
+        }
+        else{//否则租房数量变为零
+            String UpdateUserRent_numSql="update user set rent_num=0 where user_id=?";
+            update(UpdateUserRent_numSql,user_id);//修改用户租房数量
+        }
+        String UpdateH_resourcesH_statusSql="update h_resources set h_status=0 where h_id=?";
         String UpdateLodge_otime="update lodge set lodge_otime=now() , lodge_psta='订单结束' where h_id=? and user_id=?";
 
-        update(UpdateUserRent_numSql,user_id);//修改用户租房数量
         update(UpdateH_resourcesH_statusSql,h_id);//修改房源状态
         update(UpdateLodge_otime,h_id,user_id);//修改租房表的截止时间
 

@@ -1,11 +1,12 @@
 .wrap{
-    width: 540px;
+    width: 610px;
     height: 500px;
-    background-color:#f5f5f7;
+    background-color:white;
     margin: 50px auto;
     border: solid white 1px;
     border-radius: 10px;
     -moz-outline-radius: 25px;
+    transition: all 0.25s;
 }
 .wrap:hover{
     box-shadow: 1px 1px 10px #a4a4a6;
@@ -19,7 +20,7 @@
     margin-left: 50px;
 }
 .move{
-    width:200px;
+    width:210px;
     background-color: transparent;
     outline: none;
     border: none;
@@ -27,43 +28,56 @@
     margin-left: 48px;
 }
 .nmove{
-    width:200px;
+    width:210px;
     background-color: transparent;
     outline: none;
     border: none;
     border-bottom: 1px solid #3b3b3c;
 }
-.block{
-    display:block;
+.form_Register{
+    width: 490px;
+    height: 330px;
     text-align: left;
-    color:#3b3b3c;
+    font-size: 18px;
+    margin: auto;
+    padding: 10px;
+    letter-spacing:4px;
+
 }
-/*.form_Register{*/
-/*    width: 490px;*/
-/*    height: 330px;*/
-/*    text-align: left;*/
-/*    font-size: 18px;*/
-/*    margin: auto;*/
-/*    padding: 10px;*/
-/*    letter-spacing:4px;*/
+#check1,#check2,#check3,#check4,#check5,#check6{
+    font-size: 13px;
+    letter-spacing:0px;
+}
 
-/*}*/
+.form_Register div{
+    height: 20px;
+    font-size: 20px;
+    font-weight: 200;
+    margin: 10px;
+    margin-top: 3%;
+    margin-left: 10%;
+}
 
+.send-button{
+    margin: 20px;
+}
 
-/*.form_Register div{*/
-/*    height: 20px;*/
-/*    color: rgb(0,83,119);*/
-/*    font-size: 20px;*/
-/*    font-weight: 200;*/
-/*    margin: 10px;*/
-/*    padding: 0px;*/
-/*}*/
-
-/*.send-button{*/
-/*    margin: 20px;*/
-/*}*/
-
-
+.errorMsg{
+    background-color: #F5F5F7;
+    height: 8%;
+    width: 80%;
+    margin-left: 10%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.errorMsg1{
+    background-color: transparent;
+    height: 8%;
+    width: 80%;
+    margin-left: 10%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
 .submit{
     margin-top: -12px;
     background-color: transparent;
@@ -71,8 +85,8 @@
     padding: 8px;
     outline: none;
     border: none;
-    font-size: 17px;
-    width: 30%;
+    font-size: 18px;
+    width: 25%;
     cursor: pointer;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
@@ -84,13 +98,14 @@
 
 .cancel{
     margin-top: -12px;
+    margin-left: 5%;
     background-color: transparent;
     color: #0597F2;
+    font-size: 18px;
     padding: 8px;
     outline: none;
     border: none;
-    font-size: 17px;
-    width: 30%;
+    width: 25%;
     cursor: pointer;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;

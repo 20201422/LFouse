@@ -6,12 +6,11 @@
     function check1() {
         var result;
         if (!(/[\u4e00-\u9fa5_a-zA-Z0-9_]{2,20}/.test(uname.value))) {
-            document.getElementById("check1").innerHTML = "× 长度在2-20,不包含特殊字符";
+            document.getElementById("check1").innerHTML = "长度在2-20,不包含特殊字符";
             document.getElementById("uname").focus();
             result = false;
         }
         else{
-            document.getElementById("check1").innerHTML = "√";
             result = true;
         }
         return result;
@@ -20,12 +19,11 @@
     function check2() {
         var result;
         if (!(/^1[3-9]\d{9}$/.test(tel.value))) {
-            document.getElementById("check2").innerHTML = "×";
+            document.getElementById("check2").innerHTML = "电话号码格式错误";
             document.getElementById("tel").focus();
             result = false;
         }
         else{
-            document.getElementById("check2").innerHTML = "√";
             result = true;
         }
         return result;
@@ -34,12 +32,11 @@
     function check3() {
         var result;
         if (!(/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(com|cn|net)$/.test(email.value))) {
-            document.getElementById("check3").innerHTML = "×";
+            document.getElementById("check3").innerHTML = "邮箱格式错误";
             document.getElementById("email").focus();
             result = false;
         }
         else{
-            document.getElementById("check3").innerHTML = "√";
             result = true;
         }
         return result;
@@ -48,12 +45,11 @@
     function check4(){
         var result;
         if (!(/^(?:[1-9][0-9]?|1[01][0-9]|120)$/.test(age.value))) {
-            document.getElementById("check1").innerHTML = "× 必须在1-120之间";
+            document.getElementById("check4").innerHTML = "年龄必须在1-120之间";
             document.getElementById("uname").focus();
             result = false;
         }
         else{
-            document.getElementById("check1").innerHTML = "√";
             result = true;
         }
         return result;

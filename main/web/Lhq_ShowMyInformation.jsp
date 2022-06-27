@@ -83,8 +83,28 @@
     <div><span class="move">邮箱：</span><input type="text" id="email" readonly="true" name="email" value=<%=user.getEmail()%>></div>
     <div><span class="move">性别：</span><input type="text" name="sex" readonly="true" value=<%=user.getSex()%>></div>
     <div><span class="move">年龄：</span><input type="text" id="age" name="age" readonly="true" value=<%=user.getAge()%>></div>
-    <div><span class="move">出租数量：</span><input type="text" id="lodge_num" name="lodge_num" value="0" readonly="true" value=<%=user.getLodge_num()%>></div>
-    <div><span class="move">租房数量：</span><input type="text" id="rent_num" name="rent_num" value="0" readonly="true" value=<%=user.getRent_num()%>></div>
+    <%
+        if(user.getLodge_num()<=0){
+            %>
+    <div><span class="move">出租数量：</span><input type="text" id="lodge_num" name="lodge_num" readonly="true" value="0"></div>
+    <%
+        }else{
+    %>
+    <div><span class="move">出租数量：</span><input type="text" id="lodge_num" name="lodge_num" readonly="true" value=<%=user.getLodge_num()%>></div>
+   <%
+    }
+    %>
+    <%
+        if(user.getRent_num()<=0){
+    %>
+    <div><span class="move">租房数量：</span><input type="text" id="rent_num" name="rent_num" readonly="true" value="0"></div>
+    <%
+    }else{
+    %>
+    <div><span class="move">租房数量：</span><input type="text" id="rent_num" name="rent_num" readonly="true" value=<%=user.getRent_num()%>></div>
+    <%
+    }
+    %>
     <div class="form-btn">
         <input class="right" type="button" onclick="modificate()" value="修改密码">&nbsp&nbsp&nbsp&nbsp&nbsp
         <input class="left" type="button" onclick="editor()" value="修改信息">
