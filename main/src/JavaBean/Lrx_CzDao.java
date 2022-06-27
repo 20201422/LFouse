@@ -8,7 +8,8 @@ public class Lrx_CzDao extends BaseDao{
     public List<Lrx_AlreadyCz>getAlreadyCz(String user_id){    //得到已经被租了的房子与租客信息
         return  queryForList(Lrx_AlreadyCz.class,"SELECT photo_name,h_resources.h_id,h_name,h_location,h_price,user.uname,user.tel,user.email,lodge.lodge_limit,lodge.lodge_stime,lodge.lodge_etime,lodge.lodge_otime,lodge.lodge_psta,lodge.lodge_pway\n" +
                                                     "FROM h_resources,lodge,USER,photo\n" +
-                                                    "WHERE h_status=3 AND lodge_psta!='订单结束' AND h_resources.user_id="+Integer.parseInt(user_id)+" AND h_resources.h_id=lodge.h_id AND lodge.user_id=user.user_id AND h_resources.h_id=photo.h_id;");
+                                                    "WHERE h_status=3 AND lodge_psta!='订单结束' AND h_resources.user_id="+Integer.parseInt(user_id)+" AND h_resources.h_id=lodge.h_id AND lodge.user_id=user.user_id AND h_resources.h_id=photo.h_id \n" +
+                                                    "group by photo.h_id;");
     }
     public List<Lrx_NotCz>getNotCz(String user_id){  //得到没被租的房子的信息
         return queryForList(Lrx_NotCz.class,"SELECT h_id,h_name,h_location,h_status\n" +

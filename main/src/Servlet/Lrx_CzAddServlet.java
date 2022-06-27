@@ -85,10 +85,10 @@ public class Lrx_CzAddServlet extends HttpServlet {
                 String fileName = item.getName();//获得上传图片的名称
                 int index = fileName.lastIndexOf("\\");
                 fileName = fileName.substring(index + 1);
-                // cz.AddHouse(user_id,name,location,price,layout,type,area,elevator,toward,traffic,floor);
+                cz.AddHouse(user_id,name,location,price,layout,type,area,elevator,toward,traffic,floor);
                 cz.Addfacilities(name,facilities[0],facilities[1],facilities[2],facilities[3],facilities[4],facilities[5]);
-                // cz.AddPhoto(name,fileName);
-                // System.out.println((String) request.getSession().getAttribute("h_name"));
+                cz.AddPhoto(name,fileName);
+                System.out.println((String) request.getSession().getAttribute("h_name"));
                 request.setAttribute("realFileName", fileName);
                 String basePath =  "C:/Web/LFouse/main/web/Image";
                 System.out.println(basePath+"\n"+fileName);//打印当前位置

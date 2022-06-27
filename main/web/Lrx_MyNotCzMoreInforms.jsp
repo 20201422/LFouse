@@ -12,6 +12,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_TableStyle.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/Lrx_AddCz.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_Button.css" />
     <title>LFouse-详细信息</title>
 </head>
@@ -52,59 +53,79 @@
     <%
         Lrx_NotCzMoreInforms lncmi=(Lrx_NotCzMoreInforms)request.getAttribute("oneInform");
     %>
-    <div class="checkOrder_Head"><h1>你可以对这些基本信息进行修改</h1></div>
-    <div class="myChangeTable">
-        <form action="Lrx_ModifyServlet?h_id=<%=lncmi.getH_id()%>" method="post">
-            <table>
-                <tr>
-                    <td colspan="2">房名：<input style="width: 305px" type="text" name="h_name" value=<%=lncmi.getH_name()%>></td>
-                    <td colspan="2">房位：<input style="width: 310px" type="text" name="h_location" value=<%=lncmi.getH_location()%>></td>
-                </tr>
-                <tr>
-                    <td>房价：<input style="width: 100px" type="text" name="h_price" value="<%=lncmi.getH_price()%>"></td>
-                    <td>户型：<input style="width: 100px" type="text" name="h_layout" value=<%=lncmi.getH_layout()%>></td>
-                    <td>类型：
-                        <select style="width: 100px" name="h_type">
-                            <option <c:if test="${oneInform.h_type=='商品房'}"> selected="selected"</c:if>>商品房</option>
-                            <option <c:if test="${oneInform.h_type=='别墅'}"> selected="selected"</c:if>>别墅</option>
-                            <option <c:if test="${oneInform.h_type=='写字楼'}"> selected="selected"</c:if>>写字楼</option>
-                            <option <c:if test="${oneInform.h_type=='民宿'}"> selected="selected"</c:if>>民宿</option>
-                            <option <c:if test="${oneInform.h_type=='公寓'}"> selected="selected"</c:if>>公寓</option>
-                        </select>
-                    </td>
-                    <td>面积：<input style="width: 100px" type="text" name="h_area" value="<%=lncmi.getH_area()%>"></td>
-                </tr>
-                <tr>
-                    <td>
-                        楼层：<input style="width: 100px" type="text" name="h_floor" value=<%=lncmi.getH_floor()%>>
-                    </td>
-                    <td>朝向：
-                        <select style="width: 95px" name="h_toward">
-                            <option value="朝南" <c:if test="${oneInform.h_toward=='朝南'}"> selected="selected"</c:if>>朝南</option>
-                            <option value="朝北" <c:if test="${oneInform.h_toward=='朝北'}"> selected="selected"</c:if>>朝北</option>
-                            <option value="朝东" <c:if test="${oneInform.h_toward=='朝东'}"> selected="selected"</c:if>>朝东</option>
-                            <option value="朝西" <c:if test="${oneInform.h_toward=='朝西'}"> selected="selected"</c:if>>朝西</option>
-                            <option value="东南" <c:if test="${oneInform.h_toward=='东南'}"> selected="selected"</c:if>>东南</option>
-                            <option value="西南" <c:if test="${oneInform.h_toward=='西南'}"> selected="selected"</c:if>>西南</option>
-                            <option value="东北" <c:if test="${oneInform.h_toward=='东北'}"> selected="selected"</c:if>>东北</option>
-                            <option value="西北" <c:if test="${oneInform.h_toward=='西北'}"> selected="selected"</c:if>>西北</option>
-                        </select>
-                    </td>
-                    <td colspan="2">电梯：
-                        <select style="width: 100px" name="h_elevator">
-                            <option value="1" <c:if test="${oneInform.h_elevator==1}"> selected="selected"</c:if>>有</option>
-                            <option value="0" <c:if test="${oneInform.h_elevator==0}"> selected="selected"</c:if>>无</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="4">交通情况：<input style="width: 690px" type="text" name="h_traffic" value=<%=lncmi.getH_traffic()%>></td>
-                </tr>
-            </table>
-            <input type="submit" value="保存修改" class="btn">
-           <a href="Lrx_MyNotCzManage.jsp"> <input type="button" value="返回" class="btn"> </a>
-        </form>
-    </div>
+    <form action="Lrx_ModifyServlet?h_id=<%=lncmi.getH_id()%>" method="post">
+        <div class="checkOrder_Head"><h1>你可以对这些基本信息进行修改</h1></div>
+        <div class="message-0">
+            <div class="message-1">
+                <div>名称：<input type="text" name="h_name" id="h_name" value=<%=lncmi.getH_name()%>></div>
+                <div>户型：<input type="text" name="h_layout" id="h_layout" value=<%=lncmi.getH_layout()%>></div>
+                <div>面积：<input placeholder="平方米" type="text" name="h_area" id="h_area" value=<%=lncmi.getH_area()%>></div>
+                <div>楼层：<input type="text" name="h_floor" id="h_floor" value=<%=lncmi.getH_floor()%>></div>
+            </div>
+
+            <div class="message-1">
+                <div>
+                    类型：
+                    <select style="width: 100px" name="h_type" id="h_type">
+                        <option <c:if test="${oneInform.h_type=='商品房'}"> selected="selected"</c:if>>商品房</option>
+                        <option <c:if test="${oneInform.h_type=='别墅'}"> selected="selected"</c:if>>别墅</option>
+                        <option <c:if test="${oneInform.h_type=='写字楼'}"> selected="selected"</c:if>>写字楼</option>
+                        <option <c:if test="${oneInform.h_type=='民宿'}"> selected="selected"</c:if>>民宿</option>
+                        <option <c:if test="${oneInform.h_type=='公寓'}"> selected="selected"</c:if>>公寓</option>
+                    </select>
+                </div>
+                <div>
+                    朝向：
+                    <select style="width:100px" name="h_toward">
+                        <option value="朝南" <c:if test="${oneInform.h_toward=='朝南'}"> selected="selected"</c:if>>朝南</option>
+                        <option value="朝北" <c:if test="${oneInform.h_toward=='朝北'}"> selected="selected"</c:if>>朝北</option>
+                        <option value="朝东" <c:if test="${oneInform.h_toward=='朝东'}"> selected="selected"</c:if>>朝东</option>
+                        <option value="朝西" <c:if test="${oneInform.h_toward=='朝西'}"> selected="selected"</c:if>>朝西</option>
+                        <option value="东南" <c:if test="${oneInform.h_toward=='东南'}"> selected="selected"</c:if>>东南</option>
+                        <option value="西南" <c:if test="${oneInform.h_toward=='西南'}"> selected="selected"</c:if>>西南</option>
+                        <option value="东北" <c:if test="${oneInform.h_toward=='东北'}"> selected="selected"</c:if>>东北</option>
+                        <option value="西北" <c:if test="${oneInform.h_toward=='西北'}"> selected="selected"</c:if>>西北</option>
+                    </select>
+                </div>
+                <div>
+                    电梯：
+                    <select style="width: 100px" name="h_elevator">
+                        <option value="1" <c:if test="${oneInform.h_elevator==1}"> selected="selected"</c:if>>有</option>
+                        <option value="0" <c:if test="${oneInform.h_elevator==0}"> selected="selected"</c:if>>无</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="checkOrder_Head">
+            <h1>请填写详细信息</h1>
+        </div>
+        <div class="message-2">
+            <div>位置：<input type="text" name="h_location" id="h_location" value=<%=lncmi.getH_location()%>></div>
+            <div class="message-2-0">交通：
+                <textarea class="message-2-1" rows="3" name="h_traffic" id="h_traffic"><%=lncmi.getH_traffic()%></textarea>
+            </div>
+        </div>
+
+
+
+        <div class="checkOrder_Head">
+            <h1>您期望的月租</h1>
+        </div>
+        <div class="message-4">
+            <input type="text" name="h_price" id="h_price" value=<%=lncmi.getH_price()%>>&nbsp RMB/月
+        </div>
+
+        <div class="message-6">
+            <input type="submit" name="Submit" value="确认修改" class="btn">
+            <a href="Lrx_MyNotCzManage.jsp"><input type="button" value="返回"></a>
+        </div>
+    </form>
+
+
+
+
     <footer>
         <hr>
         <div class="footer-help">
@@ -116,6 +137,7 @@
             Copyrite ©️ 2022 202014-4 lnc.保留所有权利<br>
             京IPC备202014-4 营业执照 无线电发射设备销售备案编号11201910351200
         </div>
+
     </footer>
 </body>
 </html>

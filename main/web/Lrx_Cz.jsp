@@ -71,22 +71,23 @@
     </nav>
 </header>
 <div>
+
     <form action="Lrx_CzAddServlet?user_id=<%=user_id%>" method="post" enctype="multipart/form-data">
         <div class="checkOrder_Head">
             <h1>请填写基本信息</h1>
         </div>
         <div class="message-0">
             <div class="message-1">
-                <div>名称：<input type="text" name="h_name" ></div>
-                <div>户型：<input type="text" name="h_layout"></div>
-                <div>面积：<input type="text" name="h_area"></div>
-                <div>楼层：<input type="text" name="h_floor"></div>
+                <div>名称：<input type="text" name="h_name" id="h_name"></div>
+                <div>户型：<input type="text" name="h_layout" id="h_layout"></div>
+                <div>面积：<input placeholder="平方米" type="text" name="h_area" id="h_area"></div>
+                <div>楼层：<input type="text" name="h_floor" id="h_floor"></div>
             </div>
 
             <div class="message-1">
                 <div>
                     类型：
-                    <select style="width: 100px" name="h_type">
+                    <select style="width: 100px" name="h_type" id="h_type">
                         <option>商品房</option>
                         <option>别墅</option>
                         <option>写字楼</option>
@@ -122,9 +123,9 @@
             <h1>请填写详细信息</h1>
         </div>
         <div class="message-2">
-            <div>位置：<input type="text" name="h_location"></div>
+            <div>位置：<input type="text" name="h_location" id="h_location"></div>
             <div class="message-2-0">交通：
-                <textarea class="message-2-1" rows="3" name="h_traffic"></textarea>
+                <textarea class="message-2-1" rows="3" name="h_traffic" id="h_traffic"></textarea>
             </div>
         </div>
 
@@ -144,7 +145,7 @@
             <h1>您期望的月租</h1>
         </div>
         <div class="message-4">
-            <input type="text" name="h_price">&nbsp RMB/月
+            <input type="text" name="h_price" id="h_price">&nbsp RMB/月
         </div>
         <div class="checkOrder_Head">
             <h1>请上传房屋图片</h1>
@@ -159,6 +160,7 @@
     </form>
     <script src="Script/Lrx_AddHouse.js"></script>
 </div>
+
 
 <br><br>
     <footer>
