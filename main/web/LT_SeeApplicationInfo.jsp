@@ -73,10 +73,18 @@
             <%--</div>--%>
             <div class="photo">
                 <%
+                    if(list1!=null&&list1.size()>0){
                     for(Photo photo:list1){
                 %>
                 <img class="img" src="Image/<%=photo.getPhoto_name()%>">
                 <%
+                        }
+                    }else{
+                        %>
+                        <div align="center"style="margin-top: 20%">
+                            <h1 style="font-family:等线 Light;">暂时没有该房源图片</h1>
+                        </div>
+                        <%
                     }
                 %>
                 <%--<img class="img" src="Image/公寓1.jpg">--%>
@@ -88,130 +96,143 @@
         </div>
         <div style="height: 80%;border-right: solid white;float: left;margin-left: 1%"></div>
         <div style="width: 40%;height: 80%;background-color: white;border-radius: 20px;margin-left: 1%;float: left">
-            <div align="center" style="width: 60%;height: 10%;background-color: #0597F2;margin-left: 20%;border-radius: 24px;margin-top: 4%">
-                <font style="line-height: 200%;color: white;font-size: 20px">配套设施信息</font>
-            </div>
-            <table align="center" border="1" cellpadding="0" cellspacing="0"class="table1">
-                <tr style="background: #f5f5f7" align="center"><td colspan="4"><font>LFouse房源信息审批订单</font></td></tr>
-                <tr>
-                    <td colspan="1" style="text-align: center;width: 20%">
-                        <font>名称</font>
-                    </td>
-                    <td colspan="3">
-                        &nbsp;<%=H_name%><br/>
-                    </td>
-                </tr>
-                <tr style="background: #f5f5f7">
-                    <td colspan="1" style="text-align: center;width: 20%">
-                        <font>wifi</font>
-                    </td>
-                    <td colspan="3">
-                        &nbsp;<%
-                                if(list.get(0).getWifi()==1){
-                                    %>
-                                        <%="有"%>
-                                    <%
-                                }
-                                else{
-                                    %>
-                                        <%="无"%>
-                                    <%
-                                }
-                            %><br/>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="1" style="text-align: center">
-                        <font>TV</font>
-                    </td>
-                    <td colspan="3">
-                        &nbsp;<%
-                                if(list.get(0).getTV()==1){
-                                    %>
-                                        <%="有"%>
-                                    <%
-                                }
-                                else{
-                                    %>
-                                        <%="无"%>
-                                    <%
-                                }
-                            %><br/>
-                    </td>
-                </tr>
-                <tr style="background: #f5f5f7">
-                    <td style="text-align: center;width: 20%">
-                        <font>淋浴</font>
-                    </td>
-                    <td style="width: 30%">
-                        &nbsp;<%
-                                if(list.get(0).getTV()==1){
-                                    %>
-                                        <%="有"%>
-                                    <%
-                                }
-                                else{
-                                    %>
-                                        <%="无"%>
-                                    <%
-                                }
-                         %><br/>
-                    </td>
-                    <td style="text-align: center;width: 20%">
-                        <font>空调</font>
-                    </td>
-                    <td>
-                        &nbsp;<%
-                        if(list.get(0).getAirConditioner()==1){
-                            %>
-                                <%="有"%>
-                            <%
-                        }
-                        else{
-                            %>
-                                <%="无"%>
-                            <%
-                        }
+            <%
+                if(list!=null&&list.size()>0){
                     %>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align: center">
-                        <font>洗衣机</font>
-                    </td>
-                    <td>
-                    &nbsp;<%
-                        if(list.get(0).getWashing()==1){
-                            %>
-                                <%="有"%>
-                            <%
-                        }
-                        else{
-                            %>
-                                <%="无"%>
-                            <%
-                        }
-                    %><br/>
-                    </td>
-                    <td style="text-align: center">
-                        <font>冰箱</font>
-                    </td>
-                    <td>
-                        &nbsp;<%
-                        if(list.get(0).getRefrigerator()==1){
-                            %>
-                                <%="有"%>
-                            <%
-                        }
-                        else{
-                            %>
-                                <%="无"%>
-                            <%
-                        }
-                    %><br/>
-                    </td>
-                </tr>
-            </table>
+                        <div align="center" style="width: 60%;height: 10%;background-color: #0597F2;margin-left: 20%;border-radius: 24px;margin-top: 4%">
+                            <font style="line-height: 200%;color: white;font-size: 20px">配套设施信息</font>
+                        </div>
+                        <table align="center" border="1" cellpadding="0" cellspacing="0"class="table1">
+                            <tr style="background: #f5f5f7" align="center"><td colspan="4"><font>LFouse房源信息审批订单</font></td></tr>
+                            <tr>
+                                <td colspan="1" style="text-align: center;width: 20%">
+                                    <font>名称</font>
+                                </td>
+                                <td colspan="3">
+                                    &nbsp;<%=H_name%><br/>
+                                </td>
+                            </tr>
+                            <tr style="background: #f5f5f7">
+                                <td colspan="1" style="text-align: center;width: 20%">
+                                    <font>wifi</font>
+                                </td>
+                                <td colspan="3">
+                                    &nbsp;<%
+                                    if(list.get(0).getWifi()==1){
+                                %>
+                                    <%="有"%>
+                                    <%
+                                    }
+                                    else{
+                                    %>
+                                    <%="无"%>
+                                    <%
+                                        }
+                                    %><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" style="text-align: center">
+                                    <font>TV</font>
+                                </td>
+                                <td colspan="3">
+                                    &nbsp;<%
+                                    if(list.get(0).getTV()==1){
+                                %>
+                                    <%="有"%>
+                                    <%
+                                    }
+                                    else{
+                                    %>
+                                    <%="无"%>
+                                    <%
+                                        }
+                                    %><br/>
+                                </td>
+                            </tr>
+                            <tr style="background: #f5f5f7">
+                                <td style="text-align: center;width: 20%">
+                                    <font>淋浴</font>
+                                </td>
+                                <td style="width: 30%">
+                                    &nbsp;<%
+                                    if(list.get(0).getTV()==1){
+                                %>
+                                    <%="有"%>
+                                    <%
+                                    }
+                                    else{
+                                    %>
+                                    <%="无"%>
+                                    <%
+                                        }
+                                    %><br/>
+                                </td>
+                                <td style="text-align: center;width: 20%">
+                                    <font>空调</font>
+                                </td>
+                                <td>
+                                    &nbsp;<%
+                                    if(list.get(0).getAirConditioner()==1){
+                                %>
+                                    <%="有"%>
+                                    <%
+                                    }
+                                    else{
+                                    %>
+                                    <%="无"%>
+                                    <%
+                                        }
+                                    %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">
+                                    <font>洗衣机</font>
+                                </td>
+                                <td>
+                                    &nbsp;<%
+                                    if(list.get(0).getWashing()==1){
+                                %>
+                                    <%="有"%>
+                                    <%
+                                    }
+                                    else{
+                                    %>
+                                    <%="无"%>
+                                    <%
+                                        }
+                                    %><br/>
+                                </td>
+                                <td style="text-align: center">
+                                    <font>冰箱</font>
+                                </td>
+                                <td>
+                                    &nbsp;<%
+                                    if(list.get(0).getRefrigerator()==1){
+                                %>
+                                    <%="有"%>
+                                    <%
+                                    }
+                                    else{
+                                    %>
+                                    <%="无"%>
+                                    <%
+                                        }
+                                    %><br/>
+                                </td>
+                            </tr>
+                        </table>
+                    <%
+                }else{
+                %>
+                    <div align="center"style="margin-top: 20%">
+                        <h1 style="font-family:等线 Light;">暂时没有你要查找的信息</h1>
+                    </div>
+                <%
+                }
+            %>
+
         </div>
         <nav class="back" align="center">
             <a href="javascript:history.back(-1)"><font >返回</font></a>

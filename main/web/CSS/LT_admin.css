@@ -3,6 +3,7 @@
     /*bottom: 0;*/
 /*}*/
 .LT_menu{
+    align-items: center;
     float: left;
     width: 8%;
     height: 100%;
@@ -53,6 +54,7 @@
 #p1{
     display: inline-block;
     margin: 16% 11px 0 11px;
+    margin-left: 18%;
     padding-top: 52px;
     font-size: 20px;
 }
@@ -60,24 +62,28 @@
 #p2{
     display: inline-block;
     margin: 0 11px 0 11px;
+    margin-left: 18%;
     padding-top: 52px;
     font-size: 20px;
 }
 #p3{
     display: inline-block;
     margin: 0 11px 0 11px;
+    margin-left: 18%;
     padding-top: 52px;
     font-size: 20px;
 }
 #p4{
     display: inline-block;
     margin: 0 11px 0 11px;
+    margin-left: 18%;
     padding-top: 52px;
     font-size: 20px;
 }
 #p5{
     display: inline-block;
     margin: 0 11px 0 11px;
+    margin-left: 18%;
     padding-top: 52px;
     font-size: 20px;
 }
