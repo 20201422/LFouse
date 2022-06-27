@@ -289,7 +289,8 @@
         <div class="ShowHouse" onclick="
                 window.location.href='Tong_detailedinformationServlet?showway=1&h_id=<%=h_resource.getH_id()%>'">
             <div class="img">
-                <img class="img" src="Image/<%=h_resource.getPhoto_name()%>" alt="<%=h_resource.getH_name()%>">
+                <img class="img" src="Image/<%=h_resource.getPhoto_name()%>" alt="<%=h_resource.getH_name()%>"
+                     title="<%=h_resource.getH_name()%>">
             </div>
             <div class="message">
                 <div class="House_Message0">
