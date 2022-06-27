@@ -1,6 +1,6 @@
 .wrap{
     width: 460px;
-    height: 630px;
+    height: 640px;
     background-color:white;
     margin: 50px auto;
     margin-top: 2%;
@@ -28,6 +28,14 @@
     border-bottom: 1px solid #3b3b3c;
     margin-left: 20%;
 }
+.move1{
+    width:120px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #3b3b3c;
+    margin-left: 20%;
+}
 .nmove{
     width:210px;
     background-color: transparent;
@@ -45,9 +53,21 @@
     letter-spacing:4px;
 
 }
-#check1,#check2,#check3,#check4,#check5,#check6{
+#check1,#check2,#check3,#check4,#check5,#check6,#check7{
     font-size: 13px;
     letter-spacing:0px;
+}
+
+.send{
+    background-color: #0597F2;
+    color:white;
+    border-radius: 10px;
+    cursor: pointer;
+    border-color: transparent;
+}
+
+.send:hover{
+    background-color: #166ece;
 }
 
 .form_Register div{
@@ -80,7 +100,7 @@
     border-bottom-right-radius: 20px;
 }
 .submit{
-    margin-left: -6%;
+    margin-left: 20%;
     margin-top: -40%;
     background-color: transparent;
     cursor: pointer;
@@ -94,7 +114,7 @@
 
     margin: auto;
     margin-top: -40%;
-    margin-left: 132%;
+    margin-left: 90%;
     cursor: pointer;
     background-color: transparent;
     font-size: 20px;

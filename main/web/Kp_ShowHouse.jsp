@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_My.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Kp_ShowHouse.css" />
-    <title>LFouse-位置找房</title>
+    <title>LFouse-提供最好的租房服务</title>
 </head>
 
 <script type="text/javascript" language="JavaScript" src="Script/Kp_ShowHouse.js"></script>
@@ -115,7 +115,7 @@
             <input type="checkbox" onchange="document.conditions.submit();" name="elevator" id="celevator">电梯房
             <%
                 if(!Objects.equals(way, "1")){
-            %>&nbsp&nbsp&nbsp&nbsp
+            %>&nbsp&nbsp
             <input type="checkbox" onchange="document.conditions.submit();" name="traffic" id="ctraffic">近地铁
             <%
                 }
