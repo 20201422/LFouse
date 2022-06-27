@@ -5,7 +5,8 @@ var eupwd = document.getElementById("eupwd");
 var email = document.getElementById("email");
 var uname = document.getElementById("uname");
 var age = document.getElementById("age");
-
+var code = document.getElementById("code");
+var vcode = document.getElementById("vcode");
 //校验电话号码
 function check1() {
     var result;
@@ -96,6 +97,24 @@ function check6() {
     }
     return result;
 }
+function check7(){
+    var result;
+    if (code.value != vcode.value) {
+        document.getElementById("check7").innerHTML = "×,验证码错误";
+        document.getElementById("vcode").focus();
+        document.getElementById("check7").style.color="Red";
+        result = false;
+    } else {
+        document.getElementById("check7").innerHTML = "√";
+        document.getElementById("check7").style.color="#48c625";
+        result = true;
+    }
+    return result;
+}
+function checkvcode() {
+    document.menu.action="Lhq_CodeServlet";
+    document.getElementById("menu").submit();
+}
 var frm = document.querySelector('form');
 frm.onsubmit = function () {
     if(tel.value===''||upwd.value===''||eupwd.value===''||uname.value===''||age.value===''||email.value===''){
@@ -103,7 +122,7 @@ frm.onsubmit = function () {
         return false;
     }
     else{
-        if(check1()&&check2()&&check3()&&check4()&&check5()&&check6()) {
+        if(check1()&&check2()&&check3()&&check4()&&check5()&&check6()&&check7()) {
             return true;
         }
         else{

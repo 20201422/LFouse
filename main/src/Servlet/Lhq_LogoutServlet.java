@@ -25,7 +25,8 @@ public class Lhq_LogoutServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         if(user!=null){
             check.DeleteCollection(user_id);
-            check.DeleteUser_id(user_id);
+            check.DeleteLodge(user_id);
+            check.DeleteUser(user_id);
             out.print("<script >alert('注销成功！');window.location.href='Lhq_QuitServlet'</script>");
         }
         else{

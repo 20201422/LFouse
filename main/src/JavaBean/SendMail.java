@@ -88,7 +88,7 @@ public class SendMail {
         message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiveMail,user.getUname(), "UTF-8"));
 
         // 设置邮件主题
-        message.setSubject("LFouse,找回密码提醒。", "UTF-8");
+        message.setSubject("LFouse提醒.", "UTF-8");
 
         // 设置邮件正文
         message.setContent(mailContent, "text/html;charset=UTF-8");
