@@ -6,7 +6,7 @@ public class LT_AdminWork extends BaseDao{
             update("UPDATE h_resources SET h_status = -1 WHERE h_id = ?",str);
         }
         else if(Type==2) {
-            update("UPDATE h_resources SET h_status = 3 WHERE h_id = ?",str);
+            update("UPDATE h_resources SET h_status = 2 WHERE h_id = ?",str);
         }
     }
 }
