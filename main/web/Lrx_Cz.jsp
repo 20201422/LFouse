@@ -157,6 +157,7 @@
             <input type="reset" value="重置" class="btn">
         </div>
     </form>
+    <script src="Script/Lrx_AddHouse.js"></script>
 </div>
 
 <br><br>
