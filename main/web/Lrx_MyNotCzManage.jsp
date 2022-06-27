@@ -138,7 +138,7 @@
                     <c:if test="${Lrx_NotCz.h_status==0}">房屋状态：待审核</c:if>
                     <c:if test="${Lrx_NotCz.h_status==1}">房屋状态：待上架</c:if>
                     <c:if test="${Lrx_NotCz.h_status==2}">房屋状态：已上架</c:if>
-                    <c:if test="${Lrx_NotCz.h_status==-1}"><h4 style="color: crimson">房屋状态：审核不通过</h4></c:if>
+                    <c:if test="${Lrx_NotCz.h_status==-1}"><span style="color: crimson">房屋状态：审核不通过</span></c:if>
                 </td>
             </tr>
     </table>

@@ -10,6 +10,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_TableStyle.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/Lrx_AddCz.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_Button.css" />
     <title>LFouse-出租</title>
 </head>
