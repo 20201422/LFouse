@@ -22,11 +22,18 @@ public class Kp_RentOrderServlet extends HttpServlet {
 
         request.setAttribute("h_id",h_id);//保存房源id
         request.setAttribute("orderway",orderway);//保存方式
-        request.setAttribute("detailinformation", tong_detailinformationBean.detailinformation(h_id));//调用方法得到房源信息
-        request.setAttribute("detailinformationfac", tong_detailinformationBean.detailinformationfac(h_id));//调用方法得到房源配置
-        request.setAttribute("detailinformationuser", tong_detailinformationBean.detailinformationuser(h_id));//调用方法得到房源主人信息
-        request.setAttribute("detailinformationphoto", tong_detailinformationBean.detailinformationphoto(h_id));//调用方法得到房源图片
-        request.setAttribute("lodgecount",kp_orderBean.lodgeCount(Integer.parseInt(user_id)));//调用方法得到该用户已租信息
+        request.setAttribute("detailinformation",
+                tong_detailinformationBean.detailinformation(h_id));//调用方法得到房源信息
+        request.setAttribute("detailinformationfac",
+                tong_detailinformationBean.detailinformationfac(h_id));//调用方法得到房源配置
+        request.setAttribute("detailinformationuser",
+                tong_detailinformationBean.detailinformationuser(h_id));//调用方法得到房源主人信息
+        request.setAttribute("detailinformationphoto",
+                tong_detailinformationBean.detailinformationphoto(h_id));//调用方法得到房源图片
+        request.setAttribute("lodgecount",
+                kp_orderBean.lodgeCount(Integer.parseInt(user_id)));//调用方法得到该用户已租信息
+        request.setAttribute("FindMyresourcesHouse",
+                kp_orderBean.FindMyresourcesHouse(h_id, Integer.parseInt(user_id)));//调用方法找到自己的房源
 
         request.getRequestDispatcher("/Kp_RentOrder.jsp").forward(request,response);//返回订单jsp
 

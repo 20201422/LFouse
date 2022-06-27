@@ -21,6 +21,14 @@
     H_facilities h_facilities= (H_facilities) request.getAttribute("detailinformationfac");//得到房源配置
     User user= (User) request.getAttribute("detailinformationuser");//得到房源主人信息
     List<Lodge> list= (List<Lodge>) request.getAttribute("lodgecount");//得到该用户的已租信息
+
+    H_resources h_resources1= (H_resources) request.getAttribute("FindMyresourcesHouse");//得到自己的房源信息
+
+    int flag=0;//该房源不是自己的
+    if (h_resources1.getUser_id()==Integer.parseInt(user_id)){//解决自己租自己房子的问题
+        flag=1;//该房源是自己的
+    }
+
 %>
 <html>
 <head>
@@ -177,9 +185,11 @@
                 <input type="radio" name="lodge_pway" value="2">分期<br>
             </div>
             <div class="Check_Form_btn">
-                合计: <span id="totalprice" onclick="totalprice()" name="lodge_price"><%=h_resources.getH_price()%></span> RMB
+                合计: <span id="totalprice" onclick="totalprice()" name="lodge_price">
+                <%=h_resources.getH_price()%></span> RMB
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <input type="button" value="确定" class="form-btn" onclick="queding('${orderway}','<%=list.size()%>')">
+                <input type="button" value="确定" class="form-btn"
+                       onclick="queding('${orderway}','<%=list.size()%>','<%=flag%>')">
             </div>
             <input type="hidden" name="orderway" id="orderway">
             <input type="hidden" value="<%=user_id%>" name="user_id">
