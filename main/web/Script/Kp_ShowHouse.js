@@ -24,13 +24,15 @@ window.onload=function (){
             document.getElementById("ctoward")[i].selected=true
         }
     }
+    for(i=0;i<document.getElementById("csort").length;i++){
+        if(document.getElementById("csort")[i].value===document.getElementById("sort").value){
+            document.getElementById("csort")[i].selected=true
+        }
+    }
     if(document.getElementById("elevator").value==="on"){
         document.getElementById("celevator").checked=true
     }
     if(document.getElementById("traffic").value==="on"){
         document.getElementById("ctraffic").checked=true
-    }
-    if(document.getElementById("sort").value==="on"){
-        document.getElementById("csort").checked=true
     }
 }

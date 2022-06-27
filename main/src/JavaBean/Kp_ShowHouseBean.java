@@ -65,8 +65,11 @@ public class Kp_ShowHouseBean extends BaseDao{
 
         sql=sql+" group by photo.h_id";//按照房源id分组，解决一个房源因为多张图片而重复查询的bug
 
-        if(Objects.equals(sort, "on")){//添加是否降序
+        if(Objects.equals(sort, "降序")){//添加降序
             sql=sql+" order by h_price DESC";
+        }
+        else if(Objects.equals(sort, "升序")){//添加升序
+            sql=sql+" order by h_price ASC";
         }
 
         if(!Objects.equals(pageNo, "0")){//如果为零则表示无分页

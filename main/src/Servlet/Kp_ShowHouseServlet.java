@@ -24,7 +24,7 @@ public class Kp_ShowHouseServlet extends HttpServlet {
         String layout=request.getParameter("layout");//得到选择的房型
         String toward=request.getParameter("toward");//得到选择的朝向
         String elevator=request.getParameter("elevator");//得到有无电梯
-        String sort=request.getParameter("sort");//得到是否降序
+        String sort=request.getParameter("sort");//得到排序
 
         String pageNo=request.getParameter("pageNo");//获取页数
         int gs=5;//一页的条数
@@ -85,7 +85,7 @@ public class Kp_ShowHouseServlet extends HttpServlet {
         request.setAttribute("layout",layout);//保存选择的房型
         request.setAttribute("toward",toward);//保存选择的朝向
         request.setAttribute("elevator",elevator);//保存有无电梯
-        request.setAttribute("sort",sort);//保存是否降序
+        request.setAttribute("sort",sort);//保存排序
 
         request.setAttribute("way",way);//保存查找方式
 

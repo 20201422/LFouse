@@ -109,6 +109,9 @@
             <option>全部</option><option>朝南</option><option>朝北</option><option>朝东</option><option>朝西</option>
             <option>东北</option><option>西北</option><option>东南</option><option>西南</option>
         </select>&nbsp&nbsp&nbsp&nbsp
+            价格排序：<select onchange="document.conditions.submit();" name="sort" id="csort">
+            <option>默认</option><option>升序</option><option>降序</option>
+        </select>&nbsp&nbsp&nbsp&nbsp
             <input type="checkbox" onchange="document.conditions.submit();" name="elevator" id="celevator">电梯房
             <%
                 if(!Objects.equals(way, "1")){
@@ -116,8 +119,7 @@
             <input type="checkbox" onchange="document.conditions.submit();" name="traffic" id="ctraffic">近地铁
             <%
                 }
-            %>&nbsp&nbsp&nbsp&nbsp
-            <input type="checkbox" onchange="document.conditions.submit();" name="sort" id="csort">降序
+            %>
         </form>
         <input type="hidden" id="location" value="${location}"><input type="hidden" id="price" value="${price}">
         <input type="hidden" id="type" value="${type}"><input type="hidden" id="layout" value="${layout}">
