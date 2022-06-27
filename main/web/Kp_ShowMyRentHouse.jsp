@@ -109,11 +109,11 @@
                 <%
                     if(Objects.equals(lodge.getLodge_psta(), "分期支付中")){
                 %>
-                <td class="myrent-error">支付状态：<p class="error"><%=lodge.getLodge_psta()%></p></td>
+                <td class="myrent-error">支付状态：<span class="error"><%=lodge.getLodge_psta()%></span></td>
                 <%
                     }else{
                 %>
-                <td>支付状态：<%=lodge.getLodge_psta()%></td>
+                <td>支付状态：&nbsp&nbsp<%=lodge.getLodge_psta()%></td>
                 <%
                     }
                 %>

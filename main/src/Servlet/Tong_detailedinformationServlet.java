@@ -1,6 +1,7 @@
 package Servlet;
 
 import JavaBean.Kp_CollectionBean;
+import JavaBean.Kp_ShowHouseBean;
 import JavaBean.Tong_detailinformationBean;
 import Model.H_resources;
 
@@ -16,6 +17,7 @@ public class Tong_detailedinformationServlet extends HttpServlet {
 
         Tong_detailinformationBean tong_detailinformationBean = new Tong_detailinformationBean();
         Kp_CollectionBean kp_collectionBean=new Kp_CollectionBean();
+        Kp_ShowHouseBean kp_showHouseBean=new Kp_ShowHouseBean();
 
         HttpSession session=request.getSession();
 
@@ -39,6 +41,9 @@ public class Tong_detailedinformationServlet extends HttpServlet {
                 tong_detailinformationBean.detailinformationuser(h_id));//调用方法得到房源主人信息
         request.setAttribute("detailinformationphoto",
                 tong_detailinformationBean.detailinformationphoto(h_id));//调用方法得到房源图片
+        request.setAttribute("ShowAllHouse",
+                kp_showHouseBean.ShowHouse("0",0,"0","","",
+                        "","","","",""));//展示所有房源
 
         request.getRequestDispatcher("/Tong_detailedinformation.jsp").forward(request,response);//返回详细信息jsp
 

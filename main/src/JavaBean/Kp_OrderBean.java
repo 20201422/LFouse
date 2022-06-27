@@ -105,8 +105,8 @@ public class Kp_OrderBean  extends BaseDao{
 
 //    @Test
 //    public void test(){
-//       FindMyresourcesHouse(1,1);
-//       System.out.println(FindMyresourcesHouse(1,1).getH_id());
+//       FindMyresourcesHouse(1,2);
+//       System.out.println(FindMyresourcesHouse(1,2));
 //    }
 
 }
