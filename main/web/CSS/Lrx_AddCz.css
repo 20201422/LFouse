@@ -147,3 +147,7 @@
     text-decoration: underline;
     color: #0062d3;
 }
+
+input[type="text"]{
+    border-radius:6px;
+}

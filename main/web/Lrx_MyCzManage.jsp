@@ -118,8 +118,15 @@
             </form>
         </div>
 -->
-<div class="checkOrder_Head"><h1>已出租房源</h1></div>
+
+<c:if test="${List.size()!=0}">
+    <div class="checkOrder_Head"><h1>已出租房源</h1></div>
+</c:if>
+<c:if test="${List.size()==0}">
+    <div class="checkOrder_Head" style="min-height: 300px"><h1>暂无出租房源</h1></div>
+</c:if>
 <c:forEach items="${List}" var="Lrx_AlreadyCz">
+
 <div class="myCz">
     <div style="display: flex;justify-content: space-evenly;flex-wrap: nowrap;" >
         <img class="img" src="Image/${Lrx_AlreadyCz.photo_name}" >
