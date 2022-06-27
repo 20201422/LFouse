@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_TableStyle.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_Button.css" />
+    <script src="Script/Lrx_AddHouse.js"></script>
     <title>LFouse-出租</title>
 </head>
 <body>
@@ -77,16 +78,16 @@
         </div>
         <div class="message-0">
             <div class="message-1">
-                <div>名称：<input type="text" name="h_name" ></div>
-                <div>户型：<input type="text" name="h_layout"></div>
-                <div>面积：<input type="text" name="h_area"></div>
-                <div>楼层：<input type="text" name="h_floor"></div>
+                <div>名称：<input type="text" name="h_name" id="h_name" ></div>
+                <div>户型：<input type="text" name="h_layout" id="h_layout"></div>
+                <div>面积：<input type="text" name="h_area" id="h_area"></div>
+                <div>楼层：<input type="text" name="h_floor" id="h_floor"></div>
             </div>
 
             <div class="message-1">
                 <div>
                     类型：
-                    <select style="width: 100px" name="h_type">
+                    <select style="width: 100px" name="h_type" id="h_type">
                         <option>商品房</option>
                         <option>别墅</option>
                         <option>写字楼</option>
@@ -96,7 +97,7 @@
                 </div>
                 <div>
                     朝向：
-                    <select style="width:100px" name="h_toward">
+                    <select style="width:100px" name="h_toward" id="h_toward">
                         <option value="朝南">朝南</option>
                         <option value="朝北">朝北</option>
                         <option value="朝东">朝东</option>
@@ -109,7 +110,7 @@
                 </div>
                 <div>
                     电梯：
-                    <select style="width: 100px" name="h_elevator">
+                    <select style="width: 100px" name="h_elevator" id="h_elevator">
                         <option value="1">有</option>
                         <option value="0">无</option>
                     </select>
@@ -122,9 +123,9 @@
             <h1>请填写详细信息</h1>
         </div>
         <div class="message-2">
-            <div>位置：<input type="text" name="h_location"></div>
+            <div>位置：<input type="text" name="h_location" id="h_location"></div>
             <div class="message-2-0">交通：
-                <textarea class="message-2-1" rows="3" name="h_traffic"></textarea>
+                <textarea class="message-2-1" rows="3" name="h_traffic" id="h_traffic"></textarea>
             </div>
         </div>
 
@@ -144,7 +145,7 @@
             <h1>您期望的月租</h1>
         </div>
         <div class="message-4">
-            <input type="text" name="h_price">&nbsp RMB/月
+            <input type="text" name="h_price" id="h_price">&nbsp RMB/月
         </div>
         <div class="checkOrder_Head">
             <h1>请上传房屋图片</h1>
@@ -157,6 +158,8 @@
             <input type="reset" value="重置" class="btn">
         </div>
     </form>
+
+    <script src="Script/Lrx_AddHouse.js"></script>
 </div>
 
 <br><br>

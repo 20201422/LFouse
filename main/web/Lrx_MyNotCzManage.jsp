@@ -146,23 +146,23 @@
         <a href="Lrx_ShowMoreInformsServlet?h_id=${Lrx_NotCz.h_id}">查看详细信息</a>
         <c:if test="${Lrx_NotCz.h_status==0}">
             <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
-            <a>上架</a>
-            <a>下架</a>
+            <a style="color: #cccccc">上架</a>
+            <a style="color: #cccccc">下架</a>
         </c:if>
         <c:if test="${Lrx_NotCz.h_status==1}">
             <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
             <a href="Lrx_PutOnServlet?h_id=${Lrx_NotCz.h_id}">上架</a>
-            <a>下架</a>
+            <a style="color: #cccccc">下架</a>
         </c:if>
         <c:if test="${Lrx_NotCz.h_status==2}">
-            <a>删除</a>
-            <a>上架</a>
+            <a style="color: #cccccc">删除</a>
+            <a style="color: #cccccc">上架</a>
             <a href="Lrx_PutOffServlet?h_id=${Lrx_NotCz.h_id}">下架</a>
         </c:if>
         <c:if test="${Lrx_NotCz.h_status==-1}">
             <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
-            <a>上架</a>
-            <a>下架</a>
+            <a style="color: #cccccc">上架</a>
+            <a style="color: #cccccc">下架</a>
         </c:if>
     </div>
 </div>
