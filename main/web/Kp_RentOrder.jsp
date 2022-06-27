@@ -15,7 +15,7 @@
     String user_id= (String) session.getAttribute("user_id");//得到用户id
     String tel= (String) session.getAttribute("tel");//得到用户电话号码
     String uname= (String) session.getAttribute("uname");//得到用户名字
-    String way= (String) request.getAttribute("way");
+//    String way= (String) request.getAttribute("way");
 
     H_resources h_resources= (H_resources) request.getAttribute("detailinformation");//得到房源信息
     H_facilities h_facilities= (H_facilities) request.getAttribute("detailinformationfac");//得到房源配置
@@ -25,7 +25,7 @@
     H_resources h_resources1= (H_resources) request.getAttribute("FindMyresourcesHouse");//得到自己的房源信息
 
     int flag=0;//该房源不是自己的
-    if (h_resources1.getUser_id()==Integer.parseInt(user_id)){//解决自己租自己房子的问题
+    if (h_resources1!=null){//解决自己租自己房子的问题
         flag=1;//该房源是自己的
     }
 
