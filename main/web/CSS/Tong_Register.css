@@ -1,8 +1,10 @@
 .wrap{
-    width: 610px;
-    height: 500px;
+    width: 460px;
+    height: 630px;
     background-color:white;
     margin: 50px auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
     border: solid white 1px;
     border-radius: 10px;
     -moz-outline-radius: 25px;
@@ -17,7 +19,6 @@
     outline: none;
     border: none;
     border-bottom: 1px solid #3b3b3c;
-    margin-left: 50px;
 }
 .move{
     width:210px;
@@ -25,7 +26,7 @@
     outline: none;
     border: none;
     border-bottom: 1px solid #3b3b3c;
-    margin-left: 48px;
+    margin-left: 20%;
 }
 .nmove{
     width:210px;
@@ -79,40 +80,32 @@
     border-bottom-right-radius: 20px;
 }
 .submit{
-    margin-top: -12px;
+    margin-left: -6%;
+    margin-top: -40%;
     background-color: transparent;
-    color: #0597F2;
-    padding: 8px;
-    outline: none;
-    border: none;
-    font-size: 18px;
-    width: 25%;
     cursor: pointer;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-    margin-left: 65px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    color: #166ece;
 }
 
 .cancel{
-    margin-top: -12px;
-    margin-left: 5%;
-    background-color: transparent;
-    color: #0597F2;
-    font-size: 18px;
-    padding: 8px;
-    outline: none;
-    border: none;
-    width: 25%;
+
+    margin: auto;
+    margin-top: -40%;
+    margin-left: 132%;
     cursor: pointer;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-}
-.submit:hover,.cancel:hover {
+    background-color: transparent;
+    font-size: 20px;
+    text-align: center;
+    border: none;
     color: #166ece;
+}
+
+
+
+.submit:hover,.cancel:hover {
+    text-decoration: underline;
+    color: #0062d3;
 }

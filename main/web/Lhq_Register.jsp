@@ -34,9 +34,9 @@
   String errorMsg = (String) request.getAttribute("errorMsg");
   if (errorMsg != null) {
 %>
-  <div class="errorMsg">
-    <div style="height: 10%"></div>
-    <span style="font-family: 等线 Light;font-size: 19px;margin-left: 27%"><%=errorMsg%></span>
+  <div class="errorMsg" style="height: 6%">
+    <div style="height: 20%"></div>
+    <span style="font-family: 等线 Light;font-size: 19px;margin-left: 27%;"><%=errorMsg%></span>
   </div>
   <%}else{
   %>
@@ -44,18 +44,87 @@
   </div>
   <%
     }%>
-  <form style="height: 50%;width: 100%;" class="form_Register" method="post" action="Lhq_RegisterServlet?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>">
-    <div align="center"style="height:25%;margin-left: 0%">
-      <font style="font-size: 42px;font-family: 等线 Light">LFouse 注册</font>
+  <form style="height: 80%;width: 100%;" class="form_Register" method="post" action="Lhq_RegisterServlet?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>">
+    <div align="center"style="height:14%;margin-left: 0%;margin-top: -1%">
+      <font style="font-size: 42px;font-family: 等线 Light;color: #0597F2">LFouse 注册</font>
     </div>
-    <div><span>电话：</span><input class="move" type="text" id="tel" name="tel" onchange="check1()"><span id = "check1"> </span></div>
-    <div><span>姓名：</span><input class="move" type="text" id="uname" name="uname" onchange="check2()"><span id = "check2"> </span></div>
-    <div><span>邮箱：</span><input class="move" type="text" id="email" name="email" onchange="check3()"><span id = "check3"> </span></div>
-    <div><span>密码：</span><input class="move" type="password" id="upwd" name="upwd" onchange="check4()"><span id = "check4"> </span></div>
-    <div ><span>确认密码：</span><input class="nmove" type="password" id="eupwd" name="eupwd" onchange="check5()"><span id = "check5"> </span></div>
-    <div><span>性别：</span><input class="sex" type="radio" name="sex" value="男" checked><span>男</span>&nbsp;&nbsp;<input type="radio" name="sex" value="女" ><span>女</span>&nbsp;&nbsp;<input type="radio" name="sex" value="其他" ><span>其他</span></div>
-    <div><span>年龄：</span><input class="move" type="text" id="age" name="age" onchange="check6()"><span id = "check6"> </span></div>
-    <div class="send-button"><input type = "submit" class="submit" value="注册">&nbsp;&nbsp;<input type="button" class="cancel" value="取消" onclick="window.location.href='Lhq_Login.jsp?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>'"></div>
+    <div style="margin-top: -1%">
+        <span style="margin-left: 10%">电话：</span>
+        <input style="margin-left: -2%;margin-top: -1%" class="move" type="text" id="tel" name="tel" onchange="check1()">
+    </div>
+    <div style="margin-left: 35%">
+        <span id = "check1"> </span>
+    </div>
+
+    <div style="margin-top: -1%">
+        <span style="margin-left: 10%">姓名：</span>
+        <input style="margin-left: -2%" class="move" type="text" id="uname" name="uname" onchange="check2()">
+    </div>
+      <div style="margin-left: 35%">
+          <span id = "check2"> </span>
+    </div>
+
+    <div style="margin-top: -1%">
+        <span style="margin-left: 10%">邮箱：</span>
+        <input style="margin-left: -2%" class="move" type="text" id="email" name="email" onchange="check3()">
+    </div>
+      <div style="margin-left: 35%">
+          <span id = "check3"> </span>
+    </div>
+
+      <div style="margin-top: -1%">
+          <span style="margin-left: 4%">验证码：</span>
+          <input style="margin-left: -2%" class="move" type="text" id="emai8" name="emai8" onchange="check8()">
+      </div>
+      <div style="margin-left: 35%">
+          <span id = "check8"> </span>
+      </div>
+
+    <div style="margin-top: -1%">
+        <span style="margin-left: 10%">密码：</span>
+        <input style="margin-left: -2%" class="move" type="password" id="upwd" name="upwd" onchange="check4()">
+    </div>
+      <div style="margin-left: 35%">
+          <span id = "check4"> </span>
+    </div>
+
+    <div style="margin-top: -1%">
+        <span style="margin-left: -2%">确认密码：</span>
+        <input style="margin-left: -2%" class="nmove" type="password" id="eupwd" name="eupwd" onchange="check5()">
+
+    </div>
+      <div style="margin-left: 35%">
+          <span id = "check5"> </span>
+    </div>
+
+    <div style="margin-top: -1%">
+        <span style="margin-left: 10%">性别：</span>
+        <input class="sex" type="radio" name="sex" value="男" checked>
+        <span>男</span>
+        <input type="radio" name="sex" value="女" >
+        <span>女</span>
+        <input type="radio" name="sex" value="其他" >
+        <span>其他</span>
+    </div>
+
+      <div style="margin-left: 35%">
+      </div>
+
+    <div style="margin-top: 1%">
+        <span style="margin-left: 10%">年龄：</span>
+        <input style="margin-left: -2%" class="move" type="number" id="age" name="age" onchange="check6()">
+    </div>
+    <div style="margin-left: 35%">
+          <span id = "check6"> </span>
+    </div>
+      <div>
+          <div style="float: left;width: 20%">
+              <input type = "submit" class="submit" value="注册">
+          </div>
+          <div style="float: left;width: 20%">
+              <input type="button" class="cancel" value="取消" onclick="window.location.href='Lhq_Login.jsp?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>'">
+          </div>
+      </div>
   </form>
 </div>
 
