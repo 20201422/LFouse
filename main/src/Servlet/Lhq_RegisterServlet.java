@@ -35,7 +35,7 @@ public class Lhq_RegisterServlet extends HttpServlet {
             request.setAttribute("flg",flg);
             request.setAttribute("showway",showway);
             request.setAttribute("h_id",h_id);
-            request.getRequestDispatcher("/Lhq_Login.jsp").forward(request,response);
+            request.getRequestDispatcher("/Lhq_Login.jsp?flg=flg").forward(request,response);
 
         }
         else{

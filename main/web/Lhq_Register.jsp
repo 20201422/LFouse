@@ -35,6 +35,9 @@
   String eupwd= (String)request.getAttribute("eupwd");
   String email=(String)request.getAttribute("email");
   String age= (String)request.getAttribute("age");
+  String flg1=request.getParameter("flg");
+  String showway1=request.getParameter("showway");
+  String h_id1=request.getParameter("h_id1");
 %>
 <div  class="wrap">
   <%
@@ -51,7 +54,7 @@
   </div>
   <%
     }%>
-  <form id="menu" name="menu" style="height: 80%;width: 100%;" class="form_Register" method="post" action="Lhq_RegisterServlet?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>">
+  <form id="menu" name="menu" style="height: 80%;width: 100%;" class="form_Register" method="post" action="Lhq_RegisterServlet">
     <div align="center"style="height:14%;margin-left: 0%;margin-top: -1%">
       <font style="font-size: 42px;font-family: 等线 Light;color: #0597F2">LFouse 注册</font>
     </div>
@@ -171,7 +174,7 @@
         <input type = "submit" class="submit" value="注册">
       </div>
       <div style="float: left;width: 20%">
-        <input type="button" class="cancel" value="取消" onclick="window.location.href='Lhq_Login.jsp?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>'">
+        <input type="button" class="cancel" value="取消" onclick="window.location.href='Lhq_Login.jsp?flg=<%=flg1%>&showway=<%=showway1%>&h_id=<%=h_id1%>'">
       </div>
     </div>
   </form>
