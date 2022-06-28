@@ -58,6 +58,22 @@
     <div align="center"style="height:14%;margin-left: 0%;margin-top: -1%">
       <font style="font-size: 42px;font-family: 等线 Light;color: #0597F2">LFouse 注册</font>
     </div>
+    <%if(uname!=null){%>
+    <div style="margin-top: -1%">
+      <span style="margin-left: 4%">用户名：</span>
+      <input style="margin-left: -2%" class="move" type="text" id="uname" name="uname" onchange="check2()" value=<%=uname%>>
+    </div>
+    <%}
+    else{%>
+    <div style="margin-top: -1%">
+      <span style="margin-left: 4%">用户名：</span>
+      <input style="margin-left: -2%" class="move" type="text" id="uname" name="uname" onchange="check2()">
+    </div>
+    <%}%>
+    <div style="margin-left: 35%">
+      <span id = "check2"> </span>
+    </div>
+
     <%if(tel!=null){%>
     <div style="margin-top: -1%">
       <span style="margin-left: 10%">电话：</span>
@@ -78,22 +94,6 @@
     <input type="hidden" name="flg" value=<%=flg%>>
     <input type="hidden" name="showway" value=<%=showway%>>
     <input type="hidden" name="h_id" value=<%=h_id%>>
-
-    <%if(uname!=null){%>
-    <div style="margin-top: -1%">
-      <span style="margin-left: 10%">姓名：</span>
-      <input style="margin-left: -2%" class="move" type="text" id="uname" name="uname" onchange="check2()" value=<%=uname%>>
-    </div>
-    <%}
-      else{%>
-      <div style="margin-top: -1%">
-      <span style="margin-left: 10%">姓名：</span>
-      <input style="margin-left: -2%" class="move" type="text" id="uname" name="uname" onchange="check2()">
-      </div>
-    <%}%>
-    <div style="margin-left: 35%">
-      <span id = "check2"> </span>
-    </div>
 
     <%if(email!=null){%>
     <div style="margin-top: -1%">

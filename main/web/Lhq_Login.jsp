@@ -54,7 +54,7 @@
                 </div>
                 <div style="height: 80%">
                     <div class="ipt">
-                        <input type="text"  class="password" placeholder=" 账号:"readonly=readonly style="float:left;font-family: 等线 Light;outline: none;width: 24%;height: 100%;background: none transparent scroll repeat 0% 0%;border-right: none;border-bottom-left-radius: 20px;border-top-left-radius: 20px;">
+                        <input type="text"  class="password" placeholder=" 电话:"readonly=readonly style="float:left;font-family: 等线 Light;outline: none;width: 24%;height: 100%;background: none transparent scroll repeat 0% 0%;border-right: none;border-bottom-left-radius: 20px;border-top-left-radius: 20px;">
                         <input type="text" class="account" name="account"  style="outline: none;float: left;font-family: 等线 Light;width: 76%;height: 100%;background: none transparent scroll repeat 0% 0%;border-left: none;border-bottom-right-radius: 20px;border-top-right-radius: 20px;">
                     </div>
 

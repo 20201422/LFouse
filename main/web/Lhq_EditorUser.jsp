@@ -71,7 +71,7 @@
     <input type="hidden" name="user_id" value=<%=user.getUser_id()%>>
     <div style="margin-top: 6%;">
         <div>
-            <span class="move">姓名：</span>
+            <span class="move">用户名：</span>
             <input type="text" id="uname" name="uname" onchange="check1()" value=<%=user.getUname()%>>
         </div>
         <div style="height: 4%;margin-top: -5%;">

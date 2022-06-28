@@ -30,11 +30,32 @@
     </div>
 </header>
 <div class="wrap">
+    <%
+        String errorMsg = (String) request.getAttribute("errorMsg");
+        if (errorMsg != null) {
+    %>
+    <div class="errorMsg">
+        <div style="height: 20%"></div>
+        <span style="font-family: 等线 Light;font-size: 19px;margin-left: 27%;"><%=errorMsg%></span>
+    </div>
+    <%}else{
+    %>
+    <div class="errorMsg1">
+    </div>
+    <%
+        }%>
     <div align="center"style="height:14%;margin-left: 0%; margin-top: 8%">
         <font style="font-size: 42px;font-family: 等线 Light;color: #0597F2">LFouse 找回密码</font>
     </div>
     <div class="findpwd">
     <form action="Lhq_SearchServlet?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>" method="post" class="find_password">
+        <div class="mailbox">
+            <span>电话 :</span>
+            <input type="tel" class="mail_code" name="tel" id="tel" width="80px"
+                   height="60px" placeholder="请输入您的电话号码"
+                   required />
+
+        </div>
         <div class="mailbox">
             <span>邮箱 :</span>
             <input type="email" class="mail_code" name="email" id="email" width="80px"

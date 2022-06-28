@@ -78,7 +78,7 @@
 <form id="menu" name="menu" method="post" action="Lhq_LogoutServlet">
     <input type="hidden" name="ntel" value=<%=user.getTel()%>>
     <input type="hidden" name="upwd" value=<%=user.getUpwd()%>>
-    <div><span class="move">姓名：</span><input type="text" id="uname" readonly="true" name="uname" value=<%=user.getUname()%>></div>
+    <div><span class="move">用户名：</span><input type="text" id="uname" readonly="true" name="uname" value=<%=user.getUname()%>></div>
     <div><span class="move">电话：</span><input type="text" id="tel" readonly="true" name="tel" value=<%=user.getTel().replaceAll("(\\d{3})\\d{4}(\\d{4})","$1****$2")%>></div>
     <div><span class="move">邮箱：</span><input type="text" id="email" readonly="true" name="email" value=<%=user.getEmail()%>></div>
     <div><span class="move">性别：</span><input type="text" name="sex" readonly="true" value=<%=user.getSex()%>></div>

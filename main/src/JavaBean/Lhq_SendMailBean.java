@@ -81,7 +81,7 @@ public class Lhq_SendMailBean {
         message.setFrom(new InternetAddress(sendMail, "LFouse", "UTF-8"));
 
         Lhq_SearchBean search=new Lhq_SearchBean();
-        User user = search.findEmail(receiveMail);
+        User user = search.sendEmail(receiveMail);
 
         // 收件人
         message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiveMail,user.getUname(), "UTF-8"));

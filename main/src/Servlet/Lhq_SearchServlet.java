@@ -17,6 +17,7 @@ public class Lhq_SearchServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
         String email = request.getParameter("email");
+        String tel = request.getParameter("tel");
         String flg = request.getParameter("flg");
         String showway = request.getParameter("showway");
         String h_id = request.getParameter("h_id");
@@ -24,7 +25,7 @@ public class Lhq_SearchServlet extends HttpServlet {
         request.setAttribute("showway",showway);
         request.setAttribute("h_id",h_id);
         Lhq_SearchBean search=new Lhq_SearchBean();
-        User user = search.findEmail(email);
+        User user = search.findEmail(email,tel);
         //实例化一个发送邮件的对象
         Lhq_SendMailBean myLhqSendMailBean = new Lhq_SendMailBean();
         //根据邮箱找到该用户信息
@@ -34,8 +35,15 @@ public class Lhq_SearchServlet extends HttpServlet {
             request.setAttribute("errorMsg","找回密码成功！");
             request.getRequestDispatcher("/Lhq_Login.jsp").forward(request,response);
         }
-        request.setAttribute("errorMsg","该邮箱尚未注册！");
-        request.getRequestDispatcher("/Lhq_Search.jsp").forward(request,response);
+        else {
+            if(search.findTel(tel)==null)
+                request.setAttribute("errorMsg", "该电话尚未注册！");
+            if(search.findmail(email)==null)
+                request.setAttribute("errorMsg", "该邮箱尚未注册！");
+            if(search.findTel(tel)!=null&&search.findmail(email)!=null)
+                request.setAttribute("errorMsg", "电话和邮箱不匹配！");
+        }
+        request.getRequestDispatcher("/Lhq_Search.jsp").forward(request, response);
     }
 
     @Override

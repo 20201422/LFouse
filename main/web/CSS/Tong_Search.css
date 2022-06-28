@@ -6,12 +6,10 @@
 .wrap{
     background-color:rgb(255,255,255);
     margin: 70px auto;
-    /*border: solid rgb(224,224,224) 1px;*/
     border-radius: 12px;
     -moz-outline-radius: 25px;
     transition: all 0.25s;
     min-width: 400px;
-    /*border-style: solid;*/
     padding:12px 12px 12px 12px ;
     width: 20%;
     height: 50%;
@@ -27,8 +25,24 @@
     color: #0597F2;
 
 }
+.errorMsg{
+    background-color: #F5F5F7;
+    height: 10%;
+    width: 80%;
+    margin-left: 10%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.errorMsg1{
+    background-color: transparent;
+    height: 10%;
+    width: 80%;
+    margin-left: 10%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
 .findpwd{
-    /*border-style: solid;*/
     margin: 27px auto;
 }
 
@@ -46,6 +60,7 @@
     justify-content: center;
     align-items: flex-end;
     margin: 24px auto;
+    margin-top: 3%;
 }
 .back{
     text-decoration: none;
@@ -65,7 +80,6 @@
 }
 
 .btn-success {
-    /*margin-top: -12px;*/
     background-color: transparent;
     color: #0597F2;
     outline: none;
@@ -84,7 +98,5 @@
     align-items: center;
     justify-content: center;
     margin: 60px auto;
+    margin-top: 10%;
 }
-/*.back_login{*/
-/*    float: right;*/
-/*}*/
