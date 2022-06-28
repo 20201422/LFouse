@@ -160,16 +160,16 @@
         </div>
         <div id="morePhoto" style="display: none">
             <div class="message-5">
-            <input type="file" name="file-1" id="file-1" >
+            <input type="file" name="file-1" id="file-1" ><br>
             </div>
             <div class="message-5">
-            <input type="file" name="file-2" id="file-2" >
+            <input type="file" name="file-2" id="file-2" ><br>
             </div>
             <div class="message-5">
-            <input type="file" name="file-3" id="file-3" >
+            <input type="file" name="file-3" id="file-3" ><br>
             </div>
             <div class="message-5">
-            <input type="file" name="file-4" id="file-4" >
+            <input type="file" name="file-4" id="file-4" ><br>
             </div>
         </div>
         <script src="Script/Lrx_addMorePhoto.js"></script>
