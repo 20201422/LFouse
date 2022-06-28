@@ -73,9 +73,27 @@
         <input type="hidden" name="tel" value=<%=ntel%>>
         <input type="hidden" id="check" value=<%=upwd%>>
         <div class="apwd-text">
-            <span>原密码：</span><input type="password" id="upwd" name="upwd" onchange="check1()"><span id="check1"></span><br>
-            <span>新密码：</span><input type="password" id="newupwd" name="newupwd" onchange="check2()"><span id="check2"></span><br>
-            <span>确认新密码：</span><input type="password" id="enewupwd" name="enewupwd" onchange="check3()"><span id="check3"></span><br>
+            <div style="margin-top: 5%"></div>
+        <div>
+            <div>
+                <span>原密码：</span><input type="password" id="upwd" name="upwd" onchange="check1()">
+                <div style="height: 10%;margin-top: -4%">
+                    <span id="check1"></span>
+                </div>
+            </div>
+        </div>
+            <div>
+                <span>新密码：</span><input type="password" id="newupwd" name="newupwd" onchange="check2()">
+                <div style="height: 10%;margin-top: -4%">
+                    <span id="check2"></span>
+                </div>
+            </div>
+            <div>
+                <span>确认新密码：</span><input type="password" id="enewupwd" name="enewupwd" onchange="check3()">
+                <div style="height: 10%;margin-top: -4%">
+                    <span id="check3"></span>
+                </div>
+            </div>
         </div><br>
         <div class="form-btn">
             <input type="submit" value="立即修改">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp

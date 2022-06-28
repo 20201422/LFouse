@@ -43,3 +43,9 @@
     color: #0062d3;
     cursor: pointer;
 }
+#check1,#check2,#check3{
+    font-size: 13px;
+}
+#menu{
+    height: 300px;
+}

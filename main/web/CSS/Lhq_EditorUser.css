@@ -24,15 +24,15 @@
     display:block;
     text-align: left;
     color:#3b3b3c;
-    margin-left: 8%;
+    margin-left: 17%;
 }
 #check1,#check2,#check3,#check4{
     width:100%;
-    color:red;
 }
 input[type="text"]{
     height: 4%;
     width: 200px;
+    margin-left: 12%;
     transform:translateY(-100%);
     background-color: transparent;
     outline: none;

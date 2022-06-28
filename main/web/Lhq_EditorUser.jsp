@@ -79,7 +79,7 @@
         </div>
     </div>
 
-    <div style="margin-top: 2%;">
+    <div>
         <span class="move">电话：</span>
         <input type="text" id="tel" name="tel" onchange="check2()" value=<%=user.getTel()%>>
         <div style="height: 4%;margin-top: -5%;">
