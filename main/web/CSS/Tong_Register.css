@@ -6,7 +6,7 @@
     margin-top: 2%;
     margin-bottom: 2%;
     border: solid white 1px;
-    border-radius: 10px;
+    border-radius: 12px;
     -moz-outline-radius: 25px;
     transition: all 0.25s;
 }

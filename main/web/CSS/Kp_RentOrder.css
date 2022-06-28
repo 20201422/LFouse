@@ -20,7 +20,7 @@
     margin: 12px auto;
     padding: 8px 8px 8px 8px;
     border: 1px solid white;
-    border-radius:24px;
+    border-radius:12px;
     width: 40%;
     justify-content: space-evenly;
     flex-direction: column;
@@ -59,7 +59,7 @@ td{
     margin: 12px auto;
     padding: 8px 8px 8px 8px;
     border: 1px solid white;
-    border-radius:24px;
+    border-radius:12px;
     width: 40%;
     justify-content: space-evenly;
     flex-direction: column;
@@ -83,6 +83,12 @@ td{
     width: 35%;
     font-size: 24px;
     text-align: center;
+}
+.fill:hover{
+    box-shadow: 1px 1px 10px #a4a4a6;
+    border: 1px solid white;
+    border-radius:24px;
+    transform: scale(1.02);
 }
 .form{
     line-height: 50px;
