@@ -129,46 +129,52 @@
     <c:if test="${(status.index)%2==0}">
         <div class="cross">
     </c:if>
-<div class="myNotCz" style="min-height: 200px">
-    <table>
+<div class="myNotCz" style="min-height: 200px;width: 45%">
+    <div style="display: flex;justify-content: space-evenly;flex-wrap: nowrap;" >
+        <img class="img-1" src="Image/${Lrx_NotCz.photo_name}" >
+        <div>
+        <table>
 
-            <tr>
-                <td colspan="2">房屋名称：${Lrx_NotCz.h_name}</td>
-            </tr>
-            <tr>
-                <td colspan="2">房屋位置：${Lrx_NotCz.h_location}</td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <c:if test="${Lrx_NotCz.h_status==0}">房屋状态：待审核</c:if>
-                    <c:if test="${Lrx_NotCz.h_status==1}">房屋状态：待上架</c:if>
-                    <c:if test="${Lrx_NotCz.h_status==2}">房屋状态：已上架</c:if>
-                    <c:if test="${Lrx_NotCz.h_status==-1}"><span style="color: crimson">房屋状态：审核不通过</span></c:if>
-                </td>
-            </tr>
-    </table>
-    <div class="MyCz-cz">
-        <a href="Lrx_ShowMoreInformsServlet?h_id=${Lrx_NotCz.h_id}">查看详细信息</a>
-        <c:if test="${Lrx_NotCz.h_status==0}">
-            <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
-            <span style="color: #cccccc">上架</span>
-            <span style="color: #cccccc">下架</span>
-        </c:if>
-        <c:if test="${Lrx_NotCz.h_status==1}">
-            <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
-            <a href="Lrx_PutOnServlet?h_id=${Lrx_NotCz.h_id}">上架</a>
-            <span style="color: #cccccc">下架</span>
-        </c:if>
-        <c:if test="${Lrx_NotCz.h_status==2}">
-            <span style="color: #cccccc">删除</span>
-            <span style="color: #cccccc">上架</span>
-            <a href="Lrx_PutOffServlet?h_id=${Lrx_NotCz.h_id}">下架</a>
-        </c:if>
-        <c:if test="${Lrx_NotCz.h_status==-1}">
-            <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
-            <span style="color: #cccccc">上架</span>
-            <span style="color: #cccccc">下架</span>
-        </c:if>
+                <tr>
+                    <td colspan="2">房屋名称：${Lrx_NotCz.h_name}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">房屋位置：${Lrx_NotCz.h_location}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <c:if test="${Lrx_NotCz.h_status==0}">房屋状态：待审核</c:if>
+                        <c:if test="${Lrx_NotCz.h_status==1}">房屋状态：待上架</c:if>
+                        <c:if test="${Lrx_NotCz.h_status==2}">房屋状态：已上架</c:if>
+                        <c:if test="${Lrx_NotCz.h_status==-1}"><span style="color: crimson">房屋状态：审核不通过</span></c:if>
+                    </td>
+                </tr>
+        </table>
+
+        <div class="MyCz-cz">
+            <a href="Lrx_ShowMoreInformsServlet?h_id=${Lrx_NotCz.h_id}">查看详细信息</a>
+            <c:if test="${Lrx_NotCz.h_status==0}">
+                <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
+                <span style="color: #cccccc">上架</span>
+                <span style="color: #cccccc">下架</span>
+            </c:if>
+            <c:if test="${Lrx_NotCz.h_status==1}">
+                <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
+                <a href="Lrx_PutOnServlet?h_id=${Lrx_NotCz.h_id}">上架</a>
+                <span style="color: #cccccc">下架</span>
+            </c:if>
+            <c:if test="${Lrx_NotCz.h_status==2}">
+                <span style="color: #cccccc">删除</span>
+                <span style="color: #cccccc">上架</span>
+                <a href="Lrx_PutOffServlet?h_id=${Lrx_NotCz.h_id}">下架</a>
+            </c:if>
+            <c:if test="${Lrx_NotCz.h_status==-1}">
+                <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
+                <span style="color: #cccccc">上架</span>
+                <span style="color: #cccccc">下架</span>
+            </c:if>
+        </div>
+        </div>
     </div>
 </div>
     <c:if test="${(status.index+1)%2==0}">

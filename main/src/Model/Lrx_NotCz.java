@@ -1,10 +1,19 @@
 package Model;
 
 public class Lrx_NotCz {
+    private String photo_name;
     private int h_id;
     private String h_name;
     private String h_location;
     private int h_status;
+
+    public String getPhoto_name() {
+        return photo_name;
+    }
+
+    public void setPhoto_name(String photo_name) {
+        this.photo_name = photo_name;
+    }
 
     public int getH_id() {
         return h_id;
