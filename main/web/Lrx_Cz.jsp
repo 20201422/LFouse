@@ -12,7 +12,9 @@
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_TableStyle.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_AddCz.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_Button.css" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <title>LFouse-出租</title>
+
 </head>
 <body>
 
@@ -153,6 +155,24 @@
         <div class="message-5">
             <input type="file" name="file" id="file" >
         </div>
+        <div align="center">
+        <input type="button" value="添加更多图片" id="addMorePhoto">
+        </div>
+        <div id="morePhoto" style="display: none">
+            <div class="message-5">
+            <input type="file" name="file-1" id="file-1" ><br>
+            </div>
+            <div class="message-5">
+            <input type="file" name="file-2" id="file-2" ><br>
+            </div>
+            <div class="message-5">
+            <input type="file" name="file-3" id="file-3" ><br>
+            </div>
+            <div class="message-5">
+            <input type="file" name="file-4" id="file-4" ><br>
+            </div>
+        </div>
+        <script src="Script/Lrx_addMorePhoto.js"></script>
         <div class="message-6">
             <input type="submit" name="Submit" value="提交" class="btn">
             <input type="reset" value="重置" class="btn">

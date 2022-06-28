@@ -27,7 +27,7 @@
 <html>
 <head>
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-    <script src="Script/Lrx_My.js"></script>
+    <script src="Script/Lrx_addMorePhoto.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_My.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Kp_ShowHouse.css" />

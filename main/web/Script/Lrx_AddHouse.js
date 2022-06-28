@@ -2,6 +2,7 @@ var frm=document.querySelector('form')
 frm.onsubmit = function(){
         var location =document.getElementById("h_location").value;
         var city=location.slice(0,2);
+        alert(city);
         var name=document.getElementById("h_name").value;
         var layout=document.getElementById("h_layout").value;
         var area=document.getElementById("h_area").value;
@@ -13,7 +14,7 @@ frm.onsubmit = function(){
                 alert("提交失败！信息不能为空")
                 return false;
         }
-        if(city!='上海'&&city!='包头'&&city!='南昌'!='北京'){
+        if(city!='上海'&&city!='包头'&&city!='南昌'&&city!='北京'){
             alert("提交失败！所选区域不在服务区")
             return false;
         }

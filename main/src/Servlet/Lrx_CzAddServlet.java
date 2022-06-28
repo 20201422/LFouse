@@ -44,6 +44,8 @@ public class Lrx_CzAddServlet extends HttpServlet {
         // 对请求信息进行判断
         Iterator iter = items.iterator();
         int [] facilities={0,0,0,0,0,0};
+        String [] photoName={"","","","",""};
+        int i=0;
         while (iter.hasNext()) {//遍历所有form中的控件
 
             FileItem item = (FileItem) iter.next();
@@ -72,26 +74,16 @@ public class Lrx_CzAddServlet extends HttpServlet {
             else {//文件
                 //获得所有文本内容
                 //System.out.println(facilities[0]+facilities[1]+facilities[2]+facilities[3]+facilities[4]+facilities[5]);
-                String name=(String) request.getSession().getAttribute("h_name");
-                String location=(String) request.getSession().getAttribute("h_location");
-                String price=(String) request.getSession().getAttribute("h_price");
-                String layout=(String) request.getSession().getAttribute("h_layout");
-                String type=(String) request.getSession().getAttribute("h_type");
-                String area=(String) request.getSession().getAttribute("h_area");
-                String elevator=(String) request.getSession().getAttribute("h_elevator");
-                String toward=(String) request.getSession().getAttribute("h_toward");
-                String traffic=(String) request.getSession().getAttribute("h_traffic");
-                String floor=(String) request.getSession().getAttribute("h_floor");
+
                 String fileName = item.getName();//获得上传图片的名称
                 int index = fileName.lastIndexOf("\\");
                 fileName = fileName.substring(index + 1);
-                cz.AddHouse(user_id,name,location,price,layout,type,area,elevator,toward,traffic,floor);
-                cz.Addfacilities(name,facilities[0],facilities[1],facilities[2],facilities[3],facilities[4],facilities[5]);
-                cz.AddPhoto(name,fileName);
-                System.out.println((String) request.getSession().getAttribute("h_name"));
+                photoName[i]=fileName;
+                i++;
+                //System.out.println((String) request.getSession().getAttribute("h_name"));
                 request.setAttribute("realFileName", fileName);
                 String basePath =  "C:/Web/LFouse/main/web/Image";
-                System.out.println(basePath+"\n"+fileName);//打印当前位置
+                //System.out.println(basePath+"\n"+fileName);//打印当前位置
                 File file = new File(basePath, fileName);
                 try {
                     item.write(file);
@@ -101,6 +93,24 @@ public class Lrx_CzAddServlet extends HttpServlet {
                 }
             }
         }
+        String name=(String) request.getSession().getAttribute("h_name");
+        String location=(String) request.getSession().getAttribute("h_location");
+        String price=(String) request.getSession().getAttribute("h_price");
+        String layout=(String) request.getSession().getAttribute("h_layout");
+        String type=(String) request.getSession().getAttribute("h_type");
+        String area=(String) request.getSession().getAttribute("h_area");
+        String elevator=(String) request.getSession().getAttribute("h_elevator");
+        String toward=(String) request.getSession().getAttribute("h_toward");
+        String traffic=(String) request.getSession().getAttribute("h_traffic");
+        String floor=(String) request.getSession().getAttribute("h_floor");
+        cz.AddHouse(user_id,name,location,price,layout,type,area,elevator,toward,traffic,floor);
+        cz.Addfacilities(name,facilities[0],facilities[1],facilities[2],facilities[3],facilities[4],facilities[5]);
+        cz.AddPhoto(name,photoName[0]);
+        for( i=1;i<5;i++){
+            if(photoName[i]!="")
+                cz.AddPhoto(name,photoName[i]);
+        }
+
         request.getRequestDispatcher("Lrx_Cz.jsp").forward(request,response);
     }
 
