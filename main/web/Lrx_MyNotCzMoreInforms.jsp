@@ -122,7 +122,7 @@
             <a href="Lrx_MyNotCzManage.jsp"><input type="button" value="返回"></a>
         </div>
     </form>
-
+    <script src="Script/Lrx_Modify.js"></script>
 
 
 

@@ -13,7 +13,7 @@ frm.onsubmit = function(){
                 alert("提交失败！信息不能为空")
                 return false;
         }
-        if(city!='上海'&&city!='包头'&&city!='南昌'){
+        if(city!='上海'&&city!='包头'&&city!='南昌'!='北京'){
             alert("提交失败！所选区域不在服务区")
             return false;
         }
