@@ -1,7 +1,6 @@
 package JavaBean;
 
 
-import JavaBean.Lhq_SearchBean;
 import Model.User;
 
 import javax.mail.MessagingException;
@@ -13,7 +12,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.Date;
 import java.util.Properties;
 
-public class SendMail {
+public class Lhq_SendMailBean {
 
     // 发件人的邮箱账号如：xxx@163.com
     public static String sendEmailAccount = "3327940673@qq.com";

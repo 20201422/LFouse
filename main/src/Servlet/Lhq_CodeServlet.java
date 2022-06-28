@@ -1,6 +1,6 @@
 package Servlet;
 
-import JavaBean.SendMail;
+import JavaBean.Lhq_SendMailBean;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -26,13 +26,13 @@ public class Lhq_CodeServlet extends HttpServlet {
         //随机产生一个6位数验证码
         int num=(int)(Math.random()*900000)+100000;
         //实例化一个发送邮件的对象
-        SendMail mySendMail = new SendMail();
+        Lhq_SendMailBean myLhqSendMailBean = new Lhq_SendMailBean();
         //根据邮箱找到该用户信息
         String message="尊敬的用户：\n您的验证码为："+num+"\n您可以注册LFouse了！";
 
         String n= String.valueOf(num);
         String a= String.valueOf(age);
-        mySendMail.sendMail(email, message);
+        myLhqSendMailBean.sendMail(email, message);
         request.setAttribute("num",n);
         request.setAttribute("showway",showway);
         request.setAttribute("h_id",h_id);
