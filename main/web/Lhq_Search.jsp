@@ -29,28 +29,28 @@
         </div>
     </div>
 </header>
-<div style="height:12%"></div>
 <div class="wrap">
-    <div class="head_color">LFouse-找回密码</div>
-    <div>
+    <div align="center"style="height:14%;margin-left: 0%; margin-top: 8%">
+        <font style="font-size: 42px;font-family: 等线 Light;color: #0597F2">LFouse 找回密码</font>
+    </div>
+    <div class="findpwd">
     <form action="Lhq_SearchServlet?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>" method="post" class="find_password">
         <div class="mailbox">
             <span>邮箱 :</span>
-            <input type="email" class="mail_code" name="email" id="email" width="100px"
+            <input type="email" class="mail_code" name="email" id="email" width="80px"
                    height="60px" placeholder="请输入您的邮箱地址"
                    required>
 
         </div>
         <p>
-            <button type="submit" class="btn-success" id="button1"
-                    width="100px" height="60px">找回密码
-            </button>
-            <a class="back" href="Lhq_Login.jsp?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>">返回</a>
+        <div class="findpwd-btn">
+        <button type="submit" class="btn-success" id="button1">找回密码</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a class="back" href="Lhq_Login.jsp?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>">返回</a>
+    </div>
         </p>
     </form>
     </div>
 </div>
-<div style="height:12%">
 
 </div>
     <footer>
