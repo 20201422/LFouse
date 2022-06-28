@@ -2,7 +2,6 @@ var frm=document.querySelector('form')
 frm.onsubmit = function(){
         var location =document.getElementById("h_location").value;
         var city=location.slice(0,2);
-        alert(city);
         var name=document.getElementById("h_name").value;
         var layout=document.getElementById("h_layout").value;
         var area=document.getElementById("h_area").value;
