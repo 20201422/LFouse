@@ -46,6 +46,8 @@
                     String flg = request.getParameter("flg");
                     String showway=request.getParameter("showway");
                     String h_id=request.getParameter("h_id");
+                    String account=request.getParameter("account");
+                    String password=request.getParameter("password");
                 %>
             <div style="height: 5%"></div>
             <form style="height: 50%;width: 100%;" method="post" id="menu" name="menu" action="Lhq_LoginServlet?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>">
@@ -53,15 +55,32 @@
                     <font style="font-size: 42px;font-family: 等线 Light">Welcome LFouse</font>
                 </div>
                 <div style="height: 80%">
+                    <%if(account!=null){%>
                     <div class="ipt">
-                        <input type="text"  class="password" placeholder=" 电话:"readonly=readonly style="float:left;font-family: 等线 Light;outline: none;width: 24%;height: 100%;background: none transparent scroll repeat 0% 0%;border-right: none;border-bottom-left-radius: 20px;border-top-left-radius: 20px;">
-                        <input type="text" class="account" name="account"  style="outline: none;float: left;font-family: 等线 Light;width: 76%;height: 100%;background: none transparent scroll repeat 0% 0%;border-left: none;border-bottom-right-radius: 20px;border-top-right-radius: 20px;">
+                        <input type="text"  class="password" placeholder=" 电话:"readonly=readonly>
+                        <input type="text" class="account" name="account"  value=<%=account%>>
                     </div>
+                    <%}
+                    else{%>
+                    <div class="ipt">
+                        <input type="text"  class="password" placeholder=" 电话:"readonly=readonly>
+                        <input type="text" class="account" name="account">
+                    </div>
+                    <%}%>
 
+                    <%if(password!=null){%>
                     <div class="ipt1">
-                        <input type="text"  class="password" placeholder=" 密码:"readonly=readonly style="float:left;font-family: 等线 Light;outline: none;width: 24%;height: 100%;background: none transparent scroll repeat 0% 0%;border-right: none;border-bottom-left-radius: 20px;border-top-left-radius: 20px;">
-                        <input type="password" id="password" name="password" class="password" style="float:left; font-family: 等线 Light;width: 76%;height: 100%;outline: none;background: none transparent scroll repeat 0% 0%;border-left: none;border-bottom-right-radius: 20px;border-top-right-radius: 20px;">
+                        <input type="text"  class="password" placeholder=" 密码:"readonly=readonly>
+                        <input type="password" id="password" name="password" class="account" value=<%=password%>>
                     </div>
+                    <%}
+                    else{%>
+                    <div class="ipt1">
+                        <input type="text"  class="password" placeholder=" 密码:"readonly=readonly>
+                        <input type="password" id="password" name="password" class="account">
+                    </div>
+                    <%}%>
+
                     <img class="eyes" id="eyes" alt="" src="Image/hide.jpg" onclick="change()">
                 </div>
                 <div class="login-button" ><input class="submit" type="submit" value="立 即 登 录"></div>

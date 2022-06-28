@@ -74,9 +74,31 @@ span{
     color: #3b3b3c;
     font-family: 等线 Light;
 }
+.password{
+    float:left;
+    font-family: 等线 Light;
+    outline: none;
+    width: 24%;
+    height: 100%;
+    background: none transparent scroll repeat 0% 0%;
+    border-right: none;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.account{
+    outline: none;
+    float: left;
+    font-family: 等线 Light;
+    width: 76%;
+    height: 100%;
+    background: none transparent scroll repeat 0% 0%;
+    border-left: none;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
 .errorMsg{
     background-color: #F5F5F7;
-    height: 8%;
+    height: 9%;
     width: 80%;
     margin-left: 10%;
     border-bottom-left-radius: 20px;
@@ -84,7 +106,7 @@ span{
 }
 .errorMsg1{
     background-color: transparent;
-    height: 8%;
+    height: 9%;
     width: 80%;
     margin-left: 10%;
     border-bottom-left-radius: 20px;

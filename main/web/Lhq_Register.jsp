@@ -44,7 +44,7 @@
     String errorMsg = (String) request.getAttribute("errorMsg");
     if (errorMsg != null) {
   %>
-  <div class="errorMsg" style="height: 6%">
+  <div class="errorMsg">
     <div style="height: 20%"></div>
     <span style="font-family: 等线 Light;font-size: 19px;margin-left: 27%;"><%=errorMsg%></span>
   </div>

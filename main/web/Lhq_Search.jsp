@@ -31,11 +31,13 @@
 </header>
 <div class="wrap">
     <%
+        String tel = request.getParameter("tel");
+        String email = request.getParameter("email");
         String errorMsg = (String) request.getAttribute("errorMsg");
         if (errorMsg != null) {
     %>
     <div class="errorMsg">
-        <div style="height: 20%"></div>
+        <div style="height: 15%"></div>
         <span style="font-family: 等线 Light;font-size: 19px;margin-left: 27%;"><%=errorMsg%></span>
     </div>
     <%}else{
@@ -51,17 +53,30 @@
     <form action="Lhq_SearchServlet?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>" method="post" class="find_password">
         <div class="mailbox">
             <span>电话 :</span>
+            <%if(tel!=null){%>
+            <input type="tel" class="mail_code" name="tel" id="tel" width="80px"
+                   height="60px" placeholder="请输入您的电话号码" value=<%=tel%>
+                   required />
+            <%}
+            else{%>
             <input type="tel" class="mail_code" name="tel" id="tel" width="80px"
                    height="60px" placeholder="请输入您的电话号码"
                    required />
+            <%}%>
 
         </div>
         <div class="mailbox">
             <span>邮箱 :</span>
+            <%if(email!=null){%>
+            <input type="email" class="mail_code" name="email" id="email" width="80px"
+                   height="60px" placeholder="请输入您的邮箱地址" value=<%=email%>
+                   required>
+            <%}
+            else{%>
             <input type="email" class="mail_code" name="email" id="email" width="80px"
                    height="60px" placeholder="请输入您的邮箱地址"
                    required>
-
+            <%}%>
         </div>
         <p>
         <div class="findpwd-btn">
