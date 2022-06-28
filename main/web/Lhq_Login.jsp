@@ -34,7 +34,7 @@
                         %>
                     <div class="errorMsg">
                     <div style="height: 24%"></div>
-                        <span style="font-family: 等线 Light;font-size: 19px;"><%=errorMsg%></span>
+                        <span style="margin-left:2%;font-family: 等线 Light;font-size: 19px;"><%=errorMsg%></span>
                     </div>
                     <%}else{
                         %>

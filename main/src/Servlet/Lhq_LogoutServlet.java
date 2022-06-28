@@ -23,6 +23,8 @@ public class Lhq_LogoutServlet extends HttpServlet {
         Lhq_LogoutBean check = new Lhq_LogoutBean();
         User user = check.checkUser(user_id);
         PrintWriter out = response.getWriter();
+        out.print("<script >var check=confirm('您确定要注销吗？');if(!check){window.location.href='Lhq_ShowMyInformationServlet';}</script>");
+        out.print("<script >var check=confirm('您确定要注销吗？');if(!check){window.location.href='Lhq_ShowMyInformationServlet';}</script>");
         if(user!=null){
             check.DeleteCollection(user_id);
             check.DeleteLodge(user_id);
