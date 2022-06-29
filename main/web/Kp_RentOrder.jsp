@@ -197,7 +197,7 @@
                 <input type="radio" name="lodge_pway" value="2">分期<br>
             </div>
             <div class="Check_Form_btn">
-                合计: <span id="totalprice" onclick="totalprice()" name="lodge_price">
+                合计: <span id="totalprice" name="lodge_price">
                 <%=h_resources.getH_price()%></span> RMB
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                 <input type="button" value="确定" class="form-btn"
