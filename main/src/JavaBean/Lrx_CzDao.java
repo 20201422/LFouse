@@ -61,6 +61,8 @@ public class Lrx_CzDao extends BaseDao{
     }
     //删除房源信息及其相关信息
     public void DelAll(String user_id,String h_id){
+
+        update("SET FOREIGN_KEY_CHECKS=0;");
         update("UPDATE USER \n" +
                 "SET lodge_num=lodge_num-1\n" +
                 "WHERE user_id="+user_id+";");
@@ -70,5 +72,6 @@ public class Lrx_CzDao extends BaseDao{
                 "WHERE h_id="+h_id+";\n");
         update("DELETE FROM h_resources\n" +
                 "WHERE h_id="+h_id+";");
+        update("SET FOREIGN_KEY_CHECKS=1;");
     }
 }
