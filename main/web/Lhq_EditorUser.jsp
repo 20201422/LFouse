@@ -1,4 +1,5 @@
-<%@ page import="Model.User" %><%--
+<%@ page import="Model.User" %>
+<%@ page import="java.util.Objects" %><%--
   Created by IntelliJ IDEA.
   User: L
   Date: 2022-06-24
@@ -99,13 +100,30 @@
 
     <div>
         <span class="move">性别：</span>
-        <input type="text" name="sex" value=<%=user.getSex()%>>
+        <%if(Objects.equals("男",user.getSex())) {%>
+        <div class="sex"><input type="radio" name="sex" value="男" checked><span>男</span>&nbsp;&nbsp;
+            <input type="radio" name="sex" value="女" ><span>女</span>&nbsp;&nbsp;
+            <input type="radio" name="sex" value="其他" ><span>其他</span>
+        </div>
+        <%}
+        else if(Objects.equals("女",user.getSex())){%>
+        <div class="sex"><input type="radio" name="sex" value="男"><span>男</span>&nbsp;&nbsp;
+            <input type="radio" name="sex" value="女" checked><span>女</span>&nbsp;&nbsp;
+            <input type="radio" name="sex" value="其他" ><span>其他</span>
+        </div>
+        <%}
+        else{%>
+        <div class="sex"><input type="radio" name="sex" value="男"><span>男</span>&nbsp;&nbsp;
+            <input type="radio" name="sex" value="女"><span>女</span>&nbsp;&nbsp;
+            <input type="radio" name="sex" value="其他" checked><span>其他</span>
+        </div>
+        <%}%>
         <div style="height: 4%;margin-top: -5%;"></div>
     </div>
 
     <div>
         <span class="move">年龄：</span>
-        <input type="text" id="age" name="age" onchange="check4()" value=<%=user.getAge()%>>
+        <input type="number" id="age" name="age" onchange="check4()" value=<%=user.getAge()%>>
         <div style="height: 4%;margin-top: -5%;">
             <span id="check4"></span>
         </div>

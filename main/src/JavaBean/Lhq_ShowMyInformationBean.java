@@ -15,7 +15,7 @@ public class Lhq_ShowMyInformationBean extends BaseDao{
         return queryForOne(User.class,sql,tel);
     }
     public void editor(int user_id,String tel,String uname,String email,String sex,int age){
-        String sql= "update user set tel='"+tel+"',uname='"+uname+"',email='"+email+"',age='"+age+"' where user_id='"+user_id+"'";
+        String sql= "update user set tel='"+tel+"',uname='"+uname+"',sex='"+sex+"',email='"+email+"',age='"+age+"' where user_id='"+user_id+"'";
         update(sql);
     }
     public void Modificate(String tel,String upwd){
