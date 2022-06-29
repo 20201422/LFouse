@@ -17,6 +17,7 @@
             document.getElementById("check1").style.color="#48c625";
             result = true;
         }
+        return result;
     }
     //校验密码
     function check2() {
@@ -32,6 +33,7 @@
             document.getElementById("check2").style.color="#48c625";
             result = true;
         }
+        return result;
     }
     //密码确认
     function check3(){
@@ -47,6 +49,7 @@
             document.getElementById("check3").style.color="#48c625";
             result = true;
         }
+        return result;
     }
     var frm = document.querySelector('form');
     frm.onsubmit = function () {
