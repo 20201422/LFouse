@@ -14,7 +14,7 @@ public class Lrx_CzDao extends BaseDao{
     public List<Lrx_NotCz>getNotCz(String user_id){  //得到没被租的房子的信息
         return queryForList(Lrx_NotCz.class,"SELECT photo_name,h_resources.h_id,h_name,h_location,h_status\n" +
                                             "FROM h_resources,photo\n" +
-                                            "WHERE h_status!=3 AND user_id=3 AND h_resources.h_id=photo.h_id\n" +
+                                            "WHERE h_status!=3 AND user_id='"+Integer.parseInt(user_id)+"' AND h_resources.h_id=photo.h_id\n" +
                                             "GROUP BY photo.h_id;");
     }
     //查找一条未出租房子详细信息
