@@ -84,7 +84,10 @@ public class Lhq_SendMailBean {
         User user = search.sendEmail(receiveMail);
 
         // 收件人
-        message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiveMail,user.getUname(), "UTF-8"));
+        if(user!=null)
+            message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiveMail,user.getUname(), "UTF-8"));
+        else
+            message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiveMail,"用户", "UTF-8"));
 
         // 设置邮件主题
         message.setSubject("LFouse提醒.", "UTF-8");
