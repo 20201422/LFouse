@@ -28,6 +28,7 @@
     <title>LFouse-我的出租</title>
 </head>
 <body>
+
 <header>
     <div class="header">
         <img src="Image/logo.jpg" title="" alt="logo" class="logo" onclick="window.location.href='index.jsp'">
@@ -154,12 +155,12 @@
         <div class="MyCz-cz">
             <a href="Lrx_ShowMoreInformsServlet?h_id=${Lrx_NotCz.h_id}">查看详细信息</a>
             <c:if test="${Lrx_NotCz.h_status==0}">
-                <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
+                <a onclick="del()" href="" >删除</a>
                 <span style="color: #cccccc">上架</span>
                 <span style="color: #cccccc">下架</span>
             </c:if>
             <c:if test="${Lrx_NotCz.h_status==1}">
-                <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
+                <a onclick="del()" href="">删除</a>
                 <a href="Lrx_PutOnServlet?h_id=${Lrx_NotCz.h_id}">上架</a>
                 <span style="color: #cccccc">下架</span>
             </c:if>
@@ -169,11 +170,20 @@
                 <a href="Lrx_PutOffServlet?h_id=${Lrx_NotCz.h_id}">下架</a>
             </c:if>
             <c:if test="${Lrx_NotCz.h_status==-1}">
-                <a href="Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}">删除</a>
+                <a onclick="del()" href="">删除</a>
                 <span style="color: #cccccc">上架</span>
                 <span style="color: #cccccc">下架</span>
             </c:if>
         </div>
+            <script >
+                function del(){
+                    var check=confirm('您确定要删除吗？');
+                    if(!check)
+                        window.location.href='/Lrx_MyNotCzManage.jsp';
+                    else
+                        window.location.href='Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}';
+                }
+            </script>
         </div>
     </div>
 </div>

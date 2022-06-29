@@ -6,6 +6,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(name = "Lrx_Delh_resourcesServlet", value = "/Lrx_Delh_resourcesServlet")
 public class Lrx_Delh_resourcesServlet extends HttpServlet {
@@ -14,6 +15,7 @@ public class Lrx_Delh_resourcesServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
+        PrintWriter out = response.getWriter();;
         Lrx_CzDao cz=new Lrx_CzDao();
         String h_id=request.getParameter("h_id");
         String user_id=(String) request.getSession().getAttribute("user_id");
