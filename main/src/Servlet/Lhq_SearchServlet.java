@@ -30,9 +30,9 @@ public class Lhq_SearchServlet extends HttpServlet {
         Lhq_SendMailBean myLhqSendMailBean = new Lhq_SendMailBean();
         //根据邮箱找到该用户信息
         if(user!=null) {
-            String message="尊敬的 "+user.getUname()+"：\n您的密码为："+user.getUpwd()+"\n您的账号通过LFouse平台已找回！";
+            String message="尊敬的 "+user.getUname()+"：<br>您的密码为："+user.getUpwd()+"<br>您的账号通过LFouse平台已找回！";
             myLhqSendMailBean.sendMail(email, message);
-            request.setAttribute("errorMsg","找回密码成功！");
+            request.setAttribute("errorMsg","密码已发送到您的邮箱！");
             request.getRequestDispatcher("/Lhq_Login.jsp").forward(request,response);
         }
         else {

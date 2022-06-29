@@ -16,8 +16,7 @@ function check1() {
         document.getElementById("check1").style.color="Red";
         result = false;
     } else {
-        document.getElementById("check1").innerHTML = "√";
-        document.getElementById("check1").style.color="Green";
+        document.getElementById("check1").innerHTML = "";
         result = true;
     }
     return result;
@@ -31,8 +30,7 @@ function check2() {
         document.getElementById("check2").style.color="Red";
         result = false;
     } else {
-        document.getElementById("check2").innerHTML = "√";
-        document.getElementById("check2").style.color="Green";
+        document.getElementById("check2").innerHTML = "";
         result = true;
     }
     return result;
@@ -46,8 +44,7 @@ function check3() {
         document.getElementById("email").focus();
         result = false;
     } else {
-        document.getElementById("check3").innerHTML = "√";
-        document.getElementById("check3").style.color="Green";
+        document.getElementById("check3").innerHTML = "";
         result = true;
     }
     return result;
@@ -61,8 +58,7 @@ function check4() {
         document.getElementById("check4").style.color="Red";
         result = false;
     } else {
-        document.getElementById("check4").innerHTML = "√";
-        document.getElementById("check4").style.color="Green";
+        document.getElementById("check4").innerHTML = "";
         result = true;
     }
     return result;
@@ -76,8 +72,7 @@ function check5() {
         document.getElementById("check5").style.color="Red";
         result = false;
     } else {
-        document.getElementById("check5").innerHTML = "√";
-        document.getElementById("check5").style.color="Green";
+        document.getElementById("check5").innerHTML = "";
         result = true;
     }
     return result;
@@ -91,8 +86,7 @@ function check6() {
         document.getElementById("check6").style.color="Red";
         result = false;
     } else {
-        document.getElementById("check6").innerHTML = "√";
-        document.getElementById("check6").style.color="#48c625";
+        document.getElementById("check6").innerHTML = "";
         result = true;
     }
     return result;
@@ -105,8 +99,7 @@ function check7(){
         document.getElementById("check7").style.color="Red";
         result = false;
     } else {
-        document.getElementById("check7").innerHTML = "√";
-        document.getElementById("check7").style.color="#48c625";
+        document.getElementById("check7").innerHTML = "";
         result = true;
     }
     return result;

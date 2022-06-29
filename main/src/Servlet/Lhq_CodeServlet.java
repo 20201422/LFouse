@@ -28,7 +28,7 @@ public class Lhq_CodeServlet extends HttpServlet {
         //实例化一个发送邮件的对象
         Lhq_SendMailBean myLhqSendMailBean = new Lhq_SendMailBean();
         //根据邮箱找到该用户信息
-        String message="尊敬的用户：\n您的验证码为："+num+"\n您可以注册LFouse了！";
+        String message="尊敬的用户：<br>您的验证码为："+num+"<br>您可以注册LFouse了！";
         String n= String.valueOf(num);
         String a= String.valueOf(age);
         myLhqSendMailBean.sendMail(email, message);
@@ -39,6 +39,7 @@ public class Lhq_CodeServlet extends HttpServlet {
         request.setAttribute("age",a);
         request.setAttribute("email",email);
         request.setAttribute("eupwd",eupwd);
+        request.setAttribute("errorMsg","验证码已发送到邮箱！");
         request.getRequestDispatcher("Lhq_Register.jsp").forward(request,response);
     }
 

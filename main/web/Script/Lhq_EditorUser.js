@@ -12,8 +12,7 @@
             result = false;
         }
         else{
-            document.getElementById("check1").innerHTML = "√";
-            document.getElementById("check1").style.color="#48c625";
+            document.getElementById("check1").innerHTML = "";
             result = true;
         }
         return result;
@@ -28,8 +27,7 @@
             result = false;
         }
         else{
-            document.getElementById("check2").innerHTML = "√";
-            document.getElementById("check2").style.color="#48c625";
+            document.getElementById("check2").innerHTML = "";
             result = true;
         }
         return result;
@@ -44,8 +42,7 @@
             result = false;
         }
         else{
-            document.getElementById("check3").innerHTML = "√";
-            document.getElementById("check3").style.color="#48c625";
+            document.getElementById("check3").innerHTML = "";
             result = true;
         }
         return result;
@@ -60,8 +57,7 @@
             result = false;
         }
         else{
-            document.getElementById("check4").innerHTML = "√";
-            document.getElementById("check4").style.color="#48c625";
+            document.getElementById("check4").innerHTML = "";
             result = true;
         }
         return result;
