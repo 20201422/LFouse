@@ -155,12 +155,12 @@
         <div class="MyCz-cz">
             <a href="Lrx_ShowMoreInformsServlet?h_id=${Lrx_NotCz.h_id}">查看详细信息</a>
             <c:if test="${Lrx_NotCz.h_status==0}">
-                <a onclick="del()" href="" >删除</a>
+                <a onclick="del()">删除</a>
                 <span style="color: #cccccc">上架</span>
                 <span style="color: #cccccc">下架</span>
             </c:if>
             <c:if test="${Lrx_NotCz.h_status==1}">
-                <a onclick="del()" href="">删除</a>
+                <a onclick="del()">删除</a>
                 <a href="Lrx_PutOnServlet?h_id=${Lrx_NotCz.h_id}">上架</a>
                 <span style="color: #cccccc">下架</span>
             </c:if>
@@ -170,7 +170,7 @@
                 <a href="Lrx_PutOffServlet?h_id=${Lrx_NotCz.h_id}">下架</a>
             </c:if>
             <c:if test="${Lrx_NotCz.h_status==-1}">
-                <a onclick="del()" href="">删除</a>
+                <a onclick="del()">删除</a>
                 <span style="color: #cccccc">上架</span>
                 <span style="color: #cccccc">下架</span>
             </c:if>
