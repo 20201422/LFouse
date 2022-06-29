@@ -33,7 +33,8 @@ public class Kp_RentOrderServlet extends HttpServlet {
         request.setAttribute("lodgecount",
                 kp_orderBean.lodgeCount(Integer.parseInt(user_id)));//调用方法得到该用户已租信息
         request.setAttribute("FindMyresourcesHouse",
-                kp_orderBean.FindMyresourcesHouse(h_id, Integer.parseInt(user_id)));//调用方法找到自己的房源
+                kp_orderBean.FindMyresourcesHouse(Integer.parseInt(user_id),h_id));//调用方法找到自己的房源
+
 
         request.getRequestDispatcher("/Kp_RentOrder.jsp").forward(request,response);//返回订单jsp
 
