@@ -29,14 +29,10 @@ public class Lhq_CodeServlet extends HttpServlet {
         Lhq_SendMailBean myLhqSendMailBean = new Lhq_SendMailBean();
         //根据邮箱找到该用户信息
         String message="尊敬的用户：\n您的验证码为："+num+"\n您可以注册LFouse了！";
-
         String n= String.valueOf(num);
         String a= String.valueOf(age);
         myLhqSendMailBean.sendMail(email, message);
         request.setAttribute("num",n);
-        request.setAttribute("showway",showway);
-        request.setAttribute("h_id",h_id);
-        request.setAttribute("flg",flg);
         request.setAttribute("tel",tel);
         request.setAttribute("uname",uname);
         request.setAttribute("upwd",upwd);

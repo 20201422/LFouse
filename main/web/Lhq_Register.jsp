@@ -25,9 +25,6 @@
   </div>
 </header>
 <%
-  String flg = (String)request.getAttribute("flg");
-  String showway=(String)request.getAttribute("showway");
-  String h_id=(String)request.getAttribute("h_id");
   String num= (String) request.getAttribute("num");
   String tel= (String)request.getAttribute("tel");
   String uname= (String)request.getAttribute("uname");
@@ -91,9 +88,9 @@
     </div>
 
     <input type="hidden" id="code" name="code" value=<%=num%>>
-    <input type="hidden" name="flg" value=<%=flg%>>
-    <input type="hidden" name="showway" value=<%=showway%>>
-    <input type="hidden" name="h_id" value=<%=h_id%>>
+    <input type="hidden" name="flg" value=<%=flg1%>>
+    <input type="hidden" name="showway" value=<%=showway1%>>
+    <input type="hidden" name="h_id" value=<%=h_id1%>>
 
     <%if(email!=null){%>
     <div style="margin-top: -1%">
