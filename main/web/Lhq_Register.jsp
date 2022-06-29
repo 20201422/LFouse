@@ -32,9 +32,9 @@
   String eupwd= (String)request.getAttribute("eupwd");
   String email=(String)request.getAttribute("email");
   String age= (String)request.getAttribute("age");
-  String flg1=request.getParameter("flg");
-  String showway1=request.getParameter("showway");
-  String h_id1=request.getParameter("h_id1");
+  String flg=request.getParameter("flg");
+  String showway=request.getParameter("showway");
+  String h_id=request.getParameter("h_id");
 %>
 <div  class="wrap">
   <%
@@ -88,9 +88,9 @@
     </div>
 
     <input type="hidden" id="code" name="code" value=<%=num%>>
-    <input type="hidden" name="flg" value=<%=flg1%>>
-    <input type="hidden" name="showway" value=<%=showway1%>>
-    <input type="hidden" name="h_id" value=<%=h_id1%>>
+    <input type="hidden" name="flg" value=<%=flg%>>
+    <input type="hidden" name="showway" value=<%=showway%>>
+    <input type="hidden" name="h_id" value=<%=h_id%>>
 
     <%if(email!=null){%>
     <div style="margin-top: -1%">
@@ -171,7 +171,7 @@
         <input type = "submit" class="submit" value="注册">
       </div>
       <div style="float: left;width: 20%">
-        <input type="button" class="cancel" value="取消" onclick="window.location.href='Lhq_Login.jsp?flg=<%=flg1%>&showway=<%=showway1%>&h_id=<%=h_id1%>'">
+        <input type="button" class="cancel" value="取消" onclick="window.location.href='Lhq_Login.jsp?flg=<%=flg%>&showway=<%=showway%>&h_id=<%=h_id%>'">
       </div>
     </div>
   </form>
