@@ -19,9 +19,9 @@ public class Kp_OrderBean  extends BaseDao{
 
     public H_resources FindMyresourcesHouse(int user_id,int h_id){//查找房源表
 
-        String sql="select * from h_resources where h_id=? and user_id=?";
+        String sql="select * from h_resources where user_id=? and h_id=?";
 
-        return queryForOne(H_resources.class,sql,h_id,user_id);
+        return queryForOne(H_resources.class,sql,user_id,h_id);
 
     }
 
@@ -105,8 +105,8 @@ public class Kp_OrderBean  extends BaseDao{
 
 //    @Test
 //    public void test(){
-//       FindMyresourcesHouse(1,2);
-//       System.out.println(FindMyresourcesHouse(1,2));
+//       FindMyresourcesHouse(51,24);
+//       System.out.println(FindMyresourcesHouse(24,51));
 //    }
 
 }
