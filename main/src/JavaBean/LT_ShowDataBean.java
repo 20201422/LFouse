@@ -14,13 +14,13 @@ import java.util.List;
 public class LT_ShowDataBean extends BaseDao{
 
     public Object queryBillPageSize() {//拿到除待上架房源总数
-        String sql="SELECT COUNT(h_id) FROM h_resources WHERE h_status != -1 and h_status!=1";
+        String sql="SELECT COUNT(h_id) FROM h_resources WHERE h_status != -1";
         return queryForSingleValue(sql);
     }
 
     public List<H_resources> queryBillPage(String PageNo) {//拿到除待上架房源信息，每页两条
         int pageIndex=(Integer.parseInt(PageNo) -1)*2;
-        String sql="select * from h_resources WHERE h_status != -1 and h_status!=1 limit "+pageIndex+","+2;
+        String sql="select * from h_resources WHERE h_status != -1 limit "+pageIndex+","+2;
         return queryForList(H_resources.class, sql);
     }
 
@@ -85,7 +85,7 @@ public class LT_ShowDataBean extends BaseDao{
     }
 
     public List<H_resources> queryBillPage8(int H_id) {//拿到特定房源信息
-        String sql="select * from h_resources where h_id = ? and h_status != -1 and h_status!=1";
+        String sql="select * from h_resources where h_id = ? and h_status != -1";
         return queryForList(H_resources.class, sql,H_id);
     }
 

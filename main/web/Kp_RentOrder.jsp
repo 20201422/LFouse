@@ -187,7 +187,7 @@
     </div>
 
     <div class="fill">
-        <form action="Kp_PlaceOrderServlet" id="queding">
+        <form action="pay.jsp" id="queding">
             <div class="form">
                 租房月数：&nbsp&nbsp&nbsp&nbsp
                 <input type="number" min="1" name="lodge_limit" id="lodge_limit" class="form-text" value="1"
@@ -206,6 +206,7 @@
             <input type="hidden" name="orderway" id="orderway">
             <input type="hidden" value="<%=user_id%>" name="user_id">
             <input type="hidden" value="<%=h_resources.getH_id()%>" name="h_id">
+            <input type="hidden" value="<%=h_resources.getH_name()%>" name="h_name" id="h_name">
             <input type="hidden" value="<%=h_resources.getH_price()%>" name="lodge_price" id="lodge_price">
         </form>
     </div>

@@ -13,6 +13,8 @@
           <element id="library" level="module" name="lib" module-name="LFouse" />
           <element id="library" level="project" name="src" />
           <element id="library" level="project" name="commons-fileupload-1.4" />
+          <element id="library" level="module" name="alipay-sdk-java-3.3.0-source" module-name="LFouse" />
+          <element id="library" level="project" name="javax.mail " />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="LFouse/web/Web" />
