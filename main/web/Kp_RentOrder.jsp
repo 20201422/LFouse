@@ -187,7 +187,7 @@
     </div>
 
     <div class="fill">
-        <form action="pay.jsp" id="queding">
+        <form action="LT_pay.jsp" id="queding">
             <div class="form">
                 租房月数：&nbsp&nbsp&nbsp&nbsp
                 <input type="number" min="1" name="lodge_limit" id="lodge_limit" class="form-text" value="1"

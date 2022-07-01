@@ -98,13 +98,30 @@ if(request.getParameter("WIDout_trade_no")!=null){
     body{
         font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
     }
+    body:hover{
+
+    }
     .hidden{
         display:none;
     }
+
+    #paybody{
+        font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+        transition: all 0.45s;
+    }
+    #paybody:hover{
+        box-shadow: 1px 1px 10px #a4a4a6;
+        border-radius:20px;
+        transform: scale(1.02);
+    }
+    .hidden{
+        display:none;
+    }
+
     .new-btn-login-sp{
         padding: 1px;
         display: inline-block;
-        width: 75%;
+        width: 100%;
     }
     .new-btn-login {
         background-color: #02aaf1;
@@ -133,21 +150,26 @@ if(request.getParameter("WIDout_trade_no")!=null){
         margin-top:5px;
     }
     .content dt{
-        width:100px;
+        /*background-color: #F5F5F7;*/
+        text-align: right;
+        width:80px;
         display:inline-block;
         float: left;
-        margin-left: 200px;
+        margin-left: 40px;
         color: #666;
         font-size: 13px;
-        margin-top: 8px;
+        margin-top: 6px;
     }
     .content dd{
-        margin-left:240px;
+        width: 300px;
+        /*background-color: red;*/
+        margin-left:-6px;
         margin-bottom:5px;
     }
     .content dd input {
-        width: 40%;
+        width: 60%;
         height: 28px;
+        margin-left: -20px;
         border: 0;
         -webkit-border-radius: 0;
         -webkit-appearance: none;
@@ -171,8 +193,9 @@ if(request.getParameter("WIDout_trade_no")!=null){
         font-size: 12px;
         line-height: 130%;
         margin-top: 5px;
-        width: 20%;
+        width: 100%;
         display: block;
+        margin-top: 36px;
     }
     #btn-dd{
         margin: 20px;
@@ -185,9 +208,11 @@ if(request.getParameter("WIDout_trade_no")!=null){
         display: block;
         height: 1px;
         border: 0;
-        border-top: 1px solid #eeeeee;
-        width: 100%;
-        margin-left: 20px;
+        border-top: 1px solid #3b3b3c;
+        width: 80%;
+        /*margin-left: 20px;*/
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     .am-header {
         display: -webkit-box;
@@ -225,11 +250,16 @@ if(request.getParameter("WIDout_trade_no")!=null){
 <header class="am-header">
         <h1>支付宝手机网站支付接口快速通道(接口名：alipay.trade.wap.pay)</h1>
 </header>
-<div id="main">
+<div id="main" align="center">
         <form name=alipayment action="" method=post target="_blank">
-            <div id="body" style="clear:left">
-                <dl class="content">
-                    <dt>商户订单号：</dt>
+            <div id="paybody" style="width: 360px;height: 420px;clear: left;">
+                <dl class="content" style="margin-top: 80px">
+                    <br/>
+                    <br/>
+                    <h1 style="font-family: 等线 Light;font-size: 32px">订单信息</h1>
+                    <br/>
+                    <br/>
+                    <dt style="margin-top: 6px">商户订单号：</dt>
                     <dd>
                         <input id="WIDout_trade_no" readonly="readonly" name="WIDout_trade_no" />
                     </dd>
