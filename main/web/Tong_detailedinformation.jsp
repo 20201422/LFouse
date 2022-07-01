@@ -280,6 +280,17 @@
         <%
             }
         %>
+        <%
+            if(h_resources.getH_status()==3){//已租出
+        %>
+        <p class="error-no">我要租房</p>
+        <%
+        }else{//未租出
+        %>
+        <a href="Kp_RentOrderServlet?showway=1&orderway=1&h_id=${h_id}">我要租房</a>
+        <%
+            }
+        %>
     </div>
     <%
         }
