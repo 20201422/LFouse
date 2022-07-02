@@ -34,7 +34,6 @@ public class Lhq_LogoutServlet extends HttpServlet {
         else{
             out.print("<script >alert('注销失败，正在租房或房屋正在出租！');window.location.href='Kp_ShowHouseServlet?way=1'</script>");
         }
-//        request.getRequestDispatcher("Kp_ShowHouseServlet?way=1").forward(request,response);
     }
 
     @Override
