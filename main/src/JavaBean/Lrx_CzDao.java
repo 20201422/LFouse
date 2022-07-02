@@ -44,7 +44,7 @@ public class Lrx_CzDao extends BaseDao{
     //修改未被租的房子信息
     public void Modify(String h_id,String h_name,String h_location,String h_price,String h_layout,String h_type,String h_area,String h_elevator,String h_toward,String h_traffic,String h_floor ){
         update("UPDATE h_resources\n" +
-                "SET h_name='"+h_name+"',h_location='"+h_location+"',h_price="+Double.parseDouble(h_price)+",h_layout='"+h_layout+"',h_type='"+h_type+"',h_area="+Double.parseDouble(h_area)+",h_elevator="+Integer.parseInt(h_elevator)+",h_toward='"+h_toward+"',h_traffic='"+h_traffic+"',h_status=0,h_floor='"+h_floor+"'\n" +
+                "SET h_name='"+h_name+"',h_location='"+h_location+"',h_price="+Double.parseDouble(h_price)+",h_layout='"+h_layout+"',h_type='"+h_type+"',h_area="+Double.parseDouble(h_area)+",h_elevator="+Integer.parseInt(h_elevator)+",h_toward='"+h_toward+"',h_traffic='"+h_traffic+"',h_status="+0+",h_floor='"+h_floor+"'\n" +
                 "WHERE h_id="+h_id+";");
     }
     //将未出租且审核通过的房源状态改为上架
