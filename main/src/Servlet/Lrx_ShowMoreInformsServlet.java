@@ -19,8 +19,10 @@ public class Lrx_ShowMoreInformsServlet extends HttpServlet {
         String h_id=request.getParameter("h_id");
         Lrx_CzDao cz=new Lrx_CzDao();
         Lrx_NotCzMoreInforms ln=cz.getNorCzMoreInforms(h_id);
+        List list=cz.GetAllPhoto(h_id);
         //System.out.println(ln.getH_name());
         request.setAttribute("oneInform",ln);
+        request.setAttribute("photolist",list);
         request.getRequestDispatcher("/Lrx_MyNotCzMoreInforms.jsp").forward(request,response);
     }
 

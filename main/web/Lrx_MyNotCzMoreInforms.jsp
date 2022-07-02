@@ -1,4 +1,6 @@
-<%@ page import="Model.Lrx_NotCzMoreInforms" %><%--
+<%@ page import="Model.Lrx_NotCzMoreInforms" %>
+<%@ page import="Model.Photo" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: LRX
   Date: 2022-06-24
@@ -14,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_TableStyle.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_AddCz.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_Button.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/Tong_detailedinformation.css" />
     <title>LFouse-详细信息</title>
 </head>
 <body>
@@ -52,7 +55,18 @@
 
     <%
         Lrx_NotCzMoreInforms lncmi=(Lrx_NotCzMoreInforms)request.getAttribute("oneInform");
+        List<Photo> photolist= (List<Photo>)request.getAttribute("photolist");
     %>
+    </div>
+    <div class="photo">
+        <%
+            for(Photo photo:photolist){
+        %>
+        <img class="img" src="Image/<%=photo.getPhoto_name()%>">
+        <%
+            }
+        %>
+    </div>
     <form action="Lrx_ModifyServlet?h_id=<%=lncmi.getH_id()%>" method="post">
         <div class="checkOrder_Head"><h1>你可以对这些基本信息进行修改</h1></div>
         <div class="message-0">

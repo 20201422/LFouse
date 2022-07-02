@@ -74,4 +74,8 @@ public class Lrx_CzDao extends BaseDao{
                 "WHERE h_id="+h_id+";");
         update("SET FOREIGN_KEY_CHECKS=1;");
     }
+    //得到该房源的所有图片
+    public List<Photo> GetAllPhoto(String h_id){
+        return  queryForList(Photo.class,"SELECT Photo_name FROM photo WHERE h_id="+Integer.parseInt(h_id)+";");
+    }
 }
