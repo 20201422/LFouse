@@ -179,7 +179,7 @@
                 function del(){
                     var check=confirm('您确定要删除吗？');
                     if(!check)
-                        window.location.href='/Lrx_MyNotCzManage.jsp';
+                        window.location.href='Lrx_MyNotCzManage.jsp';
                     else
                         window.location.href='Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}';
                 }

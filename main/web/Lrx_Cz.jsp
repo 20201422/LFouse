@@ -73,6 +73,7 @@
     </nav>
 </header>
 <div>
+<div>
 
     <form action="Lrx_CzAddServlet?user_id=<%=user_id%>" method="post" enctype="multipart/form-data">
         <div class="checkOrder_Head">
@@ -183,6 +184,7 @@
 
 
 <br><br>
+</div>
     <footer>
         <hr>
         <div class="footer-help">

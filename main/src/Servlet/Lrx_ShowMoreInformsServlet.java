@@ -19,7 +19,7 @@ public class Lrx_ShowMoreInformsServlet extends HttpServlet {
         String h_id=request.getParameter("h_id");
         Lrx_CzDao cz=new Lrx_CzDao();
         Lrx_NotCzMoreInforms ln=cz.getNorCzMoreInforms(h_id);
-        System.out.println(ln.getH_name());
+        //System.out.println(ln.getH_name());
         request.setAttribute("oneInform",ln);
         request.getRequestDispatcher("/Lrx_MyNotCzMoreInforms.jsp").forward(request,response);
     }
