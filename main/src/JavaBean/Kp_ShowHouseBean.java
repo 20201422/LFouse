@@ -41,16 +41,16 @@ public class Kp_ShowHouseBean extends BaseDao{
         if(!Objects.equals(layout, "全部")&&layout!=null
                 &&!Objects.equals(layout, "null")&&!Objects.equals(layout, "")){//添加房型搜素
             if(Objects.equals(layout, "一室"))
-                layout="1室";
+                sql=sql+" and h_layout like'%1室%'";
             else if(Objects.equals(layout, "二室"))
-                layout="2室";
+                sql=sql+" and h_layout like'%2室%'";
             else if(Objects.equals(layout, "三室"))
-                layout="3室";
+                sql=sql+" and h_layout like'%3室%'";
             else if(Objects.equals(layout, "四室"))
-                layout="4室";
+                sql=sql+" and h_layout like'%4室%'";
             else
-                layout="5室及以上";
-            sql=sql+" and h_layout like'%"+layout+"%'";
+                sql=sql+" and h_layout not like '%1室%' and h_layout not like '%2室%'\n" +
+                        " and h_layout not like '%3室%' and h_layout not like '%4室%'";
         }
         if(!Objects.equals(toward, "全部")&&toward!=null
                 &&!Objects.equals(toward, "null")&&!Objects.equals(toward, "")){//添加朝向搜素
