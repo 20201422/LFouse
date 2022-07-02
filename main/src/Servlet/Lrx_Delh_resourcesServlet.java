@@ -15,7 +15,7 @@ public class Lrx_Delh_resourcesServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
-        PrintWriter out = response.getWriter();;
+
         Lrx_CzDao cz=new Lrx_CzDao();
         String h_id=request.getParameter("h_id");
         String user_id=(String) request.getSession().getAttribute("user_id");

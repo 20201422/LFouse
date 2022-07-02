@@ -89,37 +89,7 @@
         <p><a href="Lrx_ShowNotCzServlet">未出租</a></p>
     </nav>
 </header>
-<!--
-<div>
-    <div class="Lrx_menu">
-        <p id="p2"><a href="Lrx_ShowServlet">已出租</a></p>
-        <p id="p3"><a href="Lrx_ShowNotCzServlet">未出租</a></p>
-    </div>
 
-    <div class="float">
-        <div>
-            <form action="Lrx_NotCzSearchServlet?method=1">
-                房子状态<select name="h_status">
-                    <option>请选择</option>
-                    <option>待审核</option>
-                    <option>待上架</option>
-                    <option>未出租</option>
-                    <option>审核不通过</option>
-                </select>
-                房位<select name="h_location">
-                    <option>请选择</option>
-                    <option>南昌</option>
-                    <option>上海</option>
-                    <option>北京</option>
-                    <option>包头</option>
-                </select>
-            </form>
-            <form Lrx_NotCzSearchServlet?method=2>
-            房名<input type="text" name="h_name">&nbsp;
-            <input type="button" value="搜索">
-            </form>
-        </div>
-        -->
 <c:if test="${List.size()!=0}">
     <div class="checkOrder_Head"><h1>未出租房源</h1></div>
 </c:if>
@@ -155,12 +125,12 @@
         <div class="MyCz-cz">
             <a href="Lrx_ShowMoreInformsServlet?h_id=${Lrx_NotCz.h_id}">查看详细信息</a>
             <c:if test="${Lrx_NotCz.h_status==0}">
-                <a onclick="del()">删除</a>
+                <a onclick="del(${Lrx_NotCz.h_id})">删除</a>
                 <span style="color: #cccccc">上架</span>
                 <span style="color: #cccccc">下架</span>
             </c:if>
             <c:if test="${Lrx_NotCz.h_status==1}">
-                <a onclick="del()">删除</a>
+                <a onclick="del(${Lrx_NotCz.h_id})">删除</a>
                 <a href="Lrx_PutOnServlet?h_id=${Lrx_NotCz.h_id}">上架</a>
                 <span style="color: #cccccc">下架</span>
             </c:if>
@@ -170,18 +140,18 @@
                 <a href="Lrx_PutOffServlet?h_id=${Lrx_NotCz.h_id}">下架</a>
             </c:if>
             <c:if test="${Lrx_NotCz.h_status==-1}">
-                <a onclick="del()">删除</a>
+                <a onclick="del(${Lrx_NotCz.h_id})">删除</a>
                 <span style="color: #cccccc">上架</span>
                 <span style="color: #cccccc">下架</span>
             </c:if>
         </div>
             <script >
-                function del(){
+                function del(h_id){
                     var check=confirm('您确定要删除吗？');
                     if(!check)
                         window.location.href='Lrx_MyNotCzManage.jsp';
                     else
-                        window.location.href='Lrx_Delh_resourcesServlet?h_id=${Lrx_NotCz.h_id}';
+                        window.location.href='Lrx_Delh_resourcesServlet?h_id='+h_id+'';
                 }
             </script>
         </div>
