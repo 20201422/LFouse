@@ -11,7 +11,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lhq_EditorUser.css" />
-    <title>LFouse-修改个人信息</title>
+    <title>LFouse-修改信息</title>
 </head>
 <%  User user=(User)request.getAttribute("ShowMyInformation");
     String user_id= (String) session.getAttribute("user_id");//得到用户id

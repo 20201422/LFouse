@@ -11,7 +11,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lhq_ShowMyInformation.css"/>
-    <title>LFouse-个人信息</title>
+    <title>LFouse-我的信息</title>
 </head>
 <%
     User user=(User)request.getAttribute("ShowMyInformation");

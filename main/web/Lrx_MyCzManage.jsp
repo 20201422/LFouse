@@ -24,7 +24,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/Kp_HeaderandFooter.css" />
     <link rel="stylesheet" type="text/css" href="CSS/Lrx_TableStyle.css" />
-    <title>LFouse-我的出租</title>
+    <title>LFouse-我的房源</title>
 </head>
 <script type="text/javascript" language="JavaScript" src="Script/Lrx_My.js.js"></script>
 <body>
@@ -88,36 +88,6 @@
         <p><a href="Lrx_ShowNotCzServlet">未出租</a></p>
     </nav>
 </header>
-<!--
-<div>
-    <div class="Lrx_menu" >
-        <p><a href="Lrx_ShowServlet">已出租</a></p><br>
-        <p> <a href="Lrx_ShowNotCzServlet">未出租</a></p>
-    </div>
-    <div class="float">
-        <div>
-            <form action="Lrx_AlreadyCzSearchServlet?method=1">
-            房位<select name="location">
-                <option>请选择</option>
-                <option>南昌</option>
-                <option>上海</option>
-                <option>北京</option>
-                <option>包头</option>
-            </select>
-            支付状态<select name="pway">
-                <option>请选择</option>
-                <option>已支付</option>
-                <option>分期支付中</option>
-            </select>
-            </form>
-            <form Lrx_AlreadyCzSearchServlet?method=2>
-                房名<input type="text" name="h_name">&nbsp;
-                租客姓名<input type="text" name="uname">&nbsp;
-
-                <input type="submit" value="搜索">
-            </form>
-        </div>
--->
 
 <c:if test="${List.size()!=0}">
     <div class="checkOrder_Head"><h1>已出租房源</h1></div>
