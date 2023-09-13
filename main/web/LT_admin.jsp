@@ -389,13 +389,13 @@
 <footer id="footer1">
     <hr>
     <div class="footer-help">
-        需要更多帮助？致电 400-820-8820。
+        需要更多帮助？致电 400-820-XXXX。
     </div>
     <div class="footer">
         <p>LFouse采用符合业界标准的加密技术对您提交的信息进行保密。</p>
         <hr>
-        Copyrite ©️ 2022 202014-4 lnc.保留所有权利<br>
-        京IPC备202014-4 营业执照 无线电发射设备销售备案编号11201910351200
+        Copyright ©️ 2022 202014-4 lnc.保留所有权利<br>
+        蒙 ICP备2023001109号
     </div>
 </footer>
 </body>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="lfouse@47.101.64.239" uuid="c801e55f-50b4-4cf7-a97f-e96b981ea88d">
+    <data-source source="LOCAL" name="lfouse@101.43.231.2" uuid="c6b46472-ed9e-4192-ab11-2e0291ca067a">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://47.101.64.239:3306/lfouse</jdbc-url>
+      <jdbc-url>jdbc:mysql://101.43.231.2:3306/lfouse</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
