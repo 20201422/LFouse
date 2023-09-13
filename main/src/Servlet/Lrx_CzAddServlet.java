@@ -82,7 +82,7 @@ public class Lrx_CzAddServlet extends HttpServlet {
                 i++;
                 //System.out.println((String) request.getSession().getAttribute("h_name"));
                 request.setAttribute("realFileName", fileName);
-                String basePath =  "C:/Web/LFouse/main/web/Image";
+                String basePath =  "/Users/coopskywalker/IdeaProjects/LFouse/main/web/Image";
                 //System.out.println(basePath+"\n"+fileName);//打印当前位置
                 File file = new File(basePath, fileName);
                 try {

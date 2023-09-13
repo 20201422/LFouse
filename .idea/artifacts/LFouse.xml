@@ -1,18 +1,17 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="LFouse">
+  <artifact type="war" name="LFouse">
     <output-path>$PROJECT_DIR$/out/artifacts/LFouse</output-path>
-    <root id="root">
+    <root id="archive" name="LFouse.war">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="LFouse" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="module" name="JUnit4" module-name="LFouse" />
+          <element id="library" level="project" name="commons-beanutils-1.9.4" />
           <element id="library" level="project" name="standard" />
-          <element id="library" level="project" name="commons-io-2.2 (2)" />
           <element id="library" level="module" name="lib" module-name="LFouse" />
-          <element id="library" level="project" name="src" />
           <element id="library" level="project" name="commons-fileupload-1.4" />
+          <element id="library" level="project" name="src" />
           <element id="library" level="module" name="alipay-sdk-java-3.3.0-source" module-name="LFouse" />
           <element id="library" level="project" name="javax.mail " />
         </element>
